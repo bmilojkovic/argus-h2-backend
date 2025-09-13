@@ -15,11 +15,6 @@ app.get("/", (req, res, next) => {
     res.send("This is the express server");
 });
 
-// Handling GET /hello request
-app.get("/hello", (req, res, next) => {
-    res.send("This is the hello response");
-});
-
 function buildToken(broadcasterId) {
   const tokenPayload = {
       exp: Math.floor(Date.now() / 1000) + 60,
@@ -32,7 +27,6 @@ function buildToken(broadcasterId) {
   };
 
   const token = jwt.sign(tokenPayload, Buffer.from(sharedSecret, 'base64'));
-  console.log("token: " + token);
 
   return token;
 }
@@ -48,23 +42,76 @@ function broadcastInfo(postData, jwtToken) {
             'Authorization': 'Bearer ' + jwtToken
         }
     };
+    console.log("Broadcasting data: " + requestOptions.body)
     request(requestOptions, function (error, response) {
         console.log(error,response.body,response.statusCode);
         return;
     });
 }
 
+const primaryBoonGods = ["Aphrodite", "Apollo", "Ares", "Demeter", "Haephestus", "Hera", "Hestia", "Poseidon", "Zeus"]
+const primaryBoonTypes = ["Weapon", "Special", "Cast", "Sprint", "Mana"]
+const boonRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "Infusion"]
+
+function parseBoonList(boonList) {
+  runData = {
+    "otherBoons" : []
+  };
+  boonList.forEach( (boon) => {
+    splitBoon = boon.split("-");
+    if (splitBoon.length == 1) { //no dash, so we assume we got only the name
+      boonName = boon;
+      boonRarity = "Common";
+    } else {
+      boonRarity = splitBoon[0];
+      if (!(boonRarities.includes(boonRarity))) {
+        boonRarity = "Common";
+      }
+
+      boonName = splitBoon[1];
+    }
+    
+    foundGod = null;
+    primaryBoonGods.forEach((god) => {
+      if (boonName.startsWith(god)) {
+        foundGod = god;
+        return;
+      }
+    });
+    foundType = null;
+    if (foundGod != null) {
+      primaryBoonTypes.forEach((boonType) => {
+        if (boonName.substring(foundGod.length).startsWith(boonType)) {
+          foundType = boonType;
+          return;
+        }
+      });
+    }
+
+    if (foundGod != null && foundType != null) {
+      runData[foundType.toLowerCase() + "Boon"] = {}
+      runData[foundType.toLowerCase() + "Boon"].name = foundGod + foundType + "Boon";
+      runData[foundType.toLowerCase() + "Boon"].rarity = boonRarity;
+    } else {
+      runData["otherBoons"].push({name: boonName, rarity: boonRarity})
+    }
+  });
+
+  return runData;
+}
+
 app.post("/run_info", (req, res, next) => {
   const broadcasterId = req.body.user;
+  const runData = parseBoonList(req.body.boonList.split(" "))
   jwtToken = buildToken(broadcasterId);
   broadcastMessage = {
-    message: "hello",
+    message: JSON.stringify(runData),
     broadcaster_id: broadcasterId,
     target: ["broadcast"]
   };
   broadcastInfo(broadcastMessage, jwtToken);
 
-  return "ok";
+  res.send("ok");
 })
 
 // Server setup
