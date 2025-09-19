@@ -1,3 +1,27 @@
+const winston = require('winston');
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write all logs with importance level of `error` or higher to `error.log`
+    //   (i.e., error, fatal, but not other levels)
+    //
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    //
+    // - Write all logs with importance level of `info` or higher to `combined.log`
+    //   (i.e., fatal, error, warn, and info, but not trace)
+    //
+    new winston.transports.File({ filename: 'combined.log' }),
+  ],
+});
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple(),
+  }));
+}
+
 // Importing express module
 const express = require("express");
 const app = express();
@@ -9,6 +33,8 @@ var request = require("request");
 const jwt = require('jsonwebtoken');
 const sharedSecret = 'Gg2CUK5Ct4RU5jwqCOTKHTkcoGvoXLgtLSATggsrngc=';
 const clientId = 'sl19e3aebmadlewzt7mxfv3j3llwwv';
+
+const uiMappings = require('./ui_mappings.json');
 
 // Handling GET / request
 app.get("/", (req, res, next) => {
@@ -55,11 +81,19 @@ const primaryBoonTypes = ["Weapon", "Special", "Cast", "Sprint", "Mana"];
 const boonRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "Infusion"];
 const weaponRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
 
+/*
+* Boons should arrive in the following format:
+* [rarityA];;[nameA] [rarityB];;[nameB] etc
+*
+* For example:
+* Common;;ZeusWeaponBoon Rare;;AphroditeCastBoon
+*/
 function parseBoonData(boonData) {
+  boonArray = boonData.split(" ");
   var parsedData = {
-    "otherBoons" : []
+    "otherBoons" : [],
   };
-  boonData.forEach( (boon) => {
+  boonArray.forEach( (boon) => {
     splitBoon = boon.split(dataSeparator);
     if (splitBoon.length != 2) { //data should contain boon rarity and name
       console.log("Invalid boon data. Couldn't parse.");
@@ -72,7 +106,27 @@ function parseBoonData(boonData) {
 
       boonName = splitBoon[1];
     }
+
+    if (uiMappings.boons[boonName] == null) {
+      logger.warn("Got unknown boon name: " + boonName)
+      return;
+    }
     
+    boonDetails = uiMappings.boons[boonName];
+    boonDetails["codeName"] = boonName;
+    boonDetails["rarity"] = boonRarity;
+    if (boonDetails["slot"] != null) {
+      if (parsedData[boonDetails["slot"].toLowerCase() + "Boon"] != null) {
+        logger.warn("Double slot: " + boonDetails["slot"]);
+      }
+      parsedData[boonDetails["slot"].toLowerCase() + "Boon"] = boonDetails;
+    } else {
+      parsedData["otherBoons"].push(boonDetails);
+    }
+    boonDetails["effects"].forEach( effect => {
+      effect["value"] = effect[boonRarity.toLowerCase()];
+    });
+    /*
     foundGod = null;
     primaryBoonGods.forEach((god) => {
       if (boonName.startsWith(god)) {
@@ -97,11 +151,19 @@ function parseBoonData(boonData) {
     } else {
       parsedData["otherBoons"].push({name: boonName, rarity: boonRarity})
     }
+      */
   });
 
   return parsedData;
 }
 
+/*
+* Boons should arrive in the following format:
+* [rarityA]-[nameA];;[rarityB]-[nameB];;etc
+*
+* For example:
+* Common-ZeusWeaponBoon;;Rare-AphroditeCastBoon
+*/
 const emptyWeaponString = "NOWEAPON";
 function parseWeaponData(weaponData) {
   if (weaponData === emptyWeaponString) {
@@ -121,13 +183,13 @@ function parseWeaponData(weaponData) {
     }
 
     weaponName = splitWeapon[1];
-
-    weaponDescription = splitWeapon[2];
   }
 
   parsedData["name"] = weaponName;
+  parsedData["codeName"] = weaponName;
+  parsedData["description"] = "good weapon";
   parsedData["rarity"] = weaponRarity;
-  parsedData["description"] = weaponDescription;
+  parsedData["effects"] = [];
   return parsedData;
 }
 
@@ -140,6 +202,10 @@ function parseFamiliarData(familiarData) {
   var parsedData = {}
 
   parsedData["name"] = familiarData;
+  parsedData["codeName"] = familiarData;
+  parsedData["description"] = "good pet";
+  parsedData["effects"] = [];
+  parsedData["rarity"] = "Common";
 
   return parsedData;
 }
@@ -173,19 +239,34 @@ function parseElementalData(elementalData) {
   return parsedData;
 }
 
+const emptyPinsString = "NOPINS";
+function parsePinData(pinData) {
+  if (pinData == emptyPinsString) {
+    return {};
+  }
+
+  var parsedData = [];
+
+  parsedData = pinData.split(dataSeparator);
+
+  return parsedData;
+}
+
 app.post("/run_info", (req, res, next) => {
   console.log("Received data: " + JSON.stringify(req.body));
   
   const broadcasterId = req.body.user;
-  const boonData = parseBoonData(req.body.boonData.split(" "));
+  const boonData = parseBoonData(req.body.boonData);
   const weaponData = parseWeaponData(req.body.weaponData);
   const familiarData = parseFamiliarData(req.body.familiarData);
   const elementalData = parseElementalData(req.body.elementalData);
+  const pinData = parsePinData(req.body.pinData);
   const runData = {
     boonData: boonData,
     weaponData: weaponData,
     familiarData: familiarData,
-    elementalData: elementalData
+    elementalData: elementalData,
+    pinData: pinData
   };
   jwtToken = buildToken(broadcasterId);
   broadcastMessage = {
