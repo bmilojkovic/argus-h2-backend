@@ -1,7 +1,7 @@
 {
     "boons" : {
         "AphroditeWeaponBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Flutter Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> deal more damage to nearby foes.",
@@ -10,7 +10,7 @@
             ]
         },
         "AphroditeSpecialBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Flutter Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> deal more damage to nearby foes.",
@@ -19,7 +19,7 @@
             ]
         },
         "AphroditeCastBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Rapture Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> inflict <b>Weak</b>, and damage foes while dragging them toward the center.",
@@ -28,7 +28,7 @@
             ]
         },
         "AphroditeSprintBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Passion Rush",
             "slot": "Sprint",
             "description": "<b>Rushing</b> damages surrounding foes and inflicts <b>Weak</b>, and again once you stop.",
@@ -37,7 +37,7 @@
             ]
         },
         "AphroditeManaBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Glamour Gain",
             "slot": "Mana",
             "description": "You automatically inflict <b>Weak</b> on nearby foes and gradually restore <b>Magick</b> near them.",
@@ -46,7 +46,7 @@
             ]
         },
         "HighHealthOffenseBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Shameless Attitude",
             "description": "You deal more damage. While you have at least <b>80% Health</b>, the bonus is doubled.",
             "effects": [
@@ -54,7 +54,7 @@
             ]
         },
         "HealthRewardBonusBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Spiritual Affirmation",
             "description": "Gain <b>Max Health</b> and <b>Max Magick</b> now and for the rest of this night.",
             "effects": [
@@ -62,7 +62,7 @@
             ]
         },
         "DoorHealToFullBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Healthy Rebound",
             "description": "Whenever you exit a Location, restore <b>100% Health</b> if you have not lost too much.",
             "effects": [
@@ -70,7 +70,7 @@
             ]
         },
         "WeakPotencyBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Broken Resolve",
             "description": "Your <b>Weak</b> effects are more potent.",
             "effects": [
@@ -78,7 +78,7 @@
             ]
         },
         "WeakVulnerabilityBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Sweet Surrender",
             "description": "<b>Weak</b>-afflicted foes take more damage.",
             "effects": [
@@ -86,7 +86,7 @@
             ]
         },
         "ManaBurstBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Heart Breaker",
             "description": "Whenever you use <b>40 Magick</b>, create a <b>Heartthrob</b>.",
             "effects": [
@@ -94,7 +94,7 @@
             ]
         },
         "FocusRawDamageBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Secret Crush",
             "description": "Your <b>Attacks</b> gain <b>Power</b>, but you <b>Prime 20 Magick</b>.",
             "effects": [
@@ -102,7 +102,7 @@
             ]
         },
         "ElementalDodgeBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Wispy Wiles",
             "description": "Gain a chance to <b>Dodge</b> for each <b>Air</b> you have.",
             "effects": [
@@ -110,7 +110,7 @@
             ]
         },
         "RandomStatusBoon" : {
-            "god": "Aphrodite",
+            "gods": ["Aphrodite"],
             "name": "Nervous Wreck",
             "description": "Whenever you inflict <b>Weak</b>, also randomly inflict <b>Curses</b> from other Olympians.",
             "effects": [
@@ -119,7 +119,7 @@
         },
 
         "ApolloWeaponBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Nova Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> deal more damage in a larger area.",
@@ -128,7 +128,7 @@
             ]
         },
         "ApolloSpecialBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Nova Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> deal more damage in a larger area.",
@@ -137,7 +137,7 @@
             ]
         },
         "ApolloCastBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Solar Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> inflict <b>Daze</b>, and deal a burst of damage before they expire.",
@@ -146,7 +146,7 @@
             ]
         },
         "ApolloSprintBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Blinding Rush",
             "slot": "Sprint",
             "description": "Your <b>Sprint</b> is faster and inflicts <b>Daze</b> on surrounding foes.",
@@ -155,7 +155,7 @@
             ]
         },
         "ApolloManaBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Lucid Gain",
             "slot": "Mana",
             "description": "If you stand in your <b>Casts</b> when they expire, immediately restore <b>Magick</b>.",
@@ -164,7 +164,7 @@
             ]
         },
         "ApolloRetaliateBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Light Smite",
             "description": "After you take damage, your foe takes damage and you inflict <b>Daze</b> on all foes in the vicinity.",
             "effects": [
@@ -172,7 +172,7 @@
             ]
         },
         "PerfectDamageBonusBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Perfect Image",
             "description": "You deal more damage until you take damage. If you take no more for <b>15 Sec.</b>, regain this.",
             "effects": [
@@ -180,7 +180,7 @@
             ]
         },
         "BlindChanceBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Dazzling Display",
             "description": "Your attacks may inflict <b>Daze</b>.",
             "effects": [
@@ -188,7 +188,7 @@
             ]
         },
         "ApolloBlindBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Back Burner",
             "description": "Foes with <b>Daze</b> take more damage if struck from behind.",
             "effects": [
@@ -196,7 +196,7 @@
             ]
         },
         "ApolloExCastBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Prominence Flare",
             "description": "After your <b>Omega Cast</b> expires, rapidly deal damage in the area for 2 Sec.",
             "effects": [
@@ -204,7 +204,7 @@
             ]
         },
         "ApolloCastAreaBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Super Nova",
             "description": "Your <b>Casts</b> expand in size until they expire.",
             "effects": [
@@ -212,7 +212,7 @@
             ]
         },
         "DoubleStrikeChanceBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Extra Dose",
             "description": "Your <b>Attack</b> has a chance to hit <b>2</b> times.",
             "effects": [
@@ -220,7 +220,7 @@
             ]
         },
         "ElementalRallyBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Self Healing",
             "description": "While you have at least <b>3 Fire</b>, whenever you take damage, restore some <b>Health</b>.",
             "effects": [
@@ -228,7 +228,7 @@
             ]
         },
         "DoubleExManaBoon" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Exceptional Talent",
             "description": "Your <b>Omega Attack</b> and <b>Omega Special</b> fire <b>2</b> times, but use more <b>Magick</b>.",
             "effects": [
@@ -236,7 +236,7 @@
             ]
         },
         "DoubleExManaBoon_Torch" : {
-            "god": "Apollo",
+            "gods": ["Apollo"],
             "name": "Exceptional Talent",
             "image": "DoubleExManaBoon",
             "description": "Your <b>Omega Attack</b> fires <b>2</b> times, but uses more <b>Magick</b>.",
@@ -246,7 +246,7 @@
         },
 
         "AresWeaponBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Vicious Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> deal more damage and inflict <b>Wounds</b>.",
@@ -255,7 +255,7 @@
             ]
         },
         "AresSpecialBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Vicious Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> deal more damage and inflict <b>Wounds</b>.",
@@ -264,7 +264,7 @@
             ]
         },
         "AresCastBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Sword Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> create a falling blade over each foe in the binding circle.",
@@ -273,7 +273,7 @@
             ]
         },
         "AresSprintBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Stabbing Rush",
             "slot": "Sprint",
             "description": "Your <b>Dash</b> creates a row of falling blades along your path.",
@@ -282,7 +282,7 @@
             ]
         },
         "AresManaBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Grisly Gain",
             "slot": "Mana",
             "description": "Striking foes with your <b>Weapon</b> may spill <b>Plasma</b>, which also restores <b>10 Magick</b>.",
@@ -291,7 +291,7 @@
             ]
         },
         "AresExCastBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Meat Grinder",
             "description": "Your <b>Omega Cast</b> also creates a <b>Blade Rift</b> in the binding circle.",
             "effects": [
@@ -299,7 +299,7 @@
             ]
         },
         "RendBloodDropBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Profuse Bleeding",
             "description": "Whenever foes with <b>Wounds</b> take damage, they may spill <b>Plasma</b>.",
             "effects": [
@@ -307,7 +307,7 @@
             ]
         },
         "AresStatusDoubleDamageBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Grievous Blow",
             "description": "Foes with <b>Wounds</b> may suffer <b>200%</b> damage when struck.",
             "effects": [
@@ -315,7 +315,7 @@
             ]
         },
         "BloodDropRevengeBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Visceral Impact",
             "description": "Afer you take damage or a foe is slain, spill <b>Plasma</b>, sometimes twice.",
             "effects": [
@@ -323,7 +323,7 @@
             ]
         },
         "MissingHealthCritBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Mutual Destruction",
             "description": "Gain a chance to deal <b>200%</b> damage that increases the less <b>Health</b> you have remaining.",
             "effects": [
@@ -331,7 +331,7 @@
             ]
         },
         "LowHealthLifestealBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Blood Spree",
             "description": "While you have less than <b>40 Health</b>, your <b>Attacks</b> and <b>Specials</b> restore <b>Health</b>.",
             "effects": [
@@ -339,7 +339,7 @@
             ]
         },
         "OmegaDelayedDamageBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Cut Above",
             "description": "Your <b>Omega Moves</b> also cause a falling blade to appear over each foe stroke, but use <b>+5 Magick</b>.",
             "effects": [
@@ -347,7 +347,7 @@
             ]
         },
         "ElementalOlympianDamageBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Rallying Cry",
             "description": "While you have at least <b>8 Earth</b>, any of your damaging effects from Olympians are stronger.",
             "effects": [
@@ -355,7 +355,7 @@
             ]
         },
         "DoubleBloodDropBoon" : {
-            "god": "Ares",
+            "gods": ["Ares"],
             "name": "Sanguinary Savor",
             "description": "Any <b>Plasma</b> spilled has improved potency and is drawn to you automatically.",
             "effects": [
@@ -364,7 +364,7 @@
         },
 
         "DemeterWeaponBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Ice Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> deal more damage and inflict <b>Freeze</b>.",
@@ -373,7 +373,7 @@
             ]
         },
         "DemeterSpecialBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Ice Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> deal more damage and inflict <b>Freeze</b>.",
@@ -382,7 +382,7 @@
             ]
         },
         "DemeterCastBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Arctic Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> inflict <b>Freeze</b> and repeatedly deal damage to foes in the binding circle.",
@@ -391,7 +391,7 @@
             ]
         },
         "DemeterSprintBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Frigid Rush",
             "slot": "Sprint",
             "description": "Your <b>Sprint</b> forms a <b>Gust</b> around you that lingers after you stop.",
@@ -400,7 +400,7 @@
             ]
         },
         "DemeterManaBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Tranquil Gain",
             "slot": "Mana",
             "description": "After remaining inactive for <b>0.5 Sec.</b>, rapidly restores <b>Magick</b> until you act.",
@@ -409,7 +409,7 @@
             ]
         },
         "CastNovaBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Arctic Gale",
             "description": "Your <b>Casts</b> also create a <b>Gust</b> at the binding circle.",
             "effects": [
@@ -417,7 +417,7 @@
             ]
         },
         "PlantHealthBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Plentiful Forage",
             "description": "Whenever you gather resources from a <b>Location</b>, restore <b>Health</b>. Receive <b>1 Mystery Seed</b> now.",
             "effects": [
@@ -425,7 +425,7 @@
             ]
         },
         "BoonGrowthBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Steady Growth",
             "description": "Whenever you clear enough <b>Encounters</b>, a random <b>Boon</b> you have gains <b>Rarity</b>.",
             "effects": [
@@ -433,7 +433,7 @@
             ]
         },
         "ReserveManaHitShieldBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Snow Queen",
             "description": "Gain a barrier that stops <b>1</b> instance of damage in each <b>Location</b>, but you <b>Prime Magick</b>.",
             "effects": [
@@ -441,7 +441,7 @@
             ]
         },
         "SlowExAttackBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Weed Killer",
             "description": "Your <b>Omega Attack</b> deals more damage, but uses <b>+10 Magick</b>.",
             "effects": [
@@ -449,7 +449,7 @@
             ]
         },
         "CastAttachBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Local Climate",
             "description": "Your <b>Omega Cast</b> deals more damage. If you are in the binding circle, the bonus is doubled.",
             "effects": [
@@ -457,7 +457,7 @@
             ]
         },
         "RootDurationBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Cold Storage",
             "description": "Your <b>Freeze</b> effects last longer.",
             "effects": [
@@ -465,7 +465,7 @@
             ]
         },
         "ElementalDamageCapBoon" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Frosty Veneer",
             "description": "While you have at least <b>6 Water</b>, whenever you would take at least <b>20</b> damage, take less.",
             "effects": [
@@ -473,7 +473,7 @@
             ]
         },
         "InstantRootKill" : {
-            "god": "Demeter",
+            "gods": ["Demeter"],
             "name": "Winter Harvest",
             "description": "<b>Freeze</b>-afflicted foes shatter at <b>10% Health</b>, dealing damage in the area.",
             "effects": [
@@ -482,7 +482,7 @@
         },
 
         "HephaestusWeaponBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Volcanic Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> can cause a blast that deals <b>400</b> damage in the area.",
@@ -491,7 +491,7 @@
             ]
         },
         "HephaestusSpecialBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Volcanic Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> can cause a blast that deals <b>500</b> damage in the area.",
@@ -500,7 +500,7 @@
             ]
         },
         "HephaestusCastBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Anvil Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> deal damage <b>3</b> times in succession to foes in the binding circle.",
@@ -509,7 +509,7 @@
             ]
         },
         "HephaestusSprintBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Smithy Rush",
             "slot": "Sprint",
             "description": "If a foe is near after you <b>Dash</b>, you can cause a blast that deals <b>200</b> damage in the area.",
@@ -518,7 +518,7 @@
             ]
         },
         "HephaestusManaBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Tough Gain",
             "slot": "Mana",
             "description": "Whenever you take damage, shrug some of it off and restore <b>150 Magick</b>.",
@@ -527,7 +527,7 @@
             ]
         },
         "MassiveDamageBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Grand Caldera",
             "description": "Your blast effects from <b>Hephaestus</b> deal more damage and are <b>50%</b> larger.",
             "effects": [
@@ -535,7 +535,7 @@
             ]
         },
         "AntiArmorBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Molten Touch",
             "description": "Your <b>Attacks</b> and <b>Specials</b> deal bonus damage to <b>Armor</b>.",
             "effects": [
@@ -543,7 +543,7 @@
             ]
         },
         "HeavyArmorBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Heavy Metal",
             "description": "Your <b>Weapon</b> deals more damage based on <b>20%</b> of your <b>Armor</b>, and you gain some now.",
             "effects": [
@@ -551,7 +551,7 @@
             ]
         },
         "ArmorBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Trusty Shield",
             "description": "Whenever you enter a <b>Location</b>, gain Armor for that Location, but you <b>Prime 30 Magick</b>.",
             "effects": [
@@ -559,7 +559,7 @@
             ]
         },
         "EncounterStartDefenseBuffBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Security System",
             "description": "At the start of each <b>Encounter</b>, you gain <b>Armor</b> that lasts for <b>7 Sec</b>.",
             "effects": [
@@ -567,7 +567,7 @@
             ]
         },
         "ManaToHealthBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Uncanny Fortitude",
             "description": "Gain bonus <b>Health</b> based on your <b>Magick</b> limit.",
             "effects": [
@@ -575,7 +575,7 @@
             ]
         },
         "MassiveKnockupBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Furnace Blast",
             "description": "Your blast effects from <b>Hephaestus</b> also inflict <b>Glow</b> on foes.",
             "effects": [
@@ -583,7 +583,7 @@
             ]
         },
         "ElementalDamageBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Martial Art",
             "description": "Your <b>Attack</b> and <b>Special</b> deal more damage for each <b>Earth</b> you have.",
             "effects": [
@@ -591,7 +591,7 @@
             ]
         },
         "WeaponUpgradeBoon" : {
-            "god": "Hephaestus",
+            "gods": ["Hephaestus"],
             "name": "Premium Service",
             "description": "Your <b>Aspect</b> of the <b>Nocturnal Arms</b> is even stronger.",
             "effects": [
@@ -600,7 +600,7 @@
         },
 
         "HeraWeaponBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Sworn Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> deal more damage and inflict <b>Hitch</b>.",
@@ -609,7 +609,7 @@
             ]
         },
         "HeraSpecialBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Sworn Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> deal more damage and inflict Hitch.",
@@ -618,7 +618,7 @@
             ]
         },
         "HeraCastBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Engagement Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> inflict <b>Hitch</b> and immediately deal damage based on foes in the binding circle.",
@@ -627,7 +627,7 @@
             ]
         },
         "HeraSprintBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Nexus Rush",
             "slot": "Sprint",
             "description": "Your <b>Sprint</b> inflicts <b>Hitch</b> on contact with foes, and deals damage when it does.",
@@ -636,7 +636,7 @@
             ]
         },
         "HeraManaBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Born Gain",
             "slot": "Mana",
             "description": "Whenever you run out of <b>Magick</b>, <b>Prime</b> until the next <b>Location</b> to restore all <b>Magick</b>.",
@@ -645,7 +645,7 @@
             ]
         },
         "DamageShareRetaliateBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Extended Family",
             "description": "Your damaging effects from <b>Olympians</b> are stronger for each Boon-giver you have.",
             "effects": [
@@ -653,7 +653,7 @@
             ]
         },
         "LinkedDeathDamageBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Dying Wish",
             "description": "Whenever <b>Hitch</b>-afflicted foes are slain, damage all other <b>Hitch</b>-afflicted foes.",
             "effects": [
@@ -661,7 +661,7 @@
             ]
         },
         "BoonDecayBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Bridal Glow",
             "description": "Make <b>1</b> random <b>Boon</b> become <b>Heroic</b> and give it <b>+Lv</b>.",
             "effects": [
@@ -669,7 +669,7 @@
             ]
         },
         "DamageSharePotencyBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Hereditary Bane",
             "description": "Your <b>Hitch</b> effects deal more damage and last <b>+5 Sec.</b>",
             "effects": [
@@ -677,7 +677,7 @@
             ]
         },
         "SpawnCastDamageBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Rousing Reception",
             "description": "Your <b>Casts</b> damage any foes as they join the <b>Encounter</b>, wherever they appear.",
             "effects": [
@@ -685,7 +685,7 @@
             ]
         },
         "CommonGlobalDamageBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Uncommon Grace",
             "description": "While none of your other <b>Boons</b> are <b>Common</b>, deal more damage.",
             "effects": [
@@ -693,7 +693,7 @@
             ]
         },
         "OmegaHeraProjectileBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Fine Line",
             "description": "Your <b>Omega Moves</b> create a fissure that deals damage in a long line, but use <b>+15 Magick</b>.",
             "effects": [
@@ -701,7 +701,7 @@
             ]
         },
         "ElementalRarityUpgradeBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "Proper Upbringing",
             "description": "While you have at least <b>2 Earth, Water, Air and Fire Elements</b>, all your <b>Common Boons</b> gain <b>Rarity</b>.",
             "effects": [
@@ -709,7 +709,7 @@
             ]
         },
         "AllElementalBoon" : {
-            "god": "Hera",
+            "gods": ["Hera"],
             "name": "All Together",
             "description": "Gain <b>Earth Water Air and Fire Elements</b>, and <b>1 Infusion Boon</b> for each.",
             "effects": [
@@ -718,7 +718,7 @@
         },
 
         "HestiaWeaponBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Flame Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> inflict <b>Scorch</b>.",
@@ -727,7 +727,7 @@
             ]
         },
         "HestiaSpecialBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Flame Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> inflict <b>Scorch</b>.",
@@ -736,7 +736,7 @@
             ]
         },
         "HestiaCastBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Smolder Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> repeatedly inflict <b>Scorch</b> on foes in the binding circle.",
@@ -745,7 +745,7 @@
             ]
         },
         "HestiaSprintBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Heat Rush",
             "slot": "Sprint",
             "description": "Your <b>Sprint</b> leaves a cinder trail, and any damage you take from burning is reduced to <b>1</b>.",
@@ -754,7 +754,7 @@
             ]
         },
         "HestiaManaBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Cardio Gain",
             "slot": "Mana",
             "description": "Whenever your <b>Attack</b> or <b>Special</b> deal damage, restore <b>Magick</b>.",
@@ -763,7 +763,7 @@
             ]
         },
         "OmegaZeroBurnBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Highly Flammable",
             "description": "Whenever you inflict <b>Scorch</b> on a foe for the first time, inflict more.",
             "effects": [
@@ -771,7 +771,7 @@
             ]
         },
         "CastProjectileBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Glowing Coal",
             "description": "Hold <b>Cast</b> to aim a fireball that explodes on impact. The binding circle forms there.",
             "effects": [
@@ -779,7 +779,7 @@
             ]
         },
         "FireballManaSpecialBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Controlled Burn",
             "description": "Your <b>Omega Special</b> also launches a fireball, but uses <b>+10 Magick</b>.",
             "effects": [
@@ -787,7 +787,7 @@
             ]
         },
         "BurnExplodeBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Flash Fry",
             "description": "Your foes perish in a blast that damages any surrounding foes.",
             "effects": [
@@ -795,7 +795,7 @@
             ]
         },
         "BurnArmorBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Hot Pot",
             "description": "Gain a chance to <b>Dodge</b>, which is doubled against <b>Scorch</b>-afflicted foes.",
             "effects": [
@@ -803,7 +803,7 @@
             ]
         },
         "BurnStackBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Pyro Technique",
             "description": "Your <b>Scorch</b> effects deal damage faster.",
             "effects": [
@@ -811,7 +811,7 @@
             ]
         },
         "AloneDamageBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Snuffed Candle",
             "description": "You deal more damage to foes that are nowhere near other foes.",
             "effects": [
@@ -819,7 +819,7 @@
             ]
         },
         "ElementalBaseDamageBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Slow Cooker",
             "description": "Your <b>Attacks</b> and <b>Specials</b> gain <b>Power</b> the more <b>Fire</b> you have.",
             "effects": [
@@ -827,7 +827,7 @@
             ]
         },
         "BurnSprintBoon" : {
-            "god": "Hestia",
+            "gods": ["Hestia"],
             "name": "Fire Away",
             "description": "Your <b>Casts</b> destroy many foes' ranged shots, and inflict <b>Scorch</b> on the attacking foes.",
             "effects": [
@@ -836,7 +836,7 @@
         },
 
         "PoseidonWeaponBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Wave Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> hit foes with a splash that knocks other foes away.",
@@ -845,7 +845,7 @@
             ]
         },
         "PoseidonSpecialBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Wave Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> hit foes with a splash that knocks other foes away.",
@@ -854,7 +854,7 @@
             ]
         },
         "PoseidonCastBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Tidal Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> also immediately hit foes with a powerful splash that inflicts <b>Froth</b>.",
@@ -863,7 +863,7 @@
             ]
         },
         "PoseidonSprintBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Breaker Rush",
             "slot": "Sprint",
             "description": "Whenever you <b>Sprint</b>, hit the first foe you run into with a blast that knocks foes away.",
@@ -872,7 +872,7 @@
             ]
         },
         "PoseidonManaBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Flood Gain",
             "slot": "Mana",
             "description": "Your <b>Omega Moves</b> make you briefly restore any <b>Magick</b> you use, repeatable after <b>8 Sec.</b>",
@@ -881,7 +881,7 @@
             ]
         },
         "EncounterStartOffenseBuffBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Hydraulic Might",
             "description": "At the start of each <b>Encounter</b>, your <b>Attacks</b> and <b>Specials</b> are stronger for <b>10 Sec.</b>",
             "effects": [
@@ -889,7 +889,7 @@
             ]
         },
         "RoomRewardBonusBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Buried Treasure",
             "description": "Any <b>Minor Finds</b> and <b>Gold</b> are worth more, and you receive <b>Gold</b>, <b>Health</b>, and <b>Bones</b> now.",
             "effects": [
@@ -897,7 +897,7 @@
             ]
         },
         "FocusDamageShaveBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "High Surf",
             "description": "Hit surrounding foes with a powerful splash as they start to strike, but you <b>Prime 30 Magick</b>.",
             "effects": [
@@ -905,7 +905,7 @@
             ]
         },
         "DoubleRewardBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Sea Star",
             "description": "Whenever you claim rewards other than <b>Boons</b>, <b>Daedalus Hammer</b>, or rare resources, a copy may appear.",
             "effects": [
@@ -913,7 +913,7 @@
             ]
         },
         "PoseidonStatusBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Slippery Slope",
             "description": "Your splash effects from <b>Poseidon</b> also inflict <b>Froth</b>, and <b>Froth</b> deals more damage.",
             "effects": [
@@ -921,7 +921,7 @@
             ]
         },
         "PoseidonExCastBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Geyser Spout",
             "description": "Your <b>Omega Cast</b> gains <b>Power</b> and knocks foes away.",
             "effects": [
@@ -929,7 +929,7 @@
             ]
         },
         "OmegaPoseidonProjectileBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Ocean Swell",
             "description": "Your <b>Omega Moves</b> also launch a wide wave ahead that knocks foes away, but use <b>+5 Magick</b>.",
             "effects": [
@@ -937,7 +937,7 @@
             ]
         },
         "ElementalHealthBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "Water Fitness",
             "description": "Gain <b>Health</b> for each <b>Water</b> you have.",
             "effects": [
@@ -945,7 +945,7 @@
             ]
         },
         "AmplifyConeBoon" : {
-            "god": "Poseidon",
+            "gods": ["Poseidon"],
             "name": "King Tide",
             "description": "Your splash effects from <b>Poseidon</b> are larger and deal bonus damage to <b>Guardians</b>.",
             "effects": [
@@ -954,7 +954,7 @@
         },
 
         "ZeusWeaponBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Heaven Strike",
             "slot": "Weapon",
             "description": "Your <b>Attacks</b> inflict <b>Blitz</b>.",
@@ -963,7 +963,7 @@
             ]
         },
         "ZeusSpecialBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Heaven Flourish",
             "slot": "Special",
             "description": "Your <b>Specials</b> inflict <b>Blitz</b>.",
@@ -972,7 +972,7 @@
             ]
         },
         "ZeusCastBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Storm Ring",
             "slot": "Cast",
             "description": "Your <b>Casts</b> cause lightning bolts to repeatedly strike <b>1</b> foe at a time in the binding circle.",
@@ -981,7 +981,7 @@
             ]
         },
         "ZeusSprintBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Thunder Rush",
             "slot": "Sprint",
             "description": "<b>Dashing</b> causes surrounding foes to be struck by lightning bolts.",
@@ -990,7 +990,7 @@
             ]
         },
         "ZeusManaBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Ionic Gain",
             "slot": "Mana",
             "description": "In each <b>Encounter</b>, an <b>Aether Font</b> appears in the area and restores all <b>Magick</b> when used.",
@@ -999,7 +999,7 @@
             ]
         },
         "ZeusManaBoltBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Power Surge",
             "description": "Whenever you use <b>Magick</b>, a random surrounding foe is struck by lightning.",
             "effects": [
@@ -1007,7 +1007,7 @@
             ]
         },
         "BoltRetaliateBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Divine Vengeance",
             "description": "After you take damage, your foe is struck by lightning, and again <b>50%</b> of the time.",
             "effects": [
@@ -1015,7 +1015,7 @@
             ]
         },
         "CastAnywhereBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Lightning Lance",
             "description": "Hold <b>Cast</b> to aim where the binding circle appears. Foes within are struck by lightning.",
             "effects": [
@@ -1023,7 +1023,7 @@
             ]
         },
         "FocusLightningBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Static Shock",
             "description": "Your strikes emit chain-lightning that bounces up to <b>4</b> times, but you <b>Prime 50 Magick</b>.",
             "effects": [
@@ -1031,7 +1031,7 @@
             ]
         },
         "DoubleBoltBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Double Strike",
             "description": "Your lightning bolt effects may strike <b>2</b> more times.",
             "effects": [
@@ -1039,7 +1039,7 @@
             ]
         },
         "EchoExpirationBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Arc Flash",
             "description": "Damage from <p>Omega Moves</p> immediately activates <p>Blitz</p> effects and makes them stronger.",
             "effects": [
@@ -1047,7 +1047,7 @@
             ]
         },
         "LightningDebuffGeneratorBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Electric Overload",
             "description": "Your chain-lightning deals more damage and bounces up to +3 times.",
             "effects": [
@@ -1055,7 +1055,7 @@
             ]
         },
         "ElementalDamageFloorBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Air Quality",
             "description": "While you have at least <b>5 Air</b>, you can never deal less damage than the limit.",
             "effects": [
@@ -1063,12 +1063,514 @@
             ]
         },
         "SpawnKillBoon" : {
-            "god": "Zeus",
+            "gods": ["Zeus"],
             "name": "Shocking Loss",
             "description": "Whenever you first deal damage to susceptible foes, you may destroy them outright.",
             "effects": [
                 {"text": "Instant Destruction Chance:", "legendary" : "25%"}
             ]
+        },
+        "SprintEchoBoon": {
+            "gods": ["Zeus", "Aphrodite"],
+            "name": "Romantic Spark",
+            "description": "Whenever you <b>Sprint</b> into foes with <b>Blitz</b>, the effect strikes right away for more damage.",
+            "effects": [
+                {"text": "Bonus Blitz Damage:", "duo" : "+80%"}
+            ]
+        },
+        "CharmCrowdBoon": {
+            "gods": ["Hera", "Aphrodite"],
+            "name": "Ecstatic Obsession",
+            "description": "As long as multiple foes are in an <b>Encounter</b>, automatically inflict <b>Charm</b> on <b>1</b> of them.",
+            "effects": [
+                {"text": "Min Foes for Auto-Charm:", "duo" : "2"}
+            ]
+        },
+        "AllCloseBoon": {
+            "gods": ["Poseidon", "Aphrodite"],
+            "name": "Island Getaway",
+            "description": "You take less damage from nearby foes. <b>Boons</b> of <b>Aphrodite</b> treats all foes as nearby.",
+            "effects": [
+                {"text": "Damage Resistance:", "duo" : "+15%"}
+            ]
+        },
+        "MaxHealthDamageBoon": {
+            "gods": ["Demeter", "Aphrodite"],
+            "name": "Hearty Appetite",
+            "description": "You deal more damage the more <b>Health</b> you have.",
+            "effects": [
+                {"text": "Bonus Damage per 50 Life:", "duo" : "+10%"}
+            ]
+        },
+        "ManaBurstCountBoon": {
+            "gods": ["Apollo", "Aphrodite"],
+            "name": "Sunny Disposition",
+            "description": "Whenever you create <b>Heartthrobs</b>, create more.",
+            "effects": [
+                {"text": "Bonus Heartthrobs:", "duo" : "+2"}
+            ]
+        },
+        "BurnRefreshBoon": {
+            "gods": ["Hestia", "Aphrodite"],
+            "name": "Burning Desire",
+            "description": "While foes are <b>Weak</b>, any <b>Scorch</b> they have does not diminish as it deals damage.",
+            "effects": [
+                {"text": "Scorch Duration on Weak Foes:", "duo" : "∞"}
+            ]
+        },
+        "SlamManaBurstBoon": {
+            "gods": ["Hephaestus", "Aphrodite"],
+            "name": "Love Handles",
+            "description": "Your blast effects from <b>Hephaestus</b> also create a <b>Heartthrob</b>.",
+            "effects": [
+                {"text": "Heartthrob Area Damage:", "duo" : "120"}
+            ]
+        },
+        "BloodManaBurstBoon": {
+            "gods": ["Ares", "Aphrodite"],
+            "name": "Carnal Pleasure",
+            "description": "Whenever you collect a <b>Plasma</b>, create a <b>Heartthrob</b>.",
+            "effects": [
+                {"text": "Chance of Heartthrob:", "duo" : "25%"}
+            ]
+        },
+        "ApolloSecondStageCastBoon": {
+            "gods": ["Zeus", "Apollo"],
+            "name": "Glorious Disaster",
+            "description": "You can <b>Channel +30 Magick</b> into your <b>Omega Cast</b> to repeatedly strike foes with lightning bolts.",
+            "effects": [
+                {"text": "Bolt Damage (every 0.13 Sec.):", "duo" : "20"}
+            ]
+        },
+        "RaiseDeadBoon": {
+            "gods": ["Hera", "Apollo"],
+            "name": "Sun Worshiper",
+            "description": "In each <b>Encounter</b>, the first foe you slay returns to fight for you.",
+            "effects": [
+                {"text": "Servant Damage:", "duo" : "+200%"}
+            ]
+        },
+        "PoseidonSplashSprintBoon": {
+            "gods": ["Poseidon", "Apollo"],
+            "name": "Beach Ball",
+            "description": "Your <b>Sprint</b> creates a watery globe behind you, which surges ahead once you stop.",
+            "effects": [
+                {"text": "Max Blast Damage (after 2 Sec.):", "duo" : "300"}
+            ]
+        },
+        "StormSpawnBoon": {
+            "gods": ["Demeter", "Apollo"],
+            "name": "Tropical Cyclone",
+            "description": "While standing in a <b>Gust</b>, you randomly fire gales every 0.3 Sec.",
+            "effects": [
+                {"text": "Gale Damage (every 0.5 Sec.):", "duo" : "70"}
+            ]
+        },
+        "CoverRegenerationBoon": {
+            "gods": ["Hestia", "Apollo"],
+            "name": "Warm Breeze",
+            "description": "Whenever you <b>Dodge</b> or <b>Daze</b> causes a foe to miss, restore some <b>Health</b>.",
+            "effects": [
+                {"text": "Life Restored per Evasion:", "duo" : "10"}
+            ]
+        },
+        "BlindClearBoon": {
+            "gods": ["Hephaestus", "Apollo"],
+            "name": "Rude Awakening",
+            "description": "Your blast effects from <b>Hephaestus</b> clear Daze and deal more damage if they do.",
+            "effects": [
+                {"text": "Bonus Blast Damage:", "duo" : "300"}
+            ]
+        },
+        "DoubleSwordBoon": {
+            "gods": ["Ares", "Apollo"],
+            "name": "Cutting Edge",
+            "description": "Your falling blades from <b>Ares</b> drop <b>+1</b> time in succession and deal damage in a larger area.",
+            "effects": [
+                {"text": "Blade Area of Effect:", "duo" : "+50%"}
+            ]
+        },
+        "SelfCastBoon": {
+            "gods": ["Ares", "Demeter"],
+            "name": "Hostile Environment",
+            "description": "Your <b>Omega Cast</b> is stronger and follows you, even as you start to <b>Channel</b> it.",
+            "effects": [
+                {"text": "Omega Cast Damage:", "duo" : "+100%"}
+            ]
+        },
+        "AutoRevengeBoon": {
+            "gods": ["Ares", "Zeus"],
+            "name": "Heinous Affront",
+            "description": "Inflicting <b>Wounds</b>, occasionally also inflicts all your 'after you take damage' effects.",
+            "effects": [
+                {"text": "Recharge Time per Foe:", "duo" : "6 Sec."}
+            ]
+        },
+        "BloodRetentionBoon": {
+            "gods": ["Ares", "Hera"],
+            "name": "Universal Donor",
+            "description": "Whenever you exit a <b>Location</b>, keep some of your <b>Plasma</b> bonuses.",
+            "effects": [
+                {"text": "Max Plasma Bonus Retained:", "duo" : "20"}
+            ]
+        },
+        "RapidSwordBoon": {
+            "gods": ["Ares", "Hephaestus"],
+            "name": "Coffin Nail",
+            "description": "Your falling blades from <b>Ares</b> fall immediately and deal more damage.",
+            "effects": [
+                {"text": "Blade Bonus Damage:", "duo" : "+25"}
+            ]
+        },
+        "DoubleSplashBoon": {
+            "gods": ["Ares", "Poseidon"],
+            "name": "Arterial Spray",
+            "description": "Your splash effects from <b>Poseidon</b> may hit <b>2</b> times (and take the color of the River Styx).",
+            "effects": [
+                {"text": "Double Splash Chance:", "duo" : "25%"}
+            ]
+        },
+        "FireballRendBoon": {
+            "gods": ["Ares", "Hestia"],
+            "name": "Fourth Degree",
+            "description": "Your fireball effects from <b>Hestia</b> inflict <b>Wounds</b> with even greater <b>Power</b>.",
+            "effects": [
+                {"text": "Fireball Wounds Bonus Power:", "duo" : "+250"}
+            ]
+        },
+        "RootStrikeBoon": {
+            "gods": ["Zeus", "Demeter"],
+            "name": "Hail Storm",
+            "description": "Your <b>Freeze</b> effects also cause lightning bolts to repeatedly strike afflicted foes.",
+            "effects": [
+                {"text": "Lightning Damage (every 0.5 Sec.):", "duo" : "30"}
+            ]
+        },
+        "KeepsakeLevelBoon": {
+            "gods": ["Hera", "Demeter"],
+            "name": "Cherished Heirloom",
+            "description": "Your <b>Keepsakes</b> are stronger this night (if possible).",
+            "effects": [
+                {"text": "Bonus Keepsake Ranks:", "duo" : "+1"}
+            ]
+        },
+        "GoodStuffBoon": {
+            "gods": ["Poseidon", "Demeter"],
+            "name": "Natural Selection",
+            "description": "Your <b>Boon(s)</b> in the leftmost column gain <b>Levels</b> spread across however many you got.",
+            "effects": [
+                {"text": "Total Bonus Lv. for Main Boon(s):", "duo" : "+8"}
+            ]
+        },
+        "BurnConsumeBoon": {
+            "gods": ["Hestia", "Demeter"],
+            "name": "Freezer Burn",
+            "description": "Whenever you inflict <b>Freeze</b>, on a foe with <b>Scorch</b>, deal damage and remove <b>Scorch</b>.",
+            "effects": [
+                {"text": "Damage from Scorch:", "duo" : "200%"}
+            ]
+        },
+        "ClearRootBoon": {
+            "gods": ["Hephaestus", "Demeter"],
+            "name": "Cryo Pounder",
+            "description": "Your blast effects from <b>Hephaestus</b> deal more damage to <b>Freeze</b>-afflicted foes.",
+            "effects": [
+                {"text": "Bonus Blast Damage:", "duo" : "+50%"}
+            ]
+        },
+        "ManaShieldBoon": {
+            "gods": ["Hephaestus", "Hera"],
+            "name": "Brave Face",
+            "description": "Automatically use <b>Magick</b> to resist up to <b>30%</b> of any damage.",
+            "effects": [
+                {"text": "Magick Cost per Damage Point:", "duo" : "10"}
+            ]
+        },
+        "ReboundingSparkBoon": {
+            "gods": ["Hephaestus", "Zeus"],
+            "name": "Master Conductor",
+            "description": "Your chain-lightning can bounce off of you and deals increasing damage to foes.",
+            "effects": [
+                {"text": "Damage per Bounce:", "duo" : "+15%"}
+            ]
+        },
+        "MassiveCastBoon": {
+            "gods": ["Hephaestus", "Poseidon"],
+            "name": "Seismic Servo",
+            "description": "Any <b>Boon</b> effects that recharge overtime recharge faster.",
+            "effects": [
+                {"text": "Recharge Speed:", "duo" : "+35%"}
+            ]
+        },
+        "DoubleMassiveAttackBoon": {
+            "gods": ["Hephaestus", "Hestia"],
+            "name": "Chain Reaction",
+            "description": "If you use your blast effects from <b>Hephaestus</b> just after they recharge, they fire <b>2</b> times.",
+            "effects": [
+                {"text": "Double Blast Timing:", "duo" : "2 Sec."}
+            ]
+        },
+        "SuperSacrificeBoonHera": {
+            "gods": ["Hera", "Zeus"],
+            "name": "Queen's Ransom",
+            "description": "Give up all your <b>Boons</b> of <b>Zeus</b>. For each, raise <b>Levels</b> for all your <b>Boons</b> of <b>Hera</b>.",
+            "effects": [
+                {"text": "Bonus Lv. per Zeus Boon:", "duo" : "+4"}
+            ]
+        },
+        "MoneyDamageBoon": {
+            "gods": ["Hera", "Poseidon"],
+            "name": "Ripple Effect",
+            "description": "Your effects from <b>Fine Line</b> and <b>Ocean Swell</b> have a chance to fire 2 times.",
+            "effects": [
+                {"text": "Bonus Fire Chance:", "duo" : "+35%"}
+            ]
+        },
+        "ManaRestoreDamageBoon": {
+            "gods": ["Hera", "Hestia"],
+            "name": "Incandescent Aura",
+            "description": "Whenever you restore <b>Magick</b> during <b>Encounters</b>, damage all <b>Hitch</b>-afflicted foes.",
+            "effects": [
+                {"text": "Damage from Magick Restored:", "duo" : "500% (every 0.2 Sec.)"}
+            ]
+        },
+        "EchoBurnBoon": {
+            "gods": ["Hestia", "Zeus"],
+            "name": "Thermal Dynamics",
+            "description": "Your <b>Blitz</b> effects also inflict <b>Scorch</b> whenever they deal damage.",
+            "effects": [
+                {"text": "Scorch Damage:", "duo" : "160"}
+            ]
+        },
+        "SteamBoon": {
+            "gods": ["Hestia", "Poseidon"],
+            "name": "Scalding Vapor",
+            "description": "If foes with <b>Froth</b> are struck by your fire effects from <b>Hestia</b>, they are engulfed in <b>Steam</b>.",
+            "effects": [
+                {"text": "Steam Damage (every 0.2 Sec.):", "duo" : "20"}
+            ]
+        },
+        "LightningVulnerabilityBoon": {
+            "gods": ["Poseidon", "Zeus"],
+            "name": "Killer Current",
+            "description": "Your lightning deals more damage to <b>Froth</b>-afflicted foes.",
+            "effects": [
+                {"text": "Bonus Lightning Damage:", "duo" : "+30%"}
+            ]
+        },
+        "SuperSacrificeBoonZeus": {
+            "gods": ["Zeus", "Hera"],
+            "name": "King's Ransom",
+            "description": "Give up all your <b>Boons</b> of <b>Hera</b>. For each, raise <b>Levels</b> for all your <b>Boons</b> of <b>Zeus</b>.",
+            "effects": [
+                {"text": "Bonus Lv. per Hera Boon:", "duo" : "+4"}
+            ]
         }
+    },
+    "keepsakes" : {
+        "ManaOverTimeRefundKeepsake" : {
+            "name": "Silver Wheel",
+            "common": "Gain <b>+50 Magick</b> this night.",
+            "rare": "Gain <b>+75 Magick</b> this night.",
+            "epic": "Gain <b>+100 Magick</b> this night.",
+            "heroic": "Gain <b>+150 Magick</b> this night."
+        },
+        "BossPreDamageKeepsake" : {
+            "name": "Knuckle Bones",
+            "common": "The next <b>Guardian</b> loses <b>-5% Health</b>. You take <b>-10%</b> damage from <b>Guardians</b>.",
+            "rare": "The next <b>Guardian</b> loses <b>-10% Health</b>. You take <b>-10%</b> damage from <b>Guardians</b>.",
+            "epic": "The next <b>Guardian</b> loses <b>-15% Health</b>. You take <b>-10%</b> damage from <b>Guardians</b>.",
+            "heroic": "The next <b>Guardian</b> loses <b>-25% Health</b>. You take <b>-10%</b> damage from <b>Guardians</b>."
+        },
+        "BossMetaUpgradeKeepsake" : {
+            "name": "Crystal Figurine",
+            "common": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Common Arcana Cards</b>.",
+            "rare": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Rare Arcana Cards</b>.",
+            "epic": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Epic Arcana Cards</b>.",
+            "heroic": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Heroic Arcana Cards</b>."
+        },
+        "DoorHealReserveKeepsake" : {
+            "name": "Ghost Onion",
+            "common": "Whenever you exit a <b>Location</b>, fully restore your <b>Health</b>, up to a total of <b>50 Health</b> this night.",
+            "rare": "Whenever you exit a <b>Location</b>, fully restore your <b>Health</b>, up to a total of <b>75 Health</b> this night.",
+            "epic": "Whenever you exit a <b>Location</b>, fully restore your <b>Health</b>, up to a total of <b>100 Health</b> this night.",
+            "heroic": "Whenever you exit a <b>Location</b>, fully restore your <b>Health</b>, up to a total of <b>150 Health</b> this night."
+        },
+        "ReincarnationKeepsake" : {
+            "name": "Luckier Tooth",
+            "common": "After you fall to <b>0 Health</b>, automatically restore <b>51 Health</b> once this night.",
+            "rare": "After you fall to <b>0 Health</b>, automatically restore <b>76 Health</b> once this night.",
+            "epic": "After you fall to <b>0 Health</b>, automatically restore <b>101 Health</b> once this night.",
+            "heroic": "After you fall to <b>0 Health</b>, automatically restore <b>151 Health</b> once this night."
+        },
+        "BlockDeathKeepsake" : {
+            "name": "Engraved Pin",
+            "common": "When first you fall to <b>0 Health</b>, become <b>Doomed</b>. Clear it in time for <b>30 Health</b>.",
+            "rare": "When first you fall to <b>0 Health</b>, become <b>Doomed</b>. Clear it in time for <b>45 Health</b>.",
+            "epic": "When first you fall to <b>0 Health</b>, become <b>Doomed</b>. Clear it in time for <b>60 Health</b>.",
+            "heroic": "When first you fall to <b>0 Health</b>, become <b>Doomed</b>. Clear it in time for <b>90 Health</b>."
+        },
+        "DeathVengeanceKeepsake" : {
+            "name": "Evil Eye",
+            "common": "Deal <b>+20%</b> to the last foe that vanquished you.",
+            "rare": "Deal <b>+25%</b> to the last foe that vanquished you.",
+            "epic": "Deal <b>+30%</b> to the last foe that vanquished you.",
+            "heroic": "Deal <b>+40%</b> to the last foe that vanquished you."
+        },
+        "BonusMoneyKeepsake" : {
+            "name": "Gold Purse",
+            "common": "Gain <b>+100 Gold</b> this night.",
+            "rare": "Gain <b>+125 Gold</b> this night.",
+            "epic": "Gain <b>+150 Gold</b> this night.",
+            "heroic": "Gain <b>+200 Gold</b> this night."
+        },
+        "LowHealthCritKeepsake" : {
+            "name": "White Antler",
+            "common": "For the next <b>Region</b>, gain <b>+20% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
+            "rare": "For the next <b>Region</b>, gain <b>+25% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
+            "epic": "For the next <b>Region</b>, gain <b>+30% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
+            "heroic": "For the next <b>Region</b>, gain <b>+50% Critical</b> damage chance, but you are limited to <b>30 Health</b>."
+        },
+        "SpellTalentKeepsake" : {
+            "name": "Moon Beam",
+            "common": "A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+3</b> upgrades.",
+            "rare": "A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+4</b> upgrades.",
+            "epic": "A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+5</b> upgrades.",
+            "heroic": "A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+7</b> upgrades."
+        },
+        "ArmorGainKeepsake" : {
+            "name": "Silken Sash",
+            "common": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+2 Armor</b> after each <b>Location</b>.",
+            "rare": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+3 Armor</b> after each <b>Location</b>.",
+            "epic": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+4 Armor</b> after each <b>Location</b>.",
+            "heroic": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+6 Armor</b> after each <b>Location</b>."
+        },
+        "TempHammerKeepsake" : {
+            "name": "Experimental Hammer",
+            "common": "Gain <b>1</b> random <b>Daedalus Hammer</b> that lasts for <b>10 Encounters</b>.",
+            "rare": "Gain <b>1</b> random <b>Daedalus Hammer</b> that lasts for <b>15 Encounters</b>.",
+            "epic": "Gain <b>1</b> random <b>Daedalus Hammer</b> that lasts for <b>20 Encounters</b>.",
+            "heroic": "Gain <b>1</b> random <b>Daedalus Hammer</b> that lasts for <b>30 Encounters</b>."
+        },
+        "FountainRarityKeepsake" : {
+            "name": "Aromatic Phial",
+            "common": "<b>Fountains</b> restore <b>+20% Health</b>. The next makes <b>1</b> random <b>Common Boon</b> of yours <b>Rare</b>.",
+            "rare": "<b>Fountains</b> restore <b>+20% Health</b>. The next makes <b>1</b> random <b>Common Boon</b> of yours <b>Epic</b>.",
+            "epic": "<b>Fountains</b> restore <b>+20% Health</b>. The next makes <b>1</b> random <b>Common Boon</b> of yours <b>Heroic</b>.",
+            "heroic": "<b>Fountains</b> restore <b>+20% Health</b>. The next makes <b>1</b> random <b>Common Boon</b> of yours <b>Heroic</b>."
+        },
+        "UnpickedBoonKeepsake" : {
+            "name": "Concave Stone",
+            "common": "After choosing a <b>Boon</b>, <b>25%</b> of the time randomly take <b>1</b> more, once this night.",
+            "rare": "After choosing a <b>Boon</b>, <b>50%</b> of the time randomly take <b>1</b> more, once this night.",
+            "epic": "After choosing a <b>Boon</b>, <b>75%</b> of the time randomly take <b>1</b> more, once this night.",
+            "heroic": "After choosing a <b>Boon</b>, <b>100%</b> of the time randomly take <b>1</b> more, once this night."
+        },
+        "SkipEncounterKeepsake" : {
+            "name": "Fig Leaf",
+            "common": "A single <b>Encounter</b> in <b>1 Region</b> may be blissfully free from foes the rest of this night.",
+            "rare": "A single <b>Encounter</b> in <b>2 Regions</b> may be blissfully free from foes the rest of this night.",
+            "epic": "A single <b>Encounter</b> in <b>3 Regions</b> may be blissfully free from foes the rest of this night.",
+            "heroic": "A single <b>Encounter</b> in <b>4 Regions</b> may be blissfully free from foes the rest of this night."
+        },
+        "AthenaEncounterKeepsake" : {
+            "name": "Gorgon Amulet",
+            "common": "While you have no <b>Death Defiance</b>, <b>Athena</b> may appear once this night with at least <b>Common Boons</b>.",
+            "rare": "While you have no <b>Death Defiance</b>, <b>Athena</b> may appear once this night with at least <b>Rare Boons</b>.",
+            "epic": "While you have no <b>Death Defiance</b>, <b>Athena</b> may appear once this night with at least <b>Epic Boons</b>.",
+            "heroic": "While you have no <b>Death Defiance</b>, <b>Athena</b> may appear once this night with at least <b>Heroic Boons</b>."
+        },
+        "ForceZeusBoonKeepsake" : {
+            "name": "Cloud Bangle",
+            "common": "A <b>Boon</b> of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night."
+        },
+        "ForceHeraBoonKeepsake" : {
+            "name": "Iridescent Fan",
+            "common": "A <b>Boon</b> of <b>Hera</b> is likely. You can <b>Rarify</b> her <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Hera</b> is likely. You can <b>Rarify</b> her <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Hera</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Hera</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night."
+        },
+        "ForceAresBoonKeepsake" : {
+            "name": "Sword Hilt",
+            "common": "A <b>Boon</b> of <b>Ares</b> is likely. You can <b>Rarify</b> his <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Ares</b> is likely. You can <b>Rarify</b> his <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Ares</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Ares</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night."
+        },
+        "ForceApolloBoonKeepsake" : {
+            "name": "Harmonic Photon",
+            "common": "A <b>Boon</b> of <b>Apollo</b> is likely. You can <b>Rarify</b> his <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Apollo</b> is likely. You can <b>Rarify</b> his <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Apollo</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Apollo</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night."
+        },
+        "ForceDemeterBoonKeepsake" : {
+            "name": "Barley Sheaf",
+            "common": "A <b>Boon</b> of <b>Demeter</b> is likely. You can <b>Rarify</b> her <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Demeter</b> is likely. You can <b>Rarify</b> her <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Demeter</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Demeter</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night."
+        },
+        "ForceAphroditeBoonKeepsake" : {
+            "name": "Beautiful Mirror",
+            "common": "A <b>Boon</b> of <b>Aphrodite</b> is likely. You can <b>Rarify</b> her <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Aphrodite</b> is likely. You can <b>Rarify</b> her <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Aphrodite</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Aphrodite</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night."
+        },
+        "ForceHephaestusBoonKeepsake" : {
+            "name": "Adamant Shard",
+            "common": "A <b>Boon</b> of <b>Hephaestus</b> is likely. You can <b>Rarify</b> his <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Hephaestus</b> is likely. You can <b>Rarify</b> his <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Hephaestus</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Hephaestus</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night."
+        },
+        "ForceHestiaBoonKeepsake" : {
+            "name": "Everlasting Ember",
+            "common": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night."
+        },
+        "DamagedDamageBoostKeepsake" : {
+            "name": "Blackened Fleece",
+            "common": "After you take <b>250</b> damage, your <b>Omega Moves</b> deal <b>+20%</b> damage.",
+            "rare": "After you take <b>250</b> damage, your <b>Omega Moves</b> deal <b>+30%</b> damage.",
+            "epic": "After you take <b>250</b> damage, your <b>Omega Moves</b> deal <b>+40%</b> damage.",
+            "heroic": "After you take <b>250</b> damage, your <b>Omega Moves</b> deal <b>+60%</b> damage."
+        },
+        "DecayingBoostKeepsake" : {
+            "name": "Lion Fang",
+            "common": "Deal <b>+30%</b> damage, but lose <b>5%</b> of this bonus after each <b>Encounter</b>.",
+            "rare": "Deal <b>+40%</b> damage, but lose <b>5%</b> of this bonus after each <b>Encounter</b>.",
+            "epic": "Deal <b>+50%</b> damage, but lose <b>5%</b> of this bonus after each <b>Encounter</b>.",
+            "heroic": "Deal <b>+70%</b> damage, but lose <b>5%</b> of this bonus after each <b>Encounter</b>."
+        },
+        "EscalatingKeepsake" : {
+            "name": "Discordant Bell",
+            "common": "After each <b>Encounter</b> all this night, you deal <b>+0.5%</b> damage, but also take that much more.",
+            "rare": "After each <b>Encounter</b> all this night, you deal <b>+0.75%</b> damage, but also take that much more.",
+            "epic": "After each <b>Encounter</b> all this night, you deal <b>+1%</b> damage, but also take that much more.",
+            "heroic": "After each <b>Encounter</b> all this night, you deal <b>+1.5%</b> damage, but also take that much more."
+        },
+        "TimedBuffKeepsake" : {
+            "name": "Metallic Droplet",
+            "common": "You move, strike, and <b>Channel 20%</b> faster for the next <b>200 Sec.</b>",
+            "rare": "You move, strike, and <b>Channel 20%</b> faster for the next <b>250 Sec.</b>",
+            "epic": "You move, strike, and <b>Channel 20%</b> faster for the next <b>300 Sec.</b>",
+            "heroic": "You move, strike, and <b>Channel 20%</b> faster for the next <b>400 Sec.</b>"
+        },
+        "RandomBlessingKeepsake" : {
+            "name": "Transcendent Embryo",
+            "common": "Gain a random <b>Common Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
+            "rare": "Gain a random <b>Rare Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
+            "epic": "Gain a random <b>Epic Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
+            "heroic": "Gain a random <b>Heroic Chaos</b> blessing. Every <b>8</b> Encounters, replace it."
+        }
+        
     }
 }
