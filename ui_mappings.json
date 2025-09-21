@@ -1070,6 +1070,7 @@
                 {"text": "Instant Destruction Chance:", "legendary" : "25%"}
             ]
         },
+
         "SprintEchoBoon": {
             "gods": ["Zeus", "Aphrodite"],
             "name": "Romantic Spark",
@@ -1365,6 +1366,380 @@
             "effects": [
                 {"text": "Bonus Lv. per Hera Boon:", "duo" : "+4"}
             ]
+        },
+
+        "StaffDoubleAttackTrait": {
+            "name": "Wicked Thrasher",
+            "description": "Your <b>Attacks</b> have <b>+30</b> Power."
+        },
+        "StaffLongAttackTrait": {
+            "name": "Extending Wallop",
+            "description": "Your <b>Attack</b> has more range and deals <b>+100%</b> damage to distant foes."
+        },
+        "StaffDashAttackTrait": {
+            "name": "Melting Swipe",
+            "description": "Your <b>Dash-Strike</b> hits a larger area and destroys <b>+900</b> damage to <b>Armor</b>."
+        },
+        "StaffTripleShotTrait": {
+            "name": "Dual Moonshot",
+            "description": "Your <b>Specials</b> fire <b>2</b> projectiles, but have <b>-40%</b> range."
+        },
+        "StaffJumpSpecialTrait": {
+            "name": "Shimmering Moonshot",
+            "description": "Your <b>Specials</b> bounces toward up to <b>+2</b> foes, dealing <b>+10%</b> damage for each hit."
+        },
+        "StaffExAoETrait": {
+            "name": "Cross Cataclysm",
+            "description": "Your <b>Omega Attack</b> deals <b>+50%</b> damage and also strikes sideways."
+        },
+        "StaffAttackRecoveryTrait": {
+            "name": "Rapid Thrasher",
+            "description": "Your <b>Attacks</b> are <b>50%</b> faster."
+        },
+        "StaffFastSpecialTrait": {
+            "name": "Rapid Moonshot",
+            "description": "Your <b>Specials</b> are <b>25%</b> faster."
+        },
+        "StaffExHealTrait": {
+            "name": "Vampiric Cataclysm",
+            "description": "Whenever you slay a foe with your <b>Omega Attack</b>, restore <b>5 Health</b>."
+        },
+        "StaffSecondStageTrait": {
+            "name": "Giga Moonburst",
+            "description": "You can <b>Channel +30 Magick</b> in your <b>Omega Special</b> to deal <b>+300%</b> damage in a larger area."
+        },
+        "StaffPowershotTrait": {
+            "name": "Aetheric Moonburst",
+            "description": "Your <b>Omega Special</b> gains a <b>Power Shot</b> that deals <b>+50%</b> damage and restores <b>20 Magick</b>."
+        },
+        "StaffOneWayAttackTrait": {
+            "name": "Mirrored Thrasher",
+            "description": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>5 Magick</b>."
+        },
+        "StaffRaiseDeadBigTrait": {
+            "name": "Soulfilled Ankh",
+            "description": "Your <b>Attacks</b> have <b>+5 Power</b> and hit a larger area."
+        },
+        "StaffRaiseDeadDoubleTrait": {
+            "name": "Mirrored Ankh",
+            "description": "Your <b>Omega Attack</b> creates <b>+1</b> damage field ahead of the first."
+        },
+        "StaffLoneShadeRespawnTrait": {
+            "name": "Scarab Etchings",
+            "description": "<b>Lone Shades</b> deal <b>+50</b> damage and have <b>75%</b> chance to reappear after striking a foe."
+        },
+        "StaffLoneShadeRallyTrait": {
+            "name": "Pharaoh Etchings",
+            "description": "<b>Lone Shades</b> deal <b>+50%</b> damage and launch at foes struck by <b>Omega Special</b>."
+        },
+
+        "DaggerBlinkAoETrait": {
+            "name": "Sweeping Ambush",
+            "description": "Your <b>Omega Attack</b> deals <b>+400%</b> damage in a wider area, but uses <b>+20 Magick</b>."
+        },
+        "DaggerSpecialJumpTrait": {
+            "name": "Dancing Knives",
+            "description": "Your <b>Specials</b> deal <b>+15%</b> damage and each hit bounces toward up to <b>2</b> more foes."
+        },
+        "DaggerSpecialLineTrait": {
+            "name": "Sureshot Flurry",
+            "description": "Your <b>Omega Special</b> fires each shot straight ahead and your <b>Specials</b> have <b>+30%</b> range."
+        },
+        "DaggerRapidAttackTrait": {
+            "name": "Rapid Onslaught",
+            "description": "Your <b>Attacks</b> are <b>35%</b> faster."
+        },
+        "DaggerSpecialConsecutiveTrait": {
+            "name": "Melting Sickle",
+            "description": "Each hit from your <b>Special</b> deals <b>+500</b> damage to <b>Armor</b>."
+        },
+        "DaggerBackstabTrait": {
+            "name": "Skulking Onslaught",
+            "description": "Your <b>Attacks</b> deal <b>+150%</b> damage striking foes from behind."
+        },
+        "DaggerSpecialReturnTrait": {
+            "name": "Reaper Knives",
+            "description": "Your <b>Specials</b> have <b>+15 Power</b> and deal damage in a wider area."
+        },
+        "DaggerSpecialFanTrait": {
+            "name": "Hidden Knives",
+            "description": "Your <b>Specials</b> deal <b>+20%</b> damage and your <b>Omega Special</b> fires <b>+3</b> shots."
+        },
+        "DaggerAttackFinisherTrait": {
+            "name": "Final Slice",
+            "description": "The last strike in your <b>Attack</b> sequence deals <b>+300%</b> damage in a larger area."
+        },
+        "DaggerFinalHitTrait": {
+            "name": "Wicked Onslaught",
+            "description": "Your <b>Attacks</b> have <b>+20 Power</b>."
+        },
+        "DaggerChargeStageSkipTrait": {
+            "name": "Sudden Flurry",
+            "description": "You <b>Channel</b> your <b>Omega Special 40%</b> faster."
+        },
+        "DaggerDashAttackTripleTrait": {
+            "name": "Trick Knives",
+            "description": "Your <b>Dash-Strike</b> also fires your <b>Special 3</b> times at once in a fan pattern."
+        },
+        "DaggerTripleBuffTrait": {
+            "name": "Phantom Brand",
+            "description": "Your <b>Blood Triad</b> deals <b>+222</b> damage."
+        },
+        "DaggerTripleRepeatWomboTrait": {
+            "name": "Banshee Brand",
+            "description": "Your <b>Blood Triad</b> has <b>33%</b> chance to strike once more."
+        },
+        "DaggerTripleHomingSpecialTrait": {
+            "name": "Sinister Pinion",
+            "description": "Your <b>Specials</b> repeatedly deal damage <b>100%</b> faster."
+        },
+
+        "TorchExSpecialCountTrait": {
+            "name": "Hidden Helix",
+            "description": "Your <b>Specials</b> create <b>+1</b> projectile."
+        },
+        "TorchSpecialSpeedTrait": {
+            "name": "Clean Coil",
+            "description": "You <b>Channel</b> your <b>Omega Special 20%</b> faster, and it uses <b>-10 Magick</b>."
+        },
+        "TorchAttackSpeedTrait": {
+            "name": "Furious Blaze",
+            "description": "While you <b>Channel</b> your <b>Attacks</b>, you move and fire <b>20%</b> faster."
+        },
+        "TorchSplitAttackTrait": {
+            "name": "Dividing Blaze",
+            "description": "Your <b>Attacks</b> split in <b>2</b> the first time they strike foes."
+        },
+        "TorchEnhancedAttackTrait": {
+            "name": "Inverted Blaze",
+            "description": "Your <b>Attacks</b> linger for <b>+2 Sec.</b> and launch back towards you after you <b>Dash</b>."
+        },
+        "TorchDiscountExAttackTrait": {
+            "name": "Sudden Burst",
+            "description": "You <b>Channel</b> your <b>Omega Attack 50%</b> faster, and it uses <b>-1 Magick</b>."
+        },
+        "TorchLongevityTrait": {
+            "name": "Rising Helix",
+            "description": "Your <b>Specials</b> grow in size and deal up to <b>+25%</b> damage the longer they are active."
+        },
+        "TorchOrbitPointTrait": {
+            "name": "Whirling Helix",
+            "description": "Projectiles from your <b>Specials</b> orbit <b>20%</b> faster."
+        },
+        "TorchSpinAttackTrait": {
+            "name": "Leaden Blaze",
+            "description": "Your <b>Attacks</b> knock foes away and have <b>+10 Power</b>."
+        },
+        "TorchAutofireSprintTrait": {
+            "name": "Demonic Cell",
+            "description": "As long as you <b>Sprint</b>, your <b>Attacks</b> and <b>Specials</b> have <b>+5 Power</b>."
+        },
+        "TorchSpecialImpactTrait": {
+            "name": "Enduring Coil",
+            "description": "Your <b>Omega Special</b> lasts <b>+2 Sec</b>."
+        },
+        "TorchMoveSpeedTrait": {
+            "name": "Mega Blaze",
+            "description": "Your <b>Attacks</b> fire <b>20%</b> farther and deal <b>+30%</b> damage."
+        },
+        "TorchSpecialLineTrait": {
+            "name": "Melting Helix",
+            "description": "Your <b>Specials</b> deal <b>+100</b> damage to <b>Armor</b>."
+        },
+
+        "AxeSturdyTrait": {
+            "name": "Colossus Slash",
+            "description": "Your <b>Attacks</b> have <b>+10 Power</b> and you take <b>-20%</b> damage while using them."
+        },
+        "AxeDashAttackTrait": {
+            "name": "Dashing Heave",
+            "description": "Your <b>Dash-Strike</b> hits <b>2</b> times in an area around you."
+        },
+        "AxeMassiveThirdStrikeTrait": {
+            "name": "Executioner's Chop",
+            "description": "The final move in your <b>Attack</b> sequence hits <b>2</b> times, but uses <b>20 Magick</b>."
+        },
+        "AxeSpinSpeedTrait": {
+            "name": "Furious Whirlwind",
+            "description": "You <b>Channel</b> your <b>Omega Attack</b> faster, and move <b>50%</b> faster while it is active."
+        },
+        "AxeSecondStageTrait": {
+            "name": "Giga Cleaver",
+            "description": "Your <b>Omega Special</b> fires <b>2</b> times in succession, but costs <b>+15 Magick</b>."
+        },
+        "AxeRallyFirstStrikeTrait": {
+            "name": "Heaven Splitter",
+            "description": "Your <b>Attacks</b> hits <b>2</b> times, but the 5-strike sequence becomes only the first slam."
+        },
+        "AxeThirdStrikeTrait": {
+            "name": "Hell Splitter",
+            "description": "Your <b>Attack</b> has <b>+300</b> Power, but the 3-strike sequence becomes only the final chop."
+        },
+        "AxeRallyFrenzyTrait": {
+            "name": "Iron Core",
+            "description": "Your <b>Berserk</b> lasts <b>+2 Sec.</b> and restores <b>+1 Life</b> per foe struck."
+        },
+        "AxeArmorTrait": {
+            "name": "Melting Shredder",
+            "description": "Each hit from your <b>Special</b> deals <b>+300</b> damage to <b>Armor</b>."
+        },
+        "AxeFreeSpinTrait": {
+            "name": "Psychic Whirlwind",
+            "description": "During your <b>Omega Attack</b>, you are free to use your <b>Attacks</b> and <b>Specials</b>."
+        },
+        "AxeAttackRecoveryTrait": {
+            "name": "Rapid Slash",
+            "description": "Your <b>Attack</b> is <b>30%</b> faster."
+        },
+        "AxeRangedWhirlwindTrait": {
+            "name": "Seething Marauder",
+            "description": "Your <b>Attacks</b> also deals <b>60</b> damage to surrounding foes, for each and every strike."
+        },
+        "AxeBlockEmpowerTrait": {
+            "name": "Siege Shredder",
+            "description": "Your <b>Special</b> strikes farther ahead and deals <b>+150%</b> damage."
+        },
+        "AxeChargedSpecialTrait": {
+            "name": "Sudden Cleaver",
+            "description": "You <b>Channel</b> your <b>Omega Special 25%</b> faster."
+        },
+
+        "LobAmmoTrait": {
+            "name": "Bolstered Array",
+            "description": "Gain <b>+2 Shells</b>."
+        },
+        "LobStraightShotTrait": {
+            "name": "Boosted Ignition",
+            "description": "After your <b>Dash</b> or <b>Specials</b>, your <b>Attacks</b> are faster and have <b>+15 Power</b>."
+        },
+        "LobSturdySpecialTrait": {
+            "name": "Colossus Driver",
+            "description": "Your <b>Specials</b> have <b>+30 Power</b> and you take <b>-30%</b> damage while using them."
+        },
+        "LobAmmoMagnetismTrait": {
+            "name": "Fetching Array",
+            "description": "Your <b>Shells</b> fly back to you automatically and <b>100%</b> faster."
+        },
+        "LobGunAttackRangeTrait": {
+            "name": "Garmr Gaze",
+            "description": "Your Attacks shoot +25% farther and deal +25% damage."
+        },
+        "LobGunAttackDoublerTrait": {
+            "name": "Helheim Charge",
+            "description": "Your <b>Omega Attack</b> fires <b>+2</b> times in succession."
+        },
+        "LobGunBounceTrait": {
+            "name": "Leering Glance",
+            "description": "Your Attack shots bounce toward +1 and deal +15% damage on the successive hit."
+        },
+        "LobGrowthTrait": {
+            "name": "Looming Ignition",
+            "description": "Your Attacks gain +50% damage and blast size over 0.7 Sec. before they explode."
+        },
+        "LobOneSideTrait": {
+            "name": "Mega Driver",
+            "description": "Your Specials launch you ahead faster and deal +50% damage."
+        },
+        "LobRushArmorTrait": {
+            "name": "Melting Break",
+            "description": "Your <b>Special</b> deals <b>+600</b> damage to Armor."
+        },
+        "LobPulseAmmoCollectTrait": {
+            "name": "Possessed Array",
+            "description": "Your <b>Shells</b> fire your <b>Omega Attack</b> whenever retrieved, but make you lose <b>25 Magick</b>."
+        },
+        "LobSpecialSpeedTrait": {
+            "name": "Rapid Driver",
+            "description": "Your Specials are <b>35%</b> faster"
+        },
+        "LobGunSpecialBounceTrait": {
+            "name": "Runic Driver",
+            "description": "Your <b>Specials</b> fly faster and deal <b>+15%</b> damage for each foe struck."
+        },
+        "LobInOutSpecialExTrait": {
+            "name": "Twisting Crash",
+            "description": "After your <b>Omega Special</b> projectiles fire outward, they fire inward."
+        },
+        "LobGunOverheatTrait": {
+            "name": "Venerated Relic",
+            "description": "Your <b>Valkyrie</b> form lasts <b>+3 Sec.</b>"
+        },
+        "LobPulseAmmoTrait": {
+            "name": "Volatile Array",
+            "description": "Whenever your <b>Shells</b> land, they deal <b>50%</b> of your <b>Attack</b> damage around them."
+        },
+        "LobSpreadShotTrait": {
+            "name": "Wide Grin",
+            "description": "Your <b>Attacks</b> fire your <b>Shells</b> all at once in a spread pattern."
+        },
+
+        "SuitComboDoubleSpecialTrait": {
+            "name": "Awakened Rockets",
+            "description": "Absorbing <b>Omega Special</b> blasts also creates blasts from your <b>Special</b>, but you lose <b>10 Magick</b>."
+        },
+        "SuitPowershotTrait": {
+            "name": "Chakra Collider",
+            "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+80%</b> damage."
+        },
+        "SuitSpecialBlockTrait": {
+            "name": "Counter Barrage",
+            "description": "After blocking with your <b>Omega Attack</b>, your <b>Special</b> auto-fires <b>5</b> shots, reloading in <b>3 Sec.</b>"
+        },
+        "SuitComboBlockBuffTrait": {
+            "name": "Counter Supreme",
+            "description": "After blocking with your <b>Omega Attack</b>, become <b>Destructive</b> by up to <b>+3</b> ranks."
+        },
+        "SuitComboForwardRocketTrait": {
+            "name": "Elephant Rockets",
+            "description": "Your <b>Specials</b> have <b>+10 Power</b> and fly dead ahead."
+        },
+        "SuitDashAttackTrait": {
+            "name": "Exhaust Riser",
+            "description": "Your <b>Dash-Strike</b> hits <b>+3</b> times."
+        },
+        "SuitSpecialStartUpTrait": {
+            "name": "Furious Rockets",
+            "description": "Your <b>Specials</b> launch and fly <b>80%</b> faster."
+        },
+        "SuitSpecialAutoTrait": {
+            "name": "Launcher Frame",
+            "description": "Whenever your <b>Attacks</b> strike foes, your <b>Special</b> has <b>25%</b> chance to fire automatically."
+        },
+        "SuitArmorTrait": {
+            "name": "Melting Cross",
+            "description": "Your <b>Attack</b> deals <b>+250</b> damage to <b>Armor</b>."
+        },
+        "SuitComboDashAttackTrait": {
+            "name": "Mooncrest Riser",
+            "description": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+40%</b> damage."
+        },
+        "SuitAttackSpeedTrait": {
+            "name": "Rapid Frame",
+            "description": "Your <b>Attacks</b> are <b>35%</b> faster."
+        },
+        "SuitAttackSizeTrait": {
+            "name": "Reaper Frame",
+            "description": "Your <b>Attacks</b> have <b>+10 Power</b> and deal damage in a larger area."
+        },
+        "SuitSpecialConsecutiveHitTrait": {
+            "name": "Ripper Rockets",
+            "description": "Your <b>Specials</b> briefly gain <b>+5 Power</b> for up to <b>5</b> consecutive hits to the same foe."
+        },
+        "SuitSpecialJumpTrait": {
+            "name": "Shimmering Rockets",
+            "description": "Your <b>Specials</b> bounce toward up to <b>2</b> more foes."
+        },
+        "SuitAttackRangeTrait": {
+            "name": "Siege Frame",
+            "description": "Your <b>Attacks</b> deal <b>+30%</b> damage and reach farther ahead."
+        },
+        "SuitSpecialDiscountTrait": {
+            "name": "Sudden Salvo",
+            "description": "Your <b>Omega Special</b> locks on faster and uses <b>-20% Magick</b>."
+        },
+        "SuitFullChargeTrait": {
+            "name": "World Collider",
+            "description": "Your fully-charged <b>Omega Attack</b> has <b>+100 Power</b>."
         }
     },
     "keepsakes" : {
@@ -1535,6 +1910,13 @@
             "rare": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Rare</b> blessings once this night.",
             "epic": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night.",
             "heroic": "A <b>Boon</b> of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Epic</b> blessings once this night."
+        },
+        "ForcePoseidonBoonKeepsake" : {
+            "name": "Vivid Sea",
+            "common": "A <b>Boon</b> of <b>Poseidon</b> is likely. You can <b>Rarify</b> his <b>Common</b> blessings once this night.",
+            "rare": "A <b>Boon</b> of <b>Poseidon</b> is likely. You can <b>Rarify</b> his <b>Rare</b> blessings once this night.",
+            "epic": "A <b>Boon</b> of <b>Poseidon</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night.",
+            "heroic": "A <b>Boon</b> of <b>Poseidon</b> is likely. You can <b>Rarify</b> his <b>Epic</b> blessings once this night."
         },
         "DamagedDamageBoostKeepsake" : {
             "name": "Blackened Fleece",

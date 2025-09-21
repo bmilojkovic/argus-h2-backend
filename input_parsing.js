@@ -30,6 +30,7 @@ function parseBoonData(boonData) {
     } else {
       boonRarity = splitBoon[0];
       if (!(boonRarities.includes(boonRarity))) {
+        logger.warn("Couldn't recognize boon rarity: " + boonRarity + ". Using Common.");
         boonRarity = "Common";
       }
 
@@ -44,6 +45,11 @@ function parseBoonData(boonData) {
     boonDetails = uiMappings.boons[boonName];
     boonDetails["codeName"] = boonName;
     boonDetails["rarity"] = boonRarity;
+    if (boonDetails["effects"] != null) {
+      boonDetails["effects"].forEach( effect => {
+        effect["value"] = effect[boonRarity.toLowerCase()];
+      });
+    }
     if (boonDetails["slot"] != null) {
       if (parsedData[boonDetails["slot"].toLowerCase() + "Boon"] != null) {
         logger.warn("Double slot: " + boonDetails["slot"]);
@@ -52,10 +58,6 @@ function parseBoonData(boonData) {
     } else {
       parsedData["otherBoons"].push(boonDetails);
     }
-    boonDetails["effects"].forEach( effect => {
-      effect["value"] = effect[boonRarity.toLowerCase()];
-    });
-    
   });
 
   return parsedData;
