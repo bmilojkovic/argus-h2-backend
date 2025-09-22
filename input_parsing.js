@@ -4,8 +4,6 @@ const logger = require("./argus_logger")
 const uiMappings = require('./ui_mappings.json');
 
 const dataSeparator = ";;";
-const primaryBoonGods = ["Aphrodite", "Apollo", "Ares", "Demeter", "Haephestus", "Hera", "Hestia", "Poseidon", "Zeus"];
-const primaryBoonTypes = ["Weapon", "Special", "Cast", "Sprint", "Mana"];
 const boonRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "Infusion"];
 const weaponRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
 const keepsakeRarities = ["Common", "Rare", "Epic", "Heroic"];
@@ -99,48 +97,59 @@ function parseWeaponData(weaponData) {
   return parsedData;
 }
 
-const emptyKeepsakeString = "NOKEEPSAKES";
-function parseKeepsakeData(keepsakeData) {
-  if (keepsakeData === emptyKeepsakeString) {
+const emptyExtraString = "NOEXTRAS";
+function parseExtraData(extraData) {
+  if (extraData === emptyExtraString) {
     return {};
   }
 
-  var parsedData = {}
+  var parsedData = [];
 
-  splitKeepsake = keepsakeData.split(dataSeparator);
-  if (splitKeepsake.length != 2) { //data should contain rarity and name
-    logger.warn("Invalid keepsake data. Couldn't parse.");
-    return {};
-  } else {
-    keepsakeRarity = splitKeepsake[0];
-    if (!(keepsakeRarities.includes(keepsakeRarity))) {
-      keepsakeRarity = "Common";
+  extraArray = extraData.split(" ");
+
+  extraArray.forEach( (extraItem) => {
+    splitItem = extraItem.split(dataSeparator);
+    if (splitItem.length != 2) { //data should contain rarity and name
+      logger.warn("Invalid extra data. Couldn't parse.");
+      return {};
+    } else {
+      itemRarity = splitItem[0];
+
+      itemName = splitItem[1];
     }
 
-    keepsakeName = splitKeepsake[1];
-  }
+    if (itemName.endsWith("_Expired")) { //this can happen with keepsakes
+      logger.info("Cutting _Expired from: " + itemName)
+      itemName = itemName.substring(itemName.length - "_Expired".length);
+      logger.info("Got: " + itemName)
+    }
 
-  if (keepsakeName.endsWith("_Expired")) {
-    logger.info("Cutting _Expired from: " + keepsakeName)
-    keepsakeName = keepsakeName.substring(keepsakeName.length - "_Expired".length);
-    logger.info("Got: " + keepsakeName)
-  }
+    if (itemName.endsWith("_Inactive")) { //this can happen with keepsakes
+      logger.info("Cutting _Inactive from: " + itemName)
+      itemName = itemName.substring(itemName.length - "_Inactive".length);
+      logger.info("Got: " + itemName)
+    }
 
-  if (keepsakeName.endsWith("_Inactive")) {
-    logger.info("Cutting _Inactive from: " + keepsakeName)
-    keepsakeName = keepsakeName.substring(keepsakeName.length - "_Inactive".length);
-    logger.info("Got: " + keepsakeName)
-  }
-
-  if (uiMappings.keepsakes[keepsakeName] == null) {
-      logger.warn("Got unknown keepsake name: " + keepsakeName)
-      return;
-  }
-
-  parsedData["name"] = uiMappings.keepsakes[keepsakeName]["name"];
-  parsedData["codeName"] = keepsakeName;
-  parsedData["rarity"] = keepsakeRarity;
-  parsedData["description"] = uiMappings.keepsakes[keepsakeName][keepsakeRarity.toLowerCase()];
+    if (uiMappings.keepsakes[itemName] != null) {
+      parsedItem = {};
+      parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
+      parsedItem["codeName"] = itemName;
+      if (!(itemRarity in keepsakeRarities)) {
+        itemRarity = "Common";
+      }
+      parsedItem["rarity"] = itemRarity;
+      parsedItem["description"] = uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
+      parsedData.push(parsedItem);
+    } else if (uiMappings.hexes[itemName] != null) {
+      parsedItem = uiMappings.hexes[itemName];
+      parsedItem["rarity"] = "Common";
+      parsedItem["codeName"] = itemName;
+      parsedData.push(parsedItem);
+    } else {
+      logger.warn("Unknown extra item: " + extraItem);
+    }
+  });
+  
 
   return parsedData;
 }
@@ -209,7 +218,7 @@ function parseRunData(runData) {
         boonData: parseBoonData(runData.boonData),
         weaponData: parseWeaponData(runData.weaponData),
         familiarData: parseFamiliarData(runData.familiarData),
-        keepsakeData: parseKeepsakeData(runData.keepsakeData),
+        extraData: parseExtraData(runData.extraData),
         elementalData: parseElementalData(runData.elementalData),
         pinData: parsePinData(runData.pinData)
     };

@@ -1953,6 +1953,70 @@
             "epic": "Gain a random <b>Epic Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
             "heroic": "Gain a random <b>Heroic Chaos</b> blessing. Every <b>8</b> Encounters, replace it."
         }
-        
+    },
+    "hexes" : {
+        "SpellLaserTrait" : {
+            "name": "Lunar Ray",
+            "description": "Your <b>Hex</b> fires a beam that deals up to <b>800</b> damage over <b>2 Sec.</b>",
+            "effects": [
+                {"text": "Ready After:", "value" : "30 Magick"}
+            ]
+        },
+        "SpellSummonTrait" : {
+            "name": "Night Bloom",
+            "description": "Your <b>Hex</b> raises the last susceptible foe slain this <b>Encounter</b> to fight for you for <b>12 Sec.</b>",
+            "effects": [
+                {"text": "Ready After:", "value" : "60 Magick"}
+            ]
+        },
+        "SpellTimeSlowTrait" : {
+            "name": "Phase Shift",
+            "description": "Your <b>Hex</b> makes everything else move <b>50%</b> slower for <b>4 Sec.</b>",
+            "effects": [
+                {"text": "Ready After:", "value" : "130 Magick"}
+            ]
+        },
+        "SpellPotionTrait" : {
+            "name": "Moon Water",
+            "description": "Your <b>Hex</b> restores <b>15 Health</b> up to <b>3</b> times, which reset whenever you use <b>Fountains</b>.",
+            "effects": [
+                {"text": "Ready After:", "value" : "70 Magick"}
+            ]
+        },
+        "SpellMeteorTrait" : {
+            "name": "Total Eclipse",
+            "description": "Your <b>Hex</b> blasts a large target area for <b>1000</b> damage after <b>4 Sec.</b>",
+            "effects": [
+                {"text": "Ready After:", "value" : "90 Magick"}
+            ]
+        },
+        "SpellLeapTrait" : {
+            "name": "Wolf Howl",
+            "description": "Your <b>Hex</b> makes you rise up then crash down in the target area for <b>200</b> damage.",
+            "effects": [
+                {"text": "Ready After:", "value" : "50 Magick"}
+            ]
+        },
+        "SpellPolymorphTrait" : {
+            "name": "Twilight Curse",
+            "description": "Your <b>Hex</b> launches a seeking projectile that inflicts <b>Morph</b> on up to <b>5</b> susceptible foes.",
+            "effects": [
+                {"text": "Ready After:", "value" : "40 Magick"}
+            ]
+        },
+        "SpellTransformTrait" : {
+            "name": "Dark Side",
+            "description": "Your <b>Hex</b> turns you into an <b>Impervious</b> living nightmare with her own abilities for <b>5 Sec.</b>",
+            "effects": [
+                {"text": "Ready After:", "value" : "110 Magick"}
+            ]
+        },
+        "SpellMoonBeamTrait" : {
+            "name": "Sky Fall",
+            "description": "Your <b>Hex</b> inflicts <b>Shine</b> and deals <b>50</b> damage to a random surrounding foe, <b>8</b> times.",
+            "effects": [
+                {"text": "Ready After:", "value" : "60 Magick"}
+            ]
+        }
     }
 }

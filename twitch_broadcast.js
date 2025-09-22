@@ -44,7 +44,9 @@ function broadcastInfo(runData, broadcasterId) {
     };
     logger.info("Broadcasting data: " + requestOptions.body)
     request(requestOptions, function (error, response) {
-        console.log(error,response.body,response.statusCode);
+        logger.info(error)
+        logger.info(response.body)
+        logger.info(response.statusCode);
         return;
     });
 }
