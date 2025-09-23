@@ -8,6 +8,28 @@ const boonRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "I
 const weaponRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
 const keepsakeRarities = ["Common", "Rare", "Epic", "Heroic"];
 
+function removeSuffixes(boonName) {
+  if (boonName.endsWith("_Expired")) { // keepsakes, hades boons
+    logger.info("Cutting _Expired from: " + boonName)
+    boonName = boonName.substring(boonName.length - "_Expired".length);
+    logger.info("Got: " + boonName)
+  }
+
+  if (boonName.endsWith("_Inactive")) { // keepsakes, hades boons
+    logger.info("Cutting _Inactive from: " + boonName)
+    boonName = boonName.substring(boonName.length - "_Inactive".length);
+    logger.info("Got: " + boonName)
+  }
+
+  if (boonName.endsWith("_Complete")) { // chaos blessings
+    logger.info("Cutting _Inactive from: " + boonName)
+    boonName = boonName.substring(boonName.length - "_Inactive".length);
+    logger.info("Got: " + boonName)
+  }
+
+  return boonName;
+}
+
 /*
 * Boons should arrive in the following format:
 * [rarityA];;[nameA] [rarityB];;[nameB] etc
@@ -23,7 +45,7 @@ function parseBoonData(boonData) {
   boonArray.forEach( (boon) => {
     splitBoon = boon.split(dataSeparator);
     if (splitBoon.length != 2) { //data should contain boon rarity and name
-      logger.warn("Invalid boon data. Couldn't parse.");
+      logger.warn("Invalid boon data. Couldn't parse: " + boon);
       return {};
     } else {
       boonRarity = splitBoon[0];
@@ -35,6 +57,8 @@ function parseBoonData(boonData) {
       boonName = splitBoon[1];
     }
 
+    boonName = removeSuffixes(boonName); //this can happen with Hades
+    
     if (uiMappings.boons[boonName] == null) {
       logger.warn("Got unknown boon name: " + boonName)
       return;
@@ -89,11 +113,40 @@ function parseWeaponData(weaponData) {
     weaponName = splitWeapon[1];
   }
 
-  parsedData["name"] = weaponName;
+  if (uiMappings.weapons[weaponName] == null) {
+    logger.warn("Got unknown weapon name: " + weaponName)
+    return;
+  }
+
+  parsedData = uiMappings.weapons[weaponName];
   parsedData["codeName"] = weaponName;
-  parsedData["description"] = "good weapon";
   parsedData["rarity"] = weaponRarity;
-  parsedData["effects"] = [];
+  if (parsedData["effects"] != null) {
+    parsedData["effects"].forEach( effect => {
+      effect["value"] = effect[weaponRarity.toLowerCase()];
+    });
+  }
+  
+  return parsedData;
+}
+
+const emptyFamiliarString = "NOFAMILIARS";
+function parseFamiliarData(familiarData) {
+  if (familiarData === emptyFamiliarString) {
+    return {};
+  }
+
+  var parsedData = {}
+
+  if (uiMappings.familiars[familiarData] == null) {
+    logger.warn("Got unknown familiar name: " + familiarData)
+    return;
+  }
+
+  parsedData = uiMappings.familiars[familiarData];
+  parsedData["codeName"] = familiarData;
+  parsedData["rarity"] = "Common";
+
   return parsedData;
 }
 
@@ -118,23 +171,13 @@ function parseExtraData(extraData) {
       itemName = splitItem[1];
     }
 
-    if (itemName.endsWith("_Expired")) { //this can happen with keepsakes
-      logger.info("Cutting _Expired from: " + itemName)
-      itemName = itemName.substring(itemName.length - "_Expired".length);
-      logger.info("Got: " + itemName)
-    }
-
-    if (itemName.endsWith("_Inactive")) { //this can happen with keepsakes
-      logger.info("Cutting _Inactive from: " + itemName)
-      itemName = itemName.substring(itemName.length - "_Inactive".length);
-      logger.info("Got: " + itemName)
-    }
+    itemName = removeSuffixes(itemName); //this can happen with keepsakes
 
     if (uiMappings.keepsakes[itemName] != null) {
       parsedItem = {};
       parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
       parsedItem["codeName"] = itemName;
-      if (!(itemRarity in keepsakeRarities)) {
+      if (!keepsakeRarities.includes(itemRarity)) {
         itemRarity = "Common";
       }
       parsedItem["rarity"] = itemRarity;
@@ -145,28 +188,16 @@ function parseExtraData(extraData) {
       parsedItem["rarity"] = "Common";
       parsedItem["codeName"] = itemName;
       parsedData.push(parsedItem);
+    } else if (uiMappings.boons[itemName] != null && uiMappings.boons[itemName].gods[0] == "Chaos") {
+      parsedItem = uiMappings.boons[itemName];
+      parsedItem["rarity"] = "Common";
+      parsedItem["codeName"] = itemName;
+      parsedData.push(parsedItem);
     } else {
       logger.warn("Unknown extra item: " + extraItem);
     }
   });
   
-
-  return parsedData;
-}
-
-const emptyFamiliarString = "NOFAMILIARS";
-function parseFamiliarData(familiarData) {
-  if (familiarData === emptyFamiliarString) {
-    return {};
-  }
-
-  var parsedData = {}
-
-  parsedData["name"] = familiarData;
-  parsedData["codeName"] = familiarData;
-  parsedData["description"] = "good pet";
-  parsedData["effects"] = [];
-  parsedData["rarity"] = "Common";
 
   return parsedData;
 }
@@ -201,15 +232,34 @@ function parseElementalData(elementalData) {
 }
 
 const emptyPinsString = "NOPINS";
-function parsePinData(pinData) {
+function parsePinBoons(pinData) {
+  logger.warn("Pin data: " + pinData);
   if (pinData == emptyPinsString) {
-    return {};
+    return [];
   }
 
-  var parsedData = [];
+  var parsedData = []
+  
+  splitPinBoons = pinData.split(dataSeparator);
 
-  parsedData = pinData.split(dataSeparator);
+  splitPinBoons.forEach(pinBoon => {
+    if (pinBoon in uiMappings.boons) {
+      var parsedElement = uiMappings.boons[pinBoon];
+      if (parsedElement["effects"] != null && parsedElement["effects"][0]["duo"] != null) {
+        parsedElement.rarity = "Duo";
+      } else if (parsedElement["effects"] != null && parsedElement["effects"][0]["infusion"] != null) {
+        parsedElement.rarity = "Infusion";
+      } else if (parsedElement["effects"] != null && parsedElement["effects"][0]["legendary"] != null) {
+        parsedElement.rarity = "Legendary";
+      } else {
+        parsedElement.rarity = "Common";
+      }
+      parsedElement.codeName = pinBoon;
+      parsedData.push(parsedElement)
+    }
+  })
 
+  logger.warn("Parsed pin data: " + parsedData);
   return parsedData;
 }
 
@@ -220,7 +270,7 @@ function parseRunData(runData) {
         familiarData: parseFamiliarData(runData.familiarData),
         extraData: parseExtraData(runData.extraData),
         elementalData: parseElementalData(runData.elementalData),
-        pinData: parsePinData(runData.pinData)
+        pinBoons: parsePinBoons(runData.pinData)
     };
 
     return parsedData;

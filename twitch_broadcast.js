@@ -44,9 +44,10 @@ function broadcastInfo(runData, broadcasterId) {
     };
     logger.info("Broadcasting data: " + requestOptions.body)
     request(requestOptions, function (error, response) {
-        logger.info(error)
-        logger.info(response.body)
-        logger.info(response.statusCode);
+        
+        if (response.statusCode != 204) {
+            logger.warn("Non-standard twitch reply: " + response.body);
+        }
         return;
     });
 }

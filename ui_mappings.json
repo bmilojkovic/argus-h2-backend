@@ -1368,6 +1368,763 @@
             ]
         },
 
+        "SupportingFireBoon": {
+            "gods": ["Artemis"],
+            "name": "Support Fire",
+            "description": "After you hit with your <b>Attacks</b> or <b>Specials</b>, fire a seeking arrow.",
+            "effects": [
+                {"text": "Arrow Damage:", "common" : "10", "rare" : "15", "epic" : "20", "heroic" : "25"}
+            ]
+        },
+        "CritBonusBoon": {
+            "gods": ["Artemis"],
+            "name": "Pressure Points",
+            "description": "Any damage you deal may be <b>Critical</b>.",
+            "effects": [
+                {"text": "Critical Chance:", "common" : "+3%", "rare" : "+4%", "epic" : "+5%", "heroic" : "+6%"}
+            ]
+        },
+        "TimedCritVulnerabilityBoon": {
+            "gods": ["Artemis"],
+            "name": "Death Warrant",
+            "description": "A random foe occasionally becomes <b>Marked</b>. If it takes <b>Critical</b> damage, this repeats.",
+            "effects": [
+                {"text": "Time Between Marks:", "common" : "20 Sec.", "rare" : "18 Sec.", "epic" : "16 Sec.", "heroic" : "14 Sec."}
+            ]
+        },
+        "DashOmegaBuffBoon": {
+            "gods": ["Artemis"],
+            "name": "Shadow Pounce",
+            "description": "After you <b>Dash</b>, your <b>Omega Moves</b> may deal <b>Critical</b> damage for <b>2 Sec.</b>",
+            "effects": [
+                {"text": "Omega Critical Chance:", "common" : "+8%", "rare" : "+10%", "epic" : "+12%", "heroic" : "+14%"}
+            ]
+        },
+        "OmegaCastVolleyBoon": {
+            "gods": ["Artemis"],
+            "name": "Easy Shot",
+            "description": "A piercing arrow fires towards any foe damaged by your <b>Omega Cast</b>.",
+            "effects": [
+                {"text": "Arrow Damage:", "common" : "50", "rare" : "62", "epic" : "75", "heroic" : "87"}
+            ]
+        },
+        "InsideCastCritBoon": {
+            "gods": ["Artemis"],
+            "name": "Lethal Snare",
+            "description": "Foes in your <b>Casts</b> may take <b>Critical</b> damage from your <b>Attacks</b>.",
+            "effects": [
+                {"text": "Critical Chance:", "common" : "+10%", "rare" : "+13%", "epic" : "+16%", "heroic" : "+19%"}
+            ]
+        },
+        "HighHealthCritBoon": {
+            "gods": ["Artemis"],
+            "name": "Vital Signs",
+            "description": "Foes with at least <b>80% Health</b> or <b>80% Armor</b> may take <b>Critical</b> damage.",
+            "effects": [
+                {"text": "Critical Chance:", "common" : "+15%", "rare" : "+22%", "epic" : "+30%", "heroic" : "+38%"}
+            ]
+        },
+        "FocusCritBoon": {
+            "gods": ["Artemis"],
+            "name": "Killing Stroke",
+            "description": "Your <b>Specials</b> may deal <b>Critical</b> damage, but you <b>Prime 40 Magick</b>.",
+            "effects": [
+                {"text": "Critical Specials Chance:", "common" : "+10%", "rare" : "+12%", "epic" : "+14%", "heroic" : "+16%"}
+            ]
+        },
+        "SorceryCritBoon": {
+            "gods": ["Artemis"],
+            "name": "Whispered Prayer",
+            "description": "Your <b>Hex</b> may deal <b>Critical</b> damage.",
+            "effects": [
+                {"text": "Hex Critical Chance:", "common" : "+30%", "rare" : "+35%", "epic" : "+40%", "heroic" : "+45%"}
+            ]
+        },
+
+        "HadesLifestealBoon": {
+            "gods": ["Hades"],
+            "name": "Life Tax",
+            "description": "Restore <b>Health</b> for <b>1%</b> of damage you deal, until you reach the limit.",
+            "effects": [
+                {"text": "Max Total Life Restored:", "common" : "100"}
+            ]
+        },
+        "HadesDeathDefianceDamageBoon": {
+            "gods": ["Hades"],
+            "name": "Last Gasp",
+            "description": "Deal more damage based on how many times you used <b>Death Defiance</b> this night.",
+            "effects": [
+                {"text": "Damage per Death Defiance Used:", "common" : "+8%"}
+            ]
+        },
+        "HadesCastProjectileBoon": {
+            "gods": ["Hades"],
+            "name": "Howling Soul",
+            "description": "Your <b>Casts</b> launch a projectile that seeks foes. The binding circle forms where it hits.",
+            "effects": [
+                {"text": "Direct-Hit Damage:", "common" : "200"}
+            ]
+        },
+        "HadesPreDamageBoon": {
+            "gods": ["Hades"],
+            "name": "Old Grudge",
+            "description": "In your confrontation, <b>Chronos</b> takes a burst of damage after the first <b>3 Sec.</b>",
+            "effects": [
+                {"text": "Chronos Life Reduced:", "common" : "-20%"}
+            ]
+        },
+        "HadesChronosDebuffBoon": {
+            "gods": ["Hades"],
+            "name": "Deep Dissent",
+            "description": "In your confrontation, <b>Chronos</b> summons fewer reinforcements.",
+            "effects": [
+                {"text": "Chronos Foes Summoned:", "common" : "-50%"}
+            ]
+        },
+        "HadesDashSweepBoon": {
+            "gods": ["Hades"],
+            "name": "Gigaros Dash",
+            "description": "Your <b>Dash</b> strikes surrounding foes with a punishing sweep that inflicts <b>Scorn</b>.",
+            "effects": [
+                {"text": "Sweep Damage:", "common" : "50"}
+            ]
+        },
+        "HadesManaUrnBoon": {
+            "gods": ["Hades"],
+            "name": "Cinerary Circle",
+            "description": "Whenever you use <b>60 Magick</b>, summon <b>3 Soul Urns</b> around you.",
+            "effects": [
+                {"text": "Soul Urn Damage:", "common" : "200"}
+            ]
+        },
+        "HadesInvisibilityRetaliateBoon": {
+            "gods": ["Hades"],
+            "name": "Unseen Ire",
+            "description": "After you take damage, go <b>Dark</b> and deal more damage for the duration.",
+            "effects": [
+                {"text": "Damage While Dark:", "common" : "+100%"}
+            ]
+        },
+
+        "VitalityCostume": {
+            "gods": ["Arachne"],
+            "name": "Emerald Dress",
+            "description": "Don a <b>+50 Armor Outfit</b> that makes you restore <b>2 Health</b> whenever you exit a <b>Location</b>."
+        },
+        "ManaCostume": {
+            "gods": ["Arachne"],
+            "name": "Azure Dress",
+            "description": "Don a <b>+40 Armor Outfit</b> that makes you restore <b>5 Magick</b> every <b>1 Sec.</b>"
+        },
+        "AgilityCostume": {
+            "gods": ["Arachne"],
+            "name": "Lavender Dress",
+            "description": "Don a <b>+30 Armor Outfit</b> that makes you <b>Channel 40%</b> faster."
+        },
+        "CastDamageCostume": {
+            "gods": ["Arachne"],
+            "name": "Fuchsia Dress",
+            "description": "Don a <b>+30 Armor Outfit</b> that makes you <b>Channel 40%</b> faster."
+        },
+        "IncomeCostume": {
+            "gods": ["Arachne"],
+            "name": "Gilded Dress",
+            "description": "Don a <b>+10 Armor Outfit</b> that grants <b>+5 Gold</b> whenever you exit a <b>Location</b>."
+        },
+        "HighArmorCostume": {
+            "gods": ["Arachne"],
+            "name": "Onyx Dress",
+            "description": "Don a <b>+60 Armor Outfit</b> that creates <b>+1 Fate Fabric</b> now."
+        },
+        "SpellCostume": {
+            "gods": ["Arachne"],
+            "name": "Moonlight Dress",
+            "description": "Don a <b>+55 Armor Outfit</b> that makes you use <b>30% Magick</b> less than before to recharge your <b>Hex</b>."
+        },
+        "EscalatingCostume": {
+            "gods": ["Arachne"],
+            "name": "Crimson Dress",
+            "description": "Don a <b>+5 Armor Outfit</b> that makes you deal more damage and <b>+3%</b> after each <b>Encounter</b>."
+        },
+
+        "HealingOnDeathCurse": {
+            "gods": ["Medea"],
+            "name": "Life from the Dead",
+            "description": "After a foe is slain, it has <b>5%</b> chance to drop <b>+10 Health</b>, limit <b>1</b> per <b>Encounter</b>."
+        },
+        "MoneyOnDeathCurse": {
+            "gods": ["Medea"],
+            "name": "Wealth from the Dead",
+            "description": "After a foe is slain, it has <b>10%</b> chance to drop <b>+20 Gold</b>, limit <b>2</b> per <b>Encounter</b>."
+        },
+        "ManaOverTimeCurse": {
+            "gods": ["Medea"],
+            "name": "Traces of Spirit",
+            "description": "After each <b>Encounter</b>, gain <b>+5 Max Magick</b>."
+        },
+        "SpawnDamageCurse": {
+            "gods": ["Medea"],
+            "name": "Suffering on Sight",
+            "description": "After a foe joins the <b>Encounter</b>, it randomly takes <b>1</b> to <b>999</b> damage."
+        },
+        "ArmorPenaltyCurse": {
+            "gods": ["Medea"],
+            "name": "Corrosion on Sight",
+            "description": "After a foe joins the <b>Encounter</b>, it loses <b>50%</b> of any <b>Armor</b> it has."
+        },
+        "SlowProjectileCurse": {
+            "gods": ["Medea"],
+            "name": "Enfeeblement of Cowards",
+            "description": "Foes' ranged shots have <b>-40%</b> travel speed."
+        },
+        "DeathDefianceRetaliateCurse": {
+            "gods": ["Medea"],
+            "name": "Malice in Kind",
+            "description": "Whenever a foe makes you use <b>Death Defiance</b>, it loses <b>15% Health</b>."
+        },
+        "NewStatusDamage": {
+            "gods": ["Medea"],
+            "name": "Harm for the Afflicted",
+            "description": "Inflicting a <b>Curse</b> deals <b>50</b> damage if the foe is not afflicted by it, up to <b>1 Sec.</b>"
+        },
+
+        "RandomArcanaTrait": {
+            "gods": ["Circe"],
+            "name": "Red Citrine Divination",
+            "description": "Randomly draw <b>1</b> of your inactive <b>Arcana</b>, and activate it this night."
+        },
+        "ArcanaRarityTrait": {
+            "gods": ["Circe"],
+            "name": "Lapis Lazuli Insight",
+            "description": "Randomly draw <b>1</b> of your active <b>Arcana</b>, and upgrade it this night."
+        },
+        "RemoveShrineTrait": {
+            "gods": ["Circe"],
+            "name": "Black Night Banishment",
+            "description": "Randomly draw <b>1</b> of your active <b>Vows</b>, and remove its effect this night."
+        },
+        "DoubleFamiliarTrait": {
+            "gods": ["Circe"],
+            "name": "Primal Psychic Connection",
+            "description": "The spiritual benefit your <b>Animal Familiar</b> provides is stronger this night."
+        },
+        "HealAmplifyTrait": {
+            "gods": ["Circe"],
+            "name": "Old Herbal Remedy",
+            "description": "Restore <b>50%</b> of your <b>Health</b> now. Any <b>Health</b> effects are <b>25%</b> stronger this night."
+        },
+        "CirceEnlargeTrait": {
+            "gods": ["Circe"],
+            "name": "Word of Greater Girth",
+            "description": "Grow in size so that you have <b>+15% Health</b> and deal <b>+15%</b> with your <b>Weapon</b>."
+        },
+        "CirceShrinkTrait": {
+            "gods": ["Circe"],
+            "name": "Word of Smaller Stature",
+            "description": "Shrink in size, so that you move <b>10%</b> faster and have <b>+10%</b> chance to <b>Dodge</b>."
+        },
+        "CirceSorceryDamageBoon": {
+            "gods": ["Circe"],
+            "name": "Hymn to the Eye of Night",
+            "description": "Your <b>Hex</b> deals <b>+30%</b> damage."
+        },
+        "ExPolymorphBoon": {
+            "gods": ["Circe"],
+            "name": "Turning to a Simple Form",
+            "description": "Your <b>Omega Moves</b> have <b>15%</b> chance to inflict <b>Morph</b> on a susceptible foe, <b>10 Sec.</b> apart."
+        },
+
+        "FocusAttackDamageTrait": {
+            "gods": ["Icarus"],
+            "name": "Ingenious Strike",
+            "description": "Your <b>Attack Boon</b> gains <b>+3 Lv.</b>, but you <b>Prime 35 Magick</b>."
+        },
+        "FocusSpecialDamageTrait": {
+            "gods": ["Icarus"],
+            "name": "Ingenious Flourish",
+            "description": "Your <b>Special Boon</b> gains <b>+3 Lv.</b>, but you <b>Prime 35 Magick</b>."
+        },
+        "OmegaExplodeBoon": {
+            "gods": ["Icarus"],
+            "name": "Explosive Intent",
+            "description": "Your <b>Omega Moves</b> also deal <b>50</b> damage in an area around foes they hit, but use <b>+10 Magick</b>."
+        },
+        "CastHazardBoon": {
+            "gods": ["Icarus"],
+            "name": "Hazard Boom",
+            "description": "Your <b>Casts</b> also blast the area after <b>4 Sec.</b>, dealing <b>500</b> damage to foes, but <b>20</b> to you."
+        },
+        "BreakInvincibleArmorBoon": {
+            "gods": ["Icarus"],
+            "name": "Protective Coating",
+            "description": "Gain <b>+100 Armor</b>. The next time you lose all your <b>Armor</b>, become <b>Impervious</b> for <b>8 Sec.</b>"
+        },
+        "BreakExplosiveArmorBoon": {
+            "gods": ["Icarus"],
+            "name": "Volatile Coating",
+            "description": "Gain <b>+50 Armor</b>. The next time you lose all your <b>Armor</b>, deal <b>4000</b> damage to surrounding foes."
+        },
+        "SupplyDropBoon": {
+            "gods": ["Icarus"],
+            "name": "Supply Chain",
+            "description": "Each time you clear <b>7 Encounters</b>, receive <b>+10 Health</b> and <b>2 Pom Slice</b>."
+        },
+        "UpgradeHammerBoon": {
+            "gods": ["Icarus"],
+            "name": "Full Service",
+            "description": "<b>Icarus</b> chooses <b>1 Daedalus Hammer</b> of yours to upgrade to <b>Rank II</b> this night, improving its effects."
+        },
+
+        "InvulnerabilityDashBoon": {
+            "gods": ["Athena"],
+            "name": "Divine Dash",
+            "description": "Your <b>Dash</b> deals damage to foe in your path and can momentarily <b>Deflect</b>.",
+            "effects": [
+                {"text": "Dash Damage:", "common" : "10", "rare" : "15", "epic" : "20", "heroic" : "25"}
+            ]
+        },
+        "RetaliateInvulnerabilityBoon": {
+            "gods": ["Athena"],
+            "name": "Defensive Posture",
+            "description": "After you take damage, become <b>Impervious</b> for <b>2 Sec.</b>",
+            "effects": [
+                {"text": "Recharge Time Between Uses:", "common" : "13 Sec.", "rare" : "11 Sec.", "epic" : "9 Sec.", "heroic" : "7 Sec."}
+            ]
+        },
+        "AthenaProjectileBoon": {
+            "gods": ["Athena"],
+            "name": "Phalanx Shot",
+            "description": "Your <b>Specials</b> also launch a projectile ahead that can <b>Deflect</b>, rearming after <b>2 Sec.</b>",
+            "effects": [
+                {"text": "Projectile Damage:", "common" : "10", "rare" : "15", "epic" : "20", "heroic" : "25"}
+            ]
+        },
+        "InvulnerabilityCastBoon": {
+            "gods": ["Athena"],
+            "name": "Mental Block",
+            "description": "Your <b>Casts</b> also deal a burst of damage in the area and momentarily make you <b>Deflect</b>.",
+            "effects": [
+                {"text": "Cast Damage:", "common" : "40", "rare" : "60", "epic" : "80", "heroic" : "100"}
+            ]
+        },
+        "ManaSpearBoon": {
+            "gods": ["Athena"],
+            "name": "Righteous Pike",
+            "description": "Whenever you use <b>90 Magick</b>, up to <b>3</b> foe are stuck by spears from heaven.",
+            "effects": [
+                {"text": "Spear Damage:", "common" : "150", "rare" : "200", "epic" : "250", "heroic" : "300"}
+            ]
+        },
+        "FocusLastStandBoon": {
+            "gods": ["Athena"],
+            "name": "Stalwart Stand",
+            "description": "Gain <b>+1 Death Defiance</b> that replenishes in each <b>Location</b>, but you <b>Prime Magick</b>.",
+            "effects": [
+                {"text": "Magick Primed:", "common" : "150", "rare" : "125", "epic" : "100", "heroic" : "75"}
+            ]
+        },
+        "DeathDefianceRefillBoon": {
+            "gods": ["Athena"],
+            "name": "Renewed Faith",
+            "description": "Replenish all spent uses of <b>Death Defiance</b> now, and improve their potency.",
+            "effects": [
+                {"text": "Life Restoration When Used:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ]
+        },
+        "OlympianSpellCountBoon": {
+            "gods": ["Athena"],
+            "name": "Task Force",
+            "description": "If your <b>Hex</b> is <b>Godsent</b>, that effect may activate multiple times in each <b>Location</b>.",
+            "effects": [
+                {"text": "Bonus Godsent Hex:", "common" : "+1", "rare" : "+2", "epic" : "+3", "heroic" : "+4"}
+            ]
+        },
+
+        "CastLobBoon": {
+            "gods": ["Dionysus"],
+            "name": "Tipsy Shot",
+            "description": "Hold <b>Cast</b> to lob a large explosion. The binding circle forms there.",
+            "effects": [
+                {"text": "Blast Damage:", "common" : "300", "rare" : "450", "epic" : "600", "heroic" : "750"}
+            ]
+        },
+        "HiddenMaxHealthBoon": {
+            "gods": ["Dionysus"],
+            "name": "Worry Free",
+            "description": "Gain a random amount of <b>Health</b>, but how much you have becomes a mystery.",
+            "effects": [
+                {"text": "Max Life:", "common" : "+50-80", "rare" : "+70-100", "epic" : "+90-120", "heroic" : "+110-140"}
+            ]
+        },
+        "FirstHangoverBoon": {
+            "gods": ["Dionysus"],
+            "name": "Drunken Stupor",
+            "description": "Your <b>Omega Moves</b> inflict <b>Hangover</b> the first time they strike foes.",
+            "effects": [
+                {"text": "Hangover Damage (every 0.5 Sec.):", "common" : "50", "rare" : "75", "epic" : "100", "heroic" : "125"}
+            ]
+        },
+        "CombatEncounterHealBoon": {
+            "gods": ["Dionysus"],
+            "name": "Bounce Back",
+            "description": "After each <b>Encounter</b>, restore some <b>Health</b> if you took any damage in that <b>Encounter</b>.",
+            "effects": [
+                {"text": "Lost Life Restored:", "common" : "50%", "rare" : "60%", "epic" : "70%", "heroic" : "80%"}
+            ]
+        },
+        "PowerDrinkBoon": {
+            "gods": ["Dionysus"],
+            "name": "Bottomless Drink",
+            "description": "In each <b>Encounter</b>, <b>Grape Juice</b> appears, in the area and grants <b>Power</b> when used.",
+            "effects": [
+                {"text": "Reappearance Time:", "common" : "10 Sec.", "rare" : "9 Sec.", "epic" : "8 Sec.", "heroic" : "7 Sec."}
+            ]
+        },
+        "FogDamageBonusBoon": {
+            "gods": ["Dionysus"],
+            "name": "Happy Haze",
+            "description": "Every <b>8 Sec.</b> in each <b>Encounter</b>, <b>Festive Fog</b> appears, making you stronger while in it.",
+            "effects": [
+                {"text": "In-Fog Bonus Damage:", "common" : "+30%", "rare" : "+40%", "epic" : "+50%", "heroic" : "+60%"}
+            ]
+        },
+        "BankBoon": {
+            "gods": ["Dionysus"],
+            "name": "Personal Loan",
+            "description": "Give up all your <b>Gold</b> now. After vanquishing the next <b>Guardian</b>, gain that much and more.",
+            "effects": [
+                {"text": "Bonus Gold Earned, Soon:", "common" : "+300", "rare" : "+400", "epic" : "+500", "heroic" : "+600"}
+            ]
+        },
+        "RandomBaseDamageBoon": {
+            "gods": ["Dionysus"],
+            "name": "Reckless Abandon",
+            "description": "Your <b>Attacks</b> randomly deal exactly <b>5</b>, <b>55</b>, or <b>555</b> damage whenever they hit.",
+            "effects": [
+                {"text": "Bonus Chance for Max Damage:", "common" : "5%", "rare" : "7%", "epic" : "9%", "heroic" : "11%"}
+            ]
+        },
+
+        "HermesWeaponBoon": {
+            "gods": ["Hermes"],
+            "name": "Nimble Limbs",
+            "description": "Your <b>Attack</b>, <b>Special</b>, and <b>Cast</b> are faster.",
+            "effects": [
+                {"text": "Strike Speed:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ]
+        },
+        "HermesSpecialBoon": {
+            "gods": ["Hermes"],
+            "name": "Racing Thoughts",
+            "description": "Your <b>Omega Moves</b> are faster.",
+            "effects": [
+                {"text": "Omega Move Speed:", "common" : "+15%", "rare" : "+20%", "epic" : "+25%", "heroic" : "+30%"}
+            ]
+        },
+        "HermesCastDiscountBoon": {
+            "gods": ["Hermes"],
+            "name": "Winner's Circle",
+            "description": "You <b>Channel</b> your <b>Omega Cast</b> faster and your <b>Casts</b> expire faster",
+            "effects": [
+                {"text": "Omega Cast Speed:", "common" : "+100%", "rare" : "+125%", "epic" : "+150%", "heroic" : "+175%"}
+            ]
+        },
+        "SorcerySpeedBoon": {
+            "gods": ["Hermes"],
+            "name": "Stutter Step",
+            "description": "You can <b>Dash</b> more frequently.",
+            "effects": [
+                {"text": "Dash Recovery Speed:", "common" : "+25%", "rare" : "+30%", "epic" : "+35%", "heroic" : "+40%"}
+            ]
+        },
+        "DodgeChanceBoon": {
+            "gods": ["Hermes"],
+            "name": "Hasty Retreat",
+            "description": "Gain <b>Dodge</b> chance and move speed that increase the more <b>Boons</b> you have.",
+            "effects": [
+                {"text": "Bonus per Boon:", "common" : "+0.5%", "rare" : "+0.75%", "epic" : "+1%", "heroic" : "+1.25%"}
+            ]
+        },
+        "SlowProjectileBoon": {
+            "gods": ["Hermes"],
+            "name": "Hard Target",
+            "description": "Most foes' ranged shots are slower.",
+            "effects": [
+                {"text": "Foe Projectile Speed:", "common" : "-30%", "rare" : "-40%", "epic" : "-50%", "heroic" : "-60%"}
+            ]
+        },
+        "MoneyMultiplierBoon": {
+            "gods": ["Hermes"],
+            "name": "Quick Buck",
+            "description": "You find <b>Gold</b> in greater quantities. Receive <b>+100 Gold</b> now, plus the bonus!",
+            "effects": [
+                {"text": "Bonus Gold:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
+            ]
+        },
+        "SprintShieldBoon": {
+            "gods": ["Hermes"],
+            "name": "Nitro Boost",
+            "description": "Your <b>Sprint</b> is <b>15%</b> faster and gives you a barrier that ignores instances of damage.",
+            "effects": [
+                {"text": "Hits Blocked per Encounter:", "common" : "1", "rare" : "2", "epic" : "3", "heroic" : "4"}
+            ]
+        },
+        "TimedKillBuffBoon": {
+            "gods": ["Hermes"],
+            "name": "Mean Streak",
+            "description": "Each time you slay a foe, deal more damage for the next <b>45 Sec.</b>",
+            "effects": [
+                {"text": "Bonus Damage per Slain Foe:", "common" : "+1%", "rare" : "+1.5%", "epic" : "+2%", "heroic" : "+2.5%"}
+            ]
+        },
+        "LuckyBoon": {
+            "gods": ["Hermes"],
+            "name": "Success Rate",
+            "description": "Your chance-base effects are more likely to occur, except for <b>Dodge</b> or <b>Daze</b>.",
+            "effects": [
+                {"text": "Greater Chances:", "common" : "30%", "rare" : "40%", "epic" : "50%", "heroic" : "60%"}
+            ]
+        },
+        "RestockBoon": {
+            "gods": ["Hermes"],
+            "name": "Travel Deal",
+            "description": "Your first purchase in each <b>Location</b> cost less <b>Gold</b>, and another item appears afterwards.",
+            "effects": [
+                {"text": "First-Purchase Discount:", "common" : "-5%", "rare" : "-10%", "epic" : "-15%", "heroic" : "-20%"}
+            ]
+        },
+        "ElementalUnifiedBoon": {
+            "gods": ["Hermes"],
+            "name": "Tall Order",
+            "description": "While you have at least <b>8 Earth</b>, <b>8 Water</b>, <b>8 Air</b>, or <b>8 Fire</b>, you deal more damage.",
+            "effects": [
+                {"text": "Infused Damage:", "infusion" : "+25%"}
+            ]
+        },
+        "TimeStopLastStandBoon": {
+            "gods": ["Hermes"],
+            "name": "Paid Dues",
+            "description": "Whenever you take damage, you lose <b>Gold</b> before you lose <b>Health</b>.",
+            "effects": [
+                {"text": "Cost per Damage Point:", "legendary" : "-3"}
+            ]
+        },
+
+        "ChaosNoMoneyCurse": {
+            "gods": ["Chaos"],
+            "name": "Pauper's",
+            "description": "For the next <b>3 Encounters</b>, you cannot earn <b>Gold</b>."
+        },
+        "ChaosHealthCurse": {
+            "gods": ["Chaos"],
+            "name": "Atrophic",
+            "description": "For the next <b>3 Encounters</b>, you have <b>-20 Health</b>."
+        },
+        "ChaosHiddenRoomRewardCurse": {
+            "gods": ["Chaos"],
+            "name": "Enshrouded",
+            "description": "For the next <b>4 Encounters</b>, <b>Location Reward</b> previews are hidden."
+        },
+        "ChaosDamageCurse": {
+            "gods": ["Chaos"],
+            "name": "Excruciating",
+            "description": "For the next <b>3 Encounters</b>, you take <b>+20%</b> damage."
+        },
+        "ChaosPrimaryAttackCurse": {
+            "gods": ["Chaos"],
+            "name": "Maimed",
+            "description": "For the next <b>3 Encounters</b>, each time you use <b>Attacks</b>, you take <b>3 Damage</b>."
+        },
+        "ChaosSecondaryAttackCurse": {
+            "gods": ["Chaos"],
+            "name": "Flayed",
+            "description": "For the next <b>4 Encounters</b>, each time you use <b>Specials</b>, you take <b>3 Damage</b>."
+        },
+        "ChaosCastCurse": {
+            "gods": ["Chaos"],
+            "name": "Addled",
+            "description": "For the next <b>3 Encounters</b>, each time you use <b>Casts</b>, you take <b>3 Damage</b>."
+        },
+        "ChaosExAttackCurse": {
+            "gods": ["Chaos"],
+            "name": "Gagged",
+            "description": "For the next <b>3 Encounters</b>, each time you use <b>Omega Moves</b>, you take <b>5 Damage</b>."
+        },
+        "ChaosDashCurse": {
+            "gods": ["Chaos"],
+            "name": "Neurotic",
+            "description": "For the next <b>3 Encounters</b>, your <b>Dash</b> uses <b>10 Magick</b> if you have enough to spare."
+        },
+        "ChaosManaFocusCurse": {
+            "gods": ["Chaos"],
+            "name": "Fixated",
+            "description": "For the next <b>3 Encounters</b>, whenever you use <b>Magick</b>, <b>Prime</b> it until this expires."
+        },
+        "ChaosDeathWeaponCurse": {
+            "gods": ["Chaos"],
+            "name": "Caustic",
+            "description": "For the next <b>3 Encounters</b>, slain foes toss an <b>Inferno-Bomb</b> at you."
+        },
+        "ChaosSpeedCurse": {
+            "gods": ["Chaos"],
+            "name": "Slothful",
+            "description": "For the next <b>3 Encounters</b>, you move and <b>Sprint 40%</b> slower."
+        },
+        "ChaosStunCurse": {
+            "gods": ["Chaos"],
+            "name": "Paralyzing",
+            "description": "For the next <b>3 Encounters</b>, whenever you take damage, you are stunned for <b>0.5 Sec.</b>"
+        },
+        "ChaosCommonCurse": {
+            "gods": ["Chaos"],
+            "name": "Ordinary",
+            "description": "The next <b>2 Boons</b> you find are limited to <b>Common</b> blessings."
+        },
+        "ChaosRestrictBoonCurse": {
+            "gods": ["Chaos"],
+            "name": "Rejected",
+            "description": "The next <b>2 Boons</b> you find have <b>1</b> fewer blessing to choose from."
+        },
+        "ChaosTimeCurse": {
+            "gods": ["Chaos"],
+            "name": "Expiring",
+            "description": "If you have not cleared <b>2 Encounters</b> in <b>120 Sec.</b>, you take <b>500</b> damage."
+        },
+        "ChaosMetaUpgradeCurse": {
+            "gods": ["Chaos"],
+            "name": "Barren",
+            "description": "For the next <b>3 Encounters</b>, your <b>Arcana Cards</b> have no effect."
+        },
+
+        "ChaosWeaponBlessing": {
+            "gods": ["Chaos"],
+            "name": "Strike (Chaos)",
+            "description": "Your <b>Attacks</b> deal more damage.",
+            "effects": [
+                {"text": "Additional Damage For Attacks:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
+            ]
+        },
+        "ChaosSpecialBlessing": {
+            "gods": ["Chaos"],
+            "name": "Flourish (Chaos)",
+            "description": "Your <b>Specials</b> deal more damage.",
+            "effects": [
+                {"text": "Additional Damage For Specials:", "common" : "+30%", "rare" : "+45%", "epic" : "+60%", "heroic" : "+75%"}
+            ]
+        },
+        "ChaosCastBlessing": {
+            "gods": ["Chaos"],
+            "name": "Chasm (Chaos)",
+            "description": "Your <b>Casts</b> deal more damage.",
+            "effects": [
+                {"text": "Additional Damage For Casts:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
+            ]
+        },
+        "ChaosHealthBlessing": {
+            "gods": ["Chaos"],
+            "name": "Soul (Chaos)",
+            "description": "You have additional <b>Max Health</b>.",
+            "effects": [
+                {"text": "Additional Max Health:", "common" : "+26", "rare" : "+52", "epic" : "+78%", "heroic" : "+104"}
+            ]
+        },
+        "ChaosManaBlessing": {
+            "gods": ["Chaos"],
+            "name": "Mind (Chaos)",
+            "description": "You have additional <b>Max Magick</b>.",
+            "effects": [
+                {"text": "Additional Max Magick:", "common" : "+30", "rare" : "+45", "epic" : "+60", "heroic" : "+75"}
+            ]
+        },
+        "ChaosManaOverTimeBlessing": {
+            "gods": ["Chaos"],
+            "name": "Will (Chaos)",
+            "description": "You restore <b>Magick</b> every <b>1 Sec.</b>",
+            "effects": [
+                {"text": "Magick Restored Per 1 Sec.:", "common" : "4", "rare" : "8", "epic" : "12", "heroic" : "16"}
+            ]
+        },
+        "ChaosExSpeedBlessing": {
+            "gods": ["Chaos"],
+            "name": "Revelation (Chaos)",
+            "description": "You <b>Channel</b> your <b>Omega Moves</b> faster.",
+            "effects": [
+                {"text": "Channel Speed Increase:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ]
+        },
+        "ChaosRarityBlessing": {
+            "gods": ["Chaos"],
+            "name": "Favor (Chaos)",
+            "description": "Boons have a greater chance to be <b>Rare</b> or better.",
+            "effects": [
+                {"text": "Rare Or Better Boon Chance Increase:", "common" : "+40%", "rare" : "+54%", "epic" : "+67%", "heroic" : "+80%"}
+            ]
+        },
+        "ChaosMoneyBlessing": {
+            "gods": ["Chaos"],
+            "name": "Affluence (Chaos)",
+            "description": "Any <b>Gold</b> reward you gain is worth more.",
+            "effects": [
+                {"text": "Gold Reward Increase:", "common" : "+40%", "rare" : "+80%", "epic" : "+120%", "heroic" : "+160%"}
+            ]
+        },
+        "ChaosElementalBlessing": {
+            "gods": ["Chaos"],
+            "name": "Creation (Chaos)",
+            "description": "Gain <b>Earth</b>, <b>Water</b>, <b>Air</b>, <b>Fire</b> and <b>Aether</b>.",
+            "effects": [
+                {"text": "All Elements Gained:", "common" : "+1", "rare" : "+2", "epic" : "+3", "heroic" : "+4"}
+            ]
+        },
+        "ChaosManaCostBlessing": {
+            "gods": ["Chaos"],
+            "name": "Talent (Chaos)",
+            "description": "You use less <b>Magick</b>.",
+            "effects": [
+                {"text": "Magick Usage Reduction:", "common" : "-20%", "rare" : "-30%", "epic" : "-40%", "heroic" : "-50%"}
+            ]
+        },
+        "ChaosSpeedBlessing": {
+            "gods": ["Chaos"],
+            "name": "Celerity (Chaos)",
+            "description": "You move and <b>Sprint</b> faster.",
+            "effects": [
+                {"text": "Move And Sprint Speed Increase:", "common" : "+30%", "rare" : "+40%", "epic" : "+50%", "heroic" : "+60%"}
+            ]
+        },
+        "ChaosDoorHealBlessing": {
+            "gods": ["Chaos"],
+            "name": "Revival (Chaos)",
+            "description": "Whenever you exit a <b>Location</b>, restore <b>Health</b>.",
+            "effects": [
+                {"text": "Health Restored:", "common" : "3", "rare" : "9", "epic" : "15", "heroic" : "21"}
+            ]
+        },
+        "ChaosHarvestBlessing": {
+            "gods": ["Chaos"],
+            "name": "Discovery (Chaos)",
+            "description": "You have a higher chance to find <b>+100%</b> resources with your <b>Gathering Tools</b>.",
+            "effects": [
+                {"text": "Bonus resource chance:", "common" : "56%", "rare" : "64%", "epic" : "72%", "heroic" : "80%"}
+            ]
+        },
+        "ChaosOmegaDamageBlessing": {
+            "gods": ["Chaos"],
+            "name": "Chant (Chaos)",
+            "description": "Your <b>Omega Moves</b> deal additional damage the more <b>Aether</b> you have.",
+            "effects": [
+                {"text": "Additional Omega Move Damage Per Aether:", "common" : "+30%", "rare" : "+36%", "epic" : "+42%", "heroic" : "+48%"}
+            ]
+        },
+        "ChaosLastStandBlessing": {
+            "gods": ["Chaos"],
+            "name": "Defiance (Chaos)",
+            "description": "Gain an additional use of <b>Death Defiance</b>",
+            "effects": [
+                {"text": "Extra Death Defiance:", "legendary" : "1"}
+            ]
+        },
+
         "StaffDoubleAttackTrait": {
             "name": "Wicked Thrasher",
             "description": "Your <b>Attacks</b> have <b>+30</b> Power."
@@ -1740,6 +2497,228 @@
         "SuitFullChargeTrait": {
             "name": "World Collider",
             "description": "Your fully-charged <b>Omega Attack</b> has <b>+100 Power</b>."
+        }
+    },
+    "weapons" : {
+        "BaseStaffAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Gain <b>Max Magick</b> and greater <b>Power</b> for your <b>Specials</b>.",
+            "effects": [
+                {"text": "Max Magick & Special Power:", "common" : "+0", "rare" : "+10", "epic" : "+20", "heroic" : "+30", "legendary" : "+40", "perfect" : "+50"}
+            ]
+        },
+        "StaffClearCastAspect": {
+            "name": "Aspect of Circe",
+            "description": "Whenever you use <b>Casts</b>, so does your <b>Animal Familiar</b>, forming a <b>Psychic Leash</b>.",
+            "effects": [
+                {"text": "Psychic Leash Damage (every 0.2 Sec.):", "common" : "10", "rare" : "15", "epic" : "20", "heroic" : "25", "legendary" : "30", "perfect" : "45"}
+            ]
+        },
+        "StaffSelfHitAspect": {
+            "name": "Aspect of Momus",
+            "description": "Whenever you use <b>Omega Moves</b>, each fires in place up to <b>3</b> times until you use it again.",
+            "effects": [
+                {"text": "Delay Between Omega Bursts:", "common" : "4 Sec.", "rare" : "3.5 Sec.", "epic" : "3 Sec.", "heroic" : "2.5 Sec.", "legendary" : "2 Sec.", "perfect" : "1 Sec."}
+            ]
+        },
+        "StaffRaiseDeadAspect": {
+            "name": "Aspect of Anubis",
+            "description": "You have the <b>Ankh Scepter</b>, which raises <b>Lone Shades</b> wherever you slay foes.",
+            "effects": [
+                {"text": "Omega Move Speed & Damage:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%", "legendary" : "+30%", "perfect" : "+45%"}
+            ]
+        },
+
+        "DaggerBackstabAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Your <b>Attacks</b> and <b>Specials</b> deal more damage by striking foes from behind.",
+            "effects": [
+                {"text": "Backstab Damage:", "common" : "+0%", "rare" : "+40%", "epic" : "+60%", "heroic" : "+80%", "legendary" : "+100%", "perfect" : "+200%"}
+            ]
+        },
+        "DaggerBlockAspect": {
+            "name": "Aspect of Artemis",
+            "description": "While you <b>Channel</b> your <b>Omega Attack</b>, you occasionally <b>Parry</b>, then <b>Riposte</b> right after.",
+            "effects": [
+                {"text": "Omega Attack Speed:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%", "legendary" : "+60%", "perfect" : "+90%"}
+            ]
+        },
+        "DaggerHomingThrowAspect": {
+            "name": "Aspect of Pan",
+            "description": "Your <b>Specials</b> seek foes in your <b>Casts</b>, and fire more shots if you <b>Channel</b> longer.",
+            "effects": [
+                {"text": "Omega Special Max Shots:", "common" : "+1", "rare" : "+2", "epic" : "+3", "heroic" : "+4", "legendary" : "+5", "perfect" : "+6"}
+            ]
+        },
+        "DaggerTripleAspect": {
+            "name": "Aspect of the Morrigan",
+            "description": "You have the <b>Crow Cutters</b>, which can perform the ritual of <b>Blood Triad</b>.",
+            "effects": [
+                {"text": "Blood Triad Damage:", "common" : "333", "rare" : "444", "epic" : "555", "heroic" : "666", "legendary" : "777", "perfect" : "999"}
+            ]
+        },
+
+        "TorchSpecialDurationAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Your <b>Attacks</b> and <b>Specials</b> may deal <b>Critical</b> damage.",
+            "effects": [
+                {"text": "Critical Chance:", "common" : "+1%", "rare" : "+2%", "epic" : "+3%", "heroic" : "+4%", "legendary" : "+5%", "perfect" : "+8%"}
+            ]
+        },
+        "TorchDetonateAspect": {
+            "name": "Aspect of Moros",
+            "description": "Your <b>Attacks</b> linger for <b>6 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.",
+            "effects": [
+                {"text": "Blast Damage:", "common" : "+0%", "rare" : "+15%", "epic" : "+30%", "heroic" : "+45%", "legendary" : "+60%", "perfect" : "+105%"}
+            ]
+        },
+        "TorchSprintRecallAspect": {
+            "name": "Aspect of Eos",
+            "description": "Your <b>Omega Attack</b> fires a <b>Daybreaker</b> that deals damage in an area around it every <b>2 Sec.</b>",
+            "effects": [
+                {"text": "Daybreaker Blast Damage:", "common" : "100", "rare" : "113", "epic" : "125", "heroic" : "138", "legendary" : "150", "perfect" : "175"}
+            ]
+        },
+        "TorchAutofireAspect": {
+            "name": "Aspect of Supay",
+            "description": "You have the <b>Devil Sparks</b>, which also enhance your <b>Rush Boon</b>.",
+            "effects": [
+                {"text": "Rush Boon Damage:", "common" : "100", "rare" : "113", "epic" : "125", "heroic" : "138", "legendary" : "150", "perfect" : "175"}
+            ]
+        },
+
+        "AxeRecoveryAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Gain bonus <b>Attack Power</b> and <b>Health</b>.",
+            "effects": [
+                {"text": "Attack Power & Max Life:", "common" : "+0", "rare" : "+20", "epic" : "+25", "heroic" : "+30", "legendary" : "+35", "perfect" : "+50"}
+            ]
+        },
+        "AxeArmCastAspect": {
+            "name": "Aspect of Charon",
+            "description": "Your <b>Cast</b> erupts like your <b>Omega Cast</b> if struck by your <b>Omega Special</b>.",
+            "effects": [
+                {"text": "Cleave-Cast Size & Damage:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%", "legendary" : "+30%", "perfect" : "+45%"}
+            ]
+        },
+        "AxePerfectCriticalAspect": {
+            "name": "Aspect of Thanatos",
+            "description": "Your <b>Attack</b> is faster, and each strike grants <b>Mortality</b> until you take damage.",
+            "effects": [
+                {"text": "Attack Speed:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%", "legendary" : "+30%", "perfect" : "+45%"}
+            ]
+        },
+        "AxeRallyAspect": {
+            "name": "Aspect of Nergal",
+            "description": "You have the <b>Rock Lion Mace</b>, and become <b>Berserk</b> after you strike enough foes.",
+            "effects": [
+                {"text": "Berserk After:", "common" : "21 Strikes", "rare" : "18 Strikes", "epic" : "15 Strikes", "heroic" : "12 Strikes", "legendary" : "9 Strikes", "perfect" : "4 Strikes"}
+            ]
+        },
+
+        "LobAmmoBoostAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Your <b>Attacks</b> have more <b>Power</b> for each <b>Shell</b> fired and not yet retrieved.",
+            "effects": [
+                {"text": "Power per Spent Shell:", "common" : "+0", "rare" : "+3", "epic" : "+6", "heroic" : "+9", "legendary" : "+12", "perfect" : "+21"}
+            ]
+        },
+        "LobCloseAttackAspect": {
+            "name": "Aspect of Medea",
+            "description": "Your <b>Attack</b> stays within reach, and explodes after landing your <b>Specials</b> or <b>3 Sec.</b>",
+            "effects": [
+                {"text": "Attack & Special Damage:", "common" : "+30%", "rare" : "+45%", "epic" : "+60%", "heroic" : "+75%", "legendary" : "+90%", "perfect" : "+135%"}
+            ]
+        },
+        "LobImpulseAspect": {
+            "name": "Aspect of Persephone",
+            "description": "Your <b>Omega Special</b> is <b>Sprouted</b>, and lets you change direction; <b>Boons</b> start with bonus <b>Levels.</b>",
+            "effects": [
+                {"text": "Max Random Bonus Lv. for Boons:", "common" : "+2", "rare" : "+3", "epic" : "+4", "heroic" : "+5", "legendary" : "+6", "perfect" : "+9"}
+            ]
+        },
+        "LobGunAspect": {
+            "name": "Aspect of Hel",
+            "description": "You have <b>Frost Mane</b>, which grants the way of the <b>Valkyrie</b> after your <b>Omega Special</b>.",
+            "effects": [
+                {"text": "Valkyrie Attack Speed:", "common" : "+5%", "rare" : "+10%", "epic" : "+15%", "heroic" : "+20%", "legendary" : "+25%", "perfect" : "+35%"}
+            ]
+        },
+
+        "BaseSuitAspect": {
+            "name": "Aspect of Melinoë",
+            "description": "Your <b>Attacks</b>, <b>Sprint</b>, and move speed are faster.",
+            "effects": [
+                {"text": "Bonus Speed:", "common" : "+0%", "rare" : "+5%", "epic" : "+10%", "heroic" : "+15%", "legendary" : "+20%", "perfect" : "+35%"}
+            ]
+        },
+        "SuitHexAspect": {
+            "name": "Aspect of Selene",
+            "description": "You start with <b>Sky Fall</b>, a hidden <b>Hex</b> that strikes multiple foes and applies <b>Shine</b>.",
+            "effects": [
+                {"text": "Hex Ready After:", "common" : "100 Magick", "rare" : "90 Magick", "epic" : "80 Magick", "heroic" : "70 Magick", "legendary" : "60 Magick", "perfect" : "40 Magick"}
+            ]
+        },
+        "SuitMarkCritAspect": {
+            "name": "Aspect of Nyx",
+            "description": "You have <b>Omega Boost</b>, which lets you produce <b>Nightspawn</b> after you activate it.",
+            "effects": [
+                {"text": "Nightspawn Damage:", "common" : "15%", "rare" : "30%", "epic" : "45%", "heroic" : "60%", "legendary" : "75%", "perfect" : "100%"}
+            ]
+        },
+        "SuitComboAspect": {
+            "name": "Aspect of Shiva",
+            "description": "You have <b>Purifying Grace</b>, which absorbs <b>Omega Special</b> blasts to grow <b>Destructive</b>.",
+            "effects": [
+                {"text": "Max Destructive Ranks:", "common" : "2", "rare" : "3", "epic" : "4", "heroic" : "5", "legendary" : "6", "perfect" : "8"}
+            ]
+        }
+    },
+    "familiars" : {
+        "HealthFamiliar" : {
+            "name": "Frinos",
+            "description": "Hops about, absorbing foes' ranged shots that might have struck you instead.",
+            "effects": [
+                {"text": "While together, gain additional <b>Max Health</b>. <b>Max Health</b> gained:", "value": "+40 Max Health"},
+                {"text": "While together, gain a chance to manifest <b>Souls</b>. Manifestation chance: ", "value": "75%"},
+                {"text": "Frinos deals damage leaping onto foes. Damage dealt: ", "value": "30"}
+            ]
+        },
+        "CritFamiliar" : {
+            "name": "Raki",
+            "description": "Occasionally pecks foes for <b>15</b> damage, leaving them <b>Marked</b>.",
+            "effects": [
+                {"text": "Gain <b>Critical</b> chance. <b>Critical</b> chance gained:", "value": "+4%"},
+                {"text": "Outcroppings appear more often. Appearance chance:", "value": "+75%"},
+                {"text": "Raki swoops down to peck foes more often. Increase:", "value": "+75%"}
+            ]
+        },
+        "LastStandFamiliar" : {
+            "name": "Toula",
+            "description": "After you <b>Sprint</b> nearby, lunges at the nearest foe for <b>99</b> damage.",
+            "effects": [
+                {"text": "Gain <b>1</b> bonus <b>Death Defiance</b>. <b>Health</b> restored:", "value": "40"},
+                {"text": "While together, gain bonus chance to manifest <b>Fishing Points</b>. Bonus chance:", "value": "+75%"},
+                {"text": "Toula strikes additional times before losing interest. Additional strikes:", "value": "4"}
+            ]
+        },
+        "DigFamiliar" : {
+            "name": "Hecuba",
+            "description": "Occasionally stuns surrounding foes for <b>1 Sec.</b>, and digs up <b>Health</b> or <b>Magick</b> in a pinch.",
+            "effects": [
+                {"text": "While together, gain extra <b>Max Magick</b>. Max magick gained:", "value": "+60"},
+                {"text": "<b>Digging Spots</b> appear more often. <b>Digging Spot</b> chance increase:", "value": "+75%"},
+                {"text": "<b>Hecuba</b> stuns foes more often. Stun frequency increase:", "value": "+45%"}
+            ]
+        },
+        "DodgeFamiliar" : {
+            "name": "Gale",
+            "description": "Leaps in harm's way then deals <b>250</b> damage up to <b>3</b> times per <b>Region</b>, <b>30 Sec.</b> apart.",
+            "effects": [
+                {"text": "While together, gain extra Dodge Chance & Move Speed. Increase by:", "value": "+6%"},
+                {"text": "While together, you are more likely to find <b>Flora</b>. Increase by:", "value": "+19%"},
+                {"text": "<b>Gale</b> deals damage when scratching foes in retaliation. Damage dealt:", "value": "400"}
+            ]
         }
     },
     "keepsakes" : {
