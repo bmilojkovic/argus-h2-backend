@@ -153,7 +153,7 @@ function parseFamiliarData(familiarData) {
 const emptyExtraString = "NOEXTRAS";
 function parseExtraData(extraData) {
   if (extraData === emptyExtraString) {
-    return {};
+    return [];
   }
 
   var parsedData = [];

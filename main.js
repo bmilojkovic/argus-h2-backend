@@ -35,7 +35,17 @@ app.post("/run_info", (req, res, next) => {
   const broadcasterId = twitchIdByArgusToken[argusToken];
   const runData = parseRunData(req.body.runData);
   
-  broadcastInfo(runData, broadcasterId);
+  runDataChunk1 = {}
+  runDataChunk1.boonData = runData.boonData;
+
+  runDataChunk2 = {}
+  runDataChunk2.weaponData = runData.weaponData;
+  runDataChunk2.familiarData = runData.familiarData;
+  runDataChunk2.extraData = runData.extraData;
+  runDataChunk2.elementalData = runData.elementalData;
+  runDataChunk2.pinData = runData.pinData;
+  broadcastInfo(runDataChunk1, broadcasterId);
+  broadcastInfo(runDataChunk2, broadcasterId);
 
   res.send("ok");
 })
