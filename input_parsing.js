@@ -212,7 +212,7 @@ function parseExtraData(extraData) {
 const emptyElementsString = "NOELEMENTS";
 function parseElementalData(elementalData) {
   if (elementalData === emptyElementsString) {
-    return {};
+    return [];
   }
 
   var parsedData = [];
@@ -233,7 +233,6 @@ function parseElementalData(elementalData) {
 
 const emptyPinsString = "NOPINS";
 function parsePinBoons(pinData) {
-  logger.warn("Pin data: " + pinData);
   if (pinData == emptyPinsString) {
     return [];
   }
@@ -259,9 +258,27 @@ function parsePinBoons(pinData) {
     }
   })
 
-  logger.warn("Parsed pin data: " + parsedData);
   return parsedData;
 }
+
+const emptyVowsString = "NOVOWS";
+function parseVowData(vowData) {
+  logger.warn("parsing vow data: " + vowData);
+
+  return emptyVowsString;
+}
+
+const emptyArcanaString = "NOARCANA";
+function parseArcanaData(arcanaData) {
+  logger.warn("parsing arcana data: " + arcanaData);
+
+  return emptyArcanaString;
+}
+
+//twitch package size limitation is 5KB
+const twitchPackageLimit = 1024*5;
+//80% just for paranoia. 20 characters is our nonce and part number.
+const twitchPackageSizeCutoff = Math.floor(twitchPackageLimit * 0.8) - 20;
 
 function parseRunData(runData) {
     const parsedData = {
@@ -270,10 +287,32 @@ function parseRunData(runData) {
         familiarData: parseFamiliarData(runData.familiarData),
         extraData: parseExtraData(runData.extraData),
         elementalData: parseElementalData(runData.elementalData),
-        pinBoons: parsePinBoons(runData.pinData)
+        pinBoons: parsePinBoons(runData.pinData),
+        vowData: parseVowData(runData.vowData),
+        arcanaData: parseArcanaData(runData.arcanaData)
     };
 
-    return parsedData;
+    var stringToSend = JSON.stringify(parsedData);
+
+    var parsedDataArray = [];
+    if (stringToSend.length > twitchPackageSizeCutoff) {
+      var startPos = 0;
+      var stop = false;
+
+      while (!stop) {
+        var endingPosition = startPos + twitchPackageSizeCutoff;
+        if (endingPosition >= stringToSend.length) {
+          endingPosition = stringToSend.length;
+          stop = true;
+        }
+        parsedDataArray.push(stringToSend.substring(startPos, endingPosition));
+        startPos = endingPosition;
+      }
+    } else {
+      parsedDataArray.push(stringToSend);
+    }
+
+    return parsedDataArray;
 }
 
 module.exports = {

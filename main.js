@@ -24,6 +24,8 @@ function generateRandomHex(length) {
   return crypto.randomBytes(Math.ceil(length / 2)).toString('hex').slice(0, length);
 }
 
+const NONCE_MAX = 2**32;
+
 app.post("/run_info", (req, res, next) => {
   logger.info("Received data: " + JSON.stringify(req.body));
   
@@ -33,19 +35,10 @@ app.post("/run_info", (req, res, next) => {
     return;
   }
   const broadcasterId = twitchIdByArgusToken[argusToken];
-  const runData = parseRunData(req.body.runData);
-  
-  runDataChunk1 = {}
-  runDataChunk1.boonData = runData.boonData;
+  const runDataArray = parseRunData(req.body.runData);
+  const broadcastNonce = crypto.randomInt(NONCE_MAX);
 
-  runDataChunk2 = {}
-  runDataChunk2.weaponData = runData.weaponData;
-  runDataChunk2.familiarData = runData.familiarData;
-  runDataChunk2.extraData = runData.extraData;
-  runDataChunk2.elementalData = runData.elementalData;
-  runDataChunk2.pinData = runData.pinData;
-  broadcastInfo(runDataChunk1, broadcasterId);
-  broadcastInfo(runDataChunk2, broadcasterId);
+  broadcastInfo(runDataArray, broadcastNonce, broadcasterId);
 
   res.send("ok");
 })

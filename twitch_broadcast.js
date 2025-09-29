@@ -24,10 +24,11 @@ function buildToken(broadcasterId) {
   return token;
 }
 
-function broadcastInfo(runData, broadcasterId) {
+function broadcastInfoPart(partialRunData, broadcasterId) {
     jwtToken = buildToken(broadcasterId);
+    
     broadcastMessage = {
-        message: JSON.stringify(runData),
+        message: partialRunData,
         broadcaster_id: broadcasterId,
         target: ["broadcast"]
     };
@@ -50,6 +51,15 @@ function broadcastInfo(runData, broadcasterId) {
         }
         return;
     });
+}
+
+function broadcastInfo(runDataArray, broadcastNonce, broadcasterId) {
+    runDataArray.forEach((runDataPart, ind) => {
+        partialData = "*" + broadcastNonce + "*" + ind + "*" + runDataArray.length + "*" + runDataPart;
+
+        broadcastInfoPart(partialData, broadcasterId);
+    });
+    
 }
 
 module.exports = {
