@@ -182,16 +182,19 @@ function parseExtraData(extraData) {
       }
       parsedItem["rarity"] = itemRarity;
       parsedItem["description"] = uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
+      parsedItem["extraType"] = "Keepsake";
       parsedData.push(parsedItem);
     } else if (uiMappings.hexes[itemName] != null) {
       parsedItem = uiMappings.hexes[itemName];
       parsedItem["rarity"] = "Common";
       parsedItem["codeName"] = itemName;
+      parsedItem["extraType"] = "Hex";
       parsedData.push(parsedItem);
     } else if (uiMappings.boons[itemName] != null && uiMappings.boons[itemName].gods[0] == "Chaos") {
       parsedItem = uiMappings.boons[itemName];
       parsedItem["rarity"] = "Common";
       parsedItem["codeName"] = itemName;
+      parsedItem["extraType"] = "Chaos";
       parsedData.push(parsedItem);
     } else {
       logger.warn("Unknown extra item: " + extraItem);
@@ -263,16 +266,65 @@ function parsePinBoons(pinData) {
 
 const emptyVowsString = "NOVOWS";
 function parseVowData(vowData) {
-  logger.warn("parsing vow data: " + vowData);
+  if (vowData === emptyVowsString) {
+    return {};
+  }
 
-  return emptyVowsString;
+  var parsedData = [];
+
+  var allVows = vowData.split(" ");
+
+  allVows.forEach(singleVow => {
+    const [vowLevel, vowCodeName] = singleVow.split(dataSeparator);
+    
+    if (uiMappings.vows[vowCodeName] == null) {
+      logger.warn("Got unknown vow name: " + vowCodeName)
+      return;
+    }
+
+    var parsedVow = {
+      "codeName": vowCodeName,
+      "name": uiMappings.vows[vowCodeName].name,
+      "level": vowLevel,
+      "description": uiMappings.vows[vowCodeName].descriptions[parseInt(vowLevel)]
+    }
+
+    parsedData.push(parsedVow);
+  });
+
+  return parsedData;
 }
 
+const arcanaLevelMapping = ["None", "Common", "Rare", "Epic", "Heroic"];
 const emptyArcanaString = "NOARCANA";
 function parseArcanaData(arcanaData) {
-  logger.warn("parsing arcana data: " + arcanaData);
+  if (arcanaData === emptyArcanaString) {
+    return {};
+  }
 
-  return emptyArcanaString;
+  var parsedData = [];
+
+  var allArcana = arcanaData.split(" ");
+
+  allArcana.forEach(singleArcana => {
+    const [arcanaLevel, arcanaCodeName] = singleArcana.split(dataSeparator);
+    
+    if (uiMappings.arcana[arcanaCodeName] == null) {
+      logger.warn("Got unknown arcana name: " + arcanaCodeName)
+      return;
+    }
+
+    var parsedArcana = {
+      "codeName": arcanaCodeName,
+      "name": uiMappings.arcana[arcanaCodeName].name,
+      "rarity": arcanaLevelMapping[arcanaLevel],
+      "description": uiMappings.arcana[arcanaCodeName].descriptions[parseInt(arcanaLevel)]
+    }
+
+    parsedData.push(parsedArcana);
+  });
+
+  return parsedData;
 }
 
 //twitch package size limitation is 5KB

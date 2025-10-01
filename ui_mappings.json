@@ -67,6 +67,9 @@
             "description": "Whenever you exit a Location, restore <b>100% Health</b> if you have not lost too much.",
             "effects": [
                 {"text": "Min Life for Full Recovery:", "common" : "80%", "rare" : "70%", "epic" : "60%", "heroic" : "50%"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["HighHealthOffenseBoon"]}
             ]
         },
         "WeakPotencyBoon" : {
@@ -75,6 +78,9 @@
             "description": "Your <b>Weak</b> effects are more potent.",
             "effects": [
                 {"text": "Weak Damage Reduction:", "common" : "+10%", "rare" : "+12%", "epic" : "+14%", "heroic" : "+16%"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]}
             ]
         },
         "WeakVulnerabilityBoon" : {
@@ -83,6 +89,9 @@
             "description": "<b>Weak</b>-afflicted foes take more damage.",
             "effects": [
                 {"text": "Damage vs. Weak:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]}
             ]
         },
         "ManaBurstBoon" : {
@@ -107,6 +116,9 @@
             "description": "Gain a chance to <b>Dodge</b> for each <b>Air</b> you have.",
             "effects": [
                 {"text": "Dodge Chance per Air Boon:", "infusion" : "+3%"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["2 Air"]}
             ]
         },
         "RandomStatusBoon" : {
@@ -115,6 +127,11 @@
             "description": "Whenever you inflict <b>Weak</b>, also randomly inflict <b>Curses</b> from other Olympians.",
             "effects": [
                 {"text": "Bonus Random Curses:", "legendary" : "3"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]},
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon"]},
+                {"type": "Aphrodite", "items": ["WeakPotencyBoon", "WeakVulnerabilityBoon", "HighHealthOffenseBoon", "FocusRawDamageBoon"]}
             ]
         },
 
@@ -185,6 +202,9 @@
             "description": "Your attacks may inflict <b>Daze</b>.",
             "effects": [
                 {"text": "Daze Chance:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Apollo", "items": ["ApolloWeaponBoon"]}
             ]
         },
         "ApolloBlindBoon" : {
@@ -193,6 +213,9 @@
             "description": "Foes with <b>Daze</b> take more damage if struck from behind.",
             "effects": [
                 {"text": "Backstab Damage:", "common" : "+50%", "rare" : "+75%", "epic" : "+100%", "heroic" : "+125%"}
+            ],
+            "requirements": [
+                {"type": "Apollo", "items": ["ApolloCastBoon", "ApolloSprintBoon", "ApolloRetaliateBoon", "BlindChanceBoon"]}
             ]
         },
         "ApolloExCastBoon" : {
@@ -201,6 +224,9 @@
             "description": "After your <b>Omega Cast</b> expires, rapidly deal damage in the area for 2 Sec.",
             "effects": [
                 {"text": "Omega Cast Damage (every 0.13 Sec.):", "common" : "10", "rare" : "12", "epic" : "14", "heroic" : "16"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "ApolloCastAreaBoon" : {
@@ -217,6 +243,9 @@
             "description": "Your <b>Attack</b> has a chance to hit <b>2</b> times.",
             "effects": [
                 {"text": "Double Strike Chance:", "common" : "+5%", "rare" : "+8%", "epic" : "+10%", "heroic" : "+13%"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeWeaponBoon", "ApolloWeaponBoon", "DemeterWeaponBoon", "HephaestusWeaponBoon", "HeraWeaponBoon", "HestiaWeaponBoon", "PoseidonWeaponBoon", "ZeusWeaponBoon", "AresWeaponBoon"]}
             ]
         },
         "ElementalRallyBoon" : {
@@ -225,6 +254,9 @@
             "description": "While you have at least <b>3 Fire</b>, whenever you take damage, restore some <b>Health</b>.",
             "effects": [
                 {"text": "Damage Recovered (over 5 Sec.):", "infusion" : "30%"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["2 Fire"]}
             ]
         },
         "DoubleExManaBoon" : {
@@ -233,6 +265,11 @@
             "description": "Your <b>Omega Attack</b> and <b>Omega Special</b> fire <b>2</b> times, but use more <b>Magick</b>.",
             "effects": [
                 {"text": "Omega Move Cost:", "legendary" : "+20"}
+            ],
+            "requirements": [
+                {"type": "Apollo", "items": ["ApolloWeaponBoon", "ApolloSpecialBoon"]},
+                {"type": "Apollo", "items": ["ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]},
+                {"type": "Apollo", "items": ["DoubleStrikeChanceBoon", "ApolloCastAreaBoon", "ApolloBlindBoon", "ApolloExCastBoon"]}
             ]
         },
         "DoubleExManaBoon_Torch" : {
@@ -296,6 +333,9 @@
             "description": "Your <b>Omega Cast</b> also creates a <b>Blade Rift</b> in the binding circle.",
             "effects": [
                 {"text": "Rift Damage (every 1 Sec.):", "common" : "30", "rare" : "40", "epic" : "50", "heroic" : "60"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "RendBloodDropBoon" : {
@@ -304,6 +344,9 @@
             "description": "Whenever foes with <b>Wounds</b> take damage, they may spill <b>Plasma</b>.",
             "effects": [
                 {"text": "Chance of Plasma:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon"]}
             ]
         },
         "AresStatusDoubleDamageBoon" : {
@@ -312,6 +355,9 @@
             "description": "Foes with <b>Wounds</b> may suffer <b>200%</b> damage when struck.",
             "effects": [
                 {"text": "Double Damage Chance:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon"]}
             ]
         },
         "BloodDropRevengeBoon" : {
@@ -352,6 +398,9 @@
             "description": "While you have at least <b>8 Earth</b>, any of your damaging effects from Olympians are stronger.",
             "effects": [
                 {"text": "Olympian Bonus Damage:", "infusion" : "+50%"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["4 Earth"]}
             ]
         },
         "DoubleBloodDropBoon" : {
@@ -360,6 +409,11 @@
             "description": "Any <b>Plasma</b> spilled has improved potency and is drawn to you automatically.",
             "effects": [
                 {"text": "Bonus Move & Strike Speed:", "legendary" : "+100%"}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon", "AresCastBoon", "AresSprintBoon"]},
+                {"type": "Ares", "items": ["AresManaBoon", "BloodDropRevengeBoon", "RendBloodDropBoon"]},
+                {"type": "Ares", "items": ["AresExCastBoon", "AresStatusDoubleDamageBoon", "MissingHealthCritBoon", "LowHealthLifestealBoon", "OmegaDelayedDamageBoon"]}
             ]
         },
 
@@ -446,6 +500,9 @@
             "description": "Your <b>Omega Attack</b> deals more damage, but uses <b>+10 Magick</b>.",
             "effects": [
                 {"text": "Omega Attack Damage:", "common" : "+50%", "rare" : "+75%", "epic" : "+100%", "heroic" : "+125%"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeWeaponBoon", "ApolloWeaponBoon", "DemeterWeaponBoon", "HephaestusWeaponBoon", "HeraWeaponBoon", "HestiaWeaponBoon", "PoseidonWeaponBoon", "ZeusWeaponBoon", "AresWeaponBoon"]}
             ]
         },
         "CastAttachBoon" : {
@@ -454,6 +511,9 @@
             "description": "Your <b>Omega Cast</b> deals more damage. If you are in the binding circle, the bonus is doubled.",
             "effects": [
                 {"text": "Omega Cast Bonus Damage:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "RootDurationBoon" : {
@@ -462,6 +522,9 @@
             "description": "Your <b>Freeze</b> effects last longer.",
             "effects": [
                 {"text": "Freeze Duration:", "common" : "+2 Sec.", "rare" : "+3 Sec.", "epic" : "+4 Sec.", "heroic" : "+5 Sec."}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon"]}
             ]
         },
         "ElementalDamageCapBoon" : {
@@ -470,6 +533,9 @@
             "description": "While you have at least <b>6 Water</b>, whenever you would take at least <b>20</b> damage, take less.",
             "effects": [
                 {"text": "Heavy Damage Reduction:", "infusion" : "-10"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["4 Water"]}
             ]
         },
         "InstantRootKill" : {
@@ -478,6 +544,11 @@
             "description": "<b>Freeze</b>-afflicted foes shatter at <b>10% Health</b>, dealing damage in the area.",
             "effects": [
                 {"text": "Shatter Area Damage:", "legendary" : "100"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon"]},
+                {"type": "Demeter", "items": ["PlantHealthBoon", "ReserveManaHitShieldBoon", "BoonGrowthBoon"]},
+                {"type": "Demeter", "items": ["SlowExAttackBoon", "RootDurationBoon", "CastAttachBoon"]}
             ]
         },
 
@@ -532,6 +603,9 @@
             "description": "Your blast effects from <b>Hephaestus</b> deal more damage and are <b>50%</b> larger.",
             "effects": [
                 {"text": "Bonus Blast Damage:", "common" : "+75", "rare" : "+100", "epic" : "+125", "heroic" : "+150"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]}
             ]
         },
         "AntiArmorBoon" : {
@@ -580,6 +654,9 @@
             "description": "Your blast effects from <b>Hephaestus</b> also inflict <b>Glow</b> on foes.",
             "effects": [
                 {"text": "Glow Bonus Damage:", "common" : "+15%", "rare" : "+19%", "epic" : "+25%", "heroic" : "+26%"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]}
             ]
         },
         "ElementalDamageBoon" : {
@@ -588,6 +665,9 @@
             "description": "Your <b>Attack</b> and <b>Special</b> deal more damage for each <b>Earth</b> you have.",
             "effects": [
                 {"text": "Damage per Earth Boon:", "infusion" : "+5%"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["2 Earth"]}
             ]
         },
         "WeaponUpgradeBoon" : {
@@ -596,6 +676,11 @@
             "description": "Your <b>Aspect</b> of the <b>Nocturnal Arms</b> is even stronger.",
             "effects": [
                 {"text": "Aspect Bonus Ranks:", "legendary" : "+1"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]},
+                {"type": "Hephaestus", "items": ["HeavyArmorBoon", "ArmorBoon", "EncounterStartDefenseBuffBoon"]},
+                {"type": "Hephaestus", "items": ["MassiveDamageBoon", "AntiArmorBoon", "MassiveKnockupBoon"]}
             ]
         },
 
@@ -658,6 +743,9 @@
             "description": "Whenever <b>Hitch</b>-afflicted foes are slain, damage all other <b>Hitch</b>-afflicted foes.",
             "effects": [
                 {"text": "Hitch Death Damage:", "common" : "40", "rare" : "60", "epic" : "80", "heroic" : "100"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon"]}
             ]
         },
         "BoonDecayBoon" : {
@@ -674,6 +762,9 @@
             "description": "Your <b>Hitch</b> effects deal more damage and last <b>+5 Sec.</b>",
             "effects": [
                 {"text": "Hitch Damage:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon"]}
             ]
         },
         "SpawnCastDamageBoon" : {
@@ -682,6 +773,9 @@
             "description": "Your <b>Casts</b> damage any foes as they join the <b>Encounter</b>, wherever they appear.",
             "effects": [
                 {"text": "On-Spawn Damage:", "common" : "60", "rare" : "80", "epic" : "100", "heroic" : "120"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "CommonGlobalDamageBoon" : {
@@ -706,6 +800,12 @@
             "description": "While you have at least <b>2 Earth, Water, Air and Fire Elements</b>, all your <b>Common Boons</b> gain <b>Rarity</b>.",
             "effects": [
                 {"text": "Rarity Gained:", "infusion" : "Rare"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["1 Air"]},
+                {"type": "Elements", "items": ["1 Earth"]},
+                {"type": "Elements", "items": ["1 Fire"]},
+                {"type": "Elements", "items": ["1 Water"]}
             ]
         },
         "AllElementalBoon" : {
@@ -714,6 +814,11 @@
             "description": "Gain <b>Earth Water Air and Fire Elements</b>, and <b>1 Infusion Boon</b> for each.",
             "effects": [
                 {"text": "Essences Gained per Element:", "legendary" : "+1"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon"]},
+                {"type": "Hera", "items": ["BoonDecayBoon", "CommonGlobalDamageBoon", "OmegaHeraProjectileBoon"]},
+                {"type": "Hera", "items": ["DamageSharePotencyBoon", "SpawnCastDamageBoon"]}
             ]
         },
 
@@ -768,6 +873,9 @@
             "description": "Whenever you inflict <b>Scorch</b> on a foe for the first time, inflict more.",
             "effects": [
                 {"text": "First-Time Scorch Damage:", "common" : "+80", "rare" : "+120", "epic" : "+160", "heroic" : "+200"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]}
             ]
         },
         "CastProjectileBoon" : {
@@ -800,6 +908,9 @@
             "description": "Gain a chance to <b>Dodge</b>, which is doubled against <b>Scorch</b>-afflicted foes.",
             "effects": [
                 {"text": "Bonus Dodge Chance:", "common" : "+4%", "rare" : "+5%", "epic" : "+6%", "heroic" : "+7%"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]}
             ]
         },
         "BurnStackBoon" : {
@@ -808,6 +919,9 @@
             "description": "Your <b>Scorch</b> effects deal damage faster.",
             "effects": [
                 {"text": "Scorch Damage Rate:", "common" : "+50%", "rare" : "+75%", "epic" : "+100%", "heroic" : "+125%"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]}
             ]
         },
         "AloneDamageBoon" : {
@@ -824,6 +938,9 @@
             "description": "Your <b>Attacks</b> and <b>Specials</b> gain <b>Power</b> the more <b>Fire</b> you have.",
             "effects": [
                 {"text": "Power per Fire Boon:", "infusion" : "+2"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["2 Fire"]}
             ]
         },
         "BurnSprintBoon" : {
@@ -832,6 +949,11 @@
             "description": "Your <b>Casts</b> destroy many foes' ranged shots, and inflict <b>Scorch</b> on the attacking foes.",
             "effects": [
                 {"text": "Scorch Damage (every 3 Sec.):", "legendary" : "400"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaCastBoon"]},
+                {"type": "Hestia", "items": ["BurnExplodeBoon", "BurnArmorBoon", "BurnStackBoon", "OmegaZeroBurnBoon"]},
+                {"type": "Hestia", "items": ["CastProjectileBoon", "FireballManaSpecialBoon"]}
             ]
         },
 
@@ -918,6 +1040,9 @@
             "description": "Your splash effects from <b>Poseidon</b> also inflict <b>Froth</b>, and <b>Froth</b> deals more damage.",
             "effects": [
                 {"text": "Froth Damage:", "common" : "+20%", "rare" : "+50%", "epic" : "+80%", "heroic" : "+110%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon"]}
             ]
         },
         "PoseidonExCastBoon" : {
@@ -926,6 +1051,9 @@
             "description": "Your <b>Omega Cast</b> gains <b>Power</b> and knocks foes away.",
             "effects": [
                 {"text": "Omega Cast Power:", "common" : "+150", "rare" : "+200", "epic" : "+250", "heroic" : "+300"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "OmegaPoseidonProjectileBoon" : {
@@ -942,6 +1070,9 @@
             "description": "Gain <b>Health</b> for each <b>Water</b> you have.",
             "effects": [
                 {"text": "Max Life per Water Boon:", "infusion" : "+15"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["2 Water"]}
             ]
         },
         "AmplifyConeBoon" : {
@@ -950,6 +1081,11 @@
             "description": "Your splash effects from <b>Poseidon</b> are larger and deal bonus damage to <b>Guardians</b>.",
             "effects": [
                 {"text": "Splash Damage vs. Guardians:", "legendary" : "+200%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon"]},
+                {"type": "Poseidon", "items": ["PoseidonSprintBoon", "PoseidonManaBoon", "PoseidonExCastBoon"]},
+                {"type": "Poseidon", "items": ["EncounterStartOffenseBuffBoon", "OmegaPoseidonProjectileBoon", "PoseidonStatusBoon", "FocusDamageShaveBoon"]}
             ]
         },
 
@@ -1020,6 +1156,9 @@
             "description": "Hold <b>Cast</b> to aim where the binding circle appears. Foes within are struck by lightning.",
             "effects": [
                 {"text": "Bolt Damage:", "common" : "50", "rare" : "70", "epic" : "90", "heroic" : "110"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": ["AphroditeCastBoon", "ApolloCastBoon", "DemeterCastBoon", "HephaestusCastBoon", "HeraCastBoon", "HestiaCastBoon", "PoseidonCastBoon", "ZeusCastBoon", "AresCastBoon"]}
             ]
         },
         "FocusLightningBoon" : {
@@ -1036,6 +1175,9 @@
             "description": "Your lightning bolt effects may strike <b>2</b> more times.",
             "effects": [
                 {"text": "Bonus Bolt Chance:", "common" : "10%", "rare" : "15%", "epic" : "20%", "heroic" : "25%"}
+            ],
+            "requirements": [
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoltBoon", "BoltRetaliateBoon", "CastAnywhereBoon"]}
             ]
         },
         "EchoExpirationBoon" : {
@@ -1044,6 +1186,9 @@
             "description": "Damage from <p>Omega Moves</p> immediately activates <p>Blitz</p> effects and makes them stronger.",
             "effects": [
                 {"text": "Omega-Blitz Bonus Damage:", "common" : "+30%", "rare" : "+40%", "epic" : "+50%", "heroic" : "+60%"}
+            ],
+            "requirements": [
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon"]}
             ]
         },
         "LightningDebuffGeneratorBoon" : {
@@ -1052,6 +1197,9 @@
             "description": "Your chain-lightning deals more damage and bounces up to +3 times.",
             "effects": [
                 {"text": "Chain-Lightning Damage:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
+            ],
+            "requirements": [
+                {"type": "Zeus", "items": ["FocusLightningBoon"]}
             ]
         },
         "ElementalDamageFloorBoon" : {
@@ -1060,6 +1208,9 @@
             "description": "While you have at least <b>5 Air</b>, you can never deal less damage than the limit.",
             "effects": [
                 {"text": "Min Damage per Hit:", "infusion" : "50"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["3 Air"]}
             ]
         },
         "SpawnKillBoon" : {
@@ -1068,6 +1219,11 @@
             "description": "Whenever you first deal damage to susceptible foes, you may destroy them outright.",
             "effects": [
                 {"text": "Instant Destruction Chance:", "legendary" : "25%"}
+            ],
+            "requirements": [
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoon"]},
+                {"type": "Zeus", "items": ["FocusLightningBoon", "ZeusManaBoltBoon", "CastAnywhereBoon", "BoltRetaliateBoon"]},
+                {"type": "Zeus", "items": ["EchoExpirationBoon", "DoubleBoltBoon", "LightningDebuffGeneratorBoon"]}
             ]
         },
 
@@ -1077,6 +1233,10 @@
             "description": "Whenever you <b>Sprint</b> into foes with <b>Blitz</b>, the effect strikes right away for more damage.",
             "effects": [
                 {"text": "Bonus Blitz Damage:", "duo" : "+80%"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon", "AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon"]}
             ]
         },
         "CharmCrowdBoon": {
@@ -1085,6 +1245,10 @@
             "description": "As long as multiple foes are in an <b>Encounter</b>, automatically inflict <b>Charm</b> on <b>1</b> of them.",
             "effects": [
                 {"text": "Min Foes for Auto-Charm:", "duo" : "2"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon"]},
+                {"type": "Aphrodite", "items": ["AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]}
             ]
         },
         "AllCloseBoon": {
@@ -1093,6 +1257,10 @@
             "description": "You take less damage from nearby foes. <b>Boons</b> of <b>Aphrodite</b> treats all foes as nearby.",
             "effects": [
                 {"text": "Damage Resistance:", "duo" : "+15%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon", "PoseidonCastBoon", "PoseidonSprintBoon", "PoseidonManaBoon"]},
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon"]}
             ]
         },
         "MaxHealthDamageBoon": {
@@ -1101,6 +1269,10 @@
             "description": "You deal more damage the more <b>Health</b> you have.",
             "effects": [
                 {"text": "Bonus Damage per 50 Life:", "duo" : "+10%"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterManaBoon", "DemeterSprintBoon", "PlantHealthBoon"]},
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon", "AphroditeManaBoon", "AphroditeSprintBoon", "DoorHealToFullBoon"]}
             ]
         },
         "ManaBurstCountBoon": {
@@ -1109,6 +1281,10 @@
             "description": "Whenever you create <b>Heartthrobs</b>, create more.",
             "effects": [
                 {"text": "Bonus Heartthrobs:", "duo" : "+2"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["ManaBurstBoon"]},
+                {"type": "Apollo", "items": ["ApolloWeaponBoon", "ApolloSpecialBoon", "ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]}
             ]
         },
         "BurnRefreshBoon": {
@@ -1117,6 +1293,10 @@
             "description": "While foes are <b>Weak</b>, any <b>Scorch</b> they have does not diminish as it deals damage.",
             "effects": [
                 {"text": "Scorch Duration on Weak Foes:", "duo" : "∞"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]},
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]}
             ]
         },
         "SlamManaBurstBoon": {
@@ -1125,6 +1305,10 @@
             "description": "Your blast effects from <b>Hephaestus</b> also create a <b>Heartthrob</b>.",
             "effects": [
                 {"text": "Heartthrob Area Damage:", "duo" : "120"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon", "AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]},
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]}
             ]
         },
         "BloodManaBurstBoon": {
@@ -1133,6 +1317,10 @@
             "description": "Whenever you collect a <b>Plasma</b>, create a <b>Heartthrob</b>.",
             "effects": [
                 {"text": "Chance of Heartthrob:", "duo" : "25%"}
+            ],
+            "requirements": [
+                {"type": "Aphrodite", "items": ["AphroditeWeaponBoon", "AphroditeSpecialBoon", "AphroditeCastBoon", "AphroditeSprintBoon", "AphroditeManaBoon"]},
+                {"type": "Ares", "items": ["AresManaBoon", "BloodDropRevengeBoon", "RendBloodDropBoon"]}
             ]
         },
         "ApolloSecondStageCastBoon": {
@@ -1141,6 +1329,10 @@
             "description": "You can <b>Channel +30 Magick</b> into your <b>Omega Cast</b> to repeatedly strike foes with lightning bolts.",
             "effects": [
                 {"text": "Bolt Damage (every 0.13 Sec.):", "duo" : "20"}
+            ],
+            "requirements": [
+                {"type": "Apollo", "items": ["ApolloExCastBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon"]}
             ]
         },
         "RaiseDeadBoon": {
@@ -1149,6 +1341,10 @@
             "description": "In each <b>Encounter</b>, the first foe you slay returns to fight for you.",
             "effects": [
                 {"text": "Servant Damage:", "duo" : "+200%"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraCastBoon", "HeraSprintBoon", "HeraManaBoon"]},
+                {"type": "Apollo", "items": ["ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]}
             ]
         },
         "PoseidonSplashSprintBoon": {
@@ -1157,6 +1353,11 @@
             "description": "Your <b>Sprint</b> creates a watery globe behind you, which surges ahead once you stop.",
             "effects": [
                 {"text": "Max Blast Damage (after 2 Sec.):", "duo" : "300"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon", "PoseidonCastBoon", "PoseidonSprintBoon", "PoseidonManaBoon"]},
+                {"type": "Apollo", "items": ["ApolloWeaponBoon", "ApolloSpecialBoon", "ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]},
+                {"type": "Other", "items": ["ApolloSprintBoon", "PoseidonSprintBoon"]}
             ]
         },
         "StormSpawnBoon": {
@@ -1165,6 +1366,10 @@
             "description": "While standing in a <b>Gust</b>, you randomly fire gales every 0.3 Sec.",
             "effects": [
                 {"text": "Gale Damage (every 0.5 Sec.):", "duo" : "70"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterSprintBoon", "CastNovaBoon"]},
+                {"type": "Apollo", "items": ["ApolloWeaponBoon", "ApolloSpecialBoon", "ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]}
             ]
         },
         "CoverRegenerationBoon": {
@@ -1173,6 +1378,10 @@
             "description": "Whenever you <b>Dodge</b> or <b>Daze</b> causes a foe to miss, restore some <b>Health</b>.",
             "effects": [
                 {"text": "Life Restored per Evasion:", "duo" : "10"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon", "HestiaSprintBoon", "HestiaManaBoon"]},
+                {"type": "Apollo", "items": ["ApolloCastBoon", "ApolloSprintBoon", "ApolloRetaliateBoon", "BlindChanceBoon"]}
             ]
         },
         "BlindClearBoon": {
@@ -1181,6 +1390,10 @@
             "description": "Your blast effects from <b>Hephaestus</b> clear Daze and deal more damage if they do.",
             "effects": [
                 {"text": "Bonus Blast Damage:", "duo" : "300"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]},
+                {"type": "Apollo", "items": ["ApolloCastBoon", "ApolloSprintBoon", "ApolloRetaliateBoon", "BlindChanceBoon"]}
             ]
         },
         "DoubleSwordBoon": {
@@ -1189,6 +1402,10 @@
             "description": "Your falling blades from <b>Ares</b> drop <b>+1</b> time in succession and deal damage in a larger area.",
             "effects": [
                 {"text": "Blade Area of Effect:", "duo" : "+50%"}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresCastBoon", "AresSprintBoon", "OmegaDelayedDamageBoon"]},
+                {"type": "Apollo", "items": ["ApolloWeaponBoon", "ApolloSpecialBoon", "ApolloCastBoon", "ApolloSprintBoon", "ApolloManaBoon"]}
             ]
         },
         "SelfCastBoon": {
@@ -1197,6 +1414,10 @@
             "description": "Your <b>Omega Cast</b> is stronger and follows you, even as you start to <b>Channel</b> it.",
             "effects": [
                 {"text": "Omega Cast Damage:", "duo" : "+100%"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon", "DemeterSprintBoon", "DemeterManaBoon"]},
+                {"type": "Ares", "items": ["AresCastBoon", "AresExCastBoon"]}
             ]
         },
         "AutoRevengeBoon": {
@@ -1205,6 +1426,11 @@
             "description": "Inflicting <b>Wounds</b>, occasionally also inflicts all your 'after you take damage' effects.",
             "effects": [
                 {"text": "Recharge Time per Foe:", "duo" : "6 Sec."}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoon"]},
+                {"type": "Other", "items": ["BloodDropRevengeBoon", "ApolloRetaliateBoon", "BoltRetaliateBoon"]}
             ]
         },
         "BloodRetentionBoon": {
@@ -1213,6 +1439,10 @@
             "description": "Whenever you exit a <b>Location</b>, keep some of your <b>Plasma</b> bonuses.",
             "effects": [
                 {"text": "Max Plasma Bonus Retained:", "duo" : "20"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon", "HeraManaBoon"]},
+                {"type": "Ares", "items": ["AresManaBoon", "BloodDropRevengeBoon", "RendBloodDropBoon"]}
             ]
         },
         "RapidSwordBoon": {
@@ -1221,6 +1451,10 @@
             "description": "Your falling blades from <b>Ares</b> fall immediately and deal more damage.",
             "effects": [
                 {"text": "Blade Bonus Damage:", "duo" : "+25"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HestiaCastBoon", "HephaestusSprintBoon", "HestiaManaBoon"]},
+                {"type": "Ares", "items": ["AresCastBoon", "AresSprintBoon", "OmegaDelayedDamageBoon"]}
             ]
         },
         "DoubleSplashBoon": {
@@ -1229,6 +1463,10 @@
             "description": "Your splash effects from <b>Poseidon</b> may hit <b>2</b> times (and take the color of the River Styx).",
             "effects": [
                 {"text": "Double Splash Chance:", "duo" : "25%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon"]},
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon", "AresCastBoon", "AresSprintBoon", "AresManaBoon"]}
             ]
         },
         "FireballRendBoon": {
@@ -1237,6 +1475,10 @@
             "description": "Your fireball effects from <b>Hestia</b> inflict <b>Wounds</b> with even greater <b>Power</b>.",
             "effects": [
                 {"text": "Fireball Wounds Bonus Power:", "duo" : "+250"}
+            ],
+            "requirements": [
+                {"type": "Ares", "items": ["AresWeaponBoon", "AresSpecialBoon", "AresCastBoon", "AresSprintBoon", "AresManaBoon"]},
+                {"type": "Hestia", "items": ["FireballManaSpecialBoon", "CastProjectileBoon"]}
             ]
         },
         "RootStrikeBoon": {
@@ -1245,6 +1487,10 @@
             "description": "Your <b>Freeze</b> effects also cause lightning bolts to repeatedly strike afflicted foes.",
             "effects": [
                 {"text": "Lightning Damage (every 0.5 Sec.):", "duo" : "30"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoon"]}
             ]
         },
         "KeepsakeLevelBoon": {
@@ -1253,6 +1499,10 @@
             "description": "Your <b>Keepsakes</b> are stronger this night (if possible).",
             "effects": [
                 {"text": "Bonus Keepsake Ranks:", "duo" : "+1"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon", "HeraManaBoon"]},
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon", "DemeterSprintBoon", "DemeterManaBoon"]}
             ]
         },
         "GoodStuffBoon": {
@@ -1261,6 +1511,11 @@
             "description": "Your <b>Boon(s)</b> in the leftmost column gain <b>Levels</b> spread across however many you got.",
             "effects": [
                 {"text": "Total Bonus Lv. for Main Boon(s):", "duo" : "+8"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon", "PoseidonCastBoon", "PoseidonSprintBoon", "PoseidonManaBoon"]},
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon", "DemeterSprintBoon", "DemeterManaBoon"]},
+                {"type": "Other", "items": ["RoomRewardBonusBoon", "DoubleRewardBoon", "BoonGrowthBoon", "PlantHealthBoon"]}
             ]
         },
         "BurnConsumeBoon": {
@@ -1269,6 +1524,10 @@
             "description": "Whenever you inflict <b>Freeze</b>, on a foe with <b>Scorch</b>, deal damage and remove <b>Scorch</b>.",
             "effects": [
                 {"text": "Damage from Scorch:", "duo" : "200%"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon"]},
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]}
             ]
         },
         "ClearRootBoon": {
@@ -1277,6 +1536,10 @@
             "description": "Your blast effects from <b>Hephaestus</b> deal more damage to <b>Freeze</b>-afflicted foes.",
             "effects": [
                 {"text": "Bonus Blast Damage:", "duo" : "+50%"}
+            ],
+            "requirements": [
+                {"type": "Demeter", "items": ["DemeterWeaponBoon", "DemeterSpecialBoon", "DemeterCastBoon"]},
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]}
             ]
         },
         "ManaShieldBoon": {
@@ -1285,6 +1548,10 @@
             "description": "Automatically use <b>Magick</b> to resist up to <b>30%</b> of any damage.",
             "effects": [
                 {"text": "Magick Cost per Damage Point:", "duo" : "10"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["DamageShareRetaliateBoon", "LinkedDeathDamageBoon", "DamageSharePotencyBoon", "SpawnCastDamageBoon", "OmegaHeraProjectileBoon"]},
+                {"type": "Hephaestus", "items": ["MassiveDamageBoon", "AntiArmorBoon", "HeavyArmorBoon", "ArmorBoon", "EncounterStartDefenseBuffBoon", "ManaToHealthBoon", "MassiveKnockupBoon"]}
             ]
         },
         "ReboundingSparkBoon": {
@@ -1293,6 +1560,10 @@
             "description": "Your chain-lightning can bounce off of you and deals increasing damage to foes.",
             "effects": [
                 {"text": "Damage per Bounce:", "duo" : "+15%"}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusCastBoon", "HephaestusSprintBoon", "HephaestusManaBoon"]},
+                {"type": "Zeus", "items": ["FocusLightningBoon"]}
             ]
         },
         "MassiveCastBoon": {
@@ -1301,6 +1572,10 @@
             "description": "Any <b>Boon</b> effects that recharge overtime recharge faster.",
             "effects": [
                 {"text": "Recharge Speed:", "duo" : "+35%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon", "PoseidonCastBoon", "PoseidonSprintBoon", "PoseidonManaBoon"]},
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]}
             ]
         },
         "DoubleMassiveAttackBoon": {
@@ -1309,6 +1584,10 @@
             "description": "If you use your blast effects from <b>Hephaestus</b> just after they recharge, they fire <b>2</b> times.",
             "effects": [
                 {"text": "Double Blast Timing:", "duo" : "2 Sec."}
+            ],
+            "requirements": [
+                {"type": "Hephaestus", "items": ["HephaestusWeaponBoon", "HephaestusSpecialBoon", "HephaestusSprintBoon"]},
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon", "HestiaSprintBoon", "HestiaManaBoon"]}
             ]
         },
         "SuperSacrificeBoonHera": {
@@ -1317,6 +1596,10 @@
             "description": "Give up all your <b>Boons</b> of <b>Zeus</b>. For each, raise <b>Levels</b> for all your <b>Boons</b> of <b>Hera</b>.",
             "effects": [
                 {"text": "Bonus Lv. per Zeus Boon:", "duo" : "+4"}
+            ],
+            "requirements": [
+                {"type": "Zeus", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon", "HeraManaBoon"]},
+                {"type": "Hera", "items": ["ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoon"]}
             ]
         },
         "MoneyDamageBoon": {
@@ -1325,6 +1608,11 @@
             "description": "Your effects from <b>Fine Line</b> and <b>Ocean Swell</b> have a chance to fire 2 times.",
             "effects": [
                 {"text": "Bonus Fire Chance:", "duo" : "+35%"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "OmegaHeraProjectileBoon"]},
+                {"type": "Poseidon", "items": ["PoseidonWeaponBoon", "PoseidonSpecialBoon", "PoseidonCastBoon", "OmegaPoseidonProjectileBoon"]},
+                {"type": "Other", "items": ["OmegaHeraProjectileBoon", "OmegaPoseidonProjectileBoon"]}
             ]
         },
         "ManaRestoreDamageBoon": {
@@ -1333,6 +1621,10 @@
             "description": "Whenever you restore <b>Magick</b> during <b>Encounters</b>, damage all <b>Hitch</b>-afflicted foes.",
             "effects": [
                 {"text": "Damage from Magick Restored:", "duo" : "500% (every 0.2 Sec.)"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraWeaponBoon", "HeraSpecialBoon", "HeraCastBoon", "HeraSprintBoon"]},
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon", "HestiaSprintBoon", "HestiaManaBoon"]}
             ]
         },
         "EchoBurnBoon": {
@@ -1341,6 +1633,10 @@
             "description": "Your <b>Blitz</b> effects also inflict <b>Scorch</b> whenever they deal damage.",
             "effects": [
                 {"text": "Scorch Damage:", "duo" : "160"}
+            ],
+            "requirements": [
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon"]}
             ]
         },
         "SteamBoon": {
@@ -1349,6 +1645,10 @@
             "description": "If foes with <b>Froth</b> are struck by your fire effects from <b>Hestia</b>, they are engulfed in <b>Steam</b>.",
             "effects": [
                 {"text": "Steam Damage (every 0.2 Sec.):", "duo" : "20"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonCastBoon", "PoseidonStatusBoon"]},
+                {"type": "Hestia", "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon", "OmegaZeroBurnBoon", "FireballManaSpecialBoon", "CastProjectileBoon"]}
             ]
         },
         "LightningVulnerabilityBoon": {
@@ -1357,6 +1657,10 @@
             "description": "Your lightning deals more damage to <b>Froth</b>-afflicted foes.",
             "effects": [
                 {"text": "Bonus Lightning Damage:", "duo" : "+30%"}
+            ],
+            "requirements": [
+                {"type": "Poseidon", "items": ["PoseidonCastBoon", "PoseidonStatusBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "BoltRetaliateBoon", "CastAnywhereBoon"]}
             ]
         },
         "SuperSacrificeBoonZeus": {
@@ -1365,6 +1669,10 @@
             "description": "Give up all your <b>Boons</b> of <b>Hera</b>. For each, raise <b>Levels</b> for all your <b>Boons</b> of <b>Zeus</b>.",
             "effects": [
                 {"text": "Bonus Lv. per Hera Boon:", "duo" : "+4"}
+            ],
+            "requirements": [
+                {"type": "Hera", "items": ["HeraCastBoon", "HeraManaBoon", "HeraSprintBoon"]},
+                {"type": "Zeus", "items": ["ZeusWeaponBoon", "ZeusSpecialBoon", "ZeusCastBoon", "ZeusSprintBoon", "ZeusManaBoon"]}
             ]
         },
 
@@ -1883,7 +2191,18 @@
             "description": "Your chance-base effects are more likely to occur, except for <b>Dodge</b> or <b>Daze</b>.",
             "effects": [
                 {"text": "Greater Chances:", "common" : "30%", "rare" : "40%", "epic" : "50%", "heroic" : "60%"}
+            ],
+            "requirements": [
+                {"type": "Other", "items": [
+                    "DoubleRewardBoon", "PoseidonCastBoon", "PoseidonStatusBoon", "BoltRetaliateBoon",
+                    "DoubleBoltBoon", "SpawnKillBoon", "BlindChanceBoon", "DoubleStrikeChanceBoon",
+                    "CritBonusBoon", "HighHealthCritBoon", "InsideCastCritBoon", "TimedCritVulnerabilityBoon",
+                    "FocusCritBoon", "DashOmegaBuffBoon", "AresManaBoon", "BloodDropRevengeBoon",
+                    "MissingHealthCritBoon", "AresStatusDoubleDamageBoon", "RendBloodDropBoon", "DoubleSplashBoon",
+                    "BloodManaBurstBoon", "MoneyDamageBoon"
+                ]}
             ]
+
         },
         "RestockBoon": {
             "gods": ["Hermes"],
@@ -1899,6 +2218,9 @@
             "description": "While you have at least <b>8 Earth</b>, <b>8 Water</b>, <b>8 Air</b>, or <b>8 Fire</b>, you deal more damage.",
             "effects": [
                 {"text": "Infused Damage:", "infusion" : "+25%"}
+            ],
+            "requirements": [
+                {"type": "Elements", "items": ["4 Earth, 4 Air, 4 Water or 4 Fire"]}
             ]
         },
         "TimeStopLastStandBoon": {
@@ -1907,6 +2229,13 @@
             "description": "Whenever you take damage, you lose <b>Gold</b> before you lose <b>Health</b>.",
             "effects": [
                 {"text": "Cost per Damage Point:", "legendary" : "-3"}
+            ],
+            "requirements": [
+                {"type": "Hermes", "items": [
+                    "HermesWeaponBoon", "HermesSpecialBoon", "HermesCastDiscountBoon", "SprintShieldBoon",
+                    "SorcerySpeedBoon", "DodgeChanceBoon", "SlowProjectileBoon", "MoneyMultiplierBoon",
+                    "TimedKillBuffBoon", "RestockBoon", "LuckyBoon"
+                ]}
             ]
         },
 
@@ -2931,6 +3260,27 @@
             "rare": "Gain a random <b>Rare Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
             "epic": "Gain a random <b>Epic Chaos</b> blessing. Every <b>8</b> Encounters, replace it.",
             "heroic": "Gain a random <b>Heroic Chaos</b> blessing. Every <b>8</b> Encounters, replace it."
+        },
+        "RarifyKeepsake" : {
+            "name": "Calling Card",
+            "common": "While at the <b>Fates' Whim</b>, you can <b>Rarify</b> Olympian blessings up to <b>2</b> times this night.",
+            "rare": "While at the <b>Fates' Whim</b>, you can <b>Rarify</b> Olympian blessings up to <b>4</b> times this night.",
+            "epic": "While at the <b>Fates' Whim</b>, you can <b>Rarify</b> Olympian blessings up to <b>6</b> times this night.",
+            "heroic": "While at the <b>Fates' Whim</b>, you can <b>Rarify</b> Olympian blessings up to <b>8</b> times this night."
+        },
+        "HadesAndPersephoneKeepsake" : {
+            "name": "Jeweled Pom",
+            "common": "While at the <b>Fates' Whim</b>, gain a random <b>Hades</b> blessing and most <b>Boons</b> have <b>+1 Levels.</b>",
+            "rare": "While at the <b>Fates' Whim</b>, gain a random <b>Hades</b> blessing and most <b>Boons</b> have <b>+2 Levels.</b>",
+            "epic": "While at the <b>Fates' Whim</b>, gain a random <b>Hades</b> blessing and most <b>Boons</b> have <b>+3 Levels.</b>",
+            "heroic": "While at the <b>Fates' Whim</b>, gain a random <b>Hades</b> blessing and most <b>Boons</b> have <b>+4 Levels.</b>"
+        },
+        "GoldifyKeepsake" : {
+            "name": "Time Piece",
+            "common": "While at the <b>Fates' Whim</b>, you can purge most rewards for <b>Gold</b> up to <b>2</b> times this night.",
+            "rare": "While at the <b>Fates' Whim</b>, you can purge most rewards for <b>Gold</b> up to <b>3</b> times this night.",
+            "epic": "While at the <b>Fates' Whim</b>, you can purge most rewards for <b>Gold</b> up to <b>4</b> times this night.",
+            "heroic": "While at the <b>Fates' Whim</b>, you can purge most rewards for <b>Gold</b> up to <b>5</b> times this night."
         }
     },
     "hexes" : {
@@ -2995,6 +3345,402 @@
             "description": "Your <b>Hex</b> inflicts <b>Shine</b> and deals <b>50</b> damage to a random surrounding foe, <b>8</b> times.",
             "effects": [
                 {"text": "Ready After:", "value" : "60 Magick"}
+            ]
+        }
+    },
+    "vows": {
+        "BossDifficultyShrineUpgrade": {
+            "name": "Vow of Rivals",
+            "descriptions": [
+                "The <b>Guardian</b> of the first <b>0 Regions</b> shall be stronger in various ways.",
+                "The <b>Guardian</b> of the first <b>1 Region</b> shall be stronger in various ways.",
+                "The <b>Guardian</b> of the first <b>2 Regions</b> shall be stronger in various ways.",
+                "The <b>Guardian</b> of the first <b>3 Regions</b> shall be stronger in various ways.",
+                "The <b>Guardian</b> of the first <b>4 Regions</b> shall be stronger in various ways."
+            ]
+        },
+        "EnemyDamageShrineUpgrade": {
+            "name": "Vow of Pain",
+            "descriptions": [
+                "All foes deal <b>+20%</b> damage.",
+                "All foes deal <b>+40%</b> damage.",
+                "All foes deal <b>+60%</b> damage.",
+                "All foes deal <b>+100%</b> damage."
+            ]
+        },
+        "EnemyHealthShrineUpgrade": {
+            "name": "Vow of Grit",
+            "descriptions": [
+                "All foes have <b>+0% Health</b>.",
+                "All foes have <b>+10% Health</b>.",
+                "All foes have <b>+20% Health</b>.",
+                "All foes have <b>+30% Health</b>."
+            ]
+        },
+        "EnemyShieldShrineUpgrade": {
+            "name": "Vow of Wards",
+            "descriptions": [
+                "All foes have <b>0 Barriers</b>.",
+                "All foes have <b>1 Barrier</b>.",
+                "All foes have <b>2 Barriers</b>."
+            ]
+        },
+        "EnemySpeedShrineUpgrade": {
+            "name": "Vow of Frenzy",
+            "descriptions": [
+                "All foes are <b>0%</b> faster.",
+                "All foes are <b>20%</b> faster.",
+                "All foes are <b>40%</b> faster."
+            ]
+        },
+        "EnemyCountShrineUpgrade": {
+            "name": "Vow of Hordes",
+            "descriptions": [
+                "Most <b>Encounters</b> have <b>0%</b> more foes.",
+                "Most <b>Encounters</b> have <b>20%</b> more foes.",
+                "Most <b>Encounters</b> have <b>40%</b> more foes.",
+                "Most <b>Encounters</b> have <b>60%</b> more foes."
+            ]
+        },
+        "NextBiomeEnemyShrineUpgrade": {
+            "name": "Vow of Menace",
+            "descriptions": [
+                "Most foes have <b>0%</b> chance to be from the next <b>Region</b> (if there is one).",
+                "Most foes have <b>10%</b> chance to be from the next <b>Region</b> (if there is one).",
+                "Most foes have <b>25%</b> chance to be from the next <b>Region</b> (if there is one)."
+            ]
+        },
+        "EnemyRespawnShrineUpgrade": {
+            "name": "Vow of Return",
+            "descriptions": [
+                "Most slain foes have <b>0%</b> chance to become a <b>Revenant</b>",
+                "Most slain foes have <b>25%</b> chance to become a <b>Revenant</b>",
+                "Most slain foes have <b>50%</b> chance to become a <b>Revenant</b>"
+            ]
+        },
+        "EnemyEliteShrineUpgrade": {
+            "name": "Vow of Fangs",
+            "descriptions": [
+                "Most foes with <b>Armor</b> also have <b>0</b> random <b>Perks</b>.",
+                "Most foes with <b>Armor</b> also have <b>1</b> random <b>Perk</b>.",
+                "Most foes with <b>Armor</b> also have <b>2</b> random <b>Perks</b>."
+            ]
+        },
+        "HealingReductionShrineUpgrade": {
+            "name": "Vow of Scars",
+            "descriptions": [
+                "Any <b>Healing</b> effects are <b>100%</b> effective.",
+                "Any <b>Healing</b> effects are <b>75%</b> effective.",
+                "Any <b>Healing</b> effects are <b>50%</b> effective.",
+                "Any <b>Healing</b> effects are <b>0%</b> effective."
+            ]
+        },
+        "ShopPricesShrineUpgrade": {
+            "name": "Vow of Debt",
+            "descriptions": [
+                "All items that cost <b>Gold</b> are <b>0%</b> more expensive.",
+                "All items that cost <b>Gold</b> are <b>40%</b> more expensive.",
+                "All items that cost <b>Gold</b> are <b>80%</b> more expensive."
+            ]
+        },
+        "MinibossCountShrineUpgrade": {
+            "name": "Vow of Shadow",
+            "descriptions": [
+                "All <b>Encounters</b> with <b>Wardens</b> contain no fewer than <b>0 Shadow Servants</b>",
+                "All <b>Encounters</b> with <b>Wardens</b> contain no fewer than <b>1 Shadow Servants</b>"
+            ]
+        },
+        "BoonSkipShrineUpgrade": {
+            "name": "Vow of Forfeit",
+            "descriptions": [
+                "The first <b>0 Boons</b> in each <b>Region</b> become <b>Red Onion</b> instead.",
+                "The first <b>1 Boon</b> in each <b>Region</b> becomes <b>Red Onion</b> instead."
+            ]
+        },
+        "BiomeSpeedShrineUpgrade": {
+            "name": "Vow of Time",
+            "descriptions": [
+                "You have <b>∞</b> to fight through each <b>Region</b> (or else...).",
+                "You have <b>09:00.00</b> to fight through each <b>Region</b> (or else...).",
+                "You have <b>07:00.00</b> to fight through each <b>Region</b> (or else...).",
+                "You have <b>05:00.00</b> to fight through each <b>Region</b> (or else...)."
+            ]
+        },
+        "LimitGraspShrineUpgrade": {
+            "name": "Vow of Void",
+            "descriptions": [
+                "You have access to <b>100%</b> of your <b>Grasp</b> for your <b>Arcana</b>.",
+                "You have access to <b>60%</b> of your <b>Grasp</b> for your <b>Arcana</b>.",
+                "You have access to <b>40%</b> of your <b>Grasp</b> for your <b>Arcana</b>.",
+                "You have access to <b>20%</b> of your <b>Grasp</b> for your <b>Arcana</b>.",
+                "You have access to <b>0%</b> of your <b>Grasp</b> for your <b>Arcana</b>."
+            ]
+        },
+        "BoonManaReserveShrineUpgrade": {
+            "name": "Vow of Hubris",
+            "descriptions": [
+                "After you choose a <b>Boon</b>, <b>Prime 0 Magick</b> for each <b>Rarity</b> greater than <b>Common</b>.",
+                "After you choose a <b>Boon</b>, <b>Prime 3 Magick</b> for each <b>Rarity</b> greater than <b>Common</b>.",
+                "After you choose a <b>Boon</b>, <b>Prime 6 Magick</b> for each <b>Rarity</b> greater than <b>Common</b>."
+            ]
+        },
+        "BanUnpickedBoonsShrineUpgrade": {
+            "name": "Vow of Denial",
+            "descriptions": [
+                "After you choose a <b>Boon</b>, <b>0</b> unpicked blessings shall not appear again this night.",
+                "After you choose a <b>Boon</b>, <b>2</b> unpicked blessings shall not appear again this night."
+            ]
+        }
+    },
+    "arcana": {
+        "ChanneledCast": {
+            "name": "The Sorceress",
+            "descriptions": [
+                "Your <b>Omega Moves</b> are 0% faster.",
+                "Your <b>Omega Moves</b> are 20% faster.",
+                "Your <b>Omega Moves</b> are 25% faster.",
+                "Your <b>Omega Moves</b> are 30% faster.",
+                "Your <b>Omega Moves</b> are 35% faster."
+            ]
+        },
+        "HealthRegen": {
+            "name": "The Wayward Son",
+            "descriptions": [
+                "After you exit a <b>Location</b>, restore <b>0 Health</b>.",
+                "After you exit a <b>Location</b>, restore <b>3 Health</b>.",
+                "After you exit a <b>Location</b>, restore <b>4 Health</b>.",
+                "After you exit a <b>Location</b>, restore <b>5 Health</b>.",
+                "After you exit a <b>Location</b>, restore <b>6 Health</b>."
+            ]
+        },
+        "LowManaDamageBonus": {
+            "name": "The Huntress",
+            "descriptions": [
+                "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+0%</b> damage.",
+                "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+30%</b> damage.",
+                "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+40%</b> damage.",
+                "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+50%</b> damage.",
+                "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+60%</b> damage."
+            ]
+        },
+        "CastCount": {
+            "name": "Eternity",
+            "descriptions": [
+                "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>0 Sec.</b>",
+                "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>0.8 Sec.</b>",
+                "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.0 Sec.</b>",
+                "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.2 Sec.</b>",
+                "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.5 Sec.</b>"
+            ]
+        },
+        "SorceryRegenUpgrade": {
+            "name": "The Moon",
+            "descriptions": [
+                "Your <b>Hex</b> also charges up automatically as though you used <b>0 Magick</b> every <b>1 Sec.</b>",
+                "Your <b>Hex</b> also charges up automatically as though you used <b>1 Magick</b> every <b>1 Sec.</b>",
+                "Your <b>Hex</b> also charges up automatically as though you used <b>2 Magick</b> every <b>1 Sec.</b>",
+                "Your <b>Hex</b> also charges up automatically as though you used <b>3 Magick</b> every <b>1 Sec.</b>",
+                "Your <b>Hex</b> also charges up automatically as though you used <b>4 Magick</b> every <b>1 Sec.</b>"
+            ]
+        },
+        "CastBuff": {
+            "name": "The Furies",
+            "descriptions": [
+                "You deal <b>+0%</b> damage to foes in your <b>Casts</b>.",
+                "You deal <b>+20%</b> damage to foes in your <b>Casts</b>.",
+                "You deal <b>+25%</b> damage to foes in your <b>Casts</b>.",
+                "You deal <b>+30%</b> damage to foes in your <b>Casts</b>.",
+                "You deal <b>+35%</b> damage to foes in your <b>Casts</b>."
+            ]
+        },
+        "BonusHealth": {
+            "name": "Persistence",
+            "descriptions": [
+                "You have <b>+0 Max Health</b> and <b>+0 Max Magick</b>.",
+                "You have <b>+20 Max Health</b> and <b>+20 Max Magick</b>.",
+                "You have <b>+30 Max Health</b> and <b>+30 Max Magick</b>.",
+                "You have <b>+40 Max Health</b> and <b>+40 Max Magick</b>.",
+                "You have <b>+50 Max Health</b> and <b>+50 Max Magick</b>."
+            ]
+        },
+        "BonusDodge": {
+            "name": "The Messenger",
+            "descriptions": [
+                "You <b>Casts</b> make you move <b>0%</b> faster.",
+                "You <b>Casts</b> momentarily make you <b>Impervious</b> and move <b>50%</b> faster.",
+                "You <b>Casts</b> momentarily make you <b>Impervious</b> and move <b>60%</b> faster.",
+                "You <b>Casts</b> momentarily make you <b>Impervious</b> and move <b>70%</b> faster.",
+                "You <b>Casts</b> momentarily make you <b>Impervious</b> and move <b>80%</b> faster."
+            ]
+        },
+        "ManaOverTime": {
+            "name": "The Unseen",
+            "descriptions": [
+                "You restore <b>0 Magick</b> every <b>1 Sec.</b>",
+                "You restore <b>6 Magick</b> every <b>1 Sec.</b>",
+                "You restore <b>8 Magick</b> every <b>1 Sec.</b>",
+                "You restore <b>10 Magick</b> every <b>1 Sec.</b>",
+                "You restore <b>12 Magick</b> every <b>1 Sec.</b>"
+            ]
+        },
+        "MagicCrit": {
+            "name": "Night",
+            "descriptions": [
+                "You have <b>+0%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>.",
+                "You have <b>+9%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>.",
+                "You have <b>+12%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>.",
+                "You have <b>+15%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>.",
+                "You have <b>+18%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>."
+            ]
+        },
+        "SprintShield": {
+            "name": "The Swift Runner",
+            "descriptions": [
+                "Your <b>Sprint</b> is <b>0%</b> faster and lets you pass right through most dangers in your way.",
+                "Your <b>Sprint</b> is <b>5%</b> faster and lets you pass right through most dangers in your way.",
+                "Your <b>Sprint</b> is <b>7%</b> faster and lets you pass right through most dangers in your way.",
+                "Your <b>Sprint</b> is <b>10%</b> faster and lets you pass right through most dangers in your way.",
+                "Your <b>Sprint</b> is <b>13%</b> faster and lets you pass right through most dangers in your way."
+            ]
+        },
+        "LastStand": {
+            "name": "Death",
+            "descriptions": [
+                "You have <b>+0 Death Defiances</b>.",
+                "You have <b>+1 Death Defiance</b>.",
+                "You have <b>+2 Death Defiances</b>.",
+                "You have <b>+3 Death Defiances</b>.",
+                "You have <b>+4 Death Defiances</b>."
+            ]
+        },
+        "MaxHealthPerRoom": {
+            "name": "The Centaur",
+            "descriptions": [
+                "You gain <b>+0 Max Health</b> and <b>+0 Max Magick</b> whenever you pass through <b>5 Locations</b>.",
+                "You gain <b>+3 Max Health</b> and <b>+3 Max Magick</b> whenever you pass through <b>5 Locations</b>.",
+                "You gain <b>+4 Max Health</b> and <b>+4 Max Magick</b> whenever you pass through <b>5 Locations</b>.",
+                "You gain <b>+5 Max Health</b> and <b>+5 Max Magick</b> whenever you pass through <b>5 Locations</b>.",
+                "You gain <b>+6 Max Health</b> and <b>+6 Max Magick</b> whenever you pass through <b>5 Locations</b>."
+            ]
+        },
+        "StatusVulnerability": {
+            "name": "Origination",
+            "descriptions": [
+                "You deal <b>+0%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>.",
+                "You deal <b>+25%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>.",
+                "You deal <b>+38%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>.",
+                "You deal <b>+50%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>.",
+                "You deal <b>+63%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>."
+            ]
+        },
+        "ChanneledBlock": {
+            "name": "The Lovers",
+            "descriptions": [
+                "You take <b>0</b> damage the first <b>0</b> times you are hit in <b>Guardian Encounters</b>.",
+                "You take <b>0</b> damage the first <b>1</b> time you are hit in <b>Guardian Encounters</b>.",
+                "You take <b>0</b> damage the first <b>2</b> times you are hit in <b>Guardian Encounters</b>.",
+                "You take <b>0</b> damage the first <b>3</b> times you are hit in <b>Guardian Encounters</b>.",
+                "You take <b>0</b> damage the first <b>4</b> times you are hit in <b>Guardian Encounters</b>."
+            ]
+        },
+        "DoorReroll": {
+            "name": "The Enchantress",
+            "descriptions": [
+                "You have <b>+0 Rerolls</b>, and can alter <b>Location Rewards</b>.",
+                "You have <b>+1 Reroll</b>, and can alter <b>Location Rewards</b>.",
+                "You have <b>+2 Rerolls</b>, and can alter <b>Location Rewards</b>.",
+                "You have <b>+3 Rerolls</b>, and can alter <b>Location Rewards</b>.",
+                "You have <b>+4 Rerolls</b>, and can alter <b>Location Rewards</b>."
+            ]
+        },
+        "StartingGold": {
+            "name": "The Boatman",
+            "descriptions": [
+                "You have <b>+0 Gold</b>",
+                "You have <b>+200 Gold</b>",
+                "You have <b>+250 Gold</b>",
+                "You have <b>+300 Gold</b>",
+                "You have <b>+350 Gold</b>"
+            ]
+        },
+        "MetaToRunUpgrade": {
+            "name": "The Artificer",
+            "descriptions": [
+                "You have <b>0<b> chances this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>.",
+                "You have <b>1<b> chance this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>.",
+                "You have <b>2<b> chances this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>.",
+                "You have <b>3<b> chances this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>.",
+                "You have <b>4<b> chances this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>."
+            ]
+        },
+        "RarityBoost": {
+            "name": "Excellence",
+            "descriptions": [
+                "Any <b>Boons</b> you find have <b>+0%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+30%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+40%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+50%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+60%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings."
+            ]
+        },
+        "BonusRarity": {
+            "name": "The Queen",
+            "descriptions": [
+                "Any <b>Boons</b> you find have <b>+0%</b> chance to include <b>Duo</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+6%</b> chance to include <b>Duo</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+8%</b> chance to include <b>Duo</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+10%</b> chance to include <b>Duo</b> blessings.",
+                "Any <b>Boons</b> you find have <b>+12%</b> chance to include <b>Duo</b> blessings."
+            ]
+        },
+        "TradeOff": {
+            "name": "The Fates",
+            "descriptions": [
+                "You have <b>+0 Rerolls</b>",
+                "You have <b>+2 Rerolls</b>",
+                "You have <b>+3 Rerolls</b>",
+                "You have <b>+4 Rerolls</b>",
+                "You have <b>+5 Rerolls</b>"
+            ]
+        },
+        "ScreenReroll": {
+            "name": "The Champions",
+            "descriptions": [
+                "You have <b>+0 Rerolls</b>, and can alter <b>Boons</b> and certain other choices.",
+                "You have <b>+1 Reroll</b>, and can alter <b>Boons</b> and certain other choices.",
+                "You have <b>+2 Rerolls</b>, and can alter <b>Boons</b> and certain other choices.",
+                "You have <b>+3 Rerolls</b>, and can alter <b>Boons</b> and certain other choices.",
+                "You have <b>+4 Rerolls</b>, and can alter <b>Boons</b> and certain other choices."
+            ]
+        },
+        "LowHealthBonus": {
+            "name": "Strength",
+            "descriptions": [
+                "While you have no <b>Death Defiance</b>, you take <b>0%</b> damage and deal <b>0%</b>.",
+                "While you have no <b>Death Defiance</b>, you take <b>-20%</b> damage and deal <b>+20%</b>.",
+                "While you have no <b>Death Defiance</b>, you take <b>-30%</b> damage and deal <b>+20%</b>.",
+                "While you have no <b>Death Defiance</b>, you take <b>-40%</b> damage and deal <b>+20%</b>.",
+                "While you have no <b>Death Defiance</b>, you take <b>-50%</b> damage and deal <b>+20%</b>."
+            ]
+        },
+        "EpicRarityBoost": {
+            "name": "Divinity",
+            "descriptions": [
+                "Any Boons you find have <b>+0%</b> chance to include <b>Epic</b> blessings.",
+                "Any Boons you find have <b>+10%</b> chance to include <b>Epic</b> blessings.",
+                "Any Boons you find have <b>+15%</b> chance to include <b>Epic</b> blessings.",
+                "Any Boons you find have <b>+20%</b> chance to include <b>Epic</b> blessings.",
+                "Any Boons you find have <b>+25%</b> chance to include <b>Epic</b> blessings."
+            ]
+        },
+        "CardDraw": {
+            "name": "Judgment",
+            "descriptions": [
+                "You activate <b>0</b> random inactive <b>Arcana Cards</b> whenever you vanquish a <b>Guardian</b>.",
+                "You activate <b>3</b> random inactive <b>Arcana Cards</b> whenever you vanquish a <b>Guardian</b>.",
+                "You activate <b>4</b> random inactive <b>Arcana Cards</b> whenever you vanquish a <b>Guardian</b>.",
+                "You activate <b>5</b> random inactive <b>Arcana Cards</b> whenever you vanquish a <b>Guardian</b>.",
+                "You activate <b>6</b> random inactive <b>Arcana Cards</b> whenever you vanquish a <b>Guardian</b>."
             ]
         }
     }

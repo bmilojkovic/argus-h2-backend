@@ -3,8 +3,11 @@ const logger = require("./argus_logger")
 
 // jwt stuff
 const jwt = require('jsonwebtoken');
-const sharedSecret = 'Gg2CUK5Ct4RU5jwqCOTKHTkcoGvoXLgtLSATggsrngc=';
-const clientId = 'sl19e3aebmadlewzt7mxfv3j3llwwv';
+
+//IMPORTANT: have the two variables below in this json file
+const secrets = require("./secrets.json"); 
+const extensionSecret = secrets.extensionSecret;
+const extensionId = secrets.extensionId;
 
 var request = require("request");
 
@@ -19,7 +22,7 @@ function buildToken(broadcasterId) {
       }
   };
 
-  const token = jwt.sign(tokenPayload, Buffer.from(sharedSecret, 'base64'));
+  const token = jwt.sign(tokenPayload, Buffer.from(extensionSecret, 'base64'));
 
   return token;
 }
@@ -39,11 +42,11 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Client-Id': clientId,
+            'Client-Id': extensionId,
             'Authorization': 'Bearer ' + jwtToken
         }
     };
-    logger.info("Broadcasting data: " + requestOptions.body)
+    logger.info("Broadcasting data: " + JSON.stringify(broadcastMessage, ' ', 2))
     request(requestOptions, function (error, response) {
         
         if (response.statusCode != 204) {

@@ -7,14 +7,16 @@ app.use(express.json());
 const { parseRunData } = require("./input_parsing");
 const { broadcastInfo } = require("./twitch_broadcast");
 
-const logger = require("./argus_logger")
+const logger = require("./argus_logger");
 const request = require("request");
 const querystring = require('querystring');
-const crypto = require("crypto")
-const fs = require("fs")
+const crypto = require("crypto");
+const fs = require("fs");
 
-const extensionId = "sl19e3aebmadlewzt7mxfv3j3llwwv"
-const apiClientSecret = "jaj66oy02as7x9kplcotsxje7lounb"
+//IMPORTANT: have the two variables below in this json file
+const secrets = require("./secrets.json"); 
+const extensionId = secrets.extensionId;
+const apiClientSecret = secrets.apiClientSecret;
 
 const tokenStoreFile = "argus_tokens.json"
 
