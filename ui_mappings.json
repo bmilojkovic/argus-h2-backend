@@ -1754,7 +1754,7 @@
             "name": "Life Tax",
             "description": "Restore <b>Health</b> for <b>1%</b> of damage you deal, until you reach the limit.",
             "effects": [
-                {"text": "Max Total Life Restored:", "common" : "100"}
+                {"text": "Max Total Life Restored:", "value" : "100"}
             ]
         },
         "HadesDeathDefianceDamageBoon": {
@@ -1762,7 +1762,7 @@
             "name": "Last Gasp",
             "description": "Deal more damage based on how many times you used <b>Death Defiance</b> this night.",
             "effects": [
-                {"text": "Damage per Death Defiance Used:", "common" : "+8%"}
+                {"text": "Damage per Death Defiance Used:", "value" : "+8%"}
             ]
         },
         "HadesCastProjectileBoon": {
@@ -1770,7 +1770,7 @@
             "name": "Howling Soul",
             "description": "Your <b>Casts</b> launch a projectile that seeks foes. The binding circle forms where it hits.",
             "effects": [
-                {"text": "Direct-Hit Damage:", "common" : "200"}
+                {"text": "Direct-Hit Damage:", "value" : "200"}
             ]
         },
         "HadesPreDamageBoon": {
@@ -1778,7 +1778,7 @@
             "name": "Old Grudge",
             "description": "In your confrontation, <b>Chronos</b> takes a burst of damage after the first <b>3 Sec.</b>",
             "effects": [
-                {"text": "Chronos Life Reduced:", "common" : "-20%"}
+                {"text": "Chronos Life Reduced:", "value" : "-20%"}
             ]
         },
         "HadesChronosDebuffBoon": {
@@ -1786,7 +1786,7 @@
             "name": "Deep Dissent",
             "description": "In your confrontation, <b>Chronos</b> summons fewer reinforcements.",
             "effects": [
-                {"text": "Chronos Foes Summoned:", "common" : "-50%"}
+                {"text": "Chronos Foes Summoned:", "value" : "-50%"}
             ]
         },
         "HadesDashSweepBoon": {
@@ -1794,7 +1794,7 @@
             "name": "Gigaros Dash",
             "description": "Your <b>Dash</b> strikes surrounding foes with a punishing sweep that inflicts <b>Scorn</b>.",
             "effects": [
-                {"text": "Sweep Damage:", "common" : "50"}
+                {"text": "Sweep Damage:", "value" : "50"}
             ]
         },
         "HadesManaUrnBoon": {
@@ -1802,7 +1802,7 @@
             "name": "Cinerary Circle",
             "description": "Whenever you use <b>60 Magick</b>, summon <b>3 Soul Urns</b> around you.",
             "effects": [
-                {"text": "Soul Urn Damage:", "common" : "200"}
+                {"text": "Soul Urn Damage:", "value" : "200"}
             ]
         },
         "HadesInvisibilityRetaliateBoon": {
@@ -1810,7 +1810,7 @@
             "name": "Unseen Ire",
             "description": "After you take damage, go <b>Dark</b> and deal more damage for the duration.",
             "effects": [
-                {"text": "Damage While Dark:", "common" : "+100%"}
+                {"text": "Damage While Dark:", "value" : "+100%"}
             ]
         },
 

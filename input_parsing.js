@@ -158,6 +158,47 @@ function parseFamiliarData(familiarData) {
   return parsedData;
 }
 
+const ExtraType = Object.freeze({
+  KEEPSAKE: "Keepsake",
+  HEX: "Hex",
+  CHAOS_CURSE: "Chaos Curse",
+  HADES: "Hades"
+})
+function prepareExtraObject(itemName, itemRarity, extraType) {
+  parsedItem = {};
+  //parsedItem["extraType"] = extraType;
+  parsedItem["codeName"] = itemName;
+  switch (extraType) {
+    case ExtraType.KEEPSAKE:
+      parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
+      parsedItem["description"] = uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
+      if (!KEEPSAKE_RARITIES.includes(itemRarity)) {
+        itemRarity = "Common";
+      }
+      parsedItem["rarity"] = itemRarity;
+      
+      break;
+    case ExtraType.HEX:
+      parsedItem["name"] = uiMappings.hexes[itemName]["name"];
+      parsedItem["description"] = uiMappings.hexes[itemName]["description"];
+      parsedItem["rarity"] = "Common";
+      break;
+    case ExtraType.CHAOS_CURSE:
+      parsedItem["name"] = uiMappings.boons[itemName]["name"];
+      parsedItem["description"] = uiMappings.boons[itemName]["description"];
+      parsedItem["rarity"] = "Common";
+      break;
+    case ExtraType.HADES:
+      parsedItem["name"] = uiMappings.boons[itemName]["name"];
+      parsedItem["description"] = uiMappings.boons[itemName]["description"];
+      parsedItem["rarity"] = "Common";
+      parsedItem["effects"] = uiMappings.boons[itemName].effects;
+      break;
+  }
+
+  return parsedItem;
+}
+
 const EMPTY_EXTRA_STRING = "NOEXTRAS";
 function parseExtraData(extraData) {
   if (extraData === EMPTY_EXTRA_STRING) {
@@ -165,6 +206,10 @@ function parseExtraData(extraData) {
   }
 
   var parsedData = [];
+
+  var foundKeepsake = null;
+  var foundHex = null;
+  var otherExtras = [];
 
   extraArray = extraData.split(" ");
 
@@ -178,34 +223,25 @@ function parseExtraData(extraData) {
     itemName = removeSuffixes(itemName); //this can happen with keepsakes
 
     if (uiMappings.keepsakes[itemName] != null) {
-      parsedItem = {};
-      parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
-      parsedItem["codeName"] = itemName;
-      if (!KEEPSAKE_RARITIES.includes(itemRarity)) {
-        itemRarity = "Common";
-      }
-      parsedItem["rarity"] = itemRarity;
-      parsedItem["description"] = uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
-      parsedItem["extraType"] = "Keepsake";
-      parsedData.push(parsedItem);
+      foundKeepsake = prepareExtraObject(itemName, itemRarity, ExtraType.KEEPSAKE);
     } else if (uiMappings.hexes[itemName] != null) {
-      parsedItem = uiMappings.hexes[itemName];
-      parsedItem["rarity"] = "Common";
-      parsedItem["codeName"] = itemName;
-      parsedItem["extraType"] = "Hex";
-      parsedData.push(parsedItem);
-    } else if (uiMappings.boons[itemName] != null && uiMappings.boons[itemName].gods[0] == "Chaos") {
-      parsedItem = uiMappings.boons[itemName];
-      parsedItem["rarity"] = "Common";
-      parsedItem["codeName"] = itemName;
-      parsedItem["extraType"] = "Chaos";
-      parsedData.push(parsedItem);
+      foundHex = prepareExtraObject(itemName, itemRarity, ExtraType.HEX);
+    } else if (Object.hasOwn(uiMappings.boons, itemName) && (uiMappings.boons[itemName].gods[0] == "Chaos")) {
+      otherExtras.push(prepareExtraObject(itemName, itemRarity, ExtraType.CHAOS_CURSE));
+    } else if (Object.hasOwn(uiMappings.boons, itemName) && (uiMappings.boons[itemName].gods[0] == "Hades")) {
+      otherExtras.push(prepareExtraObject(itemName, itemRarity, ExtraType.HADES));
     } else {
       logger.warn("Unknown extra item: " + extraItem);
       return;
     }
   });
-  
+  if (foundKeepsake != null) {
+    parsedData.push(foundKeepsake);
+  }
+  if (foundHex != null) {
+    parsedData.push(foundHex);
+  }
+  parsedData.push(...otherExtras);
 
   return parsedData;
 }
