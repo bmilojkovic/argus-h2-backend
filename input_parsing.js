@@ -3,10 +3,10 @@ const logger = require("./argus_logger")
 
 const uiMappings = require('./ui_mappings.json');
 
-const dataSeparator = ";;";
-const boonRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "Infusion"];
-const weaponRarities = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
-const keepsakeRarities = ["Common", "Rare", "Epic", "Heroic"];
+const DATA_SEPARATOR = ";;";
+const BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic", "Legendary", "Duo", "Infusion"];
+const WEAPON_RARITIES = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
+const KEEPSAKE_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
 
 function removeSuffixes(boonName) {
   if (boonName.endsWith("_Expired")) { // keepsakes, hades boons
@@ -30,6 +30,26 @@ function removeSuffixes(boonName) {
   return boonName;
 }
 
+function prepareBoonObject(boon, rarity) {
+  var boonObject = {}
+  boonObject.codeName = boon;
+  boonObject.rarity = rarity
+  boonObject.name = uiMappings.boons[boon].name;
+  boonObject.description = uiMappings.boons[boon].description;
+  if (Object.hasOwn(uiMappings.boons[boon],"effects")) {
+    boonObject.effects = [];
+    uiMappings.boons[boon]["effects"].forEach( effect => {
+      var newEffect = {
+        text: effect.text,
+        value: effect[rarity.toLowerCase()]
+      };
+      boonObject.effects.push(newEffect);
+    });
+  }
+
+  return boonObject;
+}
+
 /*
 * Boons should arrive in the following format:
 * [rarityA];;[nameA] [rarityB];;[nameB] etc
@@ -37,24 +57,25 @@ function removeSuffixes(boonName) {
 * For example:
 * Common;;ZeusWeaponBoon Rare;;AphroditeCastBoon
 */
+const EMPTY_BOON_STRING = "NOBOONS";
 function parseBoonData(boonData) {
+  if (boonData === EMPTY_BOON_STRING) {
+    return {};
+  }
   boonArray = boonData.split(" ");
   var parsedData = {
     "otherBoons" : [],
   };
   boonArray.forEach( (boon) => {
-    splitBoon = boon.split(dataSeparator);
-    if (splitBoon.length != 2) { //data should contain boon rarity and name
+    [boonRarity, boonName] = boon.split(DATA_SEPARATOR);
+    if (boonRarity == undefined || boonName == undefined) { //data should contain boon rarity and name
       logger.warn("Invalid boon data. Couldn't parse: " + boon);
-      return {};
-    } else {
-      boonRarity = splitBoon[0];
-      if (!(boonRarities.includes(boonRarity))) {
-        logger.warn("Couldn't recognize boon rarity: " + boonRarity + ". Using Common.");
-        boonRarity = "Common";
-      }
-
-      boonName = splitBoon[1];
+      return;
+    } 
+      
+    if (!(BOON_RARITIES.includes(boonRarity))) {
+      logger.warn("Couldn't recognize boon rarity: " + boonRarity + ". Using Common.");
+      boonRarity = "Common";
     }
 
     boonName = removeSuffixes(boonName); //this can happen with Hades
@@ -63,20 +84,10 @@ function parseBoonData(boonData) {
       logger.warn("Got unknown boon name: " + boonName)
       return;
     }
-    
-    boonDetails = uiMappings.boons[boonName];
-    boonDetails["codeName"] = boonName;
-    boonDetails["rarity"] = boonRarity;
-    if (boonDetails["effects"] != null) {
-      boonDetails["effects"].forEach( effect => {
-        effect["value"] = effect[boonRarity.toLowerCase()];
-      });
-    }
-    if (boonDetails["slot"] != null) {
-      if (parsedData[boonDetails["slot"].toLowerCase() + "Boon"] != null) {
-        logger.warn("Double slot: " + boonDetails["slot"]);
-      }
-      parsedData[boonDetails["slot"].toLowerCase() + "Boon"] = boonDetails;
+
+    boonDetails = prepareBoonObject(boonName, boonRarity);
+    if (Object.hasOwn(uiMappings.boons[boonName], "slot")) {
+      parsedData[uiMappings.boons[boonName]["slot"].toLowerCase() + "Boon"] = boonDetails;
     } else {
       parsedData["otherBoons"].push(boonDetails);
     }
@@ -92,30 +103,27 @@ function parseBoonData(boonData) {
 * For example:
 * Common-ZeusWeaponBoon;;Rare-AphroditeCastBoon
 */
-const emptyWeaponString = "NOWEAPONS";
+const EMPTY_WEAPON_STRING = "NOWEAPONS";
 function parseWeaponData(weaponData) {
-  if (weaponData === emptyWeaponString) {
+  if (weaponData === EMPTY_WEAPON_STRING) {
     return {};
   }
 
   var parsedData = {};
 
-  splitWeapon = weaponData.split(dataSeparator);
-  if (splitWeapon.length != 2) { //data should contain rarity and name
-    logger.warn("Invalid weapon data. Couldn't parse.");
+  [weaponRarity, weaponName] = weaponData.split(DATA_SEPARATOR);
+  if (weaponRarity == undefined || weaponName == undefined) { //data should contain rarity and name
+    logger.warn("Invalid weapon data. Couldn't parse: " + weaponData);
     return {};
-  } else {
-    weaponRarity = splitWeapon[0];
-    if (!(weaponRarities.includes(weaponRarity))) {
-      weaponRarity = "Common";
-    }
-
-    weaponName = splitWeapon[1];
+  } 
+    
+  if (!(WEAPON_RARITIES.includes(weaponRarity))) {
+    weaponRarity = "Common";
   }
 
   if (uiMappings.weapons[weaponName] == null) {
     logger.warn("Got unknown weapon name: " + weaponName)
-    return;
+    return {};
   }
 
   parsedData = uiMappings.weapons[weaponName];
@@ -130,9 +138,9 @@ function parseWeaponData(weaponData) {
   return parsedData;
 }
 
-const emptyFamiliarString = "NOFAMILIARS";
+const EMPTY_FAMILIAR_STRING = "NOFAMILIARS";
 function parseFamiliarData(familiarData) {
-  if (familiarData === emptyFamiliarString) {
+  if (familiarData === EMPTY_FAMILIAR_STRING) {
     return {};
   }
 
@@ -140,7 +148,7 @@ function parseFamiliarData(familiarData) {
 
   if (uiMappings.familiars[familiarData] == null) {
     logger.warn("Got unknown familiar name: " + familiarData)
-    return;
+    return {};
   }
 
   parsedData = uiMappings.familiars[familiarData];
@@ -150,9 +158,9 @@ function parseFamiliarData(familiarData) {
   return parsedData;
 }
 
-const emptyExtraString = "NOEXTRAS";
+const EMPTY_EXTRA_STRING = "NOEXTRAS";
 function parseExtraData(extraData) {
-  if (extraData === emptyExtraString) {
+  if (extraData === EMPTY_EXTRA_STRING) {
     return [];
   }
 
@@ -161,14 +169,10 @@ function parseExtraData(extraData) {
   extraArray = extraData.split(" ");
 
   extraArray.forEach( (extraItem) => {
-    splitItem = extraItem.split(dataSeparator);
-    if (splitItem.length != 2) { //data should contain rarity and name
-      logger.warn("Invalid extra data. Couldn't parse.");
-      return {};
-    } else {
-      itemRarity = splitItem[0];
-
-      itemName = splitItem[1];
+    [itemRarity, itemName] = extraItem.split(DATA_SEPARATOR);
+    if (itemRarity == undefined || itemName == undefined) { //data should contain rarity and name
+      logger.warn("Invalid extra data. Couldn't parse: " + extraItem);
+      return;
     }
 
     itemName = removeSuffixes(itemName); //this can happen with keepsakes
@@ -177,7 +181,7 @@ function parseExtraData(extraData) {
       parsedItem = {};
       parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
       parsedItem["codeName"] = itemName;
-      if (!keepsakeRarities.includes(itemRarity)) {
+      if (!KEEPSAKE_RARITIES.includes(itemRarity)) {
         itemRarity = "Common";
       }
       parsedItem["rarity"] = itemRarity;
@@ -198,6 +202,7 @@ function parseExtraData(extraData) {
       parsedData.push(parsedItem);
     } else {
       logger.warn("Unknown extra item: " + extraItem);
+      return;
     }
   });
   
@@ -220,9 +225,13 @@ function parseElementalData(elementalData) {
 
   var parsedData = [];
   var unorderedData = {};
-  var elementsArray = elementalData.split(dataSeparator); //get all the elements
+  var elementsArray = elementalData.split(DATA_SEPARATOR); //get all the elements
   elementsArray.forEach((element) => {
     var splitElement = element.split(":"); //0 is element name, 1 is value
+    if (splitElement.length != 2) {
+      logger.warn("Invalid element data. Couldn't parse: " + element);
+      return;
+    }
     unorderedData[splitElement[0]] = splitElement[1];
   });
 
@@ -234,40 +243,62 @@ function parseElementalData(elementalData) {
   return parsedData;
 }
 
-const emptyPinsString = "NOPINS";
+function preparePinObject(pinBoon, rarity) {
+  pinObject = {}
+  pinObject.codeName = pinBoon;
+  if (Object.hasOwn(uiMappings.boons[pinBoon], "effects") && Object.hasOwn(uiMappings.boons[pinBoon]["effects"][0], "duo")) {
+    pinObject.rarity = "Duo";
+  } else if (Object.hasOwn(uiMappings.boons[pinBoon], "effects") && Object.hasOwn(uiMappings.boons[pinBoon]["effects"][0], "infusion")) {
+    pinObject.rarity = "Infusion";
+  } else if (Object.hasOwn(uiMappings.boons[pinBoon], "effects") && Object.hasOwn(uiMappings.boons[pinBoon]["effects"][0], "legendary")) {
+    pinObject.rarity = "Legendary";
+  } else {
+    pinObject.rarity = "Common";
+  }
+  pinObject.name = uiMappings.boons[pinBoon].name;
+  pinObject.description = uiMappings.boons[pinBoon].description;
+  if (Object.hasOwn(uiMappings.boons[pinBoon].effects)) {
+    pinObject.effects = uiMappings.boons[pinBoon].effects;
+  }
+  if (Object.hasOwn(uiMappings.boons[pinBoon].requirements)) {
+    pinObject.requirements = uiMappings.boons[pinBoon].requirements;
+  }
+
+  return pinObject;
+}
+
+const MAX_PINS = 3;
+const EMPTY_PINS_STRING = "NOPINS";
 function parsePinBoons(pinData) {
-  if (pinData == emptyPinsString) {
+  if (pinData == EMPTY_PINS_STRING) {
     return [];
   }
 
   var parsedData = []
   
-  splitPinBoons = pinData.split(dataSeparator);
+  splitPinBoons = pinData.split(DATA_SEPARATOR);
 
   splitPinBoons.forEach(pinBoon => {
+    if (parsedData.length >= MAX_PINS) {
+      return;
+    }
+
     if (pinBoon in uiMappings.boons) {
-      var parsedElement = uiMappings.boons[pinBoon];
-      if (parsedElement["effects"] != null && parsedElement["effects"][0]["duo"] != null) {
-        parsedElement.rarity = "Duo";
-      } else if (parsedElement["effects"] != null && parsedElement["effects"][0]["infusion"] != null) {
-        parsedElement.rarity = "Infusion";
-      } else if (parsedElement["effects"] != null && parsedElement["effects"][0]["legendary"] != null) {
-        parsedElement.rarity = "Legendary";
-      } else {
-        parsedElement.rarity = "Common";
-      }
-      parsedElement.codeName = pinBoon;
+      var parsedElement = preparePinObject(pinBoon)
       parsedData.push(parsedElement)
+    } else {
+      logger.warn("Invalid pin data. Couldn't parse: " + pinBoon);
+      return;
     }
   })
 
   return parsedData;
 }
 
-const emptyVowsString = "NOVOWS";
+const EMPTY_VOWS_STRING = "NOVOWS";
 function parseVowData(vowData) {
-  if (vowData === emptyVowsString) {
-    return {};
+  if (vowData === EMPTY_VOWS_STRING) {
+    return [];
   }
 
   var parsedData = [];
@@ -275,8 +306,12 @@ function parseVowData(vowData) {
   var allVows = vowData.split(" ");
 
   allVows.forEach(singleVow => {
-    const [vowLevel, vowCodeName] = singleVow.split(dataSeparator);
-    
+    const [vowLevel, vowCodeName] = singleVow.split(DATA_SEPARATOR);
+    if (vowLevel == undefined || vowCodeName == undefined) {
+      logger.warn("Invalid vow data. Couldn't parse: " + singleVow);
+      return;
+    }
+
     if (uiMappings.vows[vowCodeName] == null) {
       logger.warn("Got unknown vow name: " + vowCodeName)
       return;
@@ -295,11 +330,11 @@ function parseVowData(vowData) {
   return parsedData;
 }
 
-const arcanaLevelMapping = ["None", "Common", "Rare", "Epic", "Heroic"];
-const emptyArcanaString = "NOARCANA";
+const ARCANA_LEVEL_MAPPING = ["None", "Common", "Rare", "Epic", "Heroic"];
+const EMPTY_ARCANA_STRING = "NOARCANA";
 function parseArcanaData(arcanaData) {
-  if (arcanaData === emptyArcanaString) {
-    return {};
+  if (arcanaData === EMPTY_ARCANA_STRING) {
+    return [];
   }
 
   var parsedData = [];
@@ -307,7 +342,7 @@ function parseArcanaData(arcanaData) {
   var allArcana = arcanaData.split(" ");
 
   allArcana.forEach(singleArcana => {
-    const [arcanaLevel, arcanaCodeName] = singleArcana.split(dataSeparator);
+    var [arcanaLevel, arcanaCodeName] = singleArcana.split(DATA_SEPARATOR);
     
     if (uiMappings.arcana[arcanaCodeName] == null) {
       logger.warn("Got unknown arcana name: " + arcanaCodeName)
@@ -317,7 +352,7 @@ function parseArcanaData(arcanaData) {
     var parsedArcana = {
       "codeName": arcanaCodeName,
       "name": uiMappings.arcana[arcanaCodeName].name,
-      "rarity": arcanaLevelMapping[arcanaLevel],
+      "rarity": ARCANA_LEVEL_MAPPING[arcanaLevel],
       "description": uiMappings.arcana[arcanaCodeName].descriptions[parseInt(arcanaLevel)]
     }
 
@@ -328,9 +363,9 @@ function parseArcanaData(arcanaData) {
 }
 
 //twitch package size limitation is 5KB
-const twitchPackageLimit = 1024*5;
+const TWITCH_PACKAGE_LIMIT = 1024*5;
 //80% just for paranoia. 20 characters is our nonce and part number.
-const twitchPackageSizeCutoff = Math.floor(twitchPackageLimit * 0.8) - 20;
+const TWITCH_PACKAGE_SIZE_CUTOFF = Math.floor(TWITCH_PACKAGE_LIMIT * 0.8) - 20;
 
 function parseRunData(runData) {
     const parsedData = {
@@ -347,12 +382,12 @@ function parseRunData(runData) {
     var stringToSend = JSON.stringify(parsedData);
 
     var parsedDataArray = [];
-    if (stringToSend.length > twitchPackageSizeCutoff) {
+    if (stringToSend.length > TWITCH_PACKAGE_SIZE_CUTOFF) {
       var startPos = 0;
       var stop = false;
 
       while (!stop) {
-        var endingPosition = startPos + twitchPackageSizeCutoff;
+        var endingPosition = startPos + TWITCH_PACKAGE_SIZE_CUTOFF;
         if (endingPosition >= stringToSend.length) {
           endingPosition = stringToSend.length;
           stop = true;

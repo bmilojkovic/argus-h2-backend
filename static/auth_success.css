@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('./fonts/alegreya-sans/AlegreyaSans-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('./fonts/alegreya-sans/AlegreyaSans-ExtraBold.ttf');
+  font-weight: bold;
+}
+
+body
+{
+    background-color: black;
+}
+
+.MainPanel
+{
+    width: 984px;
+    height: 646px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #58bc81;
+    font-family: 'Alegreya Sans';
+    text-align: center;
+    background-image: url("./main_background.png");
+    padding: 20px;
+}
+
+.ArgusIcon
+{
+    width: 200px;
+}

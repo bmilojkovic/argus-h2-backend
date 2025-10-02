@@ -12,6 +12,7 @@ const request = require("request");
 const querystring = require('querystring');
 const crypto = require("crypto");
 const fs = require("fs");
+const path = require("path");
 
 //IMPORTANT: have the two variables below in this json file
 const secrets = require("./secrets.json"); 
@@ -49,11 +50,11 @@ pendingTwitchLogins = {};
 twitchIdByArgusToken = {};
 
 app.get("/oauth_token", (req, res) => {
-  logger.warn(JSON.stringify(req.query))
+  logger.info(JSON.stringify(req.query))
   
   clientState = req.query.state;
 
-  res.send("ok");
+  res.redirect("/auth_success.html");
 
   if (req.query != null && req.query.code != null) {
     const requestParams = {
@@ -153,8 +154,9 @@ function readArgusTokens() {
   }
 }
 
-readArgusTokens();
 // Server setup
+readArgusTokens();
+app.use(express.static(path.join(__dirname, 'static')));
 app.listen(3000, () => {
     logger.info("Server is Running");
 });

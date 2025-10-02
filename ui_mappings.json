@@ -2829,6 +2829,10 @@
         }
     },
     "weapons" : {
+        "DummyWeaponStaff": {
+            "name": "Witch's Staff",
+            "description": "Strike with a quick close-range <b>Attack</b>, or long-range <b>Special</b> and <b>Omega Moves</b>."
+        },
         "BaseStaffAspect": {
             "name": "Aspect of Melinoë",
             "description": "Gain <b>Max Magick</b> and greater <b>Power</b> for your <b>Specials</b>.",
@@ -2858,6 +2862,10 @@
             ]
         },
 
+        "DummyWeaponDagger": {
+            "name": "Sister Blades",
+            "description": "Slash with furious <b>Attacks</b>, or strike from afar with a flurry of <b>Specials</b>."
+        },
         "DaggerBackstabAspect": {
             "name": "Aspect of Melinoë",
             "description": "Your <b>Attacks</b> and <b>Specials</b> deal more damage by striking foes from behind.",
@@ -2887,6 +2895,10 @@
             ]
         },
 
+        "DummyWeaponTorch": {
+            "name": "Umbral Flames",
+            "description": "Launch damaging ranged <b>Attacks</b> as you move, or <b>Specials</b> that orbit around you."
+        },
         "TorchSpecialDurationAspect": {
             "name": "Aspect of Melinoë",
             "description": "Your <b>Attacks</b> and <b>Specials</b> may deal <b>Critical</b> damage.",
@@ -2916,6 +2928,10 @@
             ]
         },
 
+        "DummyWeaponAxe": {
+            "name": "Moonstone Axe",
+            "description": "Sweep through foes with a slow but devastating variety of <b>Attacks</b> and <b>Specials</b>."
+        },
         "AxeRecoveryAspect": {
             "name": "Aspect of Melinoë",
             "description": "Gain bonus <b>Attack Power</b> and <b>Health</b>.",
@@ -2945,6 +2961,10 @@
             ]
         },
 
+        "DummyWeaponLob": {
+            "name": "Argent Skull",
+            "description": "Blast foes with explosive <b>Attacks</b>, and retrieve the <b>Shells</b> with lunging <b>Specials</b>."
+        },
         "LobAmmoBoostAspect": {
             "name": "Aspect of Melinoë",
             "description": "Your <b>Attacks</b> have more <b>Power</b> for each <b>Shell</b> fired and not yet retrieved.",
@@ -2974,6 +2994,10 @@
             ]
         },
 
+        "DummyWeaponSuit": {
+            "name": "Black Coat",
+            "description": "Guard and retaliate with mighty <b>Attacks</b>, ensuring none escape with seeking <b>Specials</b>."
+        },
         "BaseSuitAspect": {
             "name": "Aspect of Melinoë",
             "description": "Your <b>Attacks</b>, <b>Sprint</b>, and move speed are faster.",
