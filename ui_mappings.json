@@ -2327,7 +2327,7 @@
 
         "ChaosWeaponBlessing": {
             "gods": ["Chaos"],
-            "name": "Strike (Chaos)",
+            "name": "Strike",
             "description": "Your <b>Attacks</b> deal more damage.",
             "effects": [
                 {"text": "Additional Damage For Attacks:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
@@ -2335,7 +2335,7 @@
         },
         "ChaosSpecialBlessing": {
             "gods": ["Chaos"],
-            "name": "Flourish (Chaos)",
+            "name": "Flourish",
             "description": "Your <b>Specials</b> deal more damage.",
             "effects": [
                 {"text": "Additional Damage For Specials:", "common" : "+30%", "rare" : "+45%", "epic" : "+60%", "heroic" : "+75%"}
@@ -2343,7 +2343,7 @@
         },
         "ChaosCastBlessing": {
             "gods": ["Chaos"],
-            "name": "Chasm (Chaos)",
+            "name": "Chasm",
             "description": "Your <b>Casts</b> deal more damage.",
             "effects": [
                 {"text": "Additional Damage For Casts:", "common" : "+20%", "rare" : "+30%", "epic" : "+40%", "heroic" : "+50%"}
@@ -2351,7 +2351,7 @@
         },
         "ChaosHealthBlessing": {
             "gods": ["Chaos"],
-            "name": "Soul (Chaos)",
+            "name": "Soul",
             "description": "You have additional <b>Max Health</b>.",
             "effects": [
                 {"text": "Additional Max Health:", "common" : "+26", "rare" : "+52", "epic" : "+78%", "heroic" : "+104"}
@@ -2359,7 +2359,7 @@
         },
         "ChaosManaBlessing": {
             "gods": ["Chaos"],
-            "name": "Mind (Chaos)",
+            "name": "Mind",
             "description": "You have additional <b>Max Magick</b>.",
             "effects": [
                 {"text": "Additional Max Magick:", "common" : "+30", "rare" : "+45", "epic" : "+60", "heroic" : "+75"}
@@ -2367,7 +2367,7 @@
         },
         "ChaosManaOverTimeBlessing": {
             "gods": ["Chaos"],
-            "name": "Will (Chaos)",
+            "name": "Will",
             "description": "You restore <b>Magick</b> every <b>1 Sec.</b>",
             "effects": [
                 {"text": "Magick Restored Per 1 Sec.:", "common" : "4", "rare" : "8", "epic" : "12", "heroic" : "16"}
@@ -2375,7 +2375,7 @@
         },
         "ChaosExSpeedBlessing": {
             "gods": ["Chaos"],
-            "name": "Revelation (Chaos)",
+            "name": "Revelation",
             "description": "You <b>Channel</b> your <b>Omega Moves</b> faster.",
             "effects": [
                 {"text": "Channel Speed Increase:", "common" : "+10%", "rare" : "+15%", "epic" : "+20%", "heroic" : "+25%"}
@@ -2383,7 +2383,7 @@
         },
         "ChaosRarityBlessing": {
             "gods": ["Chaos"],
-            "name": "Favor (Chaos)",
+            "name": "Favor",
             "description": "Boons have a greater chance to be <b>Rare</b> or better.",
             "effects": [
                 {"text": "Rare Or Better Boon Chance Increase:", "common" : "+40%", "rare" : "+54%", "epic" : "+67%", "heroic" : "+80%"}
@@ -2391,7 +2391,7 @@
         },
         "ChaosMoneyBlessing": {
             "gods": ["Chaos"],
-            "name": "Affluence (Chaos)",
+            "name": "Affluence",
             "description": "Any <b>Gold</b> reward you gain is worth more.",
             "effects": [
                 {"text": "Gold Reward Increase:", "common" : "+40%", "rare" : "+80%", "epic" : "+120%", "heroic" : "+160%"}
@@ -2399,7 +2399,7 @@
         },
         "ChaosElementalBlessing": {
             "gods": ["Chaos"],
-            "name": "Creation (Chaos)",
+            "name": "Creation",
             "description": "Gain <b>Earth</b>, <b>Water</b>, <b>Air</b>, <b>Fire</b> and <b>Aether</b>.",
             "effects": [
                 {"text": "All Elements Gained:", "common" : "+1", "rare" : "+2", "epic" : "+3", "heroic" : "+4"}
@@ -2407,7 +2407,7 @@
         },
         "ChaosManaCostBlessing": {
             "gods": ["Chaos"],
-            "name": "Talent (Chaos)",
+            "name": "Talent",
             "description": "You use less <b>Magick</b>.",
             "effects": [
                 {"text": "Magick Usage Reduction:", "common" : "-20%", "rare" : "-30%", "epic" : "-40%", "heroic" : "-50%"}
@@ -2415,7 +2415,7 @@
         },
         "ChaosSpeedBlessing": {
             "gods": ["Chaos"],
-            "name": "Celerity (Chaos)",
+            "name": "Celerity",
             "description": "You move and <b>Sprint</b> faster.",
             "effects": [
                 {"text": "Move And Sprint Speed Increase:", "common" : "+30%", "rare" : "+40%", "epic" : "+50%", "heroic" : "+60%"}
@@ -2423,7 +2423,7 @@
         },
         "ChaosDoorHealBlessing": {
             "gods": ["Chaos"],
-            "name": "Revival (Chaos)",
+            "name": "Revival",
             "description": "Whenever you exit a <b>Location</b>, restore <b>Health</b>.",
             "effects": [
                 {"text": "Health Restored:", "common" : "3", "rare" : "9", "epic" : "15", "heroic" : "21"}
@@ -2431,7 +2431,7 @@
         },
         "ChaosHarvestBlessing": {
             "gods": ["Chaos"],
-            "name": "Discovery (Chaos)",
+            "name": "Discovery",
             "description": "You have a higher chance to find <b>+100%</b> resources with your <b>Gathering Tools</b>.",
             "effects": [
                 {"text": "Bonus resource chance:", "common" : "56%", "rare" : "64%", "epic" : "72%", "heroic" : "80%"}
@@ -2439,7 +2439,7 @@
         },
         "ChaosOmegaDamageBlessing": {
             "gods": ["Chaos"],
-            "name": "Chant (Chaos)",
+            "name": "Chant",
             "description": "Your <b>Omega Moves</b> deal additional damage the more <b>Aether</b> you have.",
             "effects": [
                 {"text": "Additional Omega Move Damage Per Aether:", "common" : "+30%", "rare" : "+36%", "epic" : "+42%", "heroic" : "+48%"}
@@ -2447,7 +2447,7 @@
         },
         "ChaosLastStandBlessing": {
             "gods": ["Chaos"],
-            "name": "Defiance (Chaos)",
+            "name": "Defiance",
             "description": "Gain an additional use of <b>Death Defiance</b>",
             "effects": [
                 {"text": "Extra Death Defiance:", "legendary" : "1"}
