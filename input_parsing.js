@@ -75,6 +75,7 @@ function parseBoonData(boonData) {
   boonArray = boonData.split(" ");
   var parsedData = {
     otherBoons: [],
+    totalBoons: 0,
   };
   boonArray.forEach((boon) => {
     [boonRarity, boonName] = boon.split(DATA_SEPARATOR);
@@ -105,6 +106,7 @@ function parseBoonData(boonData) {
     } else {
       parsedData["otherBoons"].push(boonDetails);
     }
+    parsedData.totalBoons++;
   });
 
   return parsedData;
@@ -416,10 +418,13 @@ function parsePinData(pinData, boonData) {
 const EMPTY_VOWS_STRING = "NOVOWS";
 function parseVowData(vowData) {
   if (vowData === EMPTY_VOWS_STRING) {
-    return [];
+    return {};
   }
 
-  var parsedData = [];
+  var parsedData = {
+    vowList: [],
+    totalFear: 0,
+  };
 
   var allVows = vowData.split(" ");
 
@@ -443,7 +448,8 @@ function parseVowData(vowData) {
         uiMappings.vows[vowCodeName].descriptions[parseInt(vowLevel)],
     };
 
-    parsedData.push(parsedVow);
+    parsedData.vowList.push(parsedVow);
+    parsedData.totalFear += uiMappings.vows[vowCodeName].fears[vowLevel];
   });
 
   return parsedData;
@@ -453,10 +459,13 @@ const ARCANA_LEVEL_MAPPING = ["None", "Common", "Rare", "Epic", "Heroic"];
 const EMPTY_ARCANA_STRING = "NOARCANA";
 function parseArcanaData(arcanaData) {
   if (arcanaData === EMPTY_ARCANA_STRING) {
-    return [];
+    return {};
   }
 
-  var parsedData = [];
+  var parsedData = {
+    arcanaList: [],
+    totalGrasp: 0,
+  };
 
   var allArcana = arcanaData.split(" ");
 
@@ -476,10 +485,26 @@ function parseArcanaData(arcanaData) {
         uiMappings.arcana[arcanaCodeName].descriptions[parseInt(arcanaLevel)],
     };
 
-    parsedData.push(parsedArcana);
+    parsedData.arcanaList.push(parsedArcana);
+    parsedData.totalGrasp += uiMappings.arcana[arcanaCodeName].grasp;
   });
 
   return parsedData;
+}
+
+function countTotalRunItems(parsedData) {
+  var totalRunItems = parsedData.boonData.totalBoons;
+  if (parsedData.weaponData != {}) {
+    totalRunItems++;
+  }
+  if (parsedData.familiarData != {}) {
+    totalRunItems++;
+  }
+  if (parsedData.extraData != []) {
+    totalRunItems += parsedData.extraData.length;
+  }
+
+  return totalRunItems;
 }
 
 //twitch package size limitation is 5KB
@@ -488,7 +513,7 @@ const TWITCH_PACKAGE_LIMIT = 1024 * 5;
 const TWITCH_PACKAGE_SIZE_CUTOFF = Math.floor(TWITCH_PACKAGE_LIMIT * 0.8) - 20;
 
 function parseRunData(runData) {
-  const parsedData = {
+  var parsedData = {
     boonData: parseBoonData(runData.boonData),
     weaponData: parseWeaponData(runData.weaponData),
     familiarData: parseFamiliarData(runData.familiarData),
@@ -498,6 +523,7 @@ function parseRunData(runData) {
     vowData: parseVowData(runData.vowData),
     arcanaData: parseArcanaData(runData.arcanaData),
   };
+  parsedData.totalRunItems = String(countTotalRunItems(parsedData));
 
   var stringToSend = JSON.stringify(parsedData);
 
