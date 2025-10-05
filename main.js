@@ -1,4 +1,3 @@
-
 // Importing express module
 const express = require("express");
 const app = express();
@@ -6,32 +5,34 @@ app.use(express.json());
 
 const { parseRunData } = require("./input_parsing");
 const { broadcastInfo } = require("./twitch_broadcast");
+const { loadSecrets } = require("./secrets");
 
 const logger = require("./argus_logger");
 const request = require("request");
-const querystring = require('querystring');
+const querystring = require("querystring");
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
-//IMPORTANT: have the two variables below in this json file
-const secrets = require("./secrets.json"); 
 const extensionId = secrets.extensionId;
 const apiClientSecret = secrets.apiClientSecret;
 
-const tokenStoreFile = "argus_tokens.json"
+const tokenStoreFile = "argus_tokens.json";
 
 function generateRandomHex(length) {
   // `length` specifies the number of bytes, not hex characters.
   // Each byte converts to two hex characters.
-  return crypto.randomBytes(Math.ceil(length / 2)).toString('hex').slice(0, length);
+  return crypto
+    .randomBytes(Math.ceil(length / 2))
+    .toString("hex")
+    .slice(0, length);
 }
 
-const NONCE_MAX = 2**32;
+const NONCE_MAX = 2 ** 32;
 
 app.post("/run_info", (req, res, next) => {
   logger.info("Received data: " + JSON.stringify(req.body));
-  
+
   const argusToken = req.body.argusToken;
   if (twitchIdByArgusToken[argusToken] == null) {
     res.send("bad_argus_token");
@@ -44,14 +45,14 @@ app.post("/run_info", (req, res, next) => {
   broadcastInfo(runDataArray, broadcastNonce, broadcasterId);
 
   res.send("ok");
-})
+});
 
 pendingTwitchLogins = {};
 twitchIdByArgusToken = {};
 
 app.get("/oauth_token", (req, res) => {
-  logger.info(JSON.stringify(req.query))
-  
+  logger.info(JSON.stringify(req.query));
+
   clientState = req.query.state;
 
   res.redirect("/auth_success.html");
@@ -62,45 +63,48 @@ app.get("/oauth_token", (req, res) => {
       client_secret: apiClientSecret,
       code: req.query.code,
       grant_type: "authorization_code",
-      redirect_uri: "http://localhost:3000/oauth_token"
+      redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
     };
 
     //use the auth code to get the access token
     var requestOptions = {
-          uri: 'https://id.twitch.tv/oauth2/token',
-          body: querystring.stringify(requestParams),
-          method: 'POST'
+      uri: "https://id.twitch.tv/oauth2/token",
+      body: querystring.stringify(requestParams),
+      method: "POST",
     };
 
-    request.post(requestOptions, function(error, response) {
+    request.post(requestOptions, function (error, response) {
       jsonResponse = JSON.parse(response.body);
-      
+
       claimsRequestOptions = {
-        
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + jsonResponse["access_token"],
-        }
-      }
+          Authorization: "Bearer " + jsonResponse["access_token"],
+        },
+      };
 
-      request.get("https://id.twitch.tv/oauth2/userinfo", claimsRequestOptions, function(error, response) {
-        claimsObject = JSON.parse(response.body);
-        userTwitchId = claimsObject["sub"];
+      request.get(
+        "https://id.twitch.tv/oauth2/userinfo",
+        claimsRequestOptions,
+        function (error, response) {
+          claimsObject = JSON.parse(response.body);
+          userTwitchId = claimsObject["sub"];
 
-        if (pendingTwitchLogins[clientState] != null) {
-          delete pendingTwitchLogins[clientState];
-        }
+          if (pendingTwitchLogins[clientState] != null) {
+            delete pendingTwitchLogins[clientState];
+          }
 
-        pendingTwitchLogins[clientState] = {
-          "twitchId": userTwitchId,
-          "argusToken": generateRandomHex(16)
+          pendingTwitchLogins[clientState] = {
+            twitchId: userTwitchId,
+            argusToken: generateRandomHex(16),
+          };
         }
-      })
+      );
 
       return;
     });
   }
-})
+});
 
 app.get("/check_argus_token", (req, res) => {
   if (req.query.argus_token != null) {
@@ -113,12 +117,16 @@ app.get("/check_argus_token", (req, res) => {
   } else {
     res.send("token_not_ok");
   }
-})
+});
 
 app.post("/get_argus_token", (req, res) => {
   logger.info("getting token for state: " + req.body.state);
-  
-  if (req.body != null && req.body.state != null && pendingTwitchLogins[req.body.state] != null) {
+
+  if (
+    req.body != null &&
+    req.body.state != null &&
+    pendingTwitchLogins[req.body.state] != null
+  ) {
     userTwitchId = pendingTwitchLogins[req.body.state].twitchId;
     argusToken = pendingTwitchLogins[req.body.state].argusToken;
 
@@ -131,19 +139,23 @@ app.post("/get_argus_token", (req, res) => {
 
     twitchIdByArgusToken[argusToken] = userTwitchId;
     delete pendingTwitchLogins[req.body.state];
-    
+
     res.send(argusToken);
 
-    fs.writeFile(tokenStoreFile, JSON.stringify(twitchIdByArgusToken), "utf8", (err) => {
-      if (err) {
-        logger.error(err);
+    fs.writeFile(
+      tokenStoreFile,
+      JSON.stringify(twitchIdByArgusToken),
+      "utf8",
+      (err) => {
+        if (err) {
+          logger.error(err);
+        }
       }
-    })
+    );
   } else {
     res.send("FAIL");
   }
-  
-})
+});
 
 function readArgusTokens() {
   try {
@@ -155,8 +167,9 @@ function readArgusTokens() {
 }
 
 // Server setup
+secrets = loadSecrets();
 readArgusTokens();
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, "static")));
 app.listen(3000, () => {
-    logger.info("Server is Running");
+  logger.info("Server is Running");
 });
