@@ -63,7 +63,8 @@ app.get("/oauth_token", (req, res) => {
       client_secret: apiClientSecret,
       code: req.query.code,
       grant_type: "authorization_code",
-      redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
+      redirect_uri: "http://localhost:3000/oauth_token",
+      //redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
     };
 
     //use the auth code to get the access token

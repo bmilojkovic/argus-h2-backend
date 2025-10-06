@@ -180,10 +180,11 @@ const ExtraType = Object.freeze({
   HEX: "Hex",
   CHAOS_CURSE: "Chaos Curse",
   HADES: "Hades",
+  ICARUS: "Icarus",
 });
 function prepareExtraObject(itemName, itemRarity, extraType) {
   parsedItem = {};
-  //parsedItem["extraType"] = extraType;
+  parsedItem["extraType"] = extraType;
   parsedItem["codeName"] = itemName;
   switch (extraType) {
     case ExtraType.KEEPSAKE:
@@ -202,6 +203,7 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       parsedItem["rarity"] = "Common";
       break;
     case ExtraType.CHAOS_CURSE:
+    case ExtraType.ICARUS:
       parsedItem["name"] = uiMappings.boons[itemName]["name"];
       parsedItem["description"] = uiMappings.boons[itemName]["description"];
       parsedItem["rarity"] = "Common";
@@ -255,6 +257,13 @@ function parseExtraData(extraData) {
     ) {
       otherExtras.push(
         prepareExtraObject(itemName, itemRarity, ExtraType.CHAOS_CURSE)
+      );
+    } else if (
+      Object.hasOwn(uiMappings.boons, itemName) &&
+      uiMappings.boons[itemName].gods[0] == "Icarus"
+    ) {
+      otherExtras.push(
+        prepareExtraObject(itemName, itemRarity, ExtraType.ICARUS)
       );
     } else if (
       Object.hasOwn(uiMappings.boons, itemName) &&
@@ -493,14 +502,17 @@ function parseArcanaData(arcanaData) {
 }
 
 function countTotalRunItems(parsedData) {
-  var totalRunItems = parsedData.boonData.totalBoons;
-  if (parsedData.weaponData != {}) {
+  var totalRunItems = 0;
+  if (Object.keys(parsedData.boonData).length !== 0) {
+    totalRunItems += parsedData.boonData.totalBoons;
+  }
+  if (Object.keys(parsedData.weaponData).length !== 0) {
     totalRunItems++;
   }
-  if (parsedData.familiarData != {}) {
+  if (Object.keys(parsedData.familiarData).length !== 0) {
     totalRunItems++;
   }
-  if (parsedData.extraData != []) {
+  if (parsedData.extraData.length > 0) {
     totalRunItems += parsedData.extraData.length;
   }
 
@@ -523,6 +535,7 @@ function parseRunData(runData) {
     vowData: parseVowData(runData.vowData),
     arcanaData: parseArcanaData(runData.arcanaData),
   };
+  logger.info(countTotalRunItems(parsedData));
   parsedData.totalRunItems = String(countTotalRunItems(parsedData));
 
   var stringToSend = JSON.stringify(parsedData);
