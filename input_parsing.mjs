@@ -468,7 +468,7 @@ function parseVowData(vowData) {
 
     parsedData.vowList.push(parsedVow);
     parsedData.totalFear += uiMappings.vows[vowCodeName].fears[vowLevel];
-    logger.info(
+    logger.debug(
       "Added " +
         uiMappings.vows[vowCodeName].fears[vowLevel] +
         " fear to total fear for " +

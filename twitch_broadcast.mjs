@@ -43,7 +43,9 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
       Authorization: "Bearer " + jwtToken,
     },
   };
-  logger.info("Broadcasting data: " + JSON.stringify(broadcastMessage, " ", 2));
+  logger.debug(
+    "Broadcasting data: " + JSON.stringify(broadcastMessage, " ", 2)
+  );
   request(requestOptions, function (error, response) {
     if (response.statusCode != 204) {
       logger.warn("Non-standard twitch reply: " + response.body);

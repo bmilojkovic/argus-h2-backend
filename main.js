@@ -20,7 +20,7 @@ app.use(express.json());
 const NONCE_MAX = 2 ** 32;
 
 app.post("/run_info", async function (req, res, next) {
-  logger.info("Received data: " + JSON.stringify(req.body));
+  logger.debug("Received data: " + JSON.stringify(req.body));
 
   const argusToken = req.body.argusToken;
   const twitchId = await getTwitchIdByArgusToken(argusToken);

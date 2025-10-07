@@ -3382,7 +3382,7 @@
                 "All foes deal <b>+100%</b> damage."
             ],
             "fears": [
-                0, 1, 2, 2
+                0, 1, 3, 5
             ]
         },
         "EnemyHealthShrineUpgrade": {
@@ -3394,7 +3394,7 @@
                 "All foes have <b>+30% Health</b>."
             ],
             "fears": [
-                0, 1, 1, 1
+                0, 1, 2, 3
             ]
         },
         "EnemyShieldShrineUpgrade": {
@@ -3405,7 +3405,7 @@
                 "All foes have <b>2 Barriers</b>."
             ],
             "fears": [
-                0, 1, 1
+                0, 1, 2
             ]
         },
         "EnemySpeedShrineUpgrade": {
@@ -3416,7 +3416,7 @@
                 "All foes are <b>40%</b> faster."
             ],
             "fears": [
-                0, 3, 3
+                0, 3, 6
             ]
         },
         "EnemyCountShrineUpgrade": {
@@ -3428,7 +3428,7 @@
                 "Most <b>Encounters</b> have <b>60%</b> more foes."
             ],
             "fears": [
-                0, 1, 1, 1
+                0, 1, 2, 3
             ]
         },
         "NextBiomeEnemyShrineUpgrade": {
@@ -3439,7 +3439,7 @@
                 "Most foes have <b>25%</b> chance to be from the next <b>Region</b> (if there is one)."
             ],
             "fears": [
-                0, 1, 2
+                0, 1, 3
             ]
         },
         "EnemyRespawnShrineUpgrade": {
@@ -3450,7 +3450,7 @@
                 "Most slain foes have <b>50%</b> chance to become a <b>Revenant</b>"
             ],
             "fears": [
-                0, 1, 1
+                0, 1, 2
             ]
         },
         "EnemyEliteShrineUpgrade": {
@@ -3461,7 +3461,7 @@
                 "Most foes with <b>Armor</b> also have <b>2</b> random <b>Perks</b>."
             ],
             "fears": [
-                0, 2, 3
+                0, 2, 5
             ]
         },
         "HealingReductionShrineUpgrade": {
@@ -3473,7 +3473,7 @@
                 "Any <b>Healing</b> effects are <b>0%</b> effective."
             ],
             "fears": [
-                0, 1, 1, 2
+                0, 1, 2, 4
             ]
         },
         "ShopPricesShrineUpgrade": {
@@ -3484,7 +3484,7 @@
                 "All items that cost <b>Gold</b> are <b>80%</b> more expensive."
             ],
             "fears": [
-                0, 1, 1
+                0, 1, 2
             ]
         },
         "MinibossCountShrineUpgrade": {
@@ -3516,7 +3516,7 @@
                 "You have <b>05:00.00</b> to fight through each <b>Region</b> (or else...)."
             ],
             "fears": [
-                0, 1, 2, 3
+                0, 1, 3, 6
             ]
         },
         "LimitGraspShrineUpgrade": {
@@ -3529,7 +3529,7 @@
                 "You have access to <b>0%</b> of your <b>Grasp</b> for your <b>Arcana</b>."
             ],
             "fears": [
-                0, 1, 1, 1, 2
+                0, 1, 2, 3, 5
             ]
         },
         "BoonManaReserveShrineUpgrade": {
@@ -3540,7 +3540,7 @@
                 "After you choose a <b>Boon</b>, <b>Prime 6 Magick</b> for each <b>Rarity</b> greater than <b>Common</b>."
             ],
             "fears": [
-                0, 1, 1
+                0, 1, 2
             ]
         },
         "BanUnpickedBoonsShrineUpgrade": {
@@ -3563,7 +3563,7 @@
                 "The <b>Guardian</b> of the first <b>4 Regions</b> shall be stronger in various ways."
             ],
             "fears": [
-                0, 2, 3, 3, 4
+                0, 2, 5, 8, 12
             ]
         }
     },
