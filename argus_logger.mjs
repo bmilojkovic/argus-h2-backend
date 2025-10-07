@@ -1,4 +1,4 @@
-const winston = require("winston");
+import winston from "winston";
 
 const alignedWithColorsAndTime = winston.format.combine(
   winston.format.timestamp({ format: "YYYY-MM-DD hh:mm:ss" }),
@@ -6,7 +6,7 @@ const alignedWithColorsAndTime = winston.format.combine(
   winston.format.simple()
 );
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
   level: "info",
   //format: winston.format.json(),
   format: alignedWithColorsAndTime,
@@ -48,5 +48,3 @@ if (process.env.NODE_ENV !== "production") {
     })
   );
 }
-
-module.exports = logger;

@@ -1,14 +1,12 @@
-const logger = require("./argus_logger");
-const { loadSecrets } = require("./secrets");
+import { logger } from "./argus_logger.mjs";
+import { loadSecrets } from "./secrets.mjs";
+import request from "request";
 
-// jwt stuff
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 const secrets = loadSecrets();
 const extensionSecret = secrets.extensionSecret;
 const extensionId = secrets.extensionId;
-
-var request = require("request");
 
 function buildToken(broadcasterId) {
   const tokenPayload = {
@@ -27,9 +25,9 @@ function buildToken(broadcasterId) {
 }
 
 function broadcastInfoPart(partialRunData, broadcasterId) {
-  jwtToken = buildToken(broadcasterId);
+  var jwtToken = buildToken(broadcasterId);
 
-  broadcastMessage = {
+  var broadcastMessage = {
     message: partialRunData,
     broadcaster_id: broadcasterId,
     target: ["broadcast"],
@@ -54,9 +52,9 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
   });
 }
 
-function broadcastInfo(runDataArray, broadcastNonce, broadcasterId) {
+export function broadcastInfo(runDataArray, broadcastNonce, broadcasterId) {
   runDataArray.forEach((runDataPart, ind) => {
-    partialData =
+    var partialData =
       "*" +
       broadcastNonce +
       "*" +
@@ -69,7 +67,3 @@ function broadcastInfo(runDataArray, broadcastNonce, broadcasterId) {
     broadcastInfoPart(partialData, broadcasterId);
   });
 }
-
-module.exports = {
-  broadcastInfo,
-};
