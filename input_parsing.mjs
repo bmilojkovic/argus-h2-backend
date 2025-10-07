@@ -468,6 +468,14 @@ function parseVowData(vowData) {
 
     parsedData.vowList.push(parsedVow);
     parsedData.totalFear += uiMappings.vows[vowCodeName].fears[vowLevel];
+    logger.info(
+      "Added " +
+        uiMappings.vows[vowCodeName].fears[vowLevel] +
+        " fear to total fear for " +
+        vowCodeName +
+        " at level " +
+        vowLevel
+    );
   });
 
   return parsedData;

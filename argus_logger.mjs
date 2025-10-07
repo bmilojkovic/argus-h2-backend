@@ -38,13 +38,14 @@ if (process.env.NODE_ENV !== "production") {
 } else {
   logger.add(
     new winston.transports.Console({
+      stderrLevels: ["error", "warn"],
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.timestamp({ format: "YYYY-MM-DD hh:mm:ss" }),
         winston.format.align(),
         winston.format.simple()
       ),
-      level: "warning",
+      level: "info",
     })
   );
 }
