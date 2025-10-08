@@ -1,4 +1,3 @@
-import { level } from "winston";
 import { logger } from "./argus_logger.mjs";
 import { readStorageObject } from "./aws_storage.mjs";
 import cron from "node-cron";
