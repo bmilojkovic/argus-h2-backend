@@ -1,3 +1,4 @@
+import { level } from "winston";
 import { logger } from "./argus_logger.mjs";
 import { readStorageObject } from "./aws_storage.mjs";
 import cron from "node-cron";
@@ -172,14 +173,52 @@ function parseFamiliarData(familiarData) {
 
   var parsedData = {};
 
-  if (uiMappings.familiars[familiarData] == null) {
+  const familiarLevelArray = familiarData.split(" ");
+  if (familiarLevelArray.length != 4) {
+    logger.warn("Invalid familiar data. Couldn't parse: " + familiarData);
+    return {};
+  }
+
+  /* figure out which familiar it is and the trait levels (upgrades) for it*/
+  var familiarName = null;
+  var familiarLevels = {};
+  familiarLevelArray.forEach((arrayItem, ind) => {
+    if (ind == 0) {
+      familiarName = arrayItem;
+    } else {
+      const splitArrayItem = arrayItem.split(DATA_SEPARATOR);
+      if (splitArrayItem.length != 2) {
+        logger.warn("Couldn't parse familiar trait: " + arrayItem);
+        return;
+      }
+      familiarLevels[splitArrayItem[1]] = splitArrayItem[0];
+    }
+  });
+
+  if (familiarName == null) {
+    logger.warn("Couldn't parse familiar name from: " + familiarData);
+    return {};
+  }
+  /* map levels to actual descriptions */
+  if (uiMappings.familiars[familiarName] == null) {
     logger.warn("Got unknown familiar name: " + familiarData);
     return {};
   }
 
-  parsedData = uiMappings.familiars[familiarData];
-  parsedData["codeName"] = familiarData;
+  parsedData["codeName"] = familiarName;
   parsedData["rarity"] = "Common";
+  parsedData["name"] = uiMappings.familiars[familiarName].name;
+  parsedData["description"] = uiMappings.familiars[familiarName].description;
+  parsedData["effects"] = [];
+  uiMappings.familiars[familiarName].effects.forEach((familiarEffect) => {
+    var receivedFamilarLevel = familiarLevels[familiarEffect.codeName];
+    var newEffect = {
+      text: familiarEffect.text,
+      value: familiarEffect[receivedFamilarLevel],
+    };
+
+    parsedData["effects"].push(newEffect);
+  });
 
   return parsedData;
 }

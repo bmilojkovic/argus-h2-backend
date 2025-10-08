@@ -3032,45 +3032,105 @@
             "name": "Frinos",
             "description": "Hops about, absorbing foes' ranged shots that might have struck you instead.",
             "effects": [
-                {"text": "While together, gain additional <b>Max Health</b>. <b>Max Health</b> gained:", "value": "+40 Max Health"},
-                {"text": "While together, gain a chance to manifest <b>Souls</b>. Manifestation chance: ", "value": "75%"},
-                {"text": "Frinos deals damage leaping onto foes. Damage dealt: ", "value": "30"}
+                {
+                    "codeName": "HealthFamiliar",
+                    "text": "While together, gain additional <b>Max Health</b>. <b>Max Health</b> gained:",
+                    "1": "+10 Max Health", "2": "+20 Max Health", "3": "+30 Max Health", "4": "+40 Max Health"
+                },
+                {
+                    "codeName": "FamiliarFrogResourceBonus",
+                    "text": "While together, gain a chance to manifest <b>Souls</b>. Manifestation chance: ",
+                    "1": "+0%", "2": "+25%", "3": "+50%", "4": "+75%"
+                },
+                {
+                    "codeName": "FamiliarFrogDamage",
+                    "text": "Frinos deals damage leaping onto foes. Damage dealt: ",
+                    "1": "0", "2": "10", "3": "20", "4": "30"
+                }
             ]
         },
         "CritFamiliar" : {
             "name": "Raki",
             "description": "Occasionally pecks foes for <b>15</b> damage, leaving them <b>Marked</b>.",
             "effects": [
-                {"text": "Gain <b>Critical</b> chance. <b>Critical</b> chance gained:", "value": "+4%"},
-                {"text": "Outcroppings appear more often. Appearance chance:", "value": "+75%"},
-                {"text": "Raki swoops down to peck foes more often. Increase:", "value": "+75%"}
+                {
+                    "codeName": "CritFamiliar",
+                    "text": "Gain <b>Critical</b> chance. <b>Critical</b> chance gained:",
+                    "1": "+1%", "2": "+2%", "3": "+3%", "4": "+4%"
+                },
+                {
+                    "codeName": "FamiliarRavenResourceBonus",
+                    "text": "Outcroppings appear more often. Appearance chance:",
+                    "1": "+0%", "2": "+25%", "3": "+50%", "4": "+75%"
+                },
+                {
+                    "codeName": "FamiliarRavenAttackDuration",
+                    "text": "Raki swoops down to peck foes more often. Increase:",
+                    "1": "+0%", "2": "+25%", "3": "+50%", "4": "+75%"
+                }
             ]
         },
         "LastStandFamiliar" : {
             "name": "Toula",
             "description": "After you <b>Sprint</b> nearby, lunges at the nearest foe for <b>99</b> damage.",
             "effects": [
-                {"text": "Gain <b>1</b> bonus <b>Death Defiance</b>. <b>Health</b> restored:", "value": "40"},
-                {"text": "While together, gain bonus chance to manifest <b>Fishing Points</b>. Bonus chance:", "value": "+75%"},
-                {"text": "Toula strikes additional times before losing interest. Additional strikes:", "value": "4"}
+                {
+                    "codeName": "LastStandFamiliar",
+                    "text": "Gain <b>1</b> bonus <b>Death Defiance</b>. <b>Health</b> restored:",
+                    "1": "10", "2": "20", "3": "30", "4": "40"
+                },
+                {
+                    "codeName": "FamiliarCatResourceBonus",
+                    "text": "While together, gain bonus chance to manifest <b>Fishing Points</b>. Bonus chance:",
+                    "1": "+0%", "2": "+25%", "3": "+50%", "4": "+75%"
+                },
+                {
+                    "codeName": "FamiliarCatAttacks",
+                    "text": "Toula strikes additional times before losing interest. Additional strikes:",
+                    "1": "1", "2": "2", "3": "3", "4": "4"
+                }
             ]
         },
         "DigFamiliar" : {
             "name": "Hecuba",
             "description": "Occasionally stuns surrounding foes for <b>1 Sec.</b>, and digs up <b>Health</b> or <b>Magick</b> in a pinch.",
             "effects": [
-                {"text": "While together, gain extra <b>Max Magick</b>. Max magick gained:", "value": "+60"},
-                {"text": "<b>Digging Spots</b> appear more often. <b>Digging Spot</b> chance increase:", "value": "+75%"},
-                {"text": "<b>Hecuba</b> stuns foes more often. Stun frequency increase:", "value": "+45%"}
+                {
+                    "codeName": "DigFamiliar",
+                    "text": "While together, gain extra <b>Max Magick</b>. Max magick gained:",
+                    "1": "+15", "2": "+30", "3": "+45", "4": "+60"
+                },
+                {
+                    "codeName": "FamiliarHoundResourceBonus",
+                    "text": "<b>Digging Spots</b> appear more often. <b>Digging Spot</b> chance increase:",
+                    "1": "+0%", "2": "+25%", "3": "+50%", "4": "+75%"
+                },
+                {
+                    "codeName": "FamiliarHoundBarkDuration",
+                    "text": "<b>Hecuba</b> stuns foes more often. Stun frequency increase:",
+                    "1": "+0%", "2": "+15%", "3": "+30%", "4": "+45%"
+                }
             ]
         },
         "DodgeFamiliar" : {
             "name": "Gale",
             "description": "Leaps in harm's way then deals <b>250</b> damage up to <b>3</b> times per <b>Region</b>, <b>30 Sec.</b> apart.",
             "effects": [
-                {"text": "While together, gain extra Dodge Chance & Move Speed. Increase by:", "value": "+6%"},
-                {"text": "While together, you are more likely to find <b>Flora</b>. Increase by:", "value": "+19%"},
-                {"text": "<b>Gale</b> deals damage when scratching foes in retaliation. Damage dealt:", "value": "400"}
+                {
+                    "codeName": "DodgeFamiliar",
+                    "text": "While together, gain extra Dodge Chance & Move Speed. Increase by:",
+                    "1": "+3%", "2": "+4%", "3": "+5%", "4": "+6%"
+                },
+                {
+                    "codeName": "FamiliarPolecatResourceBonus",
+                    "text": "While together, you are more likely to find <b>Flora</b>. Increase by:",
+                    "1": "+10%", "2": "+13%", "3": "+16%", "4": "+19%"
+                },
+                {
+                    "codeName": "FamiliarPolecatDamage",
+                    "text": "<b>Gale</b> deals damage when scratching foes in retaliation. Damage dealt:",
+                    "1": "250", "2": "300", "3": "350", "4": "400"
+                }
             ]
         }
     },
