@@ -228,6 +228,7 @@ const ExtraType = Object.freeze({
   CHAOS_CURSE: "Chaos Curse",
   HADES: "Hades",
   ICARUS: "Icarus",
+  MEDEA: "Medea",
 });
 function prepareExtraObject(itemName, itemRarity, extraType) {
   var parsedItem = {};
@@ -325,6 +326,13 @@ function parseExtraData(extraData) {
     ) {
       otherExtras.push(
         prepareExtraObject(itemName, itemRarity, ExtraType.HADES)
+      );
+    } else if (
+      Object.hasOwn(uiMappings.boons, itemName) &&
+      uiMappings.boons[itemName].gods[0] == "Medea"
+    ) {
+      otherExtras.push(
+        prepareExtraObject(itemName, itemRarity, ExtraType.MEDEA)
       );
     } else {
       logger.warn("Unknown extra item: " + extraItem);

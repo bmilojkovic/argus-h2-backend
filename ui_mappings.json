@@ -3230,7 +3230,7 @@
     "CastDamageCostume": {
       "gods": ["Arachne"],
       "name": "Fuchsia Dress",
-      "description": "Don a <b>+30 Armor Outfit</b> that makes you <b>Channel 40%</b> faster."
+      "description": "Don a <b>+20 Armor Outfit</b> that makes your <b>Casts</b> deal <b>+100%</b> damage."
     },
     "IncomeCostume": {
       "gods": ["Arachne"],
@@ -3256,12 +3256,12 @@
     "HealingOnDeathCurse": {
       "gods": ["Medea"],
       "name": "Life from the Dead",
-      "description": "After a foe is slain, it has <b>5%</b> chance to drop <b>+10 Health</b>, limit <b>1</b> per <b>Encounter</b>."
+      "description": "After a foe is slain, it has <b>20%</b> chance to drop <b>+10 Health</b>, limit <b>1</b> per <b>Location</b>."
     },
     "MoneyOnDeathCurse": {
       "gods": ["Medea"],
       "name": "Wealth from the Dead",
-      "description": "After a foe is slain, it has <b>10%</b> chance to drop <b>+20 Gold</b>, limit <b>2</b> per <b>Encounter</b>."
+      "description": "After a foe is slain, you have <b>10%</b> chance to find <b>+20 Gold</b>, up to <b>2</b> times per <b>Location</b>."
     },
     "ManaOverTimeCurse": {
       "gods": ["Medea"],
@@ -3291,7 +3291,7 @@
     "NewStatusDamage": {
       "gods": ["Medea"],
       "name": "Harm for the Afflicted",
-      "description": "Inflicting a <b>Curse</b> deals <b>50</b> damage if the foe is not afflicted by it, up to <b>1 Sec.</b>"
+      "description": "Inflicting a <b>Curse</b> deals <b>50</b> damage if the foe is not already afflicted, up to every <b>1 Sec.</b>"
     },
 
     "RandomArcanaTrait": {
