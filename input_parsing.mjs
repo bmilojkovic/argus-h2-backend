@@ -252,6 +252,7 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       break;
     case ExtraType.CHAOS_CURSE:
     case ExtraType.ICARUS:
+    case ExtraType.MEDEA:
       parsedItem["name"] = uiMappings.boons[itemName]["name"];
       parsedItem["description"] = uiMappings.boons[itemName]["description"];
       parsedItem["rarity"] = "Common";
