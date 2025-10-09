@@ -259,7 +259,14 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       parsedItem["name"] = uiMappings.boons[itemName]["name"];
       parsedItem["description"] = uiMappings.boons[itemName]["description"];
       parsedItem["rarity"] = "Common";
-      parsedItem["effects"] = uiMappings.boons[itemName].effects;
+      parsedItem["effects"] = [];
+      uiMappings.boons[itemName].effects.forEach((effect) => {
+        var newEffect = {
+          text: effect["text"],
+          value: effect[parsedItem["rarity"].toLowerCase],
+        };
+        parsedItem["effects"].push(newEffect);
+      });
       break;
   }
 
