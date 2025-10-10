@@ -32,7 +32,7 @@ if (process.env.NODE_ENV !== "production") {
         winston.format.align(),
         winston.format.simple()
       ),
-      level: "info",
+      level: "debug",
     })
   );
 } else {
@@ -45,7 +45,7 @@ if (process.env.NODE_ENV !== "production") {
         winston.format.align(),
         winston.format.simple()
       ),
-      level: "info",
+      level: "debug",
     })
   );
 }

@@ -606,7 +606,7 @@ export function parseRunData(runData) {
     vowData: parseVowData(runData.vowData),
     arcanaData: parseArcanaData(runData.arcanaData),
   };
-  logger.info(countTotalRunItems(parsedData));
+
   parsedData.totalRunItems = String(countTotalRunItems(parsedData));
 
   var stringToSend = JSON.stringify(parsedData);
