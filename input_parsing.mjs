@@ -330,7 +330,7 @@ function parseExtraData(extraData) {
       uiMappings.boons[itemName].gods[0] == "Athena"
     ) {
       otherExtras.push(
-        prepareExtraObject(itemName, itemRarity, ExtraType.Athena)
+        prepareExtraObject(itemName, itemRarity, ExtraType.ATHENA)
       );
     } else if (
       Object.hasOwn(uiMappings.boons, itemName) &&
