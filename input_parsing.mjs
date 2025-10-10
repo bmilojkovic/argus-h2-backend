@@ -262,7 +262,7 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       break;
     case ExtraType.HADES:
     case ExtraType.ATHENA:
-      parsedItem["rarity"] = rarity;
+      parsedItem["rarity"] = itemRarity;
       parsedItem["name"] = uiMappings.boons[itemName]["name"];
       parsedItem["description"] = uiMappings.boons[itemName]["description"];
       parsedItem["effects"] = [];
