@@ -13,7 +13,7 @@ const BOON_RARITIES = [
   "Infusion",
 ];
 const WEAPON_RARITIES = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
-const KEEPSAKE_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
+const KEEPSAKE_AND_BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
 
 var uiMappings = await readStorageObject("uiMappings");
 
@@ -227,6 +227,7 @@ const ExtraType = Object.freeze({
   HEX: "Hex",
   CHAOS_CURSE: "Chaos Curse",
   HADES: "Hades",
+  ATHENA: "Athena",
   ICARUS: "Icarus",
   MEDEA: "Medea",
   CIRCE: "Circe",
@@ -240,7 +241,7 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
       parsedItem["description"] =
         uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
-      if (!KEEPSAKE_RARITIES.includes(itemRarity)) {
+      if (!KEEPSAKE_AND_BOON_RARITIES.includes(itemRarity)) {
         itemRarity = "Common";
       }
       parsedItem["rarity"] = itemRarity;
@@ -260,9 +261,10 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       parsedItem["rarity"] = "Common";
       break;
     case ExtraType.HADES:
+    case ExtraType.ATHENA:
+      parsedItem["rarity"] = rarity;
       parsedItem["name"] = uiMappings.boons[itemName]["name"];
       parsedItem["description"] = uiMappings.boons[itemName]["description"];
-      parsedItem["rarity"] = "Common";
       parsedItem["effects"] = [];
       uiMappings.boons[itemName].effects.forEach((effect) => {
         var newEffect = {
@@ -318,17 +320,24 @@ function parseExtraData(extraData) {
       );
     } else if (
       Object.hasOwn(uiMappings.boons, itemName) &&
-      uiMappings.boons[itemName].gods[0] == "Icarus"
-    ) {
-      otherExtras.push(
-        prepareExtraObject(itemName, itemRarity, ExtraType.ICARUS)
-      );
-    } else if (
-      Object.hasOwn(uiMappings.boons, itemName) &&
       uiMappings.boons[itemName].gods[0] == "Hades"
     ) {
       otherExtras.push(
         prepareExtraObject(itemName, itemRarity, ExtraType.HADES)
+      );
+    } else if (
+      Object.hasOwn(uiMappings.boons, itemName) &&
+      uiMappings.boons[itemName].gods[0] == "Athena"
+    ) {
+      otherExtras.push(
+        prepareExtraObject(itemName, itemRarity, ExtraType.Athena)
+      );
+    } else if (
+      Object.hasOwn(uiMappings.boons, itemName) &&
+      uiMappings.boons[itemName].gods[0] == "Icarus"
+    ) {
+      otherExtras.push(
+        prepareExtraObject(itemName, itemRarity, ExtraType.ICARUS)
       );
     } else if (
       Object.hasOwn(uiMappings.boons, itemName) &&
