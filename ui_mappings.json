@@ -3302,7 +3302,7 @@
     "ArcanaRarityTrait": {
       "gods": ["Circe"],
       "name": "Lapis Lazuli Insight",
-      "description": "Randomly draw <b>1</b> of your active <b>Arcana</b>, and upgrade it this night."
+      "description": "Randomly draw <b>2</b> of your active <b>Arcana</b>, and upgrade them this night."
     },
     "RemoveShrineTrait": {
       "gods": ["Circe"],
@@ -3317,12 +3317,12 @@
     "HealAmplifyTrait": {
       "gods": ["Circe"],
       "name": "Old Herbal Remedy",
-      "description": "Restore <b>50%</b> of your <b>Health</b> now. Any <b>Health</b> effects are <b>25%</b> stronger this night."
+      "description": "Restore <b>50%</b> of your <b>Health</b> now. Any <b>Healing</b> effects are <b>25%</b> stronger this night."
     },
     "CirceEnlargeTrait": {
       "gods": ["Circe"],
       "name": "Word of Greater Girth",
-      "description": "Grow in size so that you have <b>+15% Health</b> and deal <b>+15%</b> with your <b>Weapon</b>."
+      "description": "Grow in size so that you have <b>+15% Max Health</b> and deal <b>+15%</b> damage with your <b>Weapon</b>."
     },
     "CirceShrinkTrait": {
       "gods": ["Circe"],

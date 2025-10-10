@@ -267,7 +267,7 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
       uiMappings.boons[itemName].effects.forEach((effect) => {
         var newEffect = {
           text: effect["text"],
-          value: effect[parsedItem["rarity"].toLowerCase],
+          value: effect[parsedItem["rarity"].toLowerCase()],
         };
         parsedItem["effects"].push(newEffect);
       });
