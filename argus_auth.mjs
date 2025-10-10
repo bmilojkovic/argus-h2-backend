@@ -114,7 +114,7 @@ export async function handleGetArgusToken(req, res) {
     var twitchIdByArgusTokenMap = await readStorageObject(
       "twitchIdByArgusToken"
     );
-    for (tok in twitchIdByArgusTokenMap) {
+    for (var tok in twitchIdByArgusTokenMap) {
       if (twitchIdByArgusTokenMap[tok] === userTwitchId) {
         delete twitchIdByArgusTokenMap[tok];
         break;
