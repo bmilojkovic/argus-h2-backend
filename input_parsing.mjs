@@ -173,7 +173,7 @@ function parseFamiliarData(familiarData) {
   var parsedData = {};
 
   const familiarLevelArray = familiarData.split(" ");
-  if (familiarLevelArray.length != 4) {
+  if (familiarLevelArray.length != 3) {
     logger.warn("Invalid familiar data. Couldn't parse: " + familiarData);
     return {};
   }
