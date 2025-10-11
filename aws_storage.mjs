@@ -19,9 +19,6 @@ async function readStorageString(objectName) {
 }
 
 export async function readStorageObject(objectName) {
-  logger.debug(
-    "Trying to read object with key " + objectName + " from storage."
-  );
   return JSON.parse(await readStorageString(objectName));
 }
 
@@ -37,6 +34,4 @@ async function writeStorageString(objectName, stringToWrite) {
 
 export async function writeStorageObject(objectName, objectToWrite) {
   await writeStorageString(objectName, JSON.stringify(objectToWrite));
-
-  logger.debug("Wrote object with key " + objectName + " to storage.");
 }
