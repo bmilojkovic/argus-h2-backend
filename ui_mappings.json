@@ -4616,7 +4616,7 @@
     },
     "DaggerTripleAspect": {
       "name": "Aspect of the Morrigan",
-      "description": "You have the <b>Crow Cutters</b>, which can perform the ritual of <b>Blood Triad</b>.",
+      "description": "You have the <b>Crow Cutters</b>, which can perform the ritual of the <b>Blood Triad</b>.",
       "effects": [
         {
           "text": "Blood Triad Damage:",
@@ -4640,18 +4640,18 @@
       "effects": [
         {
           "text": "Critical Chance:",
-          "common": "+1%",
-          "rare": "+2%",
-          "epic": "+3%",
-          "heroic": "+4%",
-          "legendary": "+5%",
-          "perfect": "+8%"
+          "common": "+0%",
+          "rare": "+4%",
+          "epic": "+6%",
+          "heroic": "+8%",
+          "legendary": "+10%",
+          "perfect": "+16%"
         }
       ]
     },
     "TorchDetonateAspect": {
       "name": "Aspect of Moros",
-      "description": "Your <b>Attacks</b> linger for <b>6 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.",
+      "description": "Your <b>Attacks</b> linger for <b>2 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.",
       "effects": [
         {
           "text": "Blast Damage:",
@@ -4685,12 +4685,12 @@
       "effects": [
         {
           "text": "Rush Boon Damage:",
-          "common": "100",
-          "rare": "113",
-          "epic": "125",
-          "heroic": "138",
-          "legendary": "150",
-          "perfect": "175"
+          "common": "+10%",
+          "rare": "+15%",
+          "epic": "+20%",
+          "heroic": "+25%",
+          "legendary": "+30%",
+          "perfect": "+45%"
         }
       ]
     },
@@ -4701,22 +4701,22 @@
     },
     "AxeRecoveryAspect": {
       "name": "Aspect of Melinoë",
-      "description": "Gain bonus <b>Attack Power</b> and <b>Health</b>.",
+      "description": "Gain bonus <b>Attack Power</b> and <b>Max Health</b>.",
       "effects": [
         {
-          "text": "Attack Power & Max Life:",
+          "text": "Attack Power & Max Health:",
           "common": "+0",
-          "rare": "+20",
-          "epic": "+25",
-          "heroic": "+30",
-          "legendary": "+35",
-          "perfect": "+50"
+          "rare": "+30",
+          "epic": "+35",
+          "heroic": "+40",
+          "legendary": "+50",
+          "perfect": "+60"
         }
       ]
     },
     "AxeArmCastAspect": {
       "name": "Aspect of Charon",
-      "description": "Your <b>Cast</b> erupts like your <b>Omega Cast</b> if struck by your <b>Omega Special</b>.",
+      "description": "Your <b>Cast</b> erupts like a stronger <b>Omega Cast</b> if struck by your <b>Omega Special</b>.",
       "effects": [
         {
           "text": "Cleave-Cast Size & Damage:",
@@ -4735,12 +4735,12 @@
       "effects": [
         {
           "text": "Attack Speed:",
-          "common": "+10%",
-          "rare": "+15%",
-          "epic": "+20%",
-          "heroic": "+25%",
-          "legendary": "+30%",
-          "perfect": "+45%"
+          "common": "+20%",
+          "rare": "+25%",
+          "epic": "+30%",
+          "heroic": "+35%",
+          "legendary": "+40%",
+          "perfect": "+55%"
         }
       ]
     },
@@ -4784,7 +4784,7 @@
       "description": "Your <b>Attack</b> stays within reach, and explodes after landing your <b>Specials</b> or <b>3 Sec.</b>",
       "effects": [
         {
-          "text": "Attack & Special Damage:",
+          "text": "Attack & Specials Damage:",
           "common": "+30%",
           "rare": "+45%",
           "epic": "+60%",
@@ -4870,7 +4870,7 @@
           "epic": "45%",
           "heroic": "60%",
           "legendary": "75%",
-          "perfect": "100%"
+          "perfect": "105%"
         }
       ]
     },
