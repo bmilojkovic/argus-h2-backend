@@ -3384,7 +3384,7 @@
     "InvulnerabilityDashBoon": {
       "gods": ["Athena"],
       "name": "Divine Dash",
-      "description": "Your <b>Dash</b> deals damage to foe in your path and can momentarily <b>Deflect</b>.",
+      "description": "Your <b>Dash</b> deals damage to foes in your path and can momentarily <b>Deflect</b>.",
       "effects": [
         {
           "text": "Dash Damage:",
@@ -3440,7 +3440,7 @@
     "ManaSpearBoon": {
       "gods": ["Athena"],
       "name": "Righteous Pike",
-      "description": "Whenever you use <b>90 Magick</b>, up to <b>3</b> foe are stuck by spears from heaven.",
+      "description": "Whenever you use <b>90 Magick</b>, up to <b>3</b> foes are struck by spears from the heavens.",
       "effects": [
         {
           "text": "Spear Damage:",
@@ -3485,7 +3485,7 @@
       "description": "If your <b>Hex</b> is <b>Godsent</b>, that effect may activate multiple times in each <b>Location</b>.",
       "effects": [
         {
-          "text": "Bonus Godsent Hex:",
+          "text": "Bonus Godsent Uses:",
           "common": "+1",
           "rare": "+2",
           "epic": "+3",
@@ -3511,14 +3511,14 @@
     "HiddenMaxHealthBoon": {
       "gods": ["Dionysus"],
       "name": "Worry Free",
-      "description": "Gain a random amount of <b>Health</b>, but how much you have becomes a mystery.",
+      "description": "Gain a random amount of <b>Max Health</b>, but how much you have becomes a mystery.",
       "effects": [
         {
           "text": "Max Life:",
-          "common": "+50-80",
-          "rare": "+70-100",
-          "epic": "+90-120",
-          "heroic": "+110-140"
+          "common": "+50~80",
+          "rare": "+70~100",
+          "epic": "+90~120",
+          "heroic": "+110~140"
         }
       ]
     },
@@ -3722,7 +3722,7 @@
     "TimedKillBuffBoon": {
       "gods": ["Hermes"],
       "name": "Mean Streak",
-      "description": "Each time you slay a foe, deal more damage for the next <b>45 Sec.</b>",
+      "description": "Each time you slay a foe, deal more damage with your <b>Weapon</b> for the next <b>45 Sec.</b>",
       "effects": [
         {
           "text": "Bonus Damage per Slain Foe:",
@@ -4111,6 +4111,7 @@
         {
           "text": "Additional Omega Move Damage Per Aether:",
           "common": "+30%",
+          "infusion": "+30%",
           "rare": "+36%",
           "epic": "+42%",
           "heroic": "+48%"
@@ -4134,7 +4135,7 @@
     },
     "StaffDashAttackTrait": {
       "name": "Melting Swipe",
-      "description": "Your <b>Dash-Strike</b> hits a larger area and destroys <b>+900</b> damage to <b>Armor</b>."
+      "description": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+900</b> damage to <b>Armor</b>."
     },
     "StaffTripleShotTrait": {
       "name": "Dual Moonshot",
@@ -4162,7 +4163,7 @@
     },
     "StaffSecondStageTrait": {
       "name": "Giga Moonburst",
-      "description": "You can <b>Channel +30 Magick</b> in your <b>Omega Special</b> to deal <b>+300%</b> damage in a larger area."
+      "description": "You can <b>Channel +30 Magick</b> into your <b>Omega Special</b> to deal <b>+300%</b> damage in a larger area."
     },
     "StaffPowershotTrait": {
       "name": "Aetheric Moonburst",
@@ -4170,7 +4171,7 @@
     },
     "StaffOneWayAttackTrait": {
       "name": "Mirrored Thrasher",
-      "description": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>5 Magick</b>."
+      "description": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>+5 Magick</b>."
     },
     "StaffRaiseDeadBigTrait": {
       "name": "Soulfilled Ankh",
@@ -4186,7 +4187,7 @@
     },
     "StaffLoneShadeRallyTrait": {
       "name": "Pharaoh Etchings",
-      "description": "<b>Lone Shades</b> deal <b>+50%</b> damage and launch at foes struck by <b>Omega Special</b>."
+      "description": "<b>Lone Shades</b> deal <b>+50%</b> damage and launch at foes struck by your <b>Omega Special</b>."
     },
 
     "DaggerBlinkAoETrait": {
@@ -4199,7 +4200,7 @@
     },
     "DaggerSpecialLineTrait": {
       "name": "Sureshot Flurry",
-      "description": "Your <b>Omega Special</b> fires each shot straight ahead and your <b>Specials</b> have <b>+30%</b> range."
+      "description": "Your <b>Omega Special</b> fires each shot dead ahead and your <b>Specials</b> have <b>+30%</b> range."
     },
     "DaggerRapidAttackTrait": {
       "name": "Rapid Onslaught",
@@ -4341,10 +4342,10 @@
     },
     "AxeFreeSpinTrait": {
       "name": "Psychic Whirlwind",
-      "description": "During your <b>Omega Attack</b>, you are free to use your <b>Attacks</b> and <b>Specials</b>."
+      "description": "Your <b>Omega Attack</b> fires around you, leaving you free to move and strike at the same time."
     },
     "AxeAttackRecoveryTrait": {
-      "name": "Rapid Slash",
+      "name": "Rapid Hack",
       "description": "Your <b>Attack</b> is <b>30%</b> faster."
     },
     "AxeRangedWhirlwindTrait": {
@@ -4378,7 +4379,7 @@
     },
     "LobGunAttackRangeTrait": {
       "name": "Garmr Gaze",
-      "description": "Your Attacks shoot +25% farther and deal +25% damage."
+      "description": "Your <b>Attacks</b> shoot <b>+25%</b> farther and deal <b>+25%</b> damage."
     },
     "LobGunAttackDoublerTrait": {
       "name": "Helheim Charge",
@@ -4386,19 +4387,19 @@
     },
     "LobGunBounceTrait": {
       "name": "Leering Glance",
-      "description": "Your Attack shots bounce toward +1 and deal +15% damage on the successive hit."
+      "description": "Your <b>Attack</b> shots bounce toward <b>+1</b> foe and deal <b>+15%</b> damage on the successive hit."
     },
     "LobGrowthTrait": {
       "name": "Looming Ignition",
-      "description": "Your Attacks gain +50% damage and blast size over 0.7 Sec. before they explode."
+      "description": "Your <b>Attacks</b> gain <b>+50%</b> damage and blast size over <b>0.7 Sec.</b> before they explode."
     },
     "LobOneSideTrait": {
       "name": "Mega Driver",
-      "description": "Your Specials launch you ahead faster and deal +50% damage."
+      "description": "Your <b>Specials</b> launch you ahead faster and deal <b>+50%</b> damage."
     },
     "LobRushArmorTrait": {
       "name": "Melting Break",
-      "description": "Your <b>Special</b> deals <b>+600</b> damage to Armor."
+      "description": "Your <b>Special</b> deals <b>+600</b> damage to <b>Armor</b>."
     },
     "LobPulseAmmoCollectTrait": {
       "name": "Possessed Array",
@@ -4406,7 +4407,7 @@
     },
     "LobSpecialSpeedTrait": {
       "name": "Rapid Driver",
-      "description": "Your Specials are <b>35%</b> faster"
+      "description": "Your <b>Specials</b> are <b>35%</b> faster"
     },
     "LobGunSpecialBounceTrait": {
       "name": "Runic Driver",
@@ -5325,8 +5326,8 @@
     "EnemyDamageShrineUpgrade": {
       "name": "Vow of Pain",
       "descriptions": [
+        "All foes deal <b>+0%</b> damage.",
         "All foes deal <b>+20%</b> damage.",
-        "All foes deal <b>+40%</b> damage.",
         "All foes deal <b>+60%</b> damage.",
         "All foes deal <b>+100%</b> damage."
       ],
