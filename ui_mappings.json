@@ -4897,7 +4897,7 @@
       "effects": [
         {
           "codeName": "HealthFamiliar",
-          "text": "While together, gain additional <b>Max Health</b>. <b>Max Health</b> gained:",
+          "text": "Bonus Max Health:",
           "1": "+10 Max Health",
           "2": "+20 Max Health",
           "3": "+30 Max Health",
@@ -4905,29 +4905,21 @@
         },
         {
           "codeName": "FamiliarFrogResourceBonus",
-          "text": "While together, gain a chance to manifest <b>Souls</b>. Manifestation chance: ",
-          "1": "+0%",
-          "2": "+25%",
-          "3": "+50%",
-          "4": "+75%"
-        },
-        {
-          "codeName": "FamiliarFrogDamage",
-          "text": "Frinos deals damage leaping onto foes. Damage dealt: ",
-          "1": "0",
-          "2": "10",
-          "3": "20",
-          "4": "30"
+          "text": "Bonus chance of Souls appearing:",
+          "1": "+20%",
+          "2": "+30%",
+          "3": "+40%",
+          "4": "+50%"
         }
       ]
     },
     "CritFamiliar": {
       "name": "Raki",
-      "description": "Occasionally pecks foes for <b>15</b> damage, leaving them <b>Marked</b>.",
+      "description": "Occasionally pecks foes for <b>5</b> damage, leaving them <b>Marked</b>.",
       "effects": [
         {
           "codeName": "CritFamiliar",
-          "text": "Gain <b>Critical</b> chance. <b>Critical</b> chance gained:",
+          "text": "Bonus innate Critical Chance:",
           "1": "+1%",
           "2": "+2%",
           "3": "+3%",
@@ -4935,19 +4927,11 @@
         },
         {
           "codeName": "FamiliarRavenResourceBonus",
-          "text": "Outcroppings appear more often. Appearance chance:",
-          "1": "+0%",
-          "2": "+25%",
-          "3": "+50%",
-          "4": "+75%"
-        },
-        {
-          "codeName": "FamiliarRavenAttackDuration",
-          "text": "Raki swoops down to peck foes more often. Increase:",
-          "1": "+0%",
-          "2": "+25%",
-          "3": "+50%",
-          "4": "+75%"
+          "text": "Bonus chance of Outcroppings appearing:",
+          "1": "+20%",
+          "2": "+30%",
+          "3": "+40%",
+          "4": "+50%"
         }
       ]
     },
@@ -4957,27 +4941,19 @@
       "effects": [
         {
           "codeName": "LastStandFamiliar",
-          "text": "Gain <b>1</b> bonus <b>Death Defiance</b>. <b>Health</b> restored:",
-          "1": "10",
-          "2": "20",
-          "3": "30",
-          "4": "40"
+          "text": "Bonus Death Defiance:",
+          "1": "+1",
+          "2": "+1",
+          "3": "+1",
+          "4": "+1"
         },
         {
           "codeName": "FamiliarCatResourceBonus",
-          "text": "While together, gain bonus chance to manifest <b>Fishing Points</b>. Bonus chance:",
-          "1": "+0%",
-          "2": "+25%",
-          "3": "+50%",
-          "4": "+75%"
-        },
-        {
-          "codeName": "FamiliarCatAttacks",
-          "text": "Toula strikes additional times before losing interest. Additional strikes:",
-          "1": "1",
-          "2": "2",
-          "3": "3",
-          "4": "4"
+          "text": "Bonus chance of Fishing Spots appearing:",
+          "1": "+20%",
+          "2": "+30%",
+          "3": "+40%",
+          "4": "+50%"
         }
       ]
     },
@@ -4987,7 +4963,7 @@
       "effects": [
         {
           "codeName": "DigFamiliar",
-          "text": "While together, gain extra <b>Max Magick</b>. Max magick gained:",
+          "text": "Bonus Max Magick:",
           "1": "+15",
           "2": "+30",
           "3": "+45",
@@ -4995,29 +4971,21 @@
         },
         {
           "codeName": "FamiliarHoundResourceBonus",
-          "text": "<b>Digging Spots</b> appear more often. <b>Digging Spot</b> chance increase:",
-          "1": "+0%",
-          "2": "+25%",
-          "3": "+50%",
-          "4": "+75%"
-        },
-        {
-          "codeName": "FamiliarHoundBarkDuration",
-          "text": "<b>Hecuba</b> stuns foes more often. Stun frequency increase:",
-          "1": "+0%",
-          "2": "+15%",
-          "3": "+30%",
-          "4": "+45%"
+          "text": "Bonus chance of <b>Digging Spots</b> appearing:",
+          "1": "+20%",
+          "2": "+30%",
+          "3": "+40%",
+          "4": "+50%"
         }
       ]
     },
     "DodgeFamiliar": {
       "name": "Gale",
-      "description": "Leaps in harm's way then deals <b>250</b> damage up to <b>3</b> times per <b>Region</b>, <b>30 Sec.</b> apart.",
+      "description": "Leaps in harm's way then deals <b>400</b> damage up to <b>3</b> times per <b>Region</b>, <b>30 Sec.</b> apart.",
       "effects": [
         {
           "codeName": "DodgeFamiliar",
-          "text": "While together, gain extra Dodge Chance & Move Speed. Increase by:",
+          "text": "Bonus Dodge Chance & Move Speed:",
           "1": "+3%",
           "2": "+4%",
           "3": "+5%",
@@ -5025,19 +4993,11 @@
         },
         {
           "codeName": "FamiliarPolecatResourceBonus",
-          "text": "While together, you are more likely to find <b>Flora</b>. Increase by:",
-          "1": "+10%",
-          "2": "+13%",
-          "3": "+16%",
-          "4": "+19%"
-        },
-        {
-          "codeName": "FamiliarPolecatDamage",
-          "text": "<b>Gale</b> deals damage when scratching foes in retaliation. Damage dealt:",
-          "1": "250",
-          "2": "300",
-          "3": "350",
-          "4": "400"
+          "text": "Bonus chance of <b>Flora</b> appearing:",
+          "1": "+20%",
+          "2": "+30%",
+          "3": "+40%",
+          "4": "+50%"
         }
       ]
     }
@@ -5045,10 +5005,10 @@
   "keepsakes": {
     "ManaOverTimeRefundKeepsake": {
       "name": "Silver Wheel",
-      "common": "Gain <b>+50 Magick</b> this night.",
-      "rare": "Gain <b>+75 Magick</b> this night.",
-      "epic": "Gain <b>+100 Magick</b> this night.",
-      "heroic": "Gain <b>+150 Magick</b> this night."
+      "common": "Gain <b>+50 Max Magick</b> this night.",
+      "rare": "Gain <b>+75 Max Magick</b> this night.",
+      "epic": "Gain <b>+100 Max Magick</b> this night.",
+      "heroic": "Gain <b>+150 Max Magick</b> this night."
     },
     "BossPreDamageKeepsake": {
       "name": "Knuckle Bones",
@@ -5062,7 +5022,7 @@
       "common": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Common Arcana Cards</b>.",
       "rare": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Rare Arcana Cards</b>.",
       "epic": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Epic Arcana Cards</b>.",
-      "heroic": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Heroic Arcana Cards</b>."
+      "heroic": "After the next <b>Guardian</b>, activate <b>2</b> random inactive <b>Epic Arcana Cards</b>."
     },
     "DoorHealReserveKeepsake": {
       "name": "Ghost Onion",
@@ -5101,10 +5061,10 @@
     },
     "LowHealthCritKeepsake": {
       "name": "White Antler",
-      "common": "For the next <b>Region</b>, gain <b>+20% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
-      "rare": "For the next <b>Region</b>, gain <b>+25% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
-      "epic": "For the next <b>Region</b>, gain <b>+30% Critical</b> damage chance, but you are limited to <b>30 Health</b>.",
-      "heroic": "For the next <b>Region</b>, gain <b>+50% Critical</b> damage chance, but you are limited to <b>30 Health</b>."
+      "common": "For the next <b>Region</b>, gain <b>+20% Critical</b> damage chance, but you are limited to <b>30 Max Health</b>.",
+      "rare": "For the next <b>Region</b>, gain <b>+25% Critical</b> damage chance, but you are limited to <b>30 Max Health</b>.",
+      "epic": "For the next <b>Region</b>, gain <b>+30% Critical</b> damage chance, but you are limited to <b>30 Max Health</b>.",
+      "heroic": "For the next <b>Region</b>, gain <b>+50% Critical</b> damage chance, but you are limited to <b>30 Max Health</b>."
     },
     "SpellTalentKeepsake": {
       "name": "Moon Beam",
@@ -5115,10 +5075,10 @@
     },
     "ArmorGainKeepsake": {
       "name": "Silken Sash",
-      "common": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+2 Armor</b> after each <b>Location</b>.",
-      "rare": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+3 Armor</b> after each <b>Location</b>.",
-      "epic": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+4 Armor</b> after each <b>Location</b>.",
-      "heroic": "Gain <b>+20 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+6 Armor</b> after each <b>Location</b>."
+      "common": "Gain <b>+30 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+2 Armor</b> after each <b>Location</b>.",
+      "rare": "Gain <b>+30 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+3 Armor</b> after each <b>Location</b>.",
+      "epic": "Gain <b>+30 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+4 Armor</b> after each <b>Location</b>.",
+      "heroic": "Gain <b>+30 Armor</b>. While you have at least <b>1 Armor</b>, gain <b>+6 Armor</b> after each <b>Location</b>."
     },
     "TempHammerKeepsake": {
       "name": "Experimental Hammer",
@@ -5488,11 +5448,11 @@
       "name": "The Sorceress",
       "grasp": 1,
       "descriptions": [
-        "Your <b>Omega Moves</b> are 0% faster.",
-        "Your <b>Omega Moves</b> are 20% faster.",
-        "Your <b>Omega Moves</b> are 25% faster.",
-        "Your <b>Omega Moves</b> are 30% faster.",
-        "Your <b>Omega Moves</b> are 35% faster."
+        "Your <b>Omega Moves</b> are <b>0%</b> faster.",
+        "Your <b>Omega Moves</b> are <b>20%</b> faster.",
+        "Your <b>Omega Moves</b> are <b>25%</b> faster.",
+        "Your <b>Omega Moves</b> are <b>30%</b> faster.",
+        "Your <b>Omega Moves</b> are <b>35%</b> faster."
       ]
     },
     "HealthRegen": {
@@ -5525,7 +5485,7 @@
         "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>0.8 Sec.</b>",
         "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.0 Sec.</b>",
         "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.2 Sec.</b>",
-        "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.5 Sec.</b>"
+        "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.4 Sec.</b>"
       ]
     },
     "SorceryRegenUpgrade": {
@@ -5598,22 +5558,22 @@
       "name": "The Swift Runner",
       "grasp": 1,
       "descriptions": [
-        "Your <b>Sprint</b> is <b>0%</b> faster and lets you pass right through most dangers in your way.",
-        "Your <b>Sprint</b> is <b>5%</b> faster and lets you pass right through most dangers in your way.",
-        "Your <b>Sprint</b> is <b>7%</b> faster and lets you pass right through most dangers in your way.",
-        "Your <b>Sprint</b> is <b>10%</b> faster and lets you pass right through most dangers in your way.",
-        "Your <b>Sprint</b> is <b>13%</b> faster and lets you pass right through most dangers in your way."
+        "Your <b>Sprint</b> is <b>0%</b> faster and lets you pass through most dangers in your way.",
+        "Your <b>Sprint</b> is <b>5%</b> faster and lets you pass through most dangers in your way.",
+        "Your <b>Sprint</b> is <b>7%</b> faster and lets you pass through most dangers in your way.",
+        "Your <b>Sprint</b> is <b>10%</b> faster and lets you pass through most dangers in your way.",
+        "Your <b>Sprint</b> is <b>13%</b> faster and lets you pass through most dangers in your way."
       ]
     },
     "LastStand": {
       "name": "Death",
       "grasp": 4,
       "descriptions": [
-        "You have <b>+0 Death Defiances</b>.",
+        "You have <b>+0 Death Defiance</b>.",
         "You have <b>+1 Death Defiance</b>.",
-        "You have <b>+2 Death Defiances</b>.",
-        "You have <b>+3 Death Defiances</b>.",
-        "You have <b>+4 Death Defiances</b>."
+        "You have <b>+2 Death Defiance</b>.",
+        "You have <b>+3 Death Defiance</b>.",
+        "You have <b>+4 Death Defiance</b>."
       ]
     },
     "MaxHealthPerRoom": {
@@ -5742,10 +5702,10 @@
       "grasp": 0,
       "descriptions": [
         "Any Boons you find have <b>+0%</b> chance to include <b>Epic</b> blessings.",
+        "Any Boons you find have <b>+5%</b> chance to include <b>Epic</b> blessings.",
         "Any Boons you find have <b>+10%</b> chance to include <b>Epic</b> blessings.",
         "Any Boons you find have <b>+15%</b> chance to include <b>Epic</b> blessings.",
-        "Any Boons you find have <b>+20%</b> chance to include <b>Epic</b> blessings.",
-        "Any Boons you find have <b>+25%</b> chance to include <b>Epic</b> blessings."
+        "Any Boons you find have <b>+20%</b> chance to include <b>Epic</b> blessings."
       ]
     },
     "CardDraw": {
