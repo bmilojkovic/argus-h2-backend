@@ -152,8 +152,7 @@ export async function handleCheckLogin(req, res) {
     );
 
     logger.info(
-      "[LOGIN CHECK] JWT verification successful. Channel ID: " +
-        decodedPayload["channel_id"]
+      "JWT verification successful. Channel ID: " + decodedPayload["channel_id"]
     );
 
     var userTwitchId = decodedPayload["channel_id"];
@@ -163,18 +162,14 @@ export async function handleCheckLogin(req, res) {
     for (var tok in twitchIdByArgusTokenMap) {
       if (twitchIdByArgusTokenMap[tok] === userTwitchId) {
         logger.info(
-          "[LOGIN CHECK] found user nicely logged in: " +
-            decodedPayload["channel_id"]
+          "Found user nicely logged in: " + decodedPayload["channel_id"]
         );
         res.send("LOGIN_OK");
         return;
       }
     }
 
-    logger.info(
-      "[LOGIN CHECK] didn't find user logged in: " +
-        decodedPayload["channel_id"]
-    );
+    logger.info("Didn't find user logged in: " + decodedPayload["channel_id"]);
     res.send("FAIL");
   } catch (error) {
     logger.warn("Error in decoding JWT token: " + error.message);
