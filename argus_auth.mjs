@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import querystring from "querystring";
 import request from "request";
+import jwt from "jsonwebtoken";
 
 import { loadSecrets } from "./secrets.mjs";
 import { readStorageObject, writeStorageObject } from "./aws_storage.mjs";
@@ -10,6 +11,7 @@ import { logger } from "./argus_logger.mjs";
 const secrets = loadSecrets();
 const extensionId = secrets.extensionId;
 const apiClientSecret = secrets.apiClientSecret;
+const extensionSecret = secrets.extensionSecret;
 
 function generateRandomHex(length) {
   // `length` specifies the number of bytes, not hex characters.
@@ -139,5 +141,43 @@ export async function getTwitchIdByArgusToken(argus_token) {
     return twitchIdByArgusTokenMap[argus_token];
   } else {
     return null;
+  }
+}
+
+export async function handleCheckLogin(req, res) {
+  try {
+    var decodedPayload = jwt.verify(
+      req.headers["x-extension-jwt"],
+      Buffer.from(extensionSecret, "base64")
+    );
+
+    logger.info(
+      "[LOGIN CHECK] JWT verification successful. Channel ID: " +
+        decodedPayload["channel_id"]
+    );
+
+    var userTwitchId = decodedPayload["channel_id"];
+    var twitchIdByArgusTokenMap = await readStorageObject(
+      "twitchIdByArgusToken"
+    );
+    for (var tok in twitchIdByArgusTokenMap) {
+      if (twitchIdByArgusTokenMap[tok] === userTwitchId) {
+        logger.info(
+          "[LOGIN CHECK] found user nicely logged in: " +
+            decodedPayload["channel_id"]
+        );
+        res.send("LOGIN_OK");
+        return;
+      }
+    }
+
+    logger.info(
+      "[LOGIN CHECK] didn't find user logged in: " +
+        decodedPayload["channel_id"]
+    );
+    res.send("FAIL");
+  } catch (error) {
+    logger.warn("Error in decoding JWT token: " + error.message);
+    res.send("FAIL");
   }
 }
