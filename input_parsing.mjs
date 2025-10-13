@@ -12,7 +12,14 @@ const BOON_RARITIES = [
   "Duo",
   "Infusion",
 ];
-const WEAPON_RARITIES = ["Common", "Rare", "Epic", "Heroic", "Legendary"];
+const WEAPON_RARITIES = [
+  "Common",
+  "Rare",
+  "Epic",
+  "Heroic",
+  "Legendary",
+  "Perfect",
+];
 const KEEPSAKE_AND_BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
 
 var uiMappings = await readStorageObject("uiMappings");
