@@ -2058,7 +2058,7 @@
     "DoubleBoltBoon": {
       "gods": ["Zeus"],
       "name": "Double Strike",
-      "description": "Your lightning bolt effects may strike <b>2</b> more times.",
+      "description": "Your lightning bolt effects may strike <b>2</b> times.",
       "effects": [
         {
           "text": "Bonus Bolt Chance:",
@@ -4143,7 +4143,7 @@
     },
     "StaffJumpSpecialTrait": {
       "name": "Shimmering Moonshot",
-      "description": "Your <b>Specials</b> bounces toward up to <b>+2</b> foes, dealing <b>+10%</b> damage for each hit."
+      "description": "Your <b>Specials</b> bounce toward up to <b>+2</b> foes, dealing <b>+10%</b> damage for each hit."
     },
     "StaffExAoETrait": {
       "name": "Cross Cataclysm",
