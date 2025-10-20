@@ -15,7 +15,7 @@ The backend is implemented as an express js app. It is deployed on [fly.io](http
 
 ## Deployment
 
-If you are deploying your own version of this repo, you will also need to build and set up your version of the Argus Twitch Extension. Make sure you have both the client API secret and the extension secret generated for your version of the Argus Twitch Extension. For the backend code to work you need to have a couple of environment variables set:
+If you are deploying your own version of this repo, you will also need to build and set up your version of the Argus Twitch Extension. You will probably want to search through all three repos for the backend URL (https://argus-h2-backend.fly.dev) since it appears a couple of times in code. Make sure you have both the client API secret and the extension secret generated for your version of the Argus Twitch Extension. For the backend code to work you need to have a couple of environment variables set:
 
 - `ARGUS_TWITCH_ID` - the (public) client ID of the Twitch extension you are broadcasting to.
 - `ARGUS_CLIENT_SECRET` - the Twitch client API secret for the extension you are broadcasting to.

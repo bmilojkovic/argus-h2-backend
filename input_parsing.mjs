@@ -82,14 +82,16 @@ function prepareBoonObject(boon, rarity) {
   return boonObject;
 }
 
-/*
+const EMPTY_BOON_STRING = "NOBOONS";
+/**
  * Boons should arrive in the following format:
- * [rarityA];;[nameA] [rarityB];;[nameB] etc
+ * `[rarityA];;[nameA] [rarityB];;[nameB]` etc
  *
  * For example:
+ * ```
  * Common;;ZeusWeaponBoon Rare;;AphroditeCastBoon
+ * ```
  */
-const EMPTY_BOON_STRING = "NOBOONS";
 function parseBoonData(boonData) {
   if (boonData === EMPTY_BOON_STRING) {
     return {};
@@ -135,6 +137,15 @@ function parseBoonData(boonData) {
 }
 
 const EMPTY_WEAPON_STRING = "NOWEAPONS";
+/**
+ * The weapon should arrive in the following format:
+ * `[rarityA];;[nameA]` etc
+ *
+ * For example:
+ * ```
+ * Rare;;DaggerBlockAspect
+ * ```
+ */
 function parseWeaponData(weaponData) {
   if (weaponData === EMPTY_WEAPON_STRING) {
     return {};
@@ -171,6 +182,18 @@ function parseWeaponData(weaponData) {
 }
 
 const EMPTY_FAMILIAR_STRING = "NOFAMILIARS";
+/**
+ * The familiar should arrive in the following format:
+ * `[familiarName] [level1];;[trait1] [level2];;[trait2]`.
+ * There should be exactly two traits with their appropriate levels.
+ * We are not displaying the attack trait for any of the familiars
+ * since the game doesn't show them either.
+ *
+ * For example:
+ * ```
+ * LastStandFamiliar 2;;LastStandFamiliar 3;;FamiliarCatResourceBonus
+ * ```
+ */
 function parseFamiliarData(familiarData) {
   if (familiarData === EMPTY_FAMILIAR_STRING) {
     return {};
@@ -286,6 +309,31 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
 }
 
 const EMPTY_EXTRA_STRING = "NOEXTRAS";
+/**
+ * The extra list should arrive in the following format:
+ * `[rarity1];;[boon1] [rarity2];;[boon2]` etc.
+ *
+ * For example:
+ * ```
+ * Epic;;ForceZeusBoonKeepsake Common;;SpellSummonTrait
+ * ```
+ *
+ * This list should contain items that go below the main panel, which includes:
+ * - Keepsakes
+ * - Hexes
+ * - Chaos curses
+ * - Some Hades boons
+ * - Some Athena boons
+ * - Some Icarus boons
+ * - Some Medea boons
+ * - Some Circe boons
+ *
+ * We do not check if the item should really be in extra, we just make sure that it
+ * exists in UI Mappings.
+ *
+ * The keepsake should always be first, and the hex should always be second. Everything else
+ * goes in order of arrival.
+ */
 function parseExtraData(extraData) {
   if (extraData === EMPTY_EXTRA_STRING) {
     return [];
@@ -375,14 +423,16 @@ function parseExtraData(extraData) {
   return parsedData;
 }
 
+const emptyElementsString = "NOELEMENTS";
 /**
  * Elements should arrive in the following format:
- * [elementA]:[numberA];;[elementB]:[numberB];;etc
+ * `[elementA]:[numberA];;[elementB]:[numberB]` etc
  *
  * For example:
+ * ```
  * Fire:1;;Water:0;;Earth:3;;Air:0;;Aether:0
+ * ```
  */
-const emptyElementsString = "NOELEMENTS";
 function parseElementalData(elementalData) {
   if (elementalData === emptyElementsString) {
     return [];
@@ -485,6 +535,18 @@ function preparePinObject(pinBoon, boonData) {
 
 const MAX_PINS = 3;
 const EMPTY_PINS_STRING = "NOPINS";
+/**
+ * Pins should arrive in the following format:
+ * `[Boon1];;[Boon2];;[Boon3]`
+ *
+ * For example:
+ * ```
+ * RandomStatusBoon;;AresExCastBoon;;GoodStuffBoon
+ * ```
+ *
+ * If we get items that are not boons, we just skip them.
+ * If we get more than `MAX_PINS` boons in the list, we will disregard the tail ones.
+ */
 function parsePinData(pinData, boonData) {
   if (pinData == EMPTY_PINS_STRING) {
     return [];
@@ -512,6 +574,15 @@ function parsePinData(pinData, boonData) {
 }
 
 const EMPTY_VOWS_STRING = "NOVOWS";
+/**
+ * Vows should arrive in the following format:
+ * `[Level1];;[Vow1] [Level2];;[Vow2]` etc.
+ *
+ * For example:
+ * ```
+ * 4;;BossDifficultyShrineUpgrade 1;;MinibossCountShrineUpgrade 2;;NextBiomeEnemyShrineUpgrade 2;;BiomeSpeedShrineUpgrade
+ * ```
+ */
 function parseVowData(vowData) {
   if (vowData === EMPTY_VOWS_STRING) {
     return {};
@@ -561,6 +632,15 @@ function parseVowData(vowData) {
 
 const ARCANA_LEVEL_MAPPING = ["None", "Common", "Rare", "Epic", "Heroic"];
 const EMPTY_ARCANA_STRING = "NOARCANA";
+/**
+ * Arcana should arrive in the following format:
+ * `[Level1];;[Arcana1] [Level2];;[Arcana2]` etc.
+ *
+ * For example:
+ * ```
+ * 3;;ScreenReroll 3;;StatusVulnerability 2;;ChanneledCast 3;;HealthRegen 3;;LowManaDamageBonus 1;;CastCount 3;;SorceryRegenUpgrade
+ * ```
+ */
 function parseArcanaData(arcanaData) {
   if (arcanaData === EMPTY_ARCANA_STRING) {
     return {};
