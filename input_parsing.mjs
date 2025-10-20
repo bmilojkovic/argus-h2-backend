@@ -24,11 +24,17 @@ const KEEPSAKE_AND_BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
 
 var uiMappings = await readStorageObject("uiMappings");
 
+/**
+ * We periodically read the UI Mappings object from storage.
+ */
 async function refreshUIMappings() {
   logger.info("Refreshing UI mappings.");
   uiMappings = await readStorageObject("uiMappings");
 }
 
+/**
+ * Refresh UI Mappings every 60 seconds.
+ */
 cron.schedule("* * * * *", refreshUIMappings);
 
 function removeSuffixes(boonName) {
@@ -128,13 +134,6 @@ function parseBoonData(boonData) {
   return parsedData;
 }
 
-/*
- * Boons should arrive in the following format:
- * [rarityA]-[nameA];;[rarityB]-[nameB];;etc
- *
- * For example:
- * Common-ZeusWeaponBoon;;Rare-AphroditeCastBoon
- */
 const EMPTY_WEAPON_STRING = "NOWEAPONS";
 function parseWeaponData(weaponData) {
   if (weaponData === EMPTY_WEAPON_STRING) {
@@ -376,7 +375,7 @@ function parseExtraData(extraData) {
   return parsedData;
 }
 
-/*
+/**
  * Elements should arrive in the following format:
  * [elementA]:[numberA];;[elementB]:[numberB];;etc
  *
@@ -620,6 +619,18 @@ const TWITCH_PACKAGE_LIMIT = 1024 * 5;
 //80% just for paranoia. 20 characters is our nonce and part number.
 const TWITCH_PACKAGE_SIZE_CUTOFF = Math.floor(TWITCH_PACKAGE_LIMIT * 0.8) - 20;
 
+/**
+ * This function takes the raw data we got from the mod,
+ * does all the parsing and returns everything prepared for
+ * frontend. This involves, but is not limited to:
+ * - Adding proper names
+ * - Adding descriptions
+ * - Adding effects
+ * - Making everything a JSON
+ *
+ * @param runData - Raw input data. This will mostly be a code name and rarity/level.
+ * @returns Parsed data. This should be everything that the frontend needs for display.
+ */
 export function parseRunData(runData) {
   var parsedData = {
     boonData: parseBoonData(runData.boonData),
@@ -634,25 +645,5 @@ export function parseRunData(runData) {
 
   parsedData.totalRunItems = String(countTotalRunItems(parsedData));
 
-  var stringToSend = JSON.stringify(parsedData);
-
-  var parsedDataArray = [];
-  if (stringToSend.length > TWITCH_PACKAGE_SIZE_CUTOFF) {
-    var startPos = 0;
-    var stop = false;
-
-    while (!stop) {
-      var endingPosition = startPos + TWITCH_PACKAGE_SIZE_CUTOFF;
-      if (endingPosition >= stringToSend.length) {
-        endingPosition = stringToSend.length;
-        stop = true;
-      }
-      parsedDataArray.push(stringToSend.substring(startPos, endingPosition));
-      startPos = endingPosition;
-    }
-  } else {
-    parsedDataArray.push(stringToSend);
-  }
-
-  return parsedDataArray;
+  return parsedData;
 }

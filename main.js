@@ -13,7 +13,6 @@ import {
 } from "./argus_auth.mjs";
 
 import { logger } from "./argus_logger.mjs";
-import crypto from "crypto";
 import path from "path";
 
 const app = express();
@@ -32,10 +31,9 @@ app.post("/run_info", async function (req, res, next) {
     return;
   }
   const broadcasterId = twitchId;
-  const runDataArray = parseRunData(req.body.runData);
-  const broadcastNonce = crypto.randomInt(NONCE_MAX);
+  const parsedData = parseRunData(req.body.runData);
 
-  broadcastInfo(runDataArray, broadcastNonce, broadcasterId);
+  broadcastInfo(parsedData, broadcasterId);
 
   res.send("ok");
 });

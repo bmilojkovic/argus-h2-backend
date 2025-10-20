@@ -2,6 +2,7 @@ import { logger } from "./argus_logger.mjs";
 import { loadSecrets } from "./secrets.mjs";
 import request from "request";
 
+import crypto from "crypto";
 import jwt from "jsonwebtoken";
 
 const secrets = loadSecrets();
@@ -54,15 +55,42 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
   });
 }
 
-export function broadcastInfo(runDataArray, broadcastNonce, broadcasterId) {
-  runDataArray.forEach((runDataPart, ind) => {
+/**
+ * This function sends data to Twitch. This might involve breaking up
+ * the message into multiple smaller ones because there is a limit of
+ * 5KB on the size of messages that can be broacast.
+ */
+export function broadcastInfo(parsedData, broadcasterId) {
+  const broadcastNonce = crypto.randomInt(NONCE_MAX);
+
+  var stringToSend = JSON.stringify(parsedData);
+
+  var parsedDataArray = [];
+  if (stringToSend.length > TWITCH_PACKAGE_SIZE_CUTOFF) {
+    var startPos = 0;
+    var stop = false;
+
+    while (!stop) {
+      var endingPosition = startPos + TWITCH_PACKAGE_SIZE_CUTOFF;
+      if (endingPosition >= stringToSend.length) {
+        endingPosition = stringToSend.length;
+        stop = true;
+      }
+      parsedDataArray.push(stringToSend.substring(startPos, endingPosition));
+      startPos = endingPosition;
+    }
+  } else {
+    parsedDataArray.push(stringToSend);
+  }
+
+  parsedDataArray.forEach((runDataPart, ind) => {
     var partialData =
       "*" +
       broadcastNonce +
       "*" +
       ind +
       "*" +
-      runDataArray.length +
+      parsedDataArray.length +
       "*" +
       runDataPart;
 
