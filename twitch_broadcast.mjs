@@ -55,6 +55,8 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
   });
 }
 
+const NONCE_MAX = 2 ** 32;
+
 /**
  * This function sends data to Twitch. This might involve breaking up
  * the message into multiple smaller ones because there is a limit of

@@ -19,8 +19,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const NONCE_MAX = 2 ** 32;
-
 app.post("/run_info", async function (req, res, next) {
   logger.debug("Received data: " + JSON.stringify(req.body));
 
