@@ -614,11 +614,6 @@ function countTotalRunItems(parsedData) {
   return totalRunItems;
 }
 
-//twitch package size limitation is 5KB
-const TWITCH_PACKAGE_LIMIT = 1024 * 5;
-//80% just for paranoia. 20 characters is our nonce and part number.
-const TWITCH_PACKAGE_SIZE_CUTOFF = Math.floor(TWITCH_PACKAGE_LIMIT * 0.8) - 20;
-
 /**
  * This function takes the raw data we got from the mod,
  * does all the parsing and returns everything prepared for

@@ -55,6 +55,10 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
   });
 }
 
+//twitch package size limitation is 5KB
+const TWITCH_PACKAGE_LIMIT = 1024 * 5;
+//80% just for paranoia. 20 characters is our nonce and part number.
+const TWITCH_PACKAGE_SIZE_CUTOFF = Math.floor(TWITCH_PACKAGE_LIMIT * 0.8) - 20;
 const NONCE_MAX = 2 ** 32;
 
 /**
