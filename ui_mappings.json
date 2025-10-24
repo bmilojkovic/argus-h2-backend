@@ -528,10 +528,10 @@
       "effects": [
         {
           "text": "Blade Damage:",
-          "common": "80",
-          "rare": "110",
-          "epic": "140",
-          "heroic": "170"
+          "common": "100",
+          "rare": "140",
+          "epic": "180",
+          "heroic": "220"
         }
       ]
     },
@@ -1013,7 +1013,7 @@
       "effects": [
         {
           "text": "Cast Damage (every 1 Sec.):",
-          "common": "50",
+          "common": "60",
           "rare": "70",
           "epic": "80",
           "heroic": "90"
@@ -2322,7 +2322,7 @@
       "gods": ["Ares", "Aphrodite"],
       "name": "Carnal Pleasure",
       "description": "Whenever you collect <b>Plasma</b>, you may create a <b>Heartthrob</b>.",
-      "effects": [{ "text": "Chance of Heartthrob:", "duo": "25%" }],
+      "effects": [{ "text": "Chance of Heartthrob:", "duo": "35%" }],
       "requirements": [
         {
           "type": "Aphrodite",
@@ -3083,10 +3083,10 @@
       "effects": [
         {
           "text": "Omega Critical Chance:",
-          "common": "+8%",
-          "rare": "+10%",
-          "epic": "+12%",
-          "heroic": "+14%"
+          "common": "+10%",
+          "rare": "+12%",
+          "epic": "+14%",
+          "heroic": "+16%"
         }
       ]
     },
@@ -3165,14 +3165,14 @@
       "gods": ["Hades"],
       "name": "Life Tax",
       "description": "Restore <b>Health</b> for <b>1%</b> of damage you deal, until you reach the limit.",
-      "effects": [{ "text": "Max Total Life Restored:", "common": "125" }]
+      "effects": [{ "text": "Max Total Life Restored:", "common": "150" }]
     },
     "HadesDeathDefianceDamageBoon": {
       "gods": ["Hades"],
       "name": "Last Gasp",
       "description": "Deal more damage based on how many times you used <b>Death Defiance</b> this night.",
       "effects": [
-        { "text": "Damage per Death Defiance Used:", "common": "+8%" }
+        { "text": "Damage per Death Defiance Used:", "common": "+10%" }
       ]
     },
     "HadesCastProjectileBoon": {
@@ -4436,7 +4436,7 @@
     },
     "SuitPowershotTrait": {
       "name": "Chakra Collider",
-      "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+80%</b> damage."
+      "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+100%</b> damage."
     },
     "SuitSpecialBlockTrait": {
       "name": "Counter Barrage",
@@ -4448,7 +4448,7 @@
     },
     "SuitComboForwardRocketTrait": {
       "name": "Elephant Rockets",
-      "description": "Your <b>Specials</b> have <b>+10 Power</b> and fly dead ahead."
+      "description": "Your <b>Specials</b> have <b>+30 Power</b> and fly dead ahead."
     },
     "SuitDashAttackTrait": {
       "name": "Exhaust Riser",
@@ -4784,7 +4784,7 @@
       "description": "Your <b>Attack</b> stays within reach, and explodes after landing your <b>Specials</b> or <b>3 Sec.</b>",
       "effects": [
         {
-          "text": "Attack & Specials Damage:",
+          "text": "Attack & Special Damage:",
           "common": "+30%",
           "rare": "+45%",
           "epic": "+60%",

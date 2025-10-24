@@ -1,5 +1,3 @@
-import { logger } from "./argus_logger.mjs";
-
 import {
   S3Client,
   PutObjectCommand,
