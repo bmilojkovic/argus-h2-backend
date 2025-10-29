@@ -2229,7 +2229,7 @@
       "gods": ["Demeter", "Aphrodite"],
       "name": "Hearty Appetite",
       "description": "You deal more damage the more <b>Max Health</b> you have.",
-      "effects": [{ "text": "Bonus Damage per 50 Life:", "duo": "+10%" }],
+      "effects": [{ "text": "Bonus Damage per 100 Life:", "duo": "+10%" }],
       "requirements": [
         {
           "type": "Demeter",

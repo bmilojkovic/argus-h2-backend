@@ -519,7 +519,14 @@ function preparePinObject(pinBoon, boonData) {
   pinObject.name = uiMappings.boons[pinBoon].name;
   pinObject.description = uiMappings.boons[pinBoon].description;
   if (Object.hasOwn(uiMappings.boons[pinBoon], "effects")) {
-    pinObject.effects = uiMappings.boons[pinBoon].effects;
+    pinObject.effects = [];
+    uiMappings.boons[pinBoon]["effects"].forEach((effect) => {
+      var newEffect = {
+        text: effect.text,
+        value: effect[pinObject.rarity.toLowerCase()],
+      };
+      pinObject.effects.push(newEffect);
+    });
   }
   if (Object.hasOwn(uiMappings.boons[pinBoon], "requirements")) {
     pinObject.requirements = [];
