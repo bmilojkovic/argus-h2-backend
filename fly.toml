@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for argus-h2-backend on 2025-10-05T09:23:45+02:00
+# fly.toml app configuration file generated for argus-h2-backend-test on 2025-10-31T10:11:45+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'argus-h2-backend'
+app = 'argus-h2-backend-test'
 primary_region = 'cdg'
 
 [build]

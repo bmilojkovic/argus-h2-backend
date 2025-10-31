@@ -11,7 +11,10 @@ If you wish to understand how Argus works, or replicate its function, then this 
 
 Currently the backend is deployed at: https://argus-h2-backend.fly.dev
 
-The backend is implemented as an express js app. It is deployed on [fly.io](https://fly.io). If you wish to do your own deployment, you can fork this repository and use the action that triggers on push, or just do `fly deploy`. You will need to make sure your environment is set up properly if you want the code to actually function.
+The backend is implemented as an express js app. It is deployed on [fly.io](https://fly.io).
+
+- If you wish to do your own deployment, you can fork this repository and use the action that triggers on push, or just do `fly deploy`. You will need to make sure your environment is set up properly if you want the code to actually function.
+- If you want to run the code locally, do `npm run start`. It will listen at: http://localhost:3000 (port 3000, no HTTPS)
 
 ## Deployment
 
@@ -46,3 +49,21 @@ The backend provides only a couple of endpoints:
 - `/check_login` - GET request that is invoked by the Twitch extension. This one checks if a Twitch user has completed the OAuth flow from the mod.
 
 The only time the mod makes an outbound request is as a part of the `/run_info` action. We broadcast data to the Twitch extension on the https://api.twitch.tv/helix/extensions/pubsub endpoint.
+
+## Testing setup
+
+On development branches we change:
+
+- The app and hostname from `argus-h2-backend` to `argus-h2-backend-test` (set in `fly.toml`)
+- The bucket `argus-h2-backend-argus-tokens` to `argus-h2-backend-argus-tokens-test` (set in `aws_storage.mjs`)
+
+Backend is being targeted by hostname in:
+
+- The mod: `send_to_argus.py`
+- The backend itself: `argus_auth.mjs`
+- The frontend: `ConfigPage.jsx`
+
+When switching fly environment from development to testing and vice versa:
+
+- `flyctl wireguard reset`
+- `fly doctor`
