@@ -5444,7 +5444,7 @@
     }
   },
   "arcana": {
-    "ChanneledCast": {
+    "ChannelSlowMetaUpgrade": {
       "name": "The Sorceress",
       "grasp": 1,
       "descriptions": [
@@ -5455,7 +5455,7 @@
         "Your <b>Omega Moves</b> are <b>35%</b> faster."
       ]
     },
-    "HealthRegen": {
+    "DoorHealMetaUpgrade": {
       "name": "The Wayward Son",
       "grasp": 1,
       "descriptions": [
@@ -5466,7 +5466,7 @@
         "After you exit a <b>Location</b>, restore <b>6 Health</b>."
       ]
     },
-    "LowManaDamageBonus": {
+    "LowManaDamageMetaupgrade": {
       "name": "The Huntress",
       "grasp": 2,
       "descriptions": [
@@ -5477,7 +5477,7 @@
         "While you have less than <b>100% Magick</b>, your <b>Attack</b> and <b>Special</b> deal <b>+60%</b> damage."
       ]
     },
-    "CastCount": {
+    "CastDamageMetaUpgrade": {
       "name": "Eternity",
       "grasp": 3,
       "descriptions": [
@@ -5488,7 +5488,7 @@
         "While you <b>Channel</b> your <b>Omega Moves</b>, everything moves slower for <b>1.4 Sec.</b>"
       ]
     },
-    "SorceryRegenUpgrade": {
+    "SorceryRegenMetaUpgrade": {
       "name": "The Moon",
       "grasp": 0,
       "descriptions": [
@@ -5499,7 +5499,7 @@
         "Your <b>Hex</b> also charges up automatically as though you used <b>4 Magick</b> every <b>1 Sec.</b>"
       ]
     },
-    "CastBuff": {
+    "InsideCastBuffMetaUpgrade": {
       "name": "The Furies",
       "grasp": 2,
       "descriptions": [
@@ -5510,7 +5510,7 @@
         "You deal <b>+35%</b> damage to foes in your <b>Casts</b>."
       ]
     },
-    "BonusHealth": {
+    "HealthManaBonusMetaUpgrade": {
       "name": "Persistence",
       "grasp": 2,
       "descriptions": [
@@ -5521,7 +5521,7 @@
         "You have <b>+50 Max Health</b> and <b>+50 Max Magick</b>."
       ]
     },
-    "BonusDodge": {
+    "DodgeBonusMetaUpgrade": {
       "name": "The Messenger",
       "grasp": 1,
       "descriptions": [
@@ -5532,7 +5532,7 @@
         "You <b>Casts</b> momentarily make you <b>Impervious</b> and move <b>80%</b> faster."
       ]
     },
-    "ManaOverTime": {
+    "ManaOverTimeMetaUpgrade": {
       "name": "The Unseen",
       "grasp": 5,
       "descriptions": [
@@ -5543,7 +5543,7 @@
         "You restore <b>12 Magick</b> every <b>1 Sec.</b>"
       ]
     },
-    "MagicCrit": {
+    "MagicCritMetaUpgrade": {
       "name": "Night",
       "grasp": 2,
       "descriptions": [
@@ -5554,7 +5554,7 @@
         "You have <b>+18%</b> chance to deal <b>Critical</b> damage with each move in an <b>Omega Combo</b>."
       ]
     },
-    "SprintShield": {
+    "SprintShieldMetaUpgrade": {
       "name": "The Swift Runner",
       "grasp": 1,
       "descriptions": [
@@ -5565,7 +5565,7 @@
         "Your <b>Sprint</b> is <b>13%</b> faster and lets you pass through most dangers in your way."
       ]
     },
-    "LastStand": {
+    "LastStandSlowTimeMetaUpgrade": {
       "name": "Death",
       "grasp": 4,
       "descriptions": [
@@ -5576,7 +5576,7 @@
         "You have <b>+4 Death Defiance</b>."
       ]
     },
-    "MaxHealthPerRoom": {
+    "ChamberHealthMetaUpgrade": {
       "name": "The Centaur",
       "grasp": 0,
       "descriptions": [
@@ -5587,7 +5587,7 @@
         "You gain <b>+6 Max Health</b> and <b>+6 Max Magick</b> whenever you pass through <b>5 Locations</b>."
       ]
     },
-    "StatusVulnerability": {
+    "EffectVulnerabilityMetaUpgrade": {
       "name": "Origination",
       "grasp": 5,
       "descriptions": [
@@ -5598,7 +5598,7 @@
         "You deal <b>+63%</b> damage to foes afflicted with at least <b>2 Curses</b> from different <b>Olympians</b>."
       ]
     },
-    "ChanneledBlock": {
+    "BossShieldMetaUpgrade": {
       "name": "The Lovers",
       "grasp": 3,
       "descriptions": [
@@ -5609,7 +5609,7 @@
         "You take <b>0</b> damage the first <b>4</b> times you are hit in <b>Guardian Encounters</b>."
       ]
     },
-    "DoorReroll": {
+    "DoorRerollMetaUpgrade": {
       "name": "The Enchantress",
       "grasp": 3,
       "descriptions": [
@@ -5620,7 +5620,7 @@
         "You have <b>+4 Rerolls</b>, and can alter <b>Location Rewards</b>."
       ]
     },
-    "StartingGold": {
+    "StartingGoldMetaUpgrade": {
       "name": "The Boatman",
       "grasp": 5,
       "descriptions": [
@@ -5631,7 +5631,7 @@
         "You have <b>+350 Gold</b>"
       ]
     },
-    "MetaToRunUpgrade": {
+    "MetaToRunMetaUpgrade": {
       "name": "The Artificer",
       "grasp": 3,
       "descriptions": [
@@ -5642,7 +5642,7 @@
         "You have <b>4<b> chances this night to turn any <b>Minor Find</b> into a random <b>Major Find</b>."
       ]
     },
-    "RarityBoost": {
+    "RarityBoostMetaUpgrade": {
       "name": "Excellence",
       "grasp": 5,
       "descriptions": [
@@ -5653,7 +5653,7 @@
         "Any <b>Boons</b> you find have <b>+60%</b> chance to include <b>Legendary</b> or at least <b>Rare</b> blessings."
       ]
     },
-    "BonusRarity": {
+    "DuoRarityBoostMetaUpgrade": {
       "name": "The Queen",
       "grasp": 0,
       "descriptions": [
@@ -5664,7 +5664,7 @@
         "Any <b>Boons</b> you find have <b>+12%</b> chance to include <b>Duo</b> blessings."
       ]
     },
-    "TradeOff": {
+    "RerollTradeOffMetaUpgrade": {
       "name": "The Fates",
       "grasp": 0,
       "descriptions": [
@@ -5675,7 +5675,7 @@
         "You have <b>+5 Rerolls</b>"
       ]
     },
-    "ScreenReroll": {
+    "PanelRerollMetaUpgrade": {
       "name": "The Champions",
       "grasp": 4,
       "descriptions": [
@@ -5686,7 +5686,7 @@
         "You have <b>+4 Rerolls</b>, and can alter <b>Boons</b> and certain other choices."
       ]
     },
-    "LowHealthBonus": {
+    "LowHealthBuffMetaUpgrade": {
       "name": "Strength",
       "grasp": 4,
       "descriptions": [
@@ -5697,7 +5697,7 @@
         "While you have no <b>Death Defiance</b>, you take <b>-50%</b> damage and deal <b>+20%</b>."
       ]
     },
-    "EpicRarityBoost": {
+    "EpicRarityBoostMetaUpgrade": {
       "name": "Divinity",
       "grasp": 0,
       "descriptions": [
@@ -5708,7 +5708,7 @@
         "Any Boons you find have <b>+20%</b> chance to include <b>Epic</b> blessings."
       ]
     },
-    "CardDraw": {
+    "BossProgressionMetaUpgrade": {
       "name": "Judgment",
       "grasp": 0,
       "descriptions": [
