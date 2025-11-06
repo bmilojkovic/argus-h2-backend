@@ -68,6 +68,7 @@ function prepareBoonObject(boon, rarity) {
   boonObject.codeName = boon;
   boonObject.rarity = rarity;
   boonObject.name = uiMappings.boons[boon].name;
+  boonObject.boonType = "Boon";
   if (Object.hasOwn(uiMappings.boons[boon], "description")) {
     boonObject.description = uiMappings.boons[boon].description;
   } else if (
@@ -77,6 +78,7 @@ function prepareBoonObject(boon, rarity) {
     if (!HAMMER_RARITIES.includes(boonObject.rarity)) {
       boonObject.rarity = "Common";
     }
+    boonObject.boonType = "Hammer";
     boonObject.description =
       uiMappings.boons[boon][boonObject.rarity.toLowerCase()];
   }

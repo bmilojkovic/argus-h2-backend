@@ -4515,7 +4515,7 @@
     "SuitPowershotTrait": {
       "gods": ["Hammer"],
       "name": "Chakra Collider",
-      "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+100%</b> damage."
+      "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+150%</b> damage."
     },
     "SuitSpecialBlockTrait": {
       "gods": ["Hammer"],
