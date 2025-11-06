@@ -68,17 +68,17 @@ function prepareBoonObject(boon, rarity) {
   boonObject.codeName = boon;
   boonObject.rarity = rarity;
   boonObject.name = uiMappings.boons[boon].name;
-  if (Object.hasOwn(uiMappings.boonName[boon], "description")) {
+  if (Object.hasOwn(uiMappings.boons[boon], "description")) {
     boonObject.description = uiMappings.boons[boon].description;
   } else if (
-    Object.hasOwn(uiMappings.boonName[boon], "gods") &&
-    uiMappings.boonName[boon]["gods"][0] === "Hammer"
+    Object.hasOwn(uiMappings.boons[boon], "gods") &&
+    uiMappings.boons[boon]["gods"][0] === "Hammer"
   ) {
     if (!HAMMER_RARITIES.includes(boonObject.rarity)) {
       boonObject.rarity = "Common";
     }
     boonObject.description =
-      uiMappings.boonName[boon][boonObject.rarity.toLowerCase()];
+      uiMappings.boons[boon][boonObject.rarity.toLowerCase()];
   }
 
   if (Object.hasOwn(uiMappings.boons[boon], "effects")) {
