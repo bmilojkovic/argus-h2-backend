@@ -4140,457 +4140,547 @@
     "StaffDashAttackTrait": {
       "gods": ["Hammer"],
       "name": "Melting Swipe",
-      "description": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+900</b> damage to <b>Armor</b>."
+      "common": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+900</b> damage to <b>Armor</b>.",
+      "legendary": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+900</b> damage to <b>Armor</b>."
     },
     "StaffTripleShotTrait": {
       "gods": ["Hammer"],
       "name": "Dual Moonshot",
-      "description": "Your <b>Specials</b> fire <b>2</b> projectiles, but have <b>-40%</b> range."
+      "common": "Your <b>Specials</b> fire <b>2</b> projectiles, but have <b>-40%</b> range.",
+      "legendary": "Your <b>Specials</b> fire <b>2</b> projectiles, but have <b>-40%</b> range."
     },
     "StaffJumpSpecialTrait": {
       "gods": ["Hammer"],
       "name": "Shimmering Moonshot",
-      "description": "Your <b>Specials</b> bounce toward up to <b>+2</b> foes, dealing <b>+10%</b> damage for each hit."
+      "common": "Your <b>Specials</b> bounce toward up to <b>+2</b> foes, dealing <b>+10%</b> damage for each hit.",
+      "legendary": "Your <b>Specials</b> bounce toward up to <b>+2</b> foes, dealing <b>+20%</b> damage for each hit."
     },
     "StaffExAoETrait": {
       "gods": ["Hammer"],
       "name": "Cross Cataclysm",
-      "description": "Your <b>Omega Attack</b> deals <b>+50%</b> damage and also strikes sideways."
+      "common": "Your <b>Omega Attack</b> deals <b>+50%</b> damage and also strikes sideways.",
+      "legendary": "Your <b>Omega Attack</b> deals <b>+75%</b> damage and also strikes sideways."
     },
     "StaffAttackRecoveryTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Thrasher",
-      "description": "Your <b>Attacks</b> are <b>50%</b> faster."
+      "common": "Your <b>Attacks</b> are <b>50%</b> faster.",
+      "legendary": "Your <b>Attacks</b> are <b>60%</b> faster."
     },
     "StaffFastSpecialTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Moonshot",
-      "description": "Your <b>Specials</b> are <b>25%</b> faster."
+      "common": "Your <b>Specials</b> are <b>25%</b> faster.",
+      "legendary": "Your <b>Specials</b> are <b>35%</b> faster."
     },
     "StaffExHealTrait": {
       "gods": ["Hammer"],
       "name": "Vampiric Cataclysm",
-      "description": "Whenever you slay a foe with your <b>Omega Attack</b>, restore <b>5 Health</b>."
+      "common": "Whenever you slay a foe with your <b>Omega Attack</b>, restore <b>5 Health</b>.",
+      "legendary": "Whenever you slay a foe with your <b>Omega Attack</b>, restore <b>8 Health</b>."
     },
     "StaffSecondStageTrait": {
       "gods": ["Hammer"],
       "name": "Giga Moonburst",
-      "description": "You can <b>Channel +30 Magick</b> into your <b>Omega Special</b> to deal <b>+300%</b> damage in a larger area."
+      "common": "You can <b>Channel +30 Magick</b> into your <b>Omega Special</b> to deal <b>+300%</b> damage in a larger area.",
+      "legendary": "You can <b>Channel +30 Magick</b> into your <b>Omega Special</b> to deal <b>+400%</b> damage in a larger area."
     },
     "StaffPowershotTrait": {
       "gods": ["Hammer"],
       "name": "Aetheric Moonburst",
-      "description": "Your <b>Omega Special</b> gains a <b>Power Shot</b> that deals <b>+50%</b> damage and restores <b>20 Magick</b>."
+      "common": "Your <b>Omega Special</b> gains a <b>Power Shot</b> that deals <b>+50%</b> damage and restores <b>20 Magick</b>.",
+      "legendary": "Your <b>Omega Special</b> gains a <b>Power Shot</b> that deals <b>+75%</b> damage and restores <b>20 Magick</b>."
     },
     "StaffOneWayAttackTrait": {
       "gods": ["Hammer"],
       "name": "Mirrored Thrasher",
-      "description": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>+5 Magick</b>."
+      "common": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>+5 Magick</b>.",
+      "legendary": "Your <b>Attacks</b> hit <b>2</b> times, but use <b>+5 Magick</b>."
     },
     "StaffRaiseDeadBigTrait": {
       "gods": ["Hammer"],
       "name": "Soulfilled Ankh",
-      "description": "Your <b>Attacks</b> have <b>+5 Power</b> and hit a larger area."
+      "common": "Your <b>Attacks</b> have <b>+5 Power</b> and hit a larger area.",
+      "legendary": "Your <b>Attacks</b> have <b>+8 Power</b> and hit a larger area."
     },
     "StaffRaiseDeadDoubleTrait": {
       "gods": ["Hammer"],
       "name": "Mirrored Ankh",
-      "description": "Your <b>Omega Attack</b> creates <b>+1</b> damage field ahead of the first."
+      "common": "Your <b>Omega Attack</b> creates <b>+1</b> damage field ahead of the first.",
+      "legendary": "Your <b>Omega Attack</b> creates <b>+1</b> damage field ahead of the first."
     },
     "StaffLoneShadeRespawnTrait": {
       "gods": ["Hammer"],
       "name": "Scarab Etchings",
-      "description": "<b>Lone Shades</b> deal <b>+50</b> damage and have <b>75%</b> chance to reappear after striking a foe."
+      "common": "<b>Lone Shades</b> deal <b>+50</b> damage and have <b>75%</b> chance to reappear after striking a foe.",
+      "legendary": "<b>Lone Shades</b> deal <b>+75</b> damage and have <b>75%</b> chance to reappear after striking a foe."
     },
     "StaffLoneShadeRallyTrait": {
       "gods": ["Hammer"],
       "name": "Pharaoh Etchings",
-      "description": "<b>Lone Shades</b> deal <b>+50%</b> damage and launch at foes struck by your <b>Omega Special</b>."
+      "common": "<b>Lone Shades</b> deal <b>+50%</b> damage and launch at foes struck by your <b>Omega Special</b>.",
+      "legendary": "<b>Lone Shades</b> deal <b>+90%</b> damage and launch at foes struck by your <b>Omega Special</b>."
     },
 
     "DaggerBlinkAoETrait": {
       "gods": ["Hammer"],
       "name": "Sweeping Ambush",
-      "description": "Your <b>Omega Attack</b> deals <b>+400%</b> damage in a wider area, but uses <b>+20 Magick</b>."
+      "common": "Your <b>Omega Attack</b> deals <b>+400%</b> damage in a wider area, but uses <b>+20 Magick</b>.",
+      "legendary": "Your <b>Omega Attack</b> deals <b>+600%</b> damage in a wider area, but uses <b>+20 Magick</b>."
     },
     "DaggerSpecialJumpTrait": {
       "gods": ["Hammer"],
       "name": "Dancing Knives",
-      "description": "Your <b>Specials</b> deal <b>+15%</b> damage and each hit bounces toward up to <b>2</b> more foes."
+      "common": "Your <b>Specials</b> deal <b>+15%</b> damage and each hit bounces toward up to <b>2</b> more foes.",
+      "legendary": "Your <b>Specials</b> deal <b>+30%</b> damage and each hit bounces toward up to <b>2</b> more foes."
     },
     "DaggerSpecialLineTrait": {
       "gods": ["Hammer"],
       "name": "Sureshot Flurry",
-      "description": "Your <b>Omega Special</b> fires each shot dead ahead and your <b>Specials</b> have <b>+30%</b> range."
+      "common": "Your <b>Omega Special</b> fires each shot dead ahead and your <b>Specials</b> have <b>+30%</b> range.",
+      "legendary": "Your <b>Omega Special</b> fires each shot dead ahead and your <b>Specials</b> have <b>+50%</b> range."
     },
     "DaggerRapidAttackTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Onslaught",
-      "description": "Your <b>Attacks</b> are <b>35%</b> faster."
+      "common": "Your <b>Attacks</b> are <b>35%</b> faster.",
+      "legendary": "Your <b>Attacks</b> are <b>45%</b> faster."
     },
     "DaggerSpecialConsecutiveTrait": {
       "gods": ["Hammer"],
       "name": "Melting Sickle",
-      "description": "Each hit from your <b>Special</b> deals <b>+500</b> damage to <b>Armor</b>."
+      "common": "Each hit from your <b>Special</b> deals <b>+500</b> damage to <b>Armor</b>.",
+      "legendary": "Each hit from your <b>Special</b> deals <b>+500</b> damage to <b>Armor</b>."
     },
     "DaggerBackstabTrait": {
       "gods": ["Hammer"],
       "name": "Skulking Onslaught",
-      "description": "Your <b>Attacks</b> deal <b>+150%</b> damage striking foes from behind."
+      "common": "Your <b>Attacks</b> deal <b>+150%</b> damage striking foes from behind.",
+      "legendary": "Your <b>Attacks</b> deal <b>+200%</b> damage striking foes from behind."
     },
     "DaggerSpecialReturnTrait": {
       "gods": ["Hammer"],
       "name": "Reaper Knives",
-      "description": "Your <b>Specials</b> have <b>+15 Power</b> and deal damage in a wider area."
+      "common": "Your <b>Specials</b> have <b>+15 Power</b> and deal damage in a wider area.",
+      "legendary": "Your <b>Specials</b> have <b>+25 Power</b> and deal damage in a wider area."
     },
     "DaggerSpecialFanTrait": {
       "gods": ["Hammer"],
       "name": "Hidden Knives",
-      "description": "Your <b>Specials</b> deal <b>+20%</b> damage and your <b>Omega Special</b> fires <b>+3</b> shots."
+      "common": "Your <b>Specials</b> deal <b>+20%</b> damage and your <b>Omega Special</b> fires <b>+3</b> shots.",
+      "legendary": "Your <b>Specials</b> deal <b>+40%</b> damage and your <b>Omega Special</b> fires <b>+3</b> shots."
     },
     "DaggerAttackFinisherTrait": {
       "gods": ["Hammer"],
       "name": "Final Slice",
-      "description": "The last strike in your <b>Attack</b> sequence deals <b>+300%</b> damage in a larger area."
+      "common": "The last strike in your <b>Attack</b> sequence deals <b>+300%</b> damage in a larger area.",
+      "legendary": "The last strike in your <b>Attack</b> sequence deals <b>+400%</b> damage in a larger area."
     },
     "DaggerFinalHitTrait": {
       "gods": ["Hammer"],
       "name": "Wicked Onslaught",
-      "description": "Your <b>Attacks</b> have <b>+20 Power</b>."
+      "common": "Your <b>Attacks</b> have <b>+20 Power</b>.",
+      "legendary": "Your <b>Attacks</b> have <b>+30 Power</b>."
     },
     "DaggerChargeStageSkipTrait": {
       "gods": ["Hammer"],
       "name": "Sudden Flurry",
-      "description": "You <b>Channel</b> your <b>Omega Special 40%</b> faster."
+      "common": "You <b>Channel</b> your <b>Omega Special 40%</b> faster.",
+      "legendary": "You <b>Channel</b> your <b>Omega Special 50%</b> faster."
     },
     "DaggerDashAttackTripleTrait": {
       "gods": ["Hammer"],
       "name": "Trick Knives",
-      "description": "Your <b>Dash-Strike</b> also fires your <b>Special 3</b> times at once in a fan pattern."
+      "common": "Your <b>Dash-Strike</b> also fires your <b>Special 3</b> times at once in a fan pattern.",
+      "legendary": "Your <b>Dash-Strike</b> also fires your <b>Special 3</b> times at once in a fan pattern."
     },
     "DaggerTripleBuffTrait": {
       "gods": ["Hammer"],
       "name": "Phantom Brand",
-      "description": "Your <b>Blood Triad</b> deals <b>+222</b> damage."
+      "common": "Your <b>Blood Triad</b> deals <b>+222</b> damage.",
+      "legendary": "Your <b>Blood Triad</b> deals <b>+333</b> damage."
     },
     "DaggerTripleRepeatWomboTrait": {
       "gods": ["Hammer"],
       "name": "Banshee Brand",
-      "description": "Your <b>Blood Triad</b> has <b>33%</b> chance to strike once more."
+      "common": "Your <b>Blood Triad</b> has <b>33%</b> chance to strike once more.",
+      "legendary": "Your <b>Blood Triad</b> has <b>44%</b> chance to strike once more."
     },
     "DaggerTripleHomingSpecialTrait": {
       "gods": ["Hammer"],
       "name": "Sinister Pinion",
-      "description": "Your <b>Specials</b> repeatedly deal damage <b>100%</b> faster."
+      "common": "Your <b>Specials</b> repeatedly deal damage <b>100%</b> faster.",
+      "legendary": "Your <b>Specials</b> repeatedly deal damage <b>150%</b> faster."
     },
 
     "TorchExSpecialCountTrait": {
       "gods": ["Hammer"],
       "name": "Hidden Helix",
-      "description": "Your <b>Specials</b> create <b>+1</b> projectile."
+      "common": "Your <b>Specials</b> create <b>+1</b> projectile.",
+      "legendary": "Your <b>Specials</b> create <b>+1</b> projectile."
     },
     "TorchSpecialSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Clean Coil",
-      "description": "You <b>Channel</b> your <b>Omega Special 20%</b> faster, and it uses <b>-10 Magick</b>."
+      "common": "You <b>Channel</b> your <b>Omega Special 20%</b> faster, and it uses <b>-10 Magick</b>.",
+      "legendary": "You <b>Channel</b> your <b>Omega Special 20%</b> faster, and it uses <b>-10 Magick</b>."
     },
     "TorchAttackSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Furious Blaze",
-      "description": "While you <b>Channel</b> your <b>Attacks</b>, you move and fire <b>20%</b> faster."
+      "common": "While you <b>Channel</b> your <b>Attacks</b>, you move and fire <b>20%</b> faster.",
+      "legendary": "While you <b>Channel</b> your <b>Attacks</b>, you move and fire <b>30%</b> faster."
     },
     "TorchSplitAttackTrait": {
       "gods": ["Hammer"],
       "name": "Dividing Blaze",
-      "description": "Your <b>Attacks</b> split in <b>2</b> the first time they strike foes."
+      "common": "Your <b>Attacks</b> split in <b>2</b> the first time they strike foes.",
+      "legendary": "Your <b>Attacks</b> split in <b>2</b> the first time they strike foes."
     },
     "TorchEnhancedAttackTrait": {
       "gods": ["Hammer"],
       "name": "Inverted Blaze",
-      "description": "Your <b>Attacks</b> linger for <b>+2 Sec.</b> and launch back towards you after you <b>Dash</b>."
+      "common": "Your <b>Attacks</b> linger for <b>+2 Sec.</b> and launch back towards you after you <b>Dash</b>.",
+      "legendary": "Your <b>Attacks</b> linger for <b>+2 Sec.</b> and launch back towards you after you <b>Dash</b>."
     },
     "TorchDiscountExAttackTrait": {
       "gods": ["Hammer"],
       "name": "Sudden Burst",
-      "description": "You <b>Channel</b> your <b>Omega Attack 50%</b> faster, and it uses <b>-1 Magick</b>."
+      "common": "You <b>Channel</b> your <b>Omega Attack 50%</b> faster, and it uses <b>-1 Magick</b>.",
+      "legendary": "You <b>Channel</b> your <b>Omega Attack 50%</b> faster, and it uses <b>-1 Magick</b>."
     },
     "TorchLongevityTrait": {
       "gods": ["Hammer"],
       "name": "Rising Helix",
-      "description": "Your <b>Specials</b> grow in size and deal up to <b>+25%</b> damage the longer they are active."
+      "common": "Your <b>Specials</b> grow in size and deal up to <b>+25%</b> damage the longer they are active.",
+      "legendary": "Your <b>Specials</b> grow in size and deal up to <b>+35%</b> damage the longer they are active."
     },
     "TorchOrbitPointTrait": {
       "gods": ["Hammer"],
       "name": "Whirling Helix",
-      "description": "Projectiles from your <b>Specials</b> orbit <b>20%</b> faster."
+      "common": "Projectiles from your <b>Specials</b> orbit <b>20%</b> faster.",
+      "legendary": "Projectiles from your <b>Specials</b> orbit <b>30%</b> faster."
     },
     "TorchSpinAttackTrait": {
       "gods": ["Hammer"],
       "name": "Leaden Blaze",
-      "description": "Your <b>Attacks</b> knock foes away and have <b>+10 Power</b>."
+      "common": "Your <b>Attacks</b> knock foes away and have <b>+10 Power</b>.",
+      "legendary": "Your <b>Attacks</b> knock foes away and have <b>+15 Power</b>."
     },
     "TorchAutofireSprintTrait": {
       "gods": ["Hammer"],
       "name": "Demonic Cell",
-      "description": "As long as you <b>Sprint</b>, your <b>Attacks</b> and <b>Specials</b> have <b>+5 Power</b>."
+      "common": "As long as you <b>Sprint</b>, your <b>Attacks</b> and <b>Specials</b> have <b>+5 Power</b>.",
+      "legendary": "As long as you <b>Sprint</b>, your <b>Attacks</b> and <b>Specials</b> have <b>+8 Power</b>."
     },
     "TorchSpecialImpactTrait": {
       "gods": ["Hammer"],
       "name": "Enduring Coil",
-      "description": "Your <b>Omega Special</b> lasts <b>+2 Sec</b>."
+      "common": "Your <b>Omega Special</b> lasts <b>+2 Sec</b>.",
+      "legendary": "Your <b>Omega Special</b> lasts <b>+3 Sec</b>."
     },
     "TorchMoveSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Mega Blaze",
-      "description": "Your <b>Attacks</b> fire <b>20%</b> farther and deal <b>+30%</b> damage."
+      "common": "Your <b>Attacks</b> fire <b>20%</b> farther and deal <b>+30%</b> damage.",
+      "legendary": "Your <b>Attacks</b> fire <b>20%</b> farther and deal <b>+45%</b> damage."
     },
     "TorchSpecialLineTrait": {
       "gods": ["Hammer"],
       "name": "Melting Helix",
-      "description": "Your <b>Specials</b> deal <b>+100</b> damage to <b>Armor</b>."
+      "common": "Your <b>Specials</b> deal <b>+100</b> damage to <b>Armor</b>.",
+      "legendary": "Your <b>Specials</b> deal <b>+100</b> damage to <b>Armor</b>."
     },
 
     "AxeSturdyTrait": {
       "gods": ["Hammer"],
       "name": "Colossus Slash",
-      "description": "Your <b>Attacks</b> have <b>+10 Power</b> and you take <b>-20%</b> damage while using them."
+      "common": "Your <b>Attacks</b> have <b>+10 Power</b> and you take <b>-20%</b> damage while using them.",
+      "legendary": "Your <b>Attacks</b> have <b>+15 Power</b> and you take <b>-20%</b> damage while using them."
     },
     "AxeDashAttackTrait": {
       "gods": ["Hammer"],
       "name": "Dashing Heave",
-      "description": "Your <b>Dash-Strike</b> hits <b>2</b> times in an area around you."
+      "common": "Your <b>Dash-Strike</b> hits <b>2</b> times in an area around you.",
+      "legendary": "Your <b>Dash-Strike</b> hits <b>2</b> times in an area around you."
     },
     "AxeMassiveThirdStrikeTrait": {
       "gods": ["Hammer"],
       "name": "Executioner's Chop",
-      "description": "The final move in your <b>Attack</b> sequence hits <b>2</b> times, but uses <b>20 Magick</b>."
+      "common": "The final move in your <b>Attack</b> sequence hits <b>2</b> times, but uses <b>20 Magick</b>.",
+      "legendary": "The final move in your <b>Attack</b> sequence hits <b>2</b> times, but uses <b>20 Magick</b>."
     },
     "AxeSpinSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Furious Whirlwind",
-      "description": "You <b>Channel</b> your <b>Omega Attack</b> faster, and move <b>50%</b> faster while it is active."
+      "common": "You <b>Channel</b> your <b>Omega Attack</b> faster, and move <b>50%</b> faster while it is active.",
+      "legendary": "You <b>Channel</b> your <b>Omega Attack</b> faster, and move <b>60%</b> faster while it is active."
     },
     "AxeSecondStageTrait": {
       "gods": ["Hammer"],
       "name": "Giga Cleaver",
-      "description": "Your <b>Omega Special</b> fires <b>2</b> times in succession, but costs <b>+15 Magick</b>."
+      "common": "Your <b>Omega Special</b> fires <b>2</b> times in succession, but costs <b>+15 Magick</b>.",
+      "legendary": "Your <b>Omega Special</b> fires <b>2</b> times in succession, but costs <b>+15 Magick</b>."
     },
     "AxeRallyFirstStrikeTrait": {
       "gods": ["Hammer"],
       "name": "Heaven Splitter",
-      "description": "Your <b>Attacks</b> hits <b>2</b> times, but the 5-strike sequence becomes only the first slam."
+      "common": "Your <b>Attack</b> hits <b>2</b> times, but the 5-strike sequence becomes only the first slam.",
+      "legendary": "Your <b>Attack</b> hits <b>2</b> times, but the 5-strike sequence becomes only the first slam."
     },
     "AxeThirdStrikeTrait": {
       "gods": ["Hammer"],
       "name": "Hell Splitter",
-      "description": "Your <b>Attack</b> has <b>+300</b> Power, but the 3-strike sequence becomes only the final chop."
+      "common": "Your <b>Attack</b> has <b>300</b> Power, but the 3-strike sequence becomes only the final chop.",
+      "legendary": "Your <b>Attack</b> has <b>400</b> Power, but the 3-strike sequence becomes only the final chop."
     },
     "AxeRallyFrenzyTrait": {
       "gods": ["Hammer"],
       "name": "Iron Core",
-      "description": "Your <b>Berserk</b> lasts <b>+2 Sec.</b> and restores <b>+1 Life</b> per foe struck."
+      "common": "Your <b>Berserk</b> lasts <b>+2 Sec.</b> and restores <b>+1 Life</b> per foe struck.",
+      "legendary": "Your <b>Berserk</b> lasts <b>+2 Sec.</b> and restores <b>+1 Life</b> per foe struck."
     },
     "AxeArmorTrait": {
       "gods": ["Hammer"],
       "name": "Melting Shredder",
-      "description": "Each hit from your <b>Special</b> deals <b>+300</b> damage to <b>Armor</b>."
+      "common": "Each hit from your <b>Special</b> deals <b>+300</b> damage to <b>Armor</b>.",
+      "legendary": "Each hit from your <b>Special</b> deals <b>+300</b> damage to <b>Armor</b>."
     },
     "AxeFreeSpinTrait": {
       "gods": ["Hammer"],
       "name": "Psychic Whirlwind",
-      "description": "Your <b>Omega Attack</b> fires around you, leaving you free to move and strike at the same time."
+      "common": "Your <b>Omega Attack</b> fires around you, leaving you free to move and strike at the same time.",
+      "legendary": "Your <b>Omega Attack</b> fires around you, leaving you free to move and strike at the same time."
     },
     "AxeAttackRecoveryTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Hack",
-      "description": "Your <b>Attack</b> is <b>30%</b> faster."
+      "common": "Your <b>Attack</b> is <b>30%</b> faster.",
+      "legendary": "Your <b>Attack</b> is <b>40%</b> faster."
     },
     "AxeRangedWhirlwindTrait": {
       "gods": ["Hammer"],
       "name": "Seething Marauder",
-      "description": "Your <b>Attacks</b> also deals <b>60</b> damage to surrounding foes, for each and every strike."
+      "common": "Your <b>Attacks</b> also deals <b>60</b> damage to surrounding foes, for each and every strike.",
+      "legendary": "Your <b>Attacks</b> also deals <b>80</b> damage to surrounding foes, for each and every strike."
     },
     "AxeBlockEmpowerTrait": {
       "gods": ["Hammer"],
       "name": "Siege Shredder",
-      "description": "Your <b>Special</b> strikes farther ahead and deals <b>+150%</b> damage."
+      "common": "Your <b>Special</b> strikes farther ahead and deals <b>+150%</b> damage.",
+      "legendary": "Your <b>Special</b> strikes farther ahead and deals <b>+200%</b> damage."
     },
     "AxeChargedSpecialTrait": {
       "gods": ["Hammer"],
       "name": "Sudden Cleaver",
-      "description": "You <b>Channel</b> your <b>Omega Special 25%</b> faster."
+      "common": "You <b>Channel</b> your <b>Omega Special 25%</b> faster.",
+      "legendary": "You <b>Channel</b> your <b>Omega Special 30%</b> faster."
     },
 
     "LobAmmoTrait": {
       "gods": ["Hammer"],
       "name": "Bolstered Array",
-      "description": "Gain <b>+2 Shells</b>."
+      "common": "Gain <b>+2 Shells</b>.",
+      "legendary": "Gain <b>+3 Shells</b>."
     },
     "LobStraightShotTrait": {
       "gods": ["Hammer"],
       "name": "Boosted Ignition",
-      "description": "After your <b>Dash</b> or <b>Specials</b>, your <b>Attacks</b> are faster and have <b>+15 Power</b>."
+      "common": "After your <b>Dash</b> or <b>Specials</b>, your <b>Attacks</b> are faster and have <b>+15 Power</b>.",
+      "legendary": "After your <b>Dash</b> or <b>Specials</b>, your <b>Attacks</b> are faster and have <b>+20 Power</b>."
     },
     "LobSturdySpecialTrait": {
       "gods": ["Hammer"],
       "name": "Colossus Driver",
-      "description": "Your <b>Specials</b> have <b>+30 Power</b> and you take <b>-30%</b> damage while using them."
+      "common": "Your <b>Specials</b> have <b>+30 Power</b> and you take <b>-30%</b> damage while using them.",
+      "legendary": "Your <b>Specials</b> have <b>+40 Power</b> and you take <b>-30%</b> damage while using them."
     },
     "LobAmmoMagnetismTrait": {
       "gods": ["Hammer"],
       "name": "Fetching Array",
-      "description": "Your <b>Shells</b> fly back to you automatically and <b>100%</b> faster."
+      "common": "Your <b>Shells</b> fly back to you automatically and <b>100%</b> faster.",
+      "legendary": "Your <b>Shells</b> fly back to you automatically and <b>200%</b> faster."
     },
     "LobGunAttackRangeTrait": {
       "gods": ["Hammer"],
       "name": "Garmr Gaze",
-      "description": "Your <b>Attacks</b> shoot <b>+25%</b> farther and deal <b>+25%</b> damage."
+      "common": "Your <b>Attacks</b> shoot <b>+25%</b> farther and deal <b>+25%</b> damage.",
+      "legendary": "Your <b>Attacks</b> shoot <b>+35%</b> farther and deal <b>+25%</b> damage."
     },
     "LobGunAttackDoublerTrait": {
       "gods": ["Hammer"],
       "name": "Helheim Charge",
-      "description": "Your <b>Omega Attack</b> fires <b>+2</b> times in succession."
+      "common": "Your <b>Omega Attack</b> fires <b>+2</b> times in succession.",
+      "legendary": "Your <b>Omega Attack</b> fires <b>+2</b> times in succession."
     },
     "LobGunBounceTrait": {
       "gods": ["Hammer"],
       "name": "Leering Glance",
-      "description": "Your <b>Attack</b> shots bounce toward <b>+1</b> foe and deal <b>+15%</b> damage on the successive hit."
+      "common": "Your <b>Attack</b> shots bounce toward <b>+1</b> foe and deal <b>+15%</b> damage on the successive hit.",
+      "legendary": "Your <b>Attack</b> shots bounce toward <b>+1</b> foe and deal <b>+25%</b> damage on the successive hit."
     },
     "LobGrowthTrait": {
       "gods": ["Hammer"],
       "name": "Looming Ignition",
-      "description": "Your <b>Attacks</b> gain <b>+50%</b> damage and blast size over <b>0.7 Sec.</b> before they explode."
+      "common": "Your <b>Attacks</b> gain <b>+50%</b> damage and blast size over <b>0.7 Sec.</b> before they explode.",
+      "legendary": "Your <b>Attacks</b> gain <b>+75%</b> damage and blast size over <b>0.7 Sec.</b> before they explode."
     },
     "LobOneSideTrait": {
       "gods": ["Hammer"],
       "name": "Mega Driver",
-      "description": "Your <b>Specials</b> launch you ahead faster and deal <b>+50%</b> damage."
+      "common": "Your <b>Specials</b> launch you ahead faster and deal <b>+50%</b> damage.",
+      "legendary": "Your <b>Specials</b> launch you ahead faster and deal <b>+75%</b> damage."
     },
     "LobRushArmorTrait": {
       "gods": ["Hammer"],
       "name": "Melting Break",
-      "description": "Your <b>Special</b> deals <b>+600</b> damage to <b>Armor</b>."
+      "common": "Your <b>Special</b> deals <b>+600</b> damage to <b>Armor</b>.",
+      "legendary": "Your <b>Special</b> deals <b>+600</b> damage to <b>Armor</b>."
     },
     "LobPulseAmmoCollectTrait": {
       "gods": ["Hammer"],
       "name": "Possessed Array",
-      "description": "Your <b>Shells</b> fire your <b>Omega Attack</b> whenever retrieved, but make you lose <b>25 Magick</b>."
+      "common": "Your <b>Shells</b> fire your <b>Omega Attack</b> whenever retrieved, but make you lose <b>25 Magick</b>.",
+      "legendary": "Your <b>Shells</b> fire your <b>Omega Attack</b> whenever retrieved, but make you lose <b>20 Magick</b>."
     },
     "LobSpecialSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Driver",
-      "description": "Your <b>Specials</b> are <b>35%</b> faster"
+      "common": "Your <b>Specials</b> are <b>35%</b> faster",
+      "legendary": "Your <b>Specials</b> are <b>45%</b> faster"
     },
     "LobGunSpecialBounceTrait": {
       "gods": ["Hammer"],
       "name": "Runic Driver",
-      "description": "Your <b>Specials</b> fly faster and deal <b>+15%</b> damage for each foe struck."
+      "common": "Your <b>Specials</b> fly faster and deal <b>+15%</b> damage for each foe struck.",
+      "legendary": "Your <b>Specials</b> fly faster and deal <b>+25%</b> damage for each foe struck."
     },
     "LobInOutSpecialExTrait": {
       "gods": ["Hammer"],
       "name": "Twisting Crash",
-      "description": "After your <b>Omega Special</b> projectiles fire outward, they fire inward."
+      "common": "After your <b>Omega Special</b> projectiles fire outward, they fire inward.",
+      "legendary": "After your <b>Omega Special</b> projectiles fire outward, they fire inward."
     },
     "LobGunOverheatTrait": {
       "gods": ["Hammer"],
       "name": "Venerated Relic",
-      "description": "Your <b>Valkyrie</b> form lasts <b>+3 Sec.</b>"
+      "common": "Your <b>Valkyrie</b> form lasts <b>+3 Sec.</b>",
+      "legendary": "Your <b>Valkyrie</b> form lasts <b>+4 Sec.</b>"
     },
     "LobPulseAmmoTrait": {
       "gods": ["Hammer"],
       "name": "Volatile Array",
-      "description": "Whenever your <b>Shells</b> land, they deal <b>50%</b> of your <b>Attack</b> damage around them."
+      "common": "Whenever your <b>Shells</b> land, they deal <b>50%</b> of your <b>Attack</b> damage around them.",
+      "legendary": "Whenever your <b>Shells</b> land, they deal <b>75%</b> of your <b>Attack</b> damage around them."
     },
     "LobSpreadShotTrait": {
       "gods": ["Hammer"],
       "name": "Wide Grin",
-      "description": "Your <b>Attacks</b> fire your <b>Shells</b> all at once in a spread pattern."
+      "common": "Your <b>Attacks</b> fire your <b>Shells</b> all at once in a spread pattern.",
+      "legendary": "Your <b>Attacks</b> fire your <b>Shells</b> all at once in a spread pattern."
     },
 
     "SuitComboDoubleSpecialTrait": {
       "gods": ["Hammer"],
       "name": "Awakened Rockets",
-      "description": "Absorbing <b>Omega Special</b> blasts also creates blasts from your <b>Special</b>, but you lose <b>10 Magick</b>."
+      "common": "Absorbing <b>Omega Special</b> blasts also creates blasts from your <b>Special</b>, but you lose <b>10 Magick</b>.",
+      "legendary": "Absorbing <b>Omega Special</b> blasts also creates blasts from your <b>Special</b>, but you lose <b>6 Magick</b>."
     },
     "SuitPowershotTrait": {
       "gods": ["Hammer"],
       "name": "Chakra Collider",
-      "description": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+150%</b> damage."
+      "common": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+150%</b> damage.",
+      "legendary": "Your <b>Omega Attack</b> gains a <b>Power Shot</b> that deals <b>+225%</b> damage."
     },
     "SuitSpecialBlockTrait": {
       "gods": ["Hammer"],
       "name": "Counter Barrage",
-      "description": "After blocking with your <b>Omega Attack</b>, your <b>Special</b> auto-fires <b>5</b> shots, reloading in <b>3 Sec.</b>"
+      "common": "After blocking with your <b>Omega Attack</b>, your <b>Special</b> auto-fires <b>5</b> shots, reloading in <b>3 Sec.</b>",
+      "legendary": "After blocking with your <b>Omega Attack</b>, your <b>Special</b> auto-fires <b>5</b> shots, reloading in <b>3 Sec.</b>"
     },
     "SuitComboBlockBuffTrait": {
       "gods": ["Hammer"],
       "name": "Counter Supreme",
-      "description": "After blocking with your <b>Omega Attack</b>, become <b>Destructive</b> by up to <b>+3</b> ranks."
+      "common": "After blocking with your <b>Omega Attack</b>, become <b>Destructive</b> by up to <b>3</b> ranks.",
+      "legendary": "After blocking with your <b>Omega Attack</b>, become <b>Destructive</b> by up to <b>4</b> ranks."
     },
     "SuitComboForwardRocketTrait": {
       "gods": ["Hammer"],
       "name": "Elephant Rockets",
-      "description": "Your <b>Specials</b> have <b>+30 Power</b> and fly dead ahead."
+      "common": "Your <b>Specials</b> have <b>+30 Power</b> and fly dead ahead.",
+      "legendary": "Your <b>Specials</b> have <b>+45 Power</b> and fly dead ahead."
     },
     "SuitDashAttackTrait": {
       "gods": ["Hammer"],
       "name": "Exhaust Riser",
-      "description": "Your <b>Dash-Strike</b> hits <b>+3</b> times."
+      "common": "Your <b>Dash-Strike</b> hits <b>+3</b> times.",
+      "legendary": "Your <b>Dash-Strike</b> hits <b>+3</b> times."
     },
     "SuitSpecialStartUpTrait": {
       "gods": ["Hammer"],
       "name": "Furious Rockets",
-      "description": "Your <b>Specials</b> launch and fly <b>80%</b> faster."
+      "common": "Your <b>Specials</b> launch and fly <b>80%</b> faster.",
+      "legendary": "Your <b>Specials</b> launch and fly <b>80%</b> faster."
     },
     "SuitSpecialAutoTrait": {
       "gods": ["Hammer"],
       "name": "Launcher Frame",
-      "description": "Whenever your <b>Attacks</b> strike foes, your <b>Special</b> has <b>25%</b> chance to fire automatically."
+      "common": "Whenever your <b>Attacks</b> strike foes, your <b>Special</b> has <b>25%</b> chance to fire automatically.",
+      "legendary": "Whenever your <b>Attacks</b> strike foes, your <b>Special</b> has <b>35%</b> chance to fire automatically."
     },
     "SuitArmorTrait": {
       "gods": ["Hammer"],
       "name": "Melting Cross",
-      "description": "Your <b>Attack</b> deals <b>+250</b> damage to <b>Armor</b>."
+      "common": "Your <b>Attack</b> deals <b>+250</b> damage to <b>Armor</b>.",
+      "legendary": "Your <b>Attack</b> deals <b>+250</b> damage to <b>Armor</b>."
     },
     "SuitComboDashAttackTrait": {
       "gods": ["Hammer"],
       "name": "Mooncrest Riser",
-      "description": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+40%</b> damage."
+      "common": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+40%</b> damage.",
+      "legendary": "Your <b>Dash-Strike</b> hits a larger area and deals <b>+60%</b> damage."
     },
     "SuitAttackSpeedTrait": {
       "gods": ["Hammer"],
       "name": "Rapid Frame",
-      "description": "Your <b>Attacks</b> are <b>35%</b> faster."
+      "common": "Your <b>Attacks</b> are <b>35%</b> faster.",
+      "legendary": "Your <b>Attacks</b> are <b>45%</b> faster."
     },
     "SuitAttackSizeTrait": {
       "gods": ["Hammer"],
       "name": "Reaper Frame",
-      "description": "Your <b>Attacks</b> have <b>+10 Power</b> and deal damage in a larger area."
+      "common": "Your <b>Attacks</b> have <b>+10 Power</b> and deal damage in a larger area.",
+      "legendary": "Your <b>Attacks</b> have <b>+15 Power</b> and deal damage in a larger area."
     },
     "SuitSpecialConsecutiveHitTrait": {
       "gods": ["Hammer"],
       "name": "Ripper Rockets",
-      "description": "Your <b>Specials</b> briefly gain <b>+5 Power</b> for up to <b>5</b> consecutive hits to the same foe."
+      "common": "Your <b>Specials</b> briefly gain <b>+5 Power</b> for up to <b>5</b> consecutive hits to the same foe.",
+      "legendary": "Your <b>Specials</b> briefly gain <b>+8 Power</b> for up to <b>5</b> consecutive hits to the same foe."
     },
     "SuitSpecialJumpTrait": {
       "gods": ["Hammer"],
       "name": "Shimmering Rockets",
-      "description": "Your <b>Specials</b> bounce toward up to <b>2</b> more foes."
+      "common": "Your <b>Specials</b> bounce toward up to <b>2</b> more foes.",
+      "legendary": "Your <b>Specials</b> bounce toward up to <b>3</b> more foes."
     },
     "SuitAttackRangeTrait": {
       "gods": ["Hammer"],
       "name": "Siege Frame",
-      "description": "Your <b>Attacks</b> deal <b>+30%</b> damage and reach farther ahead."
+      "common": "Your <b>Attacks</b> deal <b>+30%</b> damage and reach farther ahead.",
+      "legendary": "Your <b>Attacks</b> deal <b>+45%</b> damage and reach farther ahead."
     },
     "SuitSpecialDiscountTrait": {
       "gods": ["Hammer"],
       "name": "Sudden Salvo",
-      "description": "Your <b>Omega Special</b> locks on faster and uses <b>-20% Magick</b>."
+      "common": "Your <b>Omega Special</b> locks on faster and uses <b>-20% Magick</b>.",
+      "legendary": "Your <b>Omega Special</b> locks on faster and uses <b>-30% Magick</b>."
     },
     "SuitFullChargeTrait": {
       "gods": ["Hammer"],
       "name": "World Collider",
-      "description": "Your fully-charged <b>Omega Attack</b> has <b>+100 Power</b>."
+      "common": "Your fully-charged <b>Omega Attack</b> has <b>+100 Power</b>.",
+      "legendary": "Your fully-charged <b>Omega Attack</b> has <b>+140 Power</b>."
     }
   },
   "weapons": {
