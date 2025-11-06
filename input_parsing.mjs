@@ -21,6 +21,7 @@ const WEAPON_RARITIES = [
   "Perfect",
 ];
 const KEEPSAKE_AND_BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
+const HAMMER_RARITIES = ["Common", "Legendary"];
 
 var uiMappings = await readStorageObject("uiMappings");
 
@@ -67,7 +68,19 @@ function prepareBoonObject(boon, rarity) {
   boonObject.codeName = boon;
   boonObject.rarity = rarity;
   boonObject.name = uiMappings.boons[boon].name;
-  boonObject.description = uiMappings.boons[boon].description;
+  if (Object.hasOwn(uiMappings.boonName[boon], "description")) {
+    boonObject.description = uiMappings.boons[boon].description;
+  } else if (
+    Object.hasOwn(uiMappings.boonName[boon], "gods") &&
+    uiMappings.boonName[boon]["gods"][0] === "Hammer"
+  ) {
+    if (!HAMMER_RARITIES.includes(boonObject.rarity)) {
+      boonObject.rarity = "Common";
+    }
+    boonObject.description =
+      uiMappings.boonName[boon][boonObject.rarity.toLowerCase()];
+  }
+
   if (Object.hasOwn(uiMappings.boons[boon], "effects")) {
     boonObject.effects = [];
     uiMappings.boons[boon]["effects"].forEach((effect) => {
@@ -274,11 +287,12 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
   switch (extraType) {
     case ExtraType.KEEPSAKE:
       parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
-      parsedItem["description"] =
-        uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
       if (!KEEPSAKE_AND_BOON_RARITIES.includes(itemRarity)) {
         itemRarity = "Common";
       }
+      parsedItem["description"] =
+        uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
+
       parsedItem["rarity"] = itemRarity;
 
       break;
