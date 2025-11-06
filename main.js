@@ -22,11 +22,12 @@ app.use(cors());
 const CURRENT_PROTOCOL_VERSION = "2";
 
 app.post("/run_info", async function (req, res, next) {
-  logger.debug("Received data: " + JSON.stringify(req.body));
+  logger.debug("[run_info] " + JSON.stringify(req.body));
 
   const argusToken = req.body.argusToken;
   const twitchId = await getTwitchIdByArgusToken(argusToken);
   if (twitchId == null) {
+    logger.warn("Got a bad argus token. Discarding request.");
     res.send("bad_argus_token");
     return;
   }
@@ -37,6 +38,7 @@ app.post("/run_info", async function (req, res, next) {
    */
   const argusProtocolVersion = req.body.argusProtocolVersion;
   if (argusProtocolVersion !== CURRENT_PROTOCOL_VERSION) {
+    logger.warn("Got a bad argus protocol version. Discarding request.");
     res.send("bad_protocol_version");
     return;
   }
@@ -49,20 +51,23 @@ app.post("/run_info", async function (req, res, next) {
 });
 
 app.get("/oauth_token", (req, res) => {
-  logger.info(JSON.stringify(req.query));
+  logger.debug("[oauth_token] " + JSON.stringify(req.query));
 
   handleOauthToken(req, res);
 });
 
 app.get("/check_argus_token", (req, res) => {
+  logger.debug("[check_argus_token] " + JSON.stringify(req.query));
   handleCheckArgusToken(req, res);
 });
 
 app.post("/get_argus_token", (req, res) => {
+  logger.debug("[get_argus_token] " + JSON.stringify(req.body));
   handleGetArgusToken(req, res);
 });
 
 app.get("/check_login", (req, res) => {
+  logger.debug("[check_login] " + JSON.stringify(req.headers));
   handleCheckLogin(req, res);
 });
 
