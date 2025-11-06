@@ -19,6 +19,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const CURRENT_PROTOCOL_VERSION = "2";
+
 app.post("/run_info", async function (req, res, next) {
   logger.debug("Received data: " + JSON.stringify(req.body));
 
@@ -26,6 +28,16 @@ app.post("/run_info", async function (req, res, next) {
   const twitchId = await getTwitchIdByArgusToken(argusToken);
   if (twitchId == null) {
     res.send("bad_argus_token");
+    return;
+  }
+  /*
+   * If we receive messages with old protocol format, we just discard them.
+   * The frontend will not show anything until the streamer updates
+   * the mod to the newest version.
+   */
+  const argusProtocolVersion = req.body.argusProtocolVersion;
+  if (argusProtocolVersion !== CURRENT_PROTOCOL_VERSION) {
+    res.send("bad_protocol_version");
     return;
   }
   const broadcasterId = twitchId;
