@@ -74,6 +74,11 @@ export function handleOauthToken(req, res) {
               argusToken: generateRandomHex(16),
             };
 
+            logger.debug(
+              "Adding pending object: " +
+                JSON.stringify(pendingTwitchLogins[clientState])
+            );
+
             writeStorageObject("pendingTwitchLogins", pendingTwitchLogins);
 
             res.redirect("/auth_success.html");
@@ -129,6 +134,12 @@ export async function handleGetArgusToken(req, res) {
     twitchIdByArgusTokenMap[argusToken] = {};
     twitchIdByArgusTokenMap[argusToken].twitchId = userTwitchId;
     twitchIdByArgusTokenMap[argusToken].twitchProfilePic = userTwitchProfilePic;
+
+    logger.debug(
+      "Writing twitchIdByArgusToken map: " +
+        JSON.stringify(twitchIdByArgusTokenMap)
+    );
+
     writeStorageObject("twitchIdByArgusToken", twitchIdByArgusTokenMap);
 
     delete pendingTwitchLogins[req.body.state];
