@@ -663,7 +663,7 @@
       "description": "While you have less than <b>40 Health</b>, your <b>Attacks</b> and <b>Specials</b> restore <b>Health</b>.",
       "effects": [
         {
-          "text": "Life Restore per Hit:",
+          "text": "Life Restored per Hit:",
           "common": "1",
           "rare": "2",
           "epic": "3",

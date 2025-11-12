@@ -21,16 +21,7 @@ app.use(cors());
 
 const CURRENT_PROTOCOL_VERSION = "2";
 
-app.post("/run_info", async function (req, res, next) {
-  logger.debug("[run_info] " + JSON.stringify(req.body));
-
-  const argusToken = req.body.argusToken;
-  const twitchId = await getTwitchIdByArgusToken(argusToken);
-  if (twitchId == null) {
-    logger.warn("Got a bad argus token. Discarding request.");
-    res.send("bad_argus_token");
-    return;
-  }
+function checkProtocolVersion(req) {
   /*
    * If we receive messages with old protocol format, we just discard them.
    * The frontend will not show anything until the streamer updates
@@ -42,6 +33,20 @@ app.post("/run_info", async function (req, res, next) {
     res.send("bad_protocol_version");
     return;
   }
+}
+
+app.post("/run_info", async function (req, res, next) {
+  logger.debug("[run_info] " + JSON.stringify(req.body));
+
+  const argusToken = req.body.argusToken;
+  const twitchId = await getTwitchIdByArgusToken(argusToken);
+  if (twitchId == null) {
+    logger.warn("Got a bad argus token. Discarding request.");
+    res.send("bad_argus_token");
+    return;
+  }
+  checkProtocolVersion(req);
+
   const broadcasterId = twitchId;
   const parsedData = parseRunData(req.body.runData);
 
@@ -58,16 +63,26 @@ app.get("/oauth_token", (req, res) => {
 
 app.get("/check_argus_token", (req, res) => {
   logger.debug("[check_argus_token] " + JSON.stringify(req.query));
+
+  checkProtocolVersion(req);
+
   handleCheckArgusToken(req, res);
 });
 
 app.post("/get_argus_token", (req, res) => {
   logger.debug("[get_argus_token] " + JSON.stringify(req.body));
+
+  checkProtocolVersion(req);
+
   handleGetArgusToken(req, res);
 });
 
+/*
+  This request is made from the frontend. No need to check for protocol version.
+*/
 app.get("/check_login", (req, res) => {
   logger.debug("[check_login] " + JSON.stringify(req.headers));
+
   handleCheckLogin(req, res);
 });
 
