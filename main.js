@@ -21,13 +21,12 @@ app.use(cors());
 
 const CURRENT_PROTOCOL_VERSION = "2";
 
-function checkProtocolVersion(req) {
+function checkProtocolVersion(argusProtocolVersion) {
   /*
    * If we receive messages with old protocol format, we just discard them.
    * The frontend will not show anything until the streamer updates
    * the mod to the newest version.
    */
-  const argusProtocolVersion = req.body.argusProtocolVersion;
   if (argusProtocolVersion !== CURRENT_PROTOCOL_VERSION) {
     logger.warn("Got a bad argus protocol version. Discarding request.");
     res.send("bad_protocol_version");
@@ -45,7 +44,7 @@ app.post("/run_info", async function (req, res, next) {
     res.send("bad_argus_token");
     return;
   }
-  checkProtocolVersion(req);
+  checkProtocolVersion(req.body.argusProtocolVersion);
 
   const broadcasterId = twitchId;
   const parsedData = parseRunData(req.body.runData);
@@ -64,7 +63,7 @@ app.get("/oauth_token", (req, res) => {
 app.get("/check_argus_token", (req, res) => {
   logger.debug("[check_argus_token] " + JSON.stringify(req.query));
 
-  checkProtocolVersion(req);
+  checkProtocolVersion(req.query.argusProtocolVersion);
 
   handleCheckArgusToken(req, res);
 });
@@ -72,7 +71,7 @@ app.get("/check_argus_token", (req, res) => {
 app.post("/get_argus_token", (req, res) => {
   logger.debug("[get_argus_token] " + JSON.stringify(req.body));
 
-  checkProtocolVersion(req);
+  checkProtocolVersion(req.body.argusProtocolVersion);
 
   handleGetArgusToken(req, res);
 });
