@@ -1,4 +1,4 @@
-import app_versions from "./app_versions.json";
+import app_versions from "./app_versions.json" with { type: 'json' };
 
 export function handleGetNewestAppVersion(req) {
   response_object = {};
