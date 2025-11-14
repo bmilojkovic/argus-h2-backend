@@ -89,7 +89,7 @@ app.get("/check_login", (req, res) => {
 app.get("/get_newest_app_version", (req, res) => {
   logger.debug("[check_login] " + JSON.stringify(req.query));
 
-  handleGetNewestAppVersion(req);
+  handleGetNewestAppVersion(req, res);
 });
 
 // Server setup
