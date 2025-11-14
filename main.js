@@ -11,6 +11,7 @@ import {
   handleOauthToken,
   handleCheckLogin,
 } from "./argus_auth.mjs";
+import { handleGetNewestAppVersion } from "./app_updater.mjs";
 
 import { logger } from "./argus_logger.mjs";
 import path from "path";
@@ -83,6 +84,12 @@ app.get("/check_login", (req, res) => {
   logger.debug("[check_login] " + JSON.stringify(req.headers));
 
   handleCheckLogin(req, res);
+});
+
+app.get("/get_newest_app_version", (req, res) => {
+  logger.debug("[check_login] " + JSON.stringify(req.query));
+
+  handleGetNewestAppVersion(req);
 });
 
 // Server setup
