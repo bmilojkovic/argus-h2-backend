@@ -4,8 +4,8 @@
   "versions": {
     "1.2.0": {
       "changelog": ["feature 1", "feature 2"],
-      "main_path": "/updates/argus_1.2.0.zip",
-      "updater_path": "/updates/argus_updater_1.2.0.zip"
+      "main_path": "/updates/argus_1_2_0.zip",
+      "updater_path": "/updates/argus_updater_1_2_0.zip"
     }
   }
 }
