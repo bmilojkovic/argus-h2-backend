@@ -1,10 +1,8 @@
-import app_versions from "./app_versions.json" with { type: 'json' };
+const newest_app_version = "1.1.0";
 
 export function handleGetNewestAppVersion(req, res) {
   let response_object = {};
-  response_object["newest_version"] = app_versions.newest_version;
-  response_object["details"] =
-    app_versions.versions[app_versions.newest_version];
+  response_object["newest_version"] = newest_app_version;
 
   res.send(JSON.stringify(response_object));
 }
