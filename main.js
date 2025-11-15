@@ -92,6 +92,11 @@ app.get("/get_newest_app_version", (req, res) => {
   handleGetNewestAppVersion(req, res);
 });
 
+app.get("/ping", (req, res) => {
+  logger.debug("[ping]");
+  res.send("pong");
+});
+
 // Server setup
 app.use(express.static(path.join(import.meta.dirname, "static")));
 app.listen(3000, () => {
