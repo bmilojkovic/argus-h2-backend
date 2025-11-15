@@ -92,7 +92,7 @@ app.get("/get_newest_app_version", (req, res) => {
   handleGetNewestAppVersion(req, res);
 });
 
-appp.get("/ping", (req, res) => {
+app.get("/ping", (req, res) => {
   logger.debug("[ping]");
   res.send("pong");
 });
