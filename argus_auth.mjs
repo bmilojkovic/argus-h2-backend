@@ -90,6 +90,8 @@ export function handleOauthToken(req, res) {
 
       return;
     });
+  } else {
+    res.redirect("/auth_fail.html");
   }
 }
 
