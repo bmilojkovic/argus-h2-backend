@@ -49,3 +49,32 @@ if (process.env.NODE_ENV !== "production") {
     })
   );
 }
+
+let twitchRequestTimestamps = {};
+
+export function reportRequestToTwitch(broadcasterId) {
+  const currentTimestamp = Date.now(); //milliseconds since epoch
+
+  if (!Object.hasOwn(twitchRequestTimestamps, broadcasterId)) {
+    twitchRequestTimestamps[broadcasterId] = [];
+  }
+  twitchRequestTimestamps[broadcasterId].push(currentTimestamp);
+  //filter out timestamps older than 60 seconds
+  twitchRequestTimestamps[broadcasterId] = twitchRequestTimestamps[
+    broadcasterId
+  ].filter(function (elem, ind) {
+    return elem > currentTimestamp - 60 * 1000;
+  });
+
+  if (twitchRequestTimestamps[broadcasterId].length > 50) {
+    logger.warn(
+      "Twitch requests last minute: " +
+        twitchRequestTimestamps[broadcasterId].length
+    );
+  } else if (twitchRequestTimestamps[broadcasterId].length > 20) {
+    logger.info(
+      "Twitch requests last minute: " +
+        twitchRequestTimestamps[broadcasterId].length
+    );
+  }
+}

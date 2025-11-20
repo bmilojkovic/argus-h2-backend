@@ -1,9 +1,10 @@
-import { logger } from "./argus_logger.mjs";
+import { logger, reportRequestToTwitch } from "./argus_logger.mjs";
 import { loadSecrets } from "./secrets.mjs";
 import request from "request";
 
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
+import { report } from "process";
 
 const secrets = loadSecrets();
 const extensionSecret = secrets.extensionSecret;
@@ -68,6 +69,7 @@ function broadcastInfoPart(partialRunData, broadcasterId) {
   logger.debug(
     "Broadcasting data: " + JSON.stringify(broadcastMessage, " ", 2)
   );
+  reportRequestToTwitch(broadcasterId);
   request(requestOptions, function (error, response) {
     if (response.statusCode != 204) {
       logger.warn("Non-standard twitch reply: " + response.body);
