@@ -70,8 +70,14 @@ export function handleOauthToken(req, res) {
 
             pendingTwitchLogins[clientState] = {
               twitchId: userTwitchId,
+              twitchProfilePic: claimsObject["picture"],
               argusToken: generateRandomHex(16),
             };
+
+            logger.debug(
+              "Adding pending object: " +
+                JSON.stringify(pendingTwitchLogins[clientState])
+            );
 
             writeStorageObject("pendingTwitchLogins", pendingTwitchLogins);
 
@@ -84,6 +90,8 @@ export function handleOauthToken(req, res) {
 
       return;
     });
+  } else {
+    res.redirect("/auth_fail.html");
   }
 }
 
@@ -111,25 +119,35 @@ export async function handleGetArgusToken(req, res) {
     pendingTwitchLogins[req.body.state] != null
   ) {
     var userTwitchId = pendingTwitchLogins[req.body.state].twitchId;
+    var userTwitchProfilePic =
+      pendingTwitchLogins[req.body.state].twitchProfilePic;
     var argusToken = pendingTwitchLogins[req.body.state].argusToken;
 
     var twitchIdByArgusTokenMap = await readStorageObject(
       "twitchIdByArgusToken"
     );
     for (var tok in twitchIdByArgusTokenMap) {
-      if (twitchIdByArgusTokenMap[tok] === userTwitchId) {
+      if (twitchIdByArgusTokenMap[tok].twitchId === userTwitchId) {
         delete twitchIdByArgusTokenMap[tok];
         break;
       }
     }
 
-    twitchIdByArgusTokenMap[argusToken] = userTwitchId;
+    twitchIdByArgusTokenMap[argusToken] = {};
+    twitchIdByArgusTokenMap[argusToken].twitchId = userTwitchId;
+    twitchIdByArgusTokenMap[argusToken].twitchProfilePic = userTwitchProfilePic;
+
+    logger.debug(
+      "Writing twitchIdByArgusToken map: " +
+        JSON.stringify(twitchIdByArgusTokenMap)
+    );
+
     writeStorageObject("twitchIdByArgusToken", twitchIdByArgusTokenMap);
 
     delete pendingTwitchLogins[req.body.state];
     writeStorageObject("pendingTwitchLogins", pendingTwitchLogins);
 
-    res.send(argusToken);
+    res.send(argusToken + "\n" + userTwitchProfilePic);
   } else {
     res.send("FAIL");
   }
@@ -138,7 +156,7 @@ export async function handleGetArgusToken(req, res) {
 export async function getTwitchIdByArgusToken(argus_token) {
   var twitchIdByArgusTokenMap = await readStorageObject("twitchIdByArgusToken");
   if (Object.hasOwn(twitchIdByArgusTokenMap, argus_token)) {
-    return twitchIdByArgusTokenMap[argus_token];
+    return twitchIdByArgusTokenMap[argus_token].twitchId;
   } else {
     return null;
   }
@@ -160,7 +178,7 @@ export async function handleCheckLogin(req, res) {
       "twitchIdByArgusToken"
     );
     for (var tok in twitchIdByArgusTokenMap) {
-      if (twitchIdByArgusTokenMap[tok] === userTwitchId) {
+      if (twitchIdByArgusTokenMap[tok].twitchId === userTwitchId) {
         logger.info(
           "Found user nicely logged in: " + decodedPayload["channel_id"]
         );

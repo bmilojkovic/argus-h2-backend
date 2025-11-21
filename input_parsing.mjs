@@ -21,6 +21,7 @@ const WEAPON_RARITIES = [
   "Perfect",
 ];
 const KEEPSAKE_AND_BOON_RARITIES = ["Common", "Rare", "Epic", "Heroic"];
+const HAMMER_RARITIES = ["Common", "Legendary"];
 
 var uiMappings = await readStorageObject("uiMappings");
 
@@ -67,7 +68,21 @@ function prepareBoonObject(boon, rarity) {
   boonObject.codeName = boon;
   boonObject.rarity = rarity;
   boonObject.name = uiMappings.boons[boon].name;
-  boonObject.description = uiMappings.boons[boon].description;
+  boonObject.boonType = "Boon";
+  if (Object.hasOwn(uiMappings.boons[boon], "description")) {
+    boonObject.description = uiMappings.boons[boon].description;
+  } else if (
+    Object.hasOwn(uiMappings.boons[boon], "gods") &&
+    uiMappings.boons[boon]["gods"][0] === "Hammer"
+  ) {
+    if (!HAMMER_RARITIES.includes(boonObject.rarity)) {
+      boonObject.rarity = "Common";
+    }
+    boonObject.boonType = "Hammer";
+    boonObject.description =
+      uiMappings.boons[boon][boonObject.rarity.toLowerCase()];
+  }
+
   if (Object.hasOwn(uiMappings.boons[boon], "effects")) {
     boonObject.effects = [];
     uiMappings.boons[boon]["effects"].forEach((effect) => {
@@ -184,14 +199,15 @@ function parseWeaponData(weaponData) {
 const EMPTY_FAMILIAR_STRING = "NOFAMILIARS";
 /**
  * The familiar should arrive in the following format:
- * `[familiarName] [level1];;[trait1] [level2];;[trait2]`.
+ * `[familiarLevel];;[familiarName] [level1];;[trait1] [level2];;[trait2]`.
  * There should be exactly two traits with their appropriate levels.
  * We are not displaying the attack trait for any of the familiars
- * since the game doesn't show them either.
+ * since the game doesn't show them either. The level of the familiar
+ * itself has been adjusted so that it can simply be forwarded to the UI.
  *
  * For example:
  * ```
- * LastStandFamiliar 2;;LastStandFamiliar 3;;FamiliarCatResourceBonus
+ * 9;;LastStandFamiliar 2;;LastStandFamiliar 3;;FamiliarCatResourceBonus
  * ```
  */
 function parseFamiliarData(familiarData) {
@@ -209,10 +225,11 @@ function parseFamiliarData(familiarData) {
 
   /* figure out which familiar it is and the trait levels (upgrades) for it*/
   var familiarName = null;
+  var familiarLevel = 0;
   var familiarLevels = {};
   familiarLevelArray.forEach((arrayItem, ind) => {
     if (ind == 0) {
-      familiarName = arrayItem;
+      [familiarLevel, familiarName] = arrayItem.split(DATA_SEPARATOR);
     } else {
       const splitArrayItem = arrayItem.split(DATA_SEPARATOR);
       if (splitArrayItem.length != 2) {
@@ -227,6 +244,10 @@ function parseFamiliarData(familiarData) {
     logger.warn("Couldn't parse familiar name from: " + familiarData);
     return {};
   }
+  if (familiarLevel == 0) {
+    logger.warn("Couldn't parse familiar level from: " + familiarData);
+    return {};
+  }
   /* map levels to actual descriptions */
   if (uiMappings.familiars[familiarName] == null) {
     logger.warn("Got unknown familiar name: " + familiarData);
@@ -234,7 +255,7 @@ function parseFamiliarData(familiarData) {
   }
 
   parsedData["codeName"] = familiarName;
-  parsedData["rarity"] = "Common";
+  parsedData["rarity"] = familiarLevel;
   parsedData["name"] = uiMappings.familiars[familiarName].name;
   parsedData["description"] = uiMappings.familiars[familiarName].description;
   parsedData["effects"] = [];
@@ -268,11 +289,12 @@ function prepareExtraObject(itemName, itemRarity, extraType) {
   switch (extraType) {
     case ExtraType.KEEPSAKE:
       parsedItem["name"] = uiMappings.keepsakes[itemName]["name"];
-      parsedItem["description"] =
-        uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
       if (!KEEPSAKE_AND_BOON_RARITIES.includes(itemRarity)) {
         itemRarity = "Common";
       }
+      parsedItem["description"] =
+        uiMappings.keepsakes[itemName][itemRarity.toLowerCase()];
+
       parsedItem["rarity"] = itemRarity;
 
       break;
