@@ -4,8 +4,8 @@ import {
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
 const s3Client = new S3Client({});
-//const bucketName = "argus-h2-backend-argus-tokens";
-const bucketName = "argus-h2-backend-argus-tokens-test";
+const bucketName = "argus-h2-backend-argus-tokens";
+//const bucketName = "argus-h2-backend-argus-tokens-test";
 
 async function readStorageString(objectName) {
   var objectParams = {

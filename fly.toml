@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'argus-h2-backend-test'
+app = 'argus-h2-backend'
 primary_region = 'cdg'
 
 [build]
