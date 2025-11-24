@@ -18,7 +18,9 @@ async function readStorageString(objectName) {
     const { Body } = await s3Client.send(new GetObjectCommand(objectParams));
     return await Body.transformToString();
   } catch (error) {
-    logger.error(error);
+    logger.error(
+      `Reading storage key ${objectName} from bucket ${bucketName} failed.`
+    );
   }
   return null;
 }
