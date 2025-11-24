@@ -92,14 +92,7 @@ app.get("/check_login", (req, res) => {
 app.get("/dashboard_run_data", async function (req, res) {
   const dashboardRunData = await readStorageObject("dashboardRunData");
 
-  const resultArray = Object.keys(dashboardRunData).reduce(
-    (accumulator, key) => {
-      accumulator.push(dashboardRunData[key]);
-      return accumulator;
-    },
-    []
-  );
-  res.send(JSON.stringify(resultArray));
+  res.send(JSON.stringify(dashboardRunData));
 });
 
 app.get("/get_newest_app_version", (req, res) => {
