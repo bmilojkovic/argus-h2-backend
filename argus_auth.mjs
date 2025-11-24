@@ -36,12 +36,12 @@ async function getAppAccessToken() {
   });
   const data = await response.json();
   logger.info("Got access token response: ");
-  logger.info(data);
+  logger.info(JSON.stringify(data));
   return data.access_token;
 }
 
 async function getUsernameFromTwitch(twitchId) {
-  const twitchAccessToken = getAppAccessToken();
+  const twitchAccessToken = await getAppAccessToken();
   logger.info("Got access token: " + twitchAccessToken);
 
   const response = await fetch(
@@ -56,7 +56,7 @@ async function getUsernameFromTwitch(twitchId) {
 
   const data = await response.json();
   logger.info("Got response from twitch: ");
-  logger.info(data);
+  logger.info(JSON.stringify(data));
   if (data.data && data.data.length > 0) {
     return data.data[0].display_name; // Or .login for the lowercase username
   }
