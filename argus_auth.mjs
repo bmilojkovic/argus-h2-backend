@@ -174,8 +174,8 @@ export function handleOauthToken(req, res) {
 export async function handleCheckArgusToken(req, res) {
   if (req.query.argus_token != null) {
     var token = req.query.argus_token;
-    var twitchId = await getTwitchProfileByArgusToken(token).twitchId;
-    if (twitchId != null) {
+    var twitchProfile = await getTwitchProfileByArgusToken(token);
+    if (twitchProfile != null && Object.hasOwn(twitchProfile, "twitchId")) {
       res.send("token_ok");
     } else {
       res.send("token_not_ok");
