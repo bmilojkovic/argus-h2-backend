@@ -5,7 +5,7 @@ import cors from "cors";
 import { parseRunData } from "./input_parsing.mjs";
 import { broadcastInfo } from "./twitch_broadcast.mjs";
 import {
-  getTwitchIdByArgusToken,
+  getTwitchProfileByArgusToken,
   handleCheckArgusToken,
   handleGetArgusToken,
   handleOauthToken,
@@ -15,6 +15,8 @@ import { handleGetNewestAppVersion } from "./app_updater.mjs";
 
 import { logger } from "./argus_logger.mjs";
 import path from "path";
+import { updateDasboardRunData } from "./dashboard_utils.mjs";
+import { readStorageObject } from "./aws_storage.mjs";
 
 const app = express();
 app.use(express.json());
@@ -39,7 +41,8 @@ app.post("/run_info", async function (req, res, next) {
   logger.debug("[run_info] " + JSON.stringify(req.body));
 
   const argusToken = req.body.argusToken;
-  const twitchId = await getTwitchIdByArgusToken(argusToken);
+  const twitchProfile = await getTwitchProfileByArgusToken(argusToken);
+  const twitchId = twitchProfile.twitchId;
   if (twitchId == null) {
     logger.warn("Got a bad argus token. Discarding request.");
     res.send("bad_argus_token");
@@ -47,10 +50,10 @@ app.post("/run_info", async function (req, res, next) {
   }
   checkProtocolVersion(req.body.argusProtocolVersion);
 
-  const broadcasterId = twitchId;
   const parsedData = parseRunData(req.body.runData);
 
-  broadcastInfo(parsedData, broadcasterId);
+  updateDasboardRunData(parsedData, twitchProfile);
+  broadcastInfo(parsedData, twitchId);
 
   res.send("ok");
 });
@@ -84,6 +87,12 @@ app.get("/check_login", (req, res) => {
   logger.debug("[check_login] " + JSON.stringify(req.headers));
 
   handleCheckLogin(req, res);
+});
+
+app.get("/dashboard_run_data", async function (req, res) {
+  const dashboardRunData = await readStorageObject("dashboardRunData");
+
+  res.send(JSON.stringify(dashboardRunData));
 });
 
 app.get("/get_newest_app_version", (req, res) => {

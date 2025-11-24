@@ -22,6 +22,70 @@ function generateRandomHex(length) {
     .slice(0, length);
 }
 
+async function getAppAccessToken() {
+  const response = await fetch("https://id.twitch.tv/oauth2/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      client_id: extensionId,
+      client_secret: apiClientSecret,
+      grant_type: "client_credentials",
+    }),
+  });
+  const data = await response.json();
+  return data.access_token;
+}
+
+async function getUsernameFromTwitch(twitchId) {
+  const twitchAccessToken = getAppAccessToken();
+
+  const response = await fetch(
+    `https://api.twitch.tv/helix/users?id=${twitchId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${twitchAccessToken}`,
+        "Client-Id": extensionId,
+      },
+    }
+  );
+  const data = await response.json();
+  if (data.data && data.data.length > 0) {
+    return data.data[0].display_name; // Or .login for the lowercase username
+  }
+  return null; // User not found
+}
+
+/**
+ * Updates the username for this user profile in storage. Returns the updated user profile object.
+ * @param {*} argus_token
+ */
+export async function updateUsernameFor(argus_token) {
+  var twitchIdByArgusTokenMap = await readStorageObject("twitchIdByArgusToken");
+
+  if (Object.hasOwn(twitchIdByArgusTokenMap, argus_token)) {
+    if (
+      !Object.hasOwn(twitchIdByArgusTokenMap[argus_token], "twitchUsername")
+    ) {
+      const twitchUsername = await getUsernameFromTwitch(
+        twitchIdByArgusTokenMap[argus_token].twitchId
+      );
+      if (twitchUsername != null) {
+        twitchIdByArgusTokenMap[argus_token].twitchUsername =
+          twitchIdByArgusTokenMap;
+        await writeStorageObject(
+          "twitchIdByArgusToken",
+          twitchIdByArgusTokenMap
+        );
+      }
+      return twitchIdByArgusTokenMap[argus_token];
+    }
+  }
+
+  return null;
+}
+
 export function handleOauthToken(req, res) {
   var clientState = req.query.state;
 
@@ -98,7 +162,7 @@ export function handleOauthToken(req, res) {
 export async function handleCheckArgusToken(req, res) {
   if (req.query.argus_token != null) {
     var token = req.query.argus_token;
-    var twitchId = await getTwitchIdByArgusToken(token);
+    var twitchId = await getTwitchProfileByArgusToken(token).twitchId;
     if (twitchId != null) {
       res.send("token_ok");
     } else {
@@ -126,6 +190,9 @@ export async function handleGetArgusToken(req, res) {
     var twitchIdByArgusTokenMap = await readStorageObject(
       "twitchIdByArgusToken"
     );
+    if (twitchIdByArgusTokenMap == null) {
+      twitchIdByArgusTokenMap = {};
+    }
     for (var tok in twitchIdByArgusTokenMap) {
       if (twitchIdByArgusTokenMap[tok].twitchId === userTwitchId) {
         delete twitchIdByArgusTokenMap[tok];
@@ -153,10 +220,18 @@ export async function handleGetArgusToken(req, res) {
   }
 }
 
-export async function getTwitchIdByArgusToken(argus_token) {
+export async function getTwitchProfileByArgusToken(argus_token) {
   var twitchIdByArgusTokenMap = await readStorageObject("twitchIdByArgusToken");
+  if (twitchIdByArgusTokenMap == null) {
+    return null;
+  }
   if (Object.hasOwn(twitchIdByArgusTokenMap, argus_token)) {
-    return twitchIdByArgusTokenMap[argus_token].twitchId;
+    if (
+      !Object.hasOwn(twitchIdByArgusTokenMap[argus_token], "twitchUsername")
+    ) {
+      return await updateUsernameFor(argus_token);
+    }
+    return twitchIdByArgusTokenMap[argus_token];
   } else {
     return null;
   }
@@ -177,6 +252,10 @@ export async function handleCheckLogin(req, res) {
     var twitchIdByArgusTokenMap = await readStorageObject(
       "twitchIdByArgusToken"
     );
+    if (twitchIdByArgusTokenMap == null) {
+      res.send("FAIL");
+      return;
+    }
     for (var tok in twitchIdByArgusTokenMap) {
       if (twitchIdByArgusTokenMap[tok].twitchId === userTwitchId) {
         logger.info(
