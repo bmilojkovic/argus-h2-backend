@@ -24,7 +24,7 @@ function cleanSurplus(dashboardRunData) {
  */
 export async function updateDasboardRunData(newRunData, twitchProfile) {
   logger.info("Starting update dashboard");
-  const dashboardRunData = await readStorageObject("dashboardRunData");
+  let dashboardRunData = await readStorageObject("dashboardRunData");
 
   if (newRunData == null || twitchProfile == null) {
     return;
