@@ -26,7 +26,7 @@ async function readStorageString(objectName) {
 export async function readStorageObject(objectName) {
   const result = await readStorageString(objectName);
   if (result != null) {
-    return JSON.parse();
+    return JSON.parse(result);
   }
 
   return null;
