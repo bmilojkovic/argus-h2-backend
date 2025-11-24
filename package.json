@@ -12,7 +12,8 @@
     "start": "node main.js",
     "update_ui_mappings": "node tools/update_ui_mappings.js",
     "erase_argus_tokens": "node tools/erase_argus_tokens.js",
-    "print_argus_tokens": "node tools/print_argus_tokens.js"
+    "print_argus_tokens": "node tools/print_argus_tokens.js",
+    "erase_dashboard_data": "node tools/erase_dashboard_data.js"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.7.10"
