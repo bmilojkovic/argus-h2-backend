@@ -36,9 +36,9 @@ export async function updateDasboardRunData(newRunData, twitchProfile) {
       twitchProfile: twitchProfile,
     };
     dashboardRunData[twitchProfile.twitchId] = objectToStore;
-  }
 
-  await writeStorageObject("dashboardRunData", dashboardRunData);
+    await writeStorageObject("dashboardRunData", dashboardRunData);
+  }
 }
 
 async function timedClean() {
