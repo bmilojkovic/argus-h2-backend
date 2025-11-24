@@ -35,11 +35,14 @@ async function getAppAccessToken() {
     }),
   });
   const data = await response.json();
+  logger.info("Got access token response: ");
+  logger.info(data);
   return data.access_token;
 }
 
 async function getUsernameFromTwitch(twitchId) {
   const twitchAccessToken = getAppAccessToken();
+  logger.info("Got access token: " + twitchAccessToken);
 
   const response = await fetch(
     `https://api.twitch.tv/helix/users?id=${twitchId}`,
