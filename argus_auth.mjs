@@ -50,7 +50,10 @@ async function getUsernameFromTwitch(twitchId) {
       },
     }
   );
+
   const data = await response.json();
+  logger.info("Got response from twitch: ");
+  logger.info(data);
   if (data.data && data.data.length > 0) {
     return data.data[0].display_name; // Or .login for the lowercase username
   }
@@ -68,9 +71,16 @@ export async function updateUsernameFor(argus_token) {
     if (
       !Object.hasOwn(twitchIdByArgusTokenMap[argus_token], "twitchUsername")
     ) {
+      logger.info(
+        "Getting username for " +
+          argus_token +
+          " with id " +
+          twitchIdByArgusTokenMap[argus_token].twitchId
+      );
       const twitchUsername = await getUsernameFromTwitch(
         twitchIdByArgusTokenMap[argus_token].twitchId
       );
+      logger.info("Got username: " + twitchUsername);
       if (twitchUsername != null) {
         twitchIdByArgusTokenMap[argus_token].twitchUsername =
           twitchIdByArgusTokenMap;
