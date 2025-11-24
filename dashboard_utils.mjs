@@ -2,6 +2,8 @@ import cron from "node-cron";
 import { readStorageObject, writeStorageObject } from "./aws_storage.mjs";
 
 function cleanSurplus(dashboardRunData) {
+  const currentTimestamp = Date.now();
+
   //remove any entries older than 10min
   dashboardRunData = Object.keys(dashboardRunData).reduce(
     (accumulator, key) => {
@@ -44,7 +46,7 @@ export async function updateDasboardRunData(newRunData, twitchProfile) {
 async function timedClean() {
   const dashboardRunData = await readStorageObject("dashboardRunData");
   //if it is not there, we just exit
-  if (dashboardRunData == null && newRunData == null) {
+  if (dashboardRunData == null) {
     return;
   }
   dashboardRunData = cleanSurplus(dashboardRunData);
