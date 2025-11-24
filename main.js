@@ -52,9 +52,9 @@ app.post("/run_info", async function (req, res, next) {
 
   const parsedData = parseRunData(req.body.runData);
 
-  updateDasboardRunData(parsedData, twitchProfile);
   broadcastInfo(parsedData, twitchId);
 
+  await updateDasboardRunData(parsedData, twitchProfile);
   res.send("ok");
 });
 
