@@ -1,5 +1,6 @@
 import cron from "node-cron";
 import { readStorageObject, writeStorageObject } from "./aws_storage.mjs";
+import { logger } from "./argus_logger.mjs";
 
 function cleanSurplus(dashboardRunData) {
   const currentTimestamp = Date.now();
