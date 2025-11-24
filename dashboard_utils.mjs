@@ -37,4 +37,6 @@ export function updateDasboardRunData(newRunData, twitchProfile) {
   writeStorageObject("dashboardRunData", dashboardRunData);
 }
 
-cron.schedule("* * * * *", updateDasboardRunData);
+cron.schedule("* * * * *", () => {
+  updateDasboardRunData(null, null);
+});
