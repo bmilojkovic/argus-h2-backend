@@ -49,7 +49,7 @@ export async function updateDasboardRunData(newRunData, twitchProfile) {
 }
 
 async function timedClean() {
-  const dashboardRunData = await readStorageObject("dashboardRunData");
+  let dashboardRunData = await readStorageObject("dashboardRunData");
   //if it is not there, we just exit
   if (dashboardRunData == null) {
     return;
