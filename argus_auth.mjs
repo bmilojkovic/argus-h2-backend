@@ -85,8 +85,7 @@ export async function updateUsernameFor(argus_token) {
       );
       logger.info("Got username: " + twitchUsername);
       if (twitchUsername != null) {
-        twitchIdByArgusTokenMap[argus_token].twitchUsername =
-          twitchIdByArgusTokenMap;
+        twitchIdByArgusTokenMap[argus_token].twitchUsername = twitchUsername;
         await writeStorageObject(
           "twitchIdByArgusToken",
           twitchIdByArgusTokenMap
