@@ -26,9 +26,11 @@ export async function updateDasboardRunData(newRunData, twitchProfile) {
   logger.info("Starting update dashboard");
   const dashboardRunData = await readStorageObject("dashboardRunData");
 
-  //if it is not there, we just exit
-  if (dashboardRunData == null && newRunData == null) {
+  if (newRunData == null || twitchProfile == null) {
     return;
+  }
+  if (dashboardRunData == null) {
+    dashboardRunData = {};
   }
   logger.info("Continuing update dashboard");
   const currentTimestamp = Date.now();
