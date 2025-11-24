@@ -96,7 +96,7 @@ app.get("/dashboard_run_data", async function (req, res) {
 });
 
 app.get("/get_newest_app_version", (req, res) => {
-  logger.debug("[check_login] " + JSON.stringify(req.query));
+  logger.debug("[get_newest_app_version] " + JSON.stringify(req.query));
 
   handleGetNewestAppVersion(req, res);
 });
