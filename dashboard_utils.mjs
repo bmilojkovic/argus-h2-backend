@@ -23,7 +23,6 @@ function cleanSurplus(dashboardRunData) {
  * Updates the object in S3 storage
  */
 export async function updateDasboardRunData(newRunData, twitchProfile) {
-  logger.info("Starting update dashboard");
   let dashboardRunData = await readStorageObject("dashboardRunData");
 
   if (newRunData == null || twitchProfile == null) {
@@ -32,11 +31,10 @@ export async function updateDasboardRunData(newRunData, twitchProfile) {
   if (dashboardRunData == null) {
     dashboardRunData = {};
   }
-  logger.info("Continuing update dashboard");
+
   const currentTimestamp = Date.now();
 
   if (newRunData != null) {
-    logger.info("Storing object for profile: " + JSON.stringify(twitchProfile));
     const objectToStore = {
       runData: newRunData,
       timestamp: currentTimestamp,
