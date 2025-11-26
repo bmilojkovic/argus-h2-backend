@@ -186,6 +186,7 @@ export async function handleCheckArgusToken(req, res) {
 
 export async function handleGetArgusToken(req, res) {
   logger.info("getting token for state: " + req.body.state);
+  await new Promise((resolve) => setTimeout(resolve, 5000));
   var pendingTwitchLogins = await readStorageObject("pendingTwitchLogins");
   if (
     req.body != null &&
