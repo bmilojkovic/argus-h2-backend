@@ -170,12 +170,16 @@ export async function handleCheckArgusToken(req, res) {
   if (req.query.argus_token != null) {
     var token = req.query.argus_token;
     var twitchProfile = await getTwitchProfileByArgusToken(token);
+    logger.debug("[check_argus_token] got profile for token: " + token);
     if (twitchProfile != null && Object.hasOwn(twitchProfile, "twitchId")) {
+      logger.debug("[check_argus_token] responding ok for token: " + token);
       res.send("token_ok");
     } else {
+      logger.debug("[check_argus_token] responding not ok for token: " + token);
       res.send("token_not_ok");
     }
   } else {
+    logger.debug("[check_argus_token] responding not ok for token: " + token);
     res.send("token_not_ok");
   }
 }
@@ -234,6 +238,7 @@ export async function handleGetArgusToken(req, res) {
     );
     res.send(argusToken + "\n" + userTwitchProfilePic);
   } else {
+    logger.debug("Responding FAIL for state: " + req.body.state);
     res.send("FAIL");
   }
 }
