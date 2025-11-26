@@ -189,6 +189,7 @@ export async function handleGetArgusToken(req, res) {
     pendingTwitchLogins != null &&
     pendingTwitchLogins[req.body.state] != null
   ) {
+    logger.info("entered if for state: " + req.body.state);
     var userTwitchId = pendingTwitchLogins[req.body.state].twitchId;
     var userTwitchProfilePic =
       pendingTwitchLogins[req.body.state].twitchProfilePic;
@@ -212,7 +213,9 @@ export async function handleGetArgusToken(req, res) {
     twitchIdByArgusTokenMap[argusToken].twitchProfilePic = userTwitchProfilePic;
 
     logger.debug(
-      "Writing twitchIdByArgusToken map: " +
+      "Writing twitchIdByArgusToken map for state " +
+        req.body.state +
+        ": " +
         JSON.stringify(twitchIdByArgusTokenMap)
     );
 
@@ -221,6 +224,14 @@ export async function handleGetArgusToken(req, res) {
     delete pendingTwitchLogins[req.body.state];
     writeStorageObject("pendingTwitchLogins", pendingTwitchLogins);
 
+    logger.debug(
+      "Sending reponse for state " +
+        req.body.state +
+        ": " +
+        argusToken +
+        "\n" +
+        userTwitchProfilePic
+    );
     res.send(argusToken + "\n" + userTwitchProfilePic);
   } else {
     res.send("FAIL");
