@@ -154,6 +154,9 @@ export function handleOauthToken(req, res) {
 
             res.redirect("/auth_success.html");
           } else {
+            logger.debug(
+              "[oauth_token] Couldn't read pending twitch login. Redirecting to fail."
+            );
             res.redirect("/auth_fail.html");
           }
         }
@@ -162,6 +165,9 @@ export function handleOauthToken(req, res) {
       return;
     });
   } else {
+    logger.debug(
+      "[oauth_token] Couldn't read paramaters from oauth request. Redirecting to fail."
+    );
     res.redirect("/auth_fail.html");
   }
 }
@@ -186,7 +192,6 @@ export async function handleCheckArgusToken(req, res) {
 
 export async function handleGetArgusToken(req, res) {
   logger.info("getting token for state: " + req.body.state);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
   var pendingTwitchLogins = await readStorageObject("pendingTwitchLogins");
   if (
     req.body != null &&
@@ -194,7 +199,6 @@ export async function handleGetArgusToken(req, res) {
     pendingTwitchLogins != null &&
     pendingTwitchLogins[req.body.state] != null
   ) {
-    logger.info("entered if for state: " + req.body.state);
     var userTwitchId = pendingTwitchLogins[req.body.state].twitchId;
     var userTwitchProfilePic =
       pendingTwitchLogins[req.body.state].twitchProfilePic;
