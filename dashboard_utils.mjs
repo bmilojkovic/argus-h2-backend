@@ -10,8 +10,8 @@ function cleanSurplus(dashboardRunData) {
     (accumulator, key) => {
       if (dashboardRunData[key].timestamp > currentTimestamp - 10 * 60 * 1000) {
         accumulator[key] = dashboardRunData[key];
-        return accumulator;
       }
+      return accumulator;
     },
     {}
   );
