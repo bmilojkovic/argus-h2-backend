@@ -1,6 +1,10 @@
 {
-  "newest_version": "1.1.0",
+  "newest_version": "1.1.2",
   "changelogs": {
-    "1.1.0": ["First version"]
+    "1.1.0": ["First version"],
+    "1.1.2": [
+      "Fixed a large issue where the app would sometimes silently fail unless you run as administrator.",
+      "Stability improvements."
+    ]
   }
 }
