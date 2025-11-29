@@ -4,7 +4,7 @@ name: Fly Deploy Test
 on:
   push:
     branches:
-      - v1.1.0
+      - dev-test
 jobs:
   deploy:
     name: Deploy app
