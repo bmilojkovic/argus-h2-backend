@@ -5,8 +5,8 @@ import {
 } from "@aws-sdk/client-s3";
 import { logger } from "./argus_logger.mjs";
 const s3Client = new S3Client({});
-const bucketName = "argus-h2-backend-argus-tokens";
-//const bucketName = "argus-h2-backend-argus-tokens-test";
+//const bucketName = "argus-h2-backend-argus-tokens";
+const bucketName = "argus-h2-backend-argus-tokens-test";
 
 async function readStorageString(objectName) {
   try {
