@@ -14,7 +14,6 @@ async function readStorageString(objectName) {
       Bucket: bucketName,
       Key: objectName,
     };
-    logger.debug(`Reading key ${objectName} from bucket ${bucketName}.`);
     const { Body } = await s3Client.send(new GetObjectCommand(objectParams));
     return await Body.transformToString();
   } catch (error) {
