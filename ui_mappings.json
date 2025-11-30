@@ -5164,12 +5164,12 @@
       ]
     },
     "DodgeFamiliar": {
-      "name": "Gale",
+      "name": "Galee",
       "description": "Leaps in harm's way then deals <b>400</b> damage up to <b>3</b> times per <b>Region</b>, <b>30 Sec.</b> apart.",
       "effects": [
         {
           "codeName": "DodgeFamiliar",
-          "text": "Bonus Dodge Chance & Move Speed:",
+          "text": "Bonus Dodge & Move Speed:",
           "1": "+3%",
           "2": "+4%",
           "3": "+5%",
