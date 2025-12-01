@@ -5155,7 +5155,7 @@
         },
         {
           "codeName": "FamiliarHoundResourceBonus",
-          "text": "Bonus chance of <b>Digging Spots</b> appearing:",
+          "text": "Bonus chance of Digging Spots appearing:",
           "1": "+20%",
           "2": "+30%",
           "3": "+40%",
@@ -5169,7 +5169,7 @@
       "effects": [
         {
           "codeName": "DodgeFamiliar",
-          "text": "Bonus Dodge Chance & Move Speed:",
+          "text": "Bonus Dodge & Move Speed:",
           "1": "+3%",
           "2": "+4%",
           "3": "+5%",
@@ -5177,7 +5177,7 @@
         },
         {
           "codeName": "FamiliarPolecatResourceBonus",
-          "text": "Bonus chance of <b>Flora</b> appearing:",
+          "text": "Bonus chance of Flora appearing:",
           "1": "+20%",
           "2": "+30%",
           "3": "+40%",
