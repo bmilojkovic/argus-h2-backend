@@ -102,8 +102,8 @@ export function handleOauthToken(req, res) {
       code: req.query.code,
       grant_type: "authorization_code",
       //redirect_uri: "http://localhost:3000/oauth_token",
-      //redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
-      redirect_uri: "https://argus-h2-backend-test.fly.dev/oauth_token",
+      redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
+      //redirect_uri: "https://argus-h2-backend-test.fly.dev/oauth_token",
     };
 
     var requestOptions = {
