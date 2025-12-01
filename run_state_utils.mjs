@@ -15,7 +15,7 @@ async function cleanRunDataSurplus() {
   for (const key of Object.keys(allProfiles)) {
     const candidateObjectName = "runData" + allProfiles[key].twitchId;
     if (await objectExists(candidateObjectName)) {
-      runDataObject = await readStorageObject(
+      const runDataObject = await readStorageObject(
         "runData" + allProfiles[key].twitchId
       );
 
