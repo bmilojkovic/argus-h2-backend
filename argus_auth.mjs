@@ -3,11 +3,10 @@ import querystring from "querystring";
 import request from "request";
 import jwt from "jsonwebtoken";
 
-import { loadSecrets } from "./secrets.mjs";
 import { readStorageObject, writeStorageObject } from "./aws_storage.mjs";
-
 import { logger } from "./argus_logger.mjs";
 
+import { loadSecrets } from "./secrets.mjs";
 const secrets = loadSecrets();
 const extensionId = secrets.extensionId;
 const apiClientSecret = secrets.apiClientSecret;
@@ -103,7 +102,8 @@ export function handleOauthToken(req, res) {
       code: req.query.code,
       grant_type: "authorization_code",
       //redirect_uri: "http://localhost:3000/oauth_token",
-      redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
+      //redirect_uri: "https://argus-h2-backend.fly.dev/oauth_token",
+      redirect_uri: "https://argus-h2-backend-test.fly.dev/oauth_token",
     };
 
     var requestOptions = {

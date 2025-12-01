@@ -4,7 +4,7 @@ name: Fly Deploy Test
 on:
   push:
     branches:
-      - v1.1.0
+      - dev-test
 jobs:
   deploy:
     name: Deploy app
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: v1.1.0
+          ref: dev-test
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only -a argus-h2-backend-test
         env:

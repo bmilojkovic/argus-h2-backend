@@ -15,7 +15,10 @@ import { handleGetNewestAppVersion } from "./app_updater.mjs";
 
 import { logger } from "./argus_logger.mjs";
 import path from "path";
-import { updateDasboardRunData } from "./dashboard_utils.mjs";
+import {
+  handleGetStreamerRunData,
+  updateRunState,
+} from "./run_state_utils.mjs";
 import { readStorageObject } from "./aws_storage.mjs";
 
 const app = express();
@@ -54,8 +57,14 @@ app.post("/run_info", async function (req, res, next) {
 
   broadcastInfo(parsedData, twitchId);
 
-  await updateDasboardRunData(parsedData, twitchProfile);
+  updateRunState(parsedData, twitchProfile);
   res.send("ok");
+});
+
+app.get("/get_streamer_run_data", async function (req, res) {
+  logger.debug("[get_streamer_run_data]");
+
+  handleGetStreamerRunData(req, res);
 });
 
 app.get("/oauth_token", (req, res) => {

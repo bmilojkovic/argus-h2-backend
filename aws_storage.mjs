@@ -2,11 +2,13 @@ import {
   S3Client,
   PutObjectCommand,
   GetObjectCommand,
+  HeadObjectCommand,
+  DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
 import { logger } from "./argus_logger.mjs";
 const s3Client = new S3Client({});
-const bucketName = "argus-h2-backend-argus-tokens";
-//const bucketName = "argus-h2-backend-argus-tokens-test";
+//const bucketName = "argus-h2-backend-argus-tokens";
+const bucketName = "argus-h2-backend-argus-tokens-test";
 
 async function readStorageString(objectName) {
   try {
@@ -14,7 +16,6 @@ async function readStorageString(objectName) {
       Bucket: bucketName,
       Key: objectName,
     };
-
     const { Body } = await s3Client.send(new GetObjectCommand(objectParams));
     return await Body.transformToString();
   } catch (error) {
@@ -53,4 +54,33 @@ async function writeStorageString(objectName, stringToWrite) {
 
 export async function writeStorageObject(objectName, objectToWrite) {
   await writeStorageString(objectName, JSON.stringify(objectToWrite));
+}
+
+export async function storageObjectExists(objectName) {
+  try {
+    var objectParams = {
+      Bucket: bucketName,
+      Key: objectName,
+    };
+
+    await s3Client.send(new HeadObjectCommand(objectParams));
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+export async function removeStorageObject(objectName) {
+  try {
+    var objectParams = {
+      Bucket: bucketName,
+      Key: objectName,
+    };
+
+    await s3Client.send(new DeleteObjectCommand(objectParams));
+    logger.info("Deleted object " + objectName + " from storage");
+  } catch (error) {
+    logger.error("Error in removing storage object: " + error);
+    return false;
+  }
 }
