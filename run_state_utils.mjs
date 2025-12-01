@@ -8,6 +8,7 @@ import {
 } from "./aws_storage.mjs";
 import { logger } from "./argus_logger.mjs";
 
+import { loadSecrets } from "./secrets.mjs";
 const secrets = loadSecrets();
 const extensionSecret = secrets.extensionSecret;
 
