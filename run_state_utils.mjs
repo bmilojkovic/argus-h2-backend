@@ -43,7 +43,10 @@ async function refreshRunDataCache() {
     const storageName = "runData" + key;
     if (await storageObjectExists(storageName)) {
       logger.debug("Updating run data cache for " + key);
-      runDataCache[key] = await readStorageObject(storageName);
+      const storageObject = await readStorageObject(storageName);
+      if (storageObject != null && Object.hasOwn(storageObject, "runData")) {
+        runDataCache[key] = storageObject["runData"];
+      }
     }
   }
 }
@@ -146,10 +149,22 @@ async function getRunState(twitchId) {
   const storageObjectName = "runData" + twitchId;
   if (await storageObjectExists(storageObjectName)) {
     const stateFromStorage = await readStorageObject(storageObjectName);
-    runDataCache[twitchId] = stateFromStorage;
-    return stateFromStorage;
+    if (
+      stateFromStorage != null &&
+      Object.hasOwn(stateFromStorage, "runData")
+    ) {
+      runDataCache[twitchId] = stateFromStorage["runData"];
+      return stateFromStorage["runData"];
+    }
+    logger.debug("Storage object exists but doesn't have runData " + twitchId);
+    return null;
   }
 
+  logger.debug(
+    "Tried to get run data for " +
+      twitchId +
+      " but couldn't find it in cache or storage."
+  );
   return null;
 }
 

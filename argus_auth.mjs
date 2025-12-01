@@ -3,11 +3,10 @@ import querystring from "querystring";
 import request from "request";
 import jwt from "jsonwebtoken";
 
-import { loadSecrets } from "./secrets.mjs";
 import { readStorageObject, writeStorageObject } from "./aws_storage.mjs";
-
 import { logger } from "./argus_logger.mjs";
 
+import { loadSecrets } from "./secrets.mjs";
 const secrets = loadSecrets();
 const extensionId = secrets.extensionId;
 const apiClientSecret = secrets.apiClientSecret;

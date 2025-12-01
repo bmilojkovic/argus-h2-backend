@@ -62,7 +62,7 @@ app.post("/run_info", async function (req, res, next) {
 });
 
 app.get("/get_streamer_run_data", async function (req, res) {
-  logger.debug("[get_streamer_run_data] " + JSON.stringify(req.headers));
+  logger.debug("[get_streamer_run_data]");
 
   handleGetStreamerRunData(req, res);
 });
