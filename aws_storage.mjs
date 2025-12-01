@@ -2,6 +2,8 @@ import {
   S3Client,
   PutObjectCommand,
   GetObjectCommand,
+  HeadObjectCommand,
+  DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
 import { logger } from "./argus_logger.mjs";
 const s3Client = new S3Client({});
@@ -52,4 +54,33 @@ async function writeStorageString(objectName, stringToWrite) {
 
 export async function writeStorageObject(objectName, objectToWrite) {
   await writeStorageString(objectName, JSON.stringify(objectToWrite));
+}
+
+export async function objectExists(objectName) {
+  try {
+    var objectParams = {
+      Bucket: bucketName,
+      Key: objectName,
+    };
+
+    await s3Client.send(new HeadObjectCommand(objectParams));
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+export async function removeStorageObject(objectName) {
+  try {
+    var objectParams = {
+      Bucket: bucketName,
+      Key: objectName,
+    };
+
+    await s3Client.send(new DeleteObjectCommand(objectParams));
+    logger.info("Deleted object " + objectName + " from storage");
+  } catch (error) {
+    logger.error("Error in removing storage object: " + error);
+    return false;
+  }
 }
