@@ -2,10 +2,12 @@ import cron from "node-cron";
 import {
   readStorageObject,
   writeStorageObject,
-  objectExists,
+  storageObjectExists,
   removeStorageObject,
 } from "./aws_storage.mjs";
 import { logger } from "./argus_logger.mjs";
+
+let runDataCache = {};
 
 async function cleanRunDataSurplus() {
   const currentTimestamp = Date.now();
@@ -13,18 +15,30 @@ async function cleanRunDataSurplus() {
   const allProfiles = await readStorageObject("twitchIdByArgusToken");
 
   for (const key of Object.keys(allProfiles)) {
-    const candidateObjectName = "runData" + allProfiles[key].twitchId;
-    if (await objectExists(candidateObjectName)) {
-      const runDataObject = await readStorageObject(
-        "runData" + allProfiles[key].twitchId
-      );
+    const currentId = allProfiles[key].twitchId;
+    const candidateObjectName = "runData" + currentId;
+    if (await storageObjectExists(candidateObjectName)) {
+      const runDataObject = await readStorageObject(candidateObjectName);
 
       if (
         runDataObject != null &&
         runDataObject.timestamp < currentTimestamp - 10 * 60 * 1000
       ) {
         removeStorageObject(candidateObjectName);
+        if (Object.hasOwn(runDataCache, currentId)) {
+          delete runDataCache[currentId];
+        }
       }
+    }
+  }
+}
+
+async function refreshRunDataCache() {
+  for (const key of Object.keys(runDataCache)) {
+    const storageName = "runData" + key;
+    if (await storageObjectExists(storageName)) {
+      logger.debug("Updating run data cache for " + key);
+      runDataCache[key] = await readStorageObject(storageName);
     }
   }
 }
@@ -53,8 +67,10 @@ async function cleanDashboardSurplus() {
 }
 
 async function timedClean() {
-  cleanRunDataSurplus();
   cleanDashboardSurplus();
+
+  await cleanRunDataSurplus();
+  refreshRunDataCache();
 }
 
 cron.schedule("* * * * *", timedClean);
@@ -100,6 +116,7 @@ async function updateStreamerRunData(
     };
 
     writeStorageObject("runData" + twitchProfile.twitchId, objectToStore);
+    runDataCache[twitchProfile.twitchId] = newRunData;
   }
 }
 
@@ -114,4 +131,39 @@ export async function updateRunState(newRunData, twitchProfile) {
   const currentTimestamp = Date.now();
   updateDasboardRunData(newRunData, twitchProfile, currentTimestamp);
   updateStreamerRunData(newRunData, twitchProfile, currentTimestamp);
+}
+
+async function getRunState(twitchId) {
+  if (Object.hasOwn(runDataCache, twitchId)) {
+    return runDataCache[twitchId];
+  }
+
+  const storageObjectName = "runData" + twitchId;
+  if (await storageObjectExists(storageObjectName)) {
+    const stateFromStorage = await readStorageObject(storageObjectName);
+    runDataCache[twitchId] = stateFromStorage;
+    return stateFromStorage;
+  }
+
+  return null;
+}
+
+export async function handleGetStreamerRunData(req, res) {
+  try {
+    var decodedPayload = jwt.verify(
+      req.headers["x-extension-jwt"],
+      Buffer.from(extensionSecret, "base64")
+    );
+
+    var userTwitchId = decodedPayload["channel_id"];
+    const runState = await getRunState(userTwitchId);
+    if (runState != null) {
+      res.send(JSON.stringify(runState));
+    } else {
+      res.send("NO_DATA");
+    }
+  } catch (error) {
+    logger.warn("Error in decoding JWT token: " + error.message);
+    res.send("NO_DATA");
+  }
 }

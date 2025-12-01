@@ -56,7 +56,7 @@ export async function writeStorageObject(objectName, objectToWrite) {
   await writeStorageString(objectName, JSON.stringify(objectToWrite));
 }
 
-export async function objectExists(objectName) {
+export async function storageObjectExists(objectName) {
   try {
     var objectParams = {
       Bucket: bucketName,

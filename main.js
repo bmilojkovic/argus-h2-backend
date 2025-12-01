@@ -15,7 +15,10 @@ import { handleGetNewestAppVersion } from "./app_updater.mjs";
 
 import { logger } from "./argus_logger.mjs";
 import path from "path";
-import { updateRunState } from "./run_state_utils.mjs";
+import {
+  handleGetStreamerRunData,
+  updateRunState,
+} from "./run_state_utils.mjs";
 import { readStorageObject } from "./aws_storage.mjs";
 
 const app = express();
