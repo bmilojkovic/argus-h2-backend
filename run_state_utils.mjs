@@ -1,4 +1,5 @@
 import cron from "node-cron";
+import jwt from "jsonwebtoken";
 import {
   readStorageObject,
   writeStorageObject,
@@ -6,6 +7,9 @@ import {
   removeStorageObject,
 } from "./aws_storage.mjs";
 import { logger } from "./argus_logger.mjs";
+
+const secrets = loadSecrets();
+const extensionSecret = secrets.extensionSecret;
 
 let runDataCache = {};
 
