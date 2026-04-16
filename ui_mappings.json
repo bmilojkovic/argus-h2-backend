@@ -528,10 +528,10 @@
       "effects": [
         {
           "text": "Blade Damage:",
-          "common": "100",
-          "rare": "140",
-          "epic": "180",
-          "heroic": "220"
+          "common": "120",
+          "rare": "160",
+          "epic": "200",
+          "heroic": "240"
         }
       ]
     },
@@ -554,14 +554,14 @@
       "gods": ["Ares"],
       "name": "Grisly Gain",
       "slot": "Mana",
-      "description": "Striking foes with your <b>Weapon</b> may spill <b>Plasma</b>, which also restore <b>15 Magick</b>.",
+      "description": "Striking foes with your <b>Weapon</b> has 20% chance to spill <b>Plasma</b>, which can restore <b>Magick</b>.",
       "effects": [
         {
-          "text": "Chance of Plasma:",
-          "common": "10%",
-          "rare": "12%",
-          "epic": "14%",
-          "heroic": "16%"
+          "text": "Magick Restored per Plasma:",
+          "common": "15",
+          "rare": "20",
+          "epic": "25",
+          "heroic": "30"
         }
       ]
     },
@@ -598,14 +598,14 @@
     "RendBloodDropBoon": {
       "gods": ["Ares"],
       "name": "Profuse Bleeding",
-      "description": "Whenever foes with <b>Wounds</b> take damage, they may spill <b>Plasma</b>.",
+      "description": "Whenever you inflict <b>Wounds</b> or collect <b>Plasma</b>, create a falling blade over a surrounding foe.",
       "effects": [
         {
-          "text": "Chance of Plasma:",
-          "common": "+10%",
-          "rare": "+12%",
-          "epic": "+14%",
-          "heroic": "+16%"
+          "text": "Blade Damage:",
+          "common": "30",
+          "rare": "50",
+          "epic": "70",
+          "heroic": "90"
         }
       ],
       "requirements": [
@@ -620,9 +620,9 @@
         {
           "text": "Double Damage Chance:",
           "common": "+10%",
-          "rare": "+12%",
-          "epic": "+14%",
-          "heroic": "+16%"
+          "rare": "+13%",
+          "epic": "+16%",
+          "heroic": "+19%"
         }
       ],
       "requirements": [
@@ -694,23 +694,16 @@
     "DoubleBloodDropBoon": {
       "gods": ["Ares"],
       "name": "Sanguinary Savor",
-      "description": "Any <b>Plasma</b> spilled has improved potency and is drawn to you automatically.",
-      "effects": [
-        { "text": "Bonus Move & Strike Speed:", "legendary": "+100%" }
-      ],
+      "description": "You inflict <b>Wounds</b> with greater <b>Power</b>, and spilled <b>Plasma</b> is drawn to you automatically.",
+      "effects": [{ "text": "Wounds Bonus Power:", "legendary": "+100" }],
       "requirements": [
         {
           "type": "Ares",
-          "items": [
-            "AresWeaponBoon",
-            "AresSpecialBoon",
-            "AresCastBoon",
-            "AresSprintBoon"
-          ]
+          "items": ["AresWeaponBoon", "AresSpecialBoon"]
         },
         {
           "type": "Ares",
-          "items": ["AresManaBoon", "BloodDropRevengeBoon", "RendBloodDropBoon"]
+          "items": ["AresManaBoon", "BloodDropRevengeBoon"]
         },
         {
           "type": "Ares",
@@ -1657,7 +1650,10 @@
         { "text": "Scorch Damage (every 3 Sec.):", "legendary": "400" }
       ],
       "requirements": [
-        { "type": "Hestia", "items": ["HestiaCastBoon"] },
+        {
+          "type": "Hestia",
+          "items": ["HestiaWeaponBoon", "HestiaSpecialBoon", "HestiaCastBoon"]
+        },
         {
           "type": "Hestia",
           "items": [
@@ -3638,14 +3634,14 @@
     "HermesCastDiscountBoon": {
       "gods": ["Hermes"],
       "name": "Winner's Circle",
-      "description": "You <b>Channel</b> your <b>Omega Cast</b> faster and your <b>Casts</b> expire faster",
+      "description": "You <b>Channel</b> your <b>Omega Cast</b> faster, and your <b>Casts</b> deal damage and expire faster",
       "effects": [
         {
-          "text": "Omega Cast Speed:",
-          "common": "+100%",
-          "rare": "+125%",
-          "epic": "+150%",
-          "heroic": "+175%"
+          "text": "Cast Speed:",
+          "common": "+40%",
+          "rare": "+50%",
+          "epic": "+60%",
+          "heroic": "+70%"
         }
       ]
     },
